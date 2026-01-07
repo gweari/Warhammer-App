@@ -1242,17 +1242,72 @@ const gearDatabase = {
             if (stats.includes('Dodge')) score += 20;
         });
         
-        // Add bonus for set bonuses quality
+        // Add bonus for set bonuses quality (heavily weighted)
         if (gearSet.setBonuses && Array.isArray(gearSet.setBonuses)) {
-            score += gearSet.setBonuses.length * 40;
+            score += gearSet.setBonuses.length * 150;  // Increased from 40 to 150
+            
+            // Analyze set bonus quality
+            gearSet.setBonuses.forEach(bonus => {
+                const bonusText = bonus.bonus.toLowerCase();
+                
+                // High value bonuses
+                if (bonusText.includes('critical') || bonusText.includes('crit')) score += 120;
+                if (bonusText.includes('ap per second') || bonusText.includes('action point')) score += 150;
+                if (bonusText.includes('healing power')) score += 140;
+                if (bonusText.includes('morale')) score += 100;
+                
+                // Defensive bonuses
+                if (bonusText.includes('block') || bonusText.includes('parry') || bonusText.includes('dodge')) score += 100;
+                if (bonusText.includes('reduce') && bonusText.includes('damage')) score += 110;
+                if (bonusText.includes('wounds') || bonusText.includes('toughness')) score += 90;
+                
+                // Proc bonuses (Reactionary, Superiority, etc.)
+                if (bonusText.includes('on hit') || bonusText.includes('on being hit') || bonusText.includes('on defense')) score += 130;
+                if (bonusText.includes('chance to')) score += 110;
+            });
             
             // Bonus for set completion
             const maxPieces = Math.max(...gearSet.setBonuses.map(b => b.pieces));
-            if (maxPieces >= 5) score += 100;
+            if (maxPieces >= 6) score += 300;  // Increased from 100
+            else if (maxPieces >= 5) score += 200;
+            else if (maxPieces >= 4) score += 100;
+        }
+        
+        // Parse and score totalStats if available (heavily weighted)
+        if (gearSet.totalStats) {
+            const totalStats = gearSet.totalStats;
+            
+            // Extract totals
+            const totalWP = totalStats.match(/WP:\s*(\d+)/i);
+            const totalINT = totalStats.match(/INT:\s*(\d+)/i);
+            const totalSTR = totalStats.match(/STR:\s*(\d+)/i);
+            const totalTOU = totalStats.match(/TOU:\s*(\d+)/i);
+            const totalWOU = totalStats.match(/WOU:\s*(\d+)/i);
+            const totalINI = totalStats.match(/INI:\s*(\d+)/i);
+            const totalArmor = totalStats.match(/Armor:\s*(\d+)/i);
+            
+            // Apply role-based scoring to totals with high multipliers
+            if (isHealer) {
+                score += totalWP ? parseInt(totalWP[1]) * 2 : 0;
+                score += totalWOU ? parseInt(totalWOU[1]) * 1.5 : 0;
+                score += totalINI ? parseInt(totalINI[1]) * 1.2 : 0;
+                score += totalTOU ? parseInt(totalTOU[1]) * 1 : 0;
+            } else if (isDPS) {
+                score += totalINT ? parseInt(totalINT[1]) * 2 : 0;
+                score += totalSTR ? parseInt(totalSTR[1]) * 2 : 0;
+                score += totalWP ? parseInt(totalWP[1]) * 2 : 0;
+                score += totalWOU ? parseInt(totalWOU[1]) * 1.5 : 0;
+                score += totalINI ? parseInt(totalINI[1]) * 1.2 : 0;
+            } else if (isTank) {
+                score += totalWOU ? parseInt(totalWOU[1]) * 2 : 0;
+                score += totalINI ? parseInt(totalINI[1]) * 1.8 : 0;
+                score += totalTOU ? parseInt(totalTOU[1]) * 1.5 : 0;
+                score += totalArmor ? parseInt(totalArmor[1]) * 0.4 : 0;
+            }
         }
         
         // Bonus for number of pieces (more complete sets are better)
-        score += gearSet.pieces.length * 20;
+        score += gearSet.pieces.length * 30;  // Increased from 20
         
         return score;
     },
