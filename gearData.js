@@ -1123,15 +1123,30 @@ const gearDatabase = {
             }
         }
         
-        // If no sets found, try fallback
-        if (allSets.length === 0) {
+        // Filter out sets with pieces the player can't equip
+        const wearableSets = allSets.filter(set => {
+            if (!set.pieces || !Array.isArray(set.pieces)) return true;
+            
+            // Check if any piece has requirements the player doesn't meet
+            for (const piece of set.pieces) {
+                if (piece.level && level < piece.level) return false;
+                if (piece.renown && renown < piece.renown) return false;
+            }
+            return true;
+        });
+        
+        // If no wearable sets found, try fallback
+        if (wearableSets.length === 0) {
             const fallback = this.recommendations[`default_${tier}`] || this.recommendations[`default_starter`];
             if (fallback) {
-                allSets.push(fallback);
+                wearableSets.push(fallback);
             }
         }
         
         // Sort sets by score (best first) - pass level and renown for context
+        wearableSets.sort((a, b) => this.calculateSetScore(b, role, level, renown, tier) - this.calculateSetScore(a, role, level, renown, tier));
+        
+        return wearableSets;        // Sort sets by score (best first) - pass level and renown for context
         allSets.sort((a, b) => this.calculateSetScore(b, role, level, renown, tier) - this.calculateSetScore(a, role, level, renown, tier));
         
         return allSets;
