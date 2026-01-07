@@ -157,37 +157,73 @@ function displayRecommendations(classObj, level, renown, role, gearSet) {
     if (gearSet && Object.keys(gearSet).length > 0) {
         // Show set name if available
         if (gearSet.setName) {
-            html += `<div class="gear-item" style="background: rgba(255, 184, 28, 0.2); border-left-width: 5px;">
-                <div class="gear-slot" style="font-size: 1.1rem;">Recommended Set:</div>
-                <div class="gear-name" style="font-size: 1.05rem; font-weight: 700;">${gearSet.setName}</div>
+            html += `<div class="gear-item" style="background: rgba(255, 184, 28, 0.25); border-left-width: 5px; margin-bottom: 20px;">
+                <div class="gear-slot" style="font-size: 1.2rem; color: #ffb81c;">⚔️ Recommended Set</div>
+                <div class="gear-name" style="font-size: 1.1rem; font-weight: 700; margin-top: 5px;">${gearSet.setName}</div>
             </div>`;
         }
         
-        html += '<div>';
-        Object.entries(gearSet).forEach(([slot, item]) => {
-            // Skip special fields
-            if (slot === 'setName' || slot === 'stats') return;
+        // Display individual pieces with stats
+        if (gearSet.pieces && Array.isArray(gearSet.pieces)) {
+            html += '<div style="margin-bottom: 20px;">';
+            gearSet.pieces.forEach(piece => {
+                html += `
+                    <div class="gear-item">
+                        <div class="gear-slot">${piece.slot}</div>
+                        <div class="gear-name" style="font-weight: 600;">${piece.name}</div>
+                        <div class="gear-rarity" style="margin-top: 5px; color: #a0a0a0;">${piece.stats}</div>
+                    </div>
+                `;
+            });
+            html += '</div>';
             
-            // Format slot name nicely
-            const slotName = slot.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+            // Show total stats if available
+            if (gearSet.totalStats) {
+                html += `<div class="gear-item" style="background: rgba(100, 100, 255, 0.15); border-left-color: #6b9eff;">
+                    <div class="gear-slot" style="color: #8bb4ff;">📊 Total Stats</div>
+                    <div class="gear-name" style="font-size: 0.95rem;">${gearSet.totalStats}</div>
+                </div>`;
+            }
             
-            html += `
-                <div class="gear-item">
-                    <div class="gear-slot">${slotName}:</div>
-                    <div class="gear-name">${item}</div>
-                </div>
-            `;
-        });
-        
-        // Show stats summary if available
-        if (gearSet.stats) {
-            html += `<div class="gear-item" style="background: rgba(0, 0, 0, 0.3);">
-                <div class="gear-slot">Set Bonuses:</div>
-                <div class="gear-name" style="font-size: 0.9rem;">${gearSet.stats}</div>
-            </div>`;
+            // Show set bonuses
+            if (gearSet.setBonuses && Array.isArray(gearSet.setBonuses)) {
+                html += `<div class="gear-item" style="background: rgba(0, 255, 100, 0.1); border-left-color: #5dff8c; margin-top: 15px;">
+                    <div class="gear-slot" style="color: #5dff8c;">✨ Set Bonuses</div>`;
+                gearSet.setBonuses.forEach(bonus => {
+                    html += `<div class="gear-name" style="font-size: 0.9rem; padding: 3px 0; color: #d0d0d0;">
+                        <span style="color: #5dff8c; font-weight: 600;">${bonus.pieces} pieces:</span> ${bonus.bonus}
+                    </div>`;
+                });
+                html += '</div>';
+            }
+        } else {
+            // Fallback for old format
+            html += '<div>';
+            Object.entries(gearSet).forEach(([slot, item]) => {
+                // Skip special fields
+                if (slot === 'setName' || slot === 'stats' || slot === 'pieces' || slot === 'setBonuses' || slot === 'totalStats') return;
+                
+                // Format slot name nicely
+                const slotName = slot.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                
+                html += `
+                    <div class="gear-item">
+                        <div class="gear-slot">${slotName}:</div>
+                        <div class="gear-name">${item}</div>
+                    </div>
+                `;
+            });
+            
+            // Show stats summary if available (old format)
+            if (gearSet.stats) {
+                html += `<div class="gear-item" style="background: rgba(0, 0, 0, 0.3);">
+                    <div class="gear-slot">Set Bonuses:</div>
+                    <div class="gear-name" style="font-size: 0.9rem;">${gearSet.stats}</div>
+                </div>`;
+            }
+            
+            html += '</div>';
         }
-        
-        html += '</div>';
     } else {
         html += '<div class="no-results">No gear recommendations found for this combination.</div>';
     }
