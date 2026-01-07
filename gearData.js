@@ -551,11 +551,11 @@ const gearDatabase = {
         'shaman_goblin_healer_rr26': {
             setName: 'Devastator Set',
             pieces: [
-                { slot: 'Head', name: 'Devastator Morkyfeets', stats: 'Armor: 132 | WP: 24, TOU: 7, INI: 7, WOU: 8' },
-                { slot: 'Chest', name: 'Devastator Robefings', stats: 'Armor: 190 | WP: 32, TOU: 9, WOU: 10 | +40 HP Every 4s' },
-                { slot: 'Hands', name: 'Devastator Greenbringas', stats: 'Armor: 140 | WP: 25, TOU: 7, INI: 6 | +2% Healing Crit' },
-                { slot: 'Shoulders', name: 'Devastator Sholdafings', stats: 'Armor: 171 | WP: 23, TOU: 15, INI: 9 | +1% Disrupt' },
-                { slot: 'Belt', name: 'Devastator Waaaghat', stats: 'Armor: 162 | WP: 32, TOU: 10, INI: 3, WOU: 12' }
+                { slot: 'Head', name: 'Devastator Morkyfeets', stats: 'Armor: 132 | WP: 24, TOU: 7, INI: 7, WOU: 8', level: 26, renown: 26 },
+                { slot: 'Chest', name: 'Devastator Robefings', stats: 'Armor: 190 | WP: 32, TOU: 9, WOU: 10 | +40 HP Every 4s', level: 26, renown: 26 },
+                { slot: 'Hands', name: 'Devastator Greenbringas', stats: 'Armor: 140 | WP: 25, TOU: 7, INI: 6 | +2% Healing Crit', level: 26, renown: 26 },
+                { slot: 'Shoulders', name: 'Devastator Sholdafings', stats: 'Armor: 171 | WP: 23, TOU: 15, INI: 9 | +1% Disrupt', level: 26, renown: 26 },
+                { slot: 'Belt', name: 'Devastator Waaaghat', stats: 'Armor: 162 | WP: 32, TOU: 10, INI: 3, WOU: 12', level: 26, renown: 26 }
             ],
             setBonuses: [
                 { pieces: 2, bonus: '+47 Willpower' },
@@ -568,11 +568,11 @@ const gearDatabase = {
         'shaman_goblin_healer_rr35': {
             setName: 'Annihilator Set',
             pieces: [
-                { slot: 'Head', name: 'Annihilator Morkyfeets', stats: 'Armor: 183 | WP: 21, TOU: 13, INI: 10 | +2% Dodge' },
-                { slot: 'Chest', name: 'Annihilator Robefings', stats: 'Armor: 236 | WP: 30, TOU: 12, INI: 17 | +3 AP Per Second' },
-                { slot: 'Hands', name: 'Annihilator Greenbringas', stats: 'Armor: 183 | WP: 23, TOU: 11, INI: 9, WOU: 14' },
-                { slot: 'Shoulders', name: 'Annihilator Sholdafings', stats: 'Armor: 212 | WP: 25, INI: 12, WOU: 18 | +1% Reduction in being Crit' },
-                { slot: 'Belt', name: 'Annihilator Waaaghat', stats: 'Armor: 212 | WP: 25, TOU: 12, INI: 13 | +2% Disrupt' }
+                { slot: 'Head', name: 'Annihilator Morkyfeets', stats: 'Armor: 183 | WP: 21, TOU: 13, INI: 10 | +2% Dodge', level: 35, renown: 35 },
+                { slot: 'Chest', name: 'Annihilator Robefings', stats: 'Armor: 236 | WP: 30, TOU: 12, INI: 17 | +3 AP Per Second', level: 35, renown: 35 },
+                { slot: 'Hands', name: 'Annihilator Greenbringas', stats: 'Armor: 183 | WP: 23, TOU: 11, INI: 9, WOU: 14', level: 35, renown: 35 },
+                { slot: 'Shoulders', name: 'Annihilator Sholdafings', stats: 'Armor: 212 | WP: 25, INI: 12, WOU: 18 | +1% Reduction in being Crit', level: 35, renown: 35 },
+                { slot: 'Belt', name: 'Annihilator Waaaghat', stats: 'Armor: 212 | WP: 25, TOU: 12, INI: 13 | +2% Disrupt', level: 35, renown: 35 }
             ],
             setBonuses: [
                 { pieces: 2, bonus: '+53 Willpower' },
@@ -673,12 +673,12 @@ const gearDatabase = {
         'shaman_goblin_healer_rr45': {
             setName: 'Conqueror Set',
             pieces: [
-                { slot: 'Head', name: 'Conqueror Morkyfeets', stats: 'Armor: 192 | WP: 14, INI: 16, WOU: 10 | +2% Healing Crit', cost: 70, currency: 'War Crests' },
-                { slot: 'Chest', name: 'Conqueror Robefings', stats: 'Armor: 255 | WP: 33, TOU: 19, INI: 13 | +3 AP Per Second', cost: 147, currency: 'War Crests' },
-                { slot: 'Hands', name: 'Conqueror Greenbringas', stats: 'Armor: 192 | WP: 25, TOU: 15, INI: 8 | +2% Disrupt', cost: 81, currency: 'War Crests' },
-                { slot: 'Shoulders', name: 'Conqueror Sholdafings', stats: 'Armor: 225 | WP: 29, TOU: 16, INI: 12 | +2% Reduce Armor Pen', cost: 111, currency: 'War Crests' },
-                { slot: 'Belt', name: 'Conqueror Waaaghat', stats: 'Armor: 225 | WP: 17, TOU: 10, INI: 30 | +2% Dodge', cost: 122, currency: 'War Crests' },
-                { slot: 'Accessory', name: 'Conqueror Bitskeepa', stats: 'WP: 18, INI: 6, WOU: 12 | +36 Healing Power | 83 SRe, 77 ERe, 83 CRe', cost: 49, currency: 'War Crests' }
+                { slot: 'Head', name: 'Conqueror Morkyfeets', stats: 'Armor: 192 | WP: 14, INI: 16, WOU: 10 | +2% Healing Crit', cost: 70, currency: 'War Crests', level: 40, renown: 45 },
+                { slot: 'Chest', name: 'Conqueror Robefings', stats: 'Armor: 255 | WP: 33, TOU: 19, INI: 13 | +3 AP Per Second', cost: 147, currency: 'War Crests', level: 40, renown: 45 },
+                { slot: 'Hands', name: 'Conqueror Greenbringas', stats: 'Armor: 192 | WP: 25, TOU: 15, INI: 8 | +2% Disrupt', cost: 81, currency: 'War Crests', level: 40, renown: 45 },
+                { slot: 'Shoulders', name: 'Conqueror Sholdafings', stats: 'Armor: 225 | WP: 29, TOU: 16, INI: 12 | +2% Reduce Armor Pen', cost: 111, currency: 'War Crests', level: 40, renown: 45 },
+                { slot: 'Belt', name: 'Conqueror Waaaghat', stats: 'Armor: 225 | WP: 17, TOU: 10, INI: 30 | +2% Dodge', cost: 122, currency: 'War Crests', level: 40, renown: 45 },
+                { slot: 'Accessory', name: 'Conqueror Bitskeepa', stats: 'WP: 18, INI: 6, WOU: 12 | +36 Healing Power | 83 SRe, 77 ERe, 83 CRe', cost: 49, currency: 'War Crests', level: 40, renown: 45 }
             ],
             setBonuses: [
                 { pieces: 2, bonus: '+57 Willpower' },
