@@ -159,17 +159,69 @@ function displayRecommendations(classObj, level, renown, role, gearSets) {
 
     // Display all available gear sets
     if (gearSets && gearSets.length > 0) {
-        gearSets.forEach((gearSet, index) => {
-            // Add separator between sets
-            if (index > 0) {
+        // Show BiS (first set) always
+        displayGearSet(gearSets[0], 0, true);
+        
+        // If there are additional sets, add a button to show them
+        if (gearSets.length > 1) {
+            html += `
+                <div style="text-align: center; margin: 30px 0;">
+                    <button id="showOthersBtn" style="
+                        background: rgba(255, 184, 28, 0.2);
+                        border: 2px solid #ffb81c;
+                        color: #ffb81c;
+                        padding: 12px 30px;
+                        font-size: 1rem;
+                        font-weight: 600;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                    " onmouseover="this.style.background='rgba(255, 184, 28, 0.3)'" onmouseout="this.style.background='rgba(255, 184, 28, 0.2)'">
+                        Show ${gearSets.length - 1} Other Option${gearSets.length - 1 > 1 ? 's' : ''}
+                    </button>
+                </div>
+                <div id="otherSets" style="display: none;">
+            `;
+            
+            // Add other sets (hidden initially)
+            gearSets.slice(1).forEach((gearSet, index) => {
                 html += `<div style="height: 3px; background: linear-gradient(90deg, rgba(255,184,28,0) 0%, rgba(255,184,28,0.5) 50%, rgba(255,184,28,0) 100%); margin: 40px 0;"></div>`;
-            }
-            // Show set name if available
-            if (gearSet.setName) {
-                html += `<div class="gear-item" style="background: rgba(255, 184, 28, 0.25); border-left-width: 5px; margin-bottom: 20px;">
-                    <div class="gear-slot" style="font-size: 1.2rem; color: #ffb81c;">⚔️ Set ${index + 1} of ${gearSets.length}</div>
-                    <div class="gear-name" style="font-size: 1.1rem; font-weight: 700; margin-top: 5px;">${gearSet.setName}</div>
-                </div>`;
+                displayGearSet(gearSet, index + 1, false);
+            });
+            
+            html += '</div>';
+        }
+    } else {
+        html += '<div class="no-results">No gear recommendations found for this combination.</div>';
+    }
+
+    resultsDiv.innerHTML = html;
+    
+    // Add click handler for show others button
+    if (gearSets && gearSets.length > 1) {
+        const showOthersBtn = document.getElementById('showOthersBtn');
+        const otherSets = document.getElementById('otherSets');
+        if (showOthersBtn) {
+            showOthersBtn.addEventListener('click', function() {
+                if (otherSets.style.display === 'none') {
+                    otherSets.style.display = 'block';
+                    showOthersBtn.textContent = 'Hide Other Options';
+                } else {
+                    otherSets.style.display = 'none';
+                    showOthersBtn.textContent = `Show ${gearSets.length - 1} Other Option${gearSets.length - 1 > 1 ? 's' : ''}`;
+                }
+            });
+        }
+    }
+    
+    function displayGearSet(gearSet, index, isBiS) {
+        // Show set name if available
+        const setLabel = isBiS ? '🏆 Best in Slot' : `Alternative Set ${index}`;
+        if (gearSet.setName) {
+            html += `<div class="gear-item" style="background: rgba(255, 184, 28, ${isBiS ? '0.35' : '0.15'}); border-left-width: 5px; margin-bottom: 20px;">
+                <div class="gear-slot" style="font-size: 1.2rem; color: #ffb81c;">${setLabel}</div>
+                <div class="gear-name" style="font-size: 1.1rem; font-weight: 700; margin-top: 5px;">${gearSet.setName}</div>
+            </div>`;
         }
         
         // Display individual pieces with stats
@@ -239,12 +291,7 @@ function displayRecommendations(classObj, level, renown, role, gearSets) {
             
             html += '</div>';
         }
-        }); // End forEach
-    } else {
-        html += '<div class="no-results">No gear recommendations found for this combination.</div>';
     }
-
-    resultsDiv.innerHTML = html;
 }
 
 function showError(message) {
