@@ -1,4 +1,5 @@
 // Warhammer Online RoR Gear Recommendation Database
+// Updated class names
 const gearDatabase = {
     // Classes available in the game
     classes: [
