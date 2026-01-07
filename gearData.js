@@ -416,6 +416,32 @@ const gearDatabase = {
         },
 
         // ========== SHAMAN HEALER SETS ==========
+        'shaman_goblin_healer_rr5': {
+            setName: 'Set of Carnage',
+            pieces: [
+                { slot: 'Head', name: 'Carnage Morkyfeets', stats: 'Armor: 36 | INT: 5, TOU: 3, INI: 2, WP: 6' },
+                { slot: 'Chest', name: 'Carnage Robefings', stats: 'Armor: 45 | INT: 4, TOU: 6, WP: 6, WOU: 6' },
+                { slot: 'Hands', name: 'Carnage Greenbringas', stats: 'Armor: 36 | INT: 4, TOU: 3, WP: 5, WOU: 4' }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: '+45 Armor' },
+                { pieces: 3, bonus: '+20 Willpower' }
+            ],
+            totalStats: 'Armor: 117 | INT: 13, TOU: 12, INI: 2, WP: 17, WOU: 10'
+        },
+        'shaman_goblin_healer_rr8_protector': {
+            setName: 'Protector\'s Set',
+            pieces: [
+                { slot: 'Head', name: 'Protector\'s Morkyfeets', stats: 'Armor: 40 | INI: 4, WP: 7, WOU: 6' },
+                { slot: 'Chest', name: 'Protector\'s Robefings', stats: 'Armor: 50 | TOU: 6, INI: 3, WP: 8, WOU: 6' },
+                { slot: 'Shoulders', name: 'Protector\'s Waaaghat', stats: 'Armor: 45 | INT: 4, TOU: 4, WP: 7, WOU: 4 | +4 HP Every 4s' }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: '+4% Dodge' },
+                { pieces: 3, bonus: '+2% Reduced chance to be Critically Hit' }
+            ],
+            totalStats: 'Armor: 135 | INT: 4, TOU: 10, INI: 7, WP: 23, WOU: 16'
+        },
         'shaman_goblin_healer_rr8': {
             setName: 'Decimator Set',
             pieces: [
@@ -428,6 +454,52 @@ const gearDatabase = {
                 { pieces: 3, bonus: '+22 Wounds' }
             ],
             totalStats: 'Armor: 99 | TOU: 12, INI: 2, WP: 20, WOU: 12'
+        },
+        'shaman_goblin_healer_rr16_keeper': {
+            setName: 'Keeper\'s Set',
+            pieces: [
+                { slot: 'Head', name: 'Keeper\'s Morkyfeets', stats: 'Armor: 80 | TOU: 7, INI: 7, WP: 8, WOU: 10' },
+                { slot: 'Chest', name: 'Keeper\'s Robefings', stats: 'Armor: 100 | TOU: 10, WP: 15, WOU: 12 | +2 Morale' },
+                { slot: 'Hands', name: 'Keeper\'s Greenbringas', stats: 'Armor: 80 | TOU: 9, INI: 4, WP: 13, WOU: 6' },
+                { slot: 'Shoulders', name: 'Keeper\'s Sholdafings', stats: 'Armor: 90 | TOU: 15, WP: 13 | +1% Healing Crit' },
+                { slot: 'Belt', name: 'Keeper\'s Waaaghat', stats: 'Armor: 90 | TOU: 8, INI: 5, WP: 16, WOU: 9' }
+            ],
+            setBonuses: [
+                { pieces: 3, bonus: '+37 Willpower' },
+                { pieces: 4, bonus: '+2% Healing Critical Chance' },
+                { pieces: 5, bonus: 'Quickening - On Being Hit: 10% chance to reduce build times by half a second for 10 seconds' }
+            ],
+            totalStats: 'Armor: 440 | TOU: 49, INI: 16, WP: 65, WOU: 37'
+        },
+        'shaman_goblin_healer_rr16_havoc': {
+            setName: 'Set of Havoc',
+            pieces: [
+                { slot: 'Head', name: 'Havoc Morkyfeets', stats: 'Armor: 76 | TOU: 7, WP: 10, WOU: 4 | +1% Healing Crit' },
+                { slot: 'Chest', name: 'Havoc Robefings', stats: 'Armor: 95 | TOU: 8, WP: 12, WOU: 9 | +2% Dodge' },
+                { slot: 'Hands', name: 'Havoc Greenbringas', stats: 'Armor: 76 | TOU: 5, INI: 7, WP: 10, WOU: 9' },
+                { slot: 'Shoulders', name: 'Havoc Shouldafings', stats: 'Armor: 86 | TOU: 6, INI: 4, WP: 11, WOU: 15' }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: '+29 Wounds' },
+                { pieces: 3, bonus: '+35 Willpower' },
+                { pieces: 4, bonus: '+2% Healing Critical Chance' }
+            ],
+            totalStats: 'Armor: 333 | TOU: 26, INI: 11, WP: 43, WOU: 37'
+        },
+        'shaman_goblin_healer_rr16_tracker': {
+            setName: 'Tracker\'s Set',
+            pieces: [
+                { slot: 'Head', name: 'Tracker\'s Morkyfeets', stats: 'Armor: 80 | INT: 12, TOU: 4, WP: 10, WOU: 6' },
+                { slot: 'Chest', name: 'Tracker\'s Robefings', stats: 'Armor: 100 | INT: 8, TOU: 8, WP: 16, WOU: 11' },
+                { slot: 'Hands', name: 'Tracker\'s Greenbringas', stats: 'Armor: 80 | TOU: 9, INI: 6, WP: 10, WOU: 7' },
+                { slot: 'Shoulders', name: 'Tracker\'s Shouldafings', stats: 'Armor: 90 | INT: 12, TOU: 8, WP: 4, WOU: 8 | +1% Disrupt' }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: '+31 Toughness' },
+                { pieces: 3, bonus: '+20 HP Every 4s' },
+                { pieces: 4, bonus: '+3% Disrupt' }
+            ],
+            totalStats: 'Armor: 350 | INT: 32, TOU: 25, INI: 10, WP: 40, WOU: 32'
         },
         'shaman_goblin_healer_rr16': {
             setName: 'Obliterator Set',
@@ -443,6 +515,38 @@ const gearDatabase = {
                 { pieces: 4, bonus: '+3% Disrupt' }
             ],
             totalStats: 'Armor: 368 | TOU: 24, INI: 22, WP: 60, WOU: 33'
+        },
+        'shaman_goblin_healer_rr26_mayhem': {
+            setName: 'Mayhem Set',
+            pieces: [
+                { slot: 'Head', name: 'Morkyfeets of Mayhem', stats: 'Armor: 108 | INT: 17, TOU: 6, INI: 7, WOU: 7' },
+                { slot: 'Chest', name: 'Robefings of Mayhem', stats: 'Armor: 145 | INT: 13, TOU: 20, WOU: 7 | +32 HP Every 4s' },
+                { slot: 'Hands', name: 'Greenbringas of Mayhem', stats: 'Armor: 112 | INT: 6, TOU: 10, WOU: 2 | +2% Reduction in being Crit' },
+                { slot: 'Shoulders', name: 'Sholdafings of Mayhem', stats: 'Armor: 130 | INT: 18, TOU: 11, WOU: 7 | +1% Disrupt Strikethrough' },
+                { slot: 'Belt', name: 'Waaaghat of Mayhem', stats: 'Armor: 130 | WP: 25, TOU: 10, INI: 2, WOU: 8' }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: '+37 Willpower' },
+                { pieces: 3, bonus: '+192 Corporeal Resistance' },
+                { pieces: 4, bonus: '+5% Disrupt' },
+                { pieces: 5, bonus: 'Superiority - On Hit: 25% chance to reduce target\'s Willpower by 58 while increasing your Intelligence by 58 for 10s' }
+            ],
+            totalStats: 'Armor: 625 | INT: 88, TOU: 26, WP: 37, INI: 23, WOU: 15'
+        },
+        'shaman_goblin_healer_rr26_stalker': {
+            setName: 'Stalker Set',
+            pieces: [
+                { slot: 'Head', name: 'Stalker\'s Morkyfeets', stats: 'Armor: 132 | WP: 12, TOU: 7, WOU: 4 | +2% Dodge' },
+                { slot: 'Chest', name: 'Stalker\'s Robefings', stats: 'Armor: 190 | WP: 19, TOU: 12 | +2% Disrupt' },
+                { slot: 'Hands', name: 'Stalker\'s Greenbringas', stats: 'Armor: 140 | WP: 18, INI: 5 | +1% Healing Crit' },
+                { slot: 'Shoulders', name: 'Stalker\'s Sholdafings', stats: 'Armor: 171 | WP: 18, TOU: 7, INI: 5, WOU: 11' }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: '+34 Willpower' },
+                { pieces: 3, bonus: '+2 Morale Per Second' },
+                { pieces: 4, bonus: '+34 Toughness' }
+            ],
+            totalStats: 'Armor: 633 | WP: 67, TOU: 19, INI: 10, WOU: 15'
         },
         'shaman_goblin_healer_rr26': {
             setName: 'Devastator Set',
@@ -477,6 +581,94 @@ const gearDatabase = {
                 { pieces: 5, bonus: '+5% Healing Critical Chance' }
             ],
             totalStats: 'Armor: 1026 | WP: 124, TOU: 36, INI: 58, WOU: 49'
+        },
+        'shaman_goblin_healer_rr45': {
+            setName: 'Conqueror Set',
+            pieces: [
+                { slot: 'Head', name: 'Conqueror Morkyfeets', stats: 'Armor: 192 | WP: 14, INI: 16, WOU: 10 | +2% Healing Crit' },
+                { slot: 'Chest', name: 'Conqueror Robefings', stats: 'Armor: 255 | WP: 33, TOU: 19, INI: 13 | +3 AP Per Second' },
+                { slot: 'Hands', name: 'Conqueror Greenbringas', stats: 'Armor: 192 | WP: 25, TOU: 15, INI: 8 | +2% Disrupt' },
+                { slot: 'Shoulders', name: 'Conqueror Sholdafings', stats: 'Armor: 225 | WP: 29, TOU: 16, INI: 12 | +2% Reduce Armor Pen' },
+                { slot: 'Belt', name: 'Conqueror Waaaghat', stats: 'Armor: 225 | WP: 17, TOU: 10, INI: 30 | +2% Dodge' },
+                { slot: 'Accessory', name: 'Conqueror Bitskeepa', stats: 'WP: 18, INI: 6, WOU: 12 | +36 Healing Power | 83 SRe, 77 ERe, 83 CRe' }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: '+57 Willpower' },
+                { pieces: 3, bonus: '+63 Toughness' },
+                { pieces: 4, bonus: '+69 Wounds' },
+                { pieces: 5, bonus: 'Reactionary - On Defense: 25% chance to increase Parry, Evade and Disrupt by 10% for 10s' },
+                { pieces: 6, bonus: '+5% Healing Critical Chance' }
+            ],
+            totalStats: 'Armor: 1089 | WP: 136, TOU: 60, INI: 85, WOU: 22'
+        },
+        'shaman_goblin_healer_rr45_ruin': {
+            setName: 'Ruin Set',
+            pieces: [
+                { slot: 'Head', name: 'Morkyfeets of Ruin', stats: 'Armor: 164 | WP: 11, INT: 20, TOU: 9, WOU: 10' },
+                { slot: 'Chest', name: 'Robefings of Ruin', stats: 'Armor: 215 | WP: 29, INT: 15, TOU: 14 | +2 Morale Per Second' },
+                { slot: 'Hands', name: 'Greenbringas of Ruin', stats: 'Armor: 164 | WP: 20, TOU: 10, INI: 8 | +2% Disrupt' },
+                { slot: 'Shoulders', name: 'Sholdafings of Ruin', stats: 'Armor: 189 | WP: 27, INT: 13, TOU: 11 | +1% Healing Crit' },
+                { slot: 'Belt', name: 'Waaaghat of Ruin', stats: 'Armor: 189 | WP: 23, INT: 14, INI: 11, WOU: 11' }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: '+48 Willpower' },
+                { pieces: 3, bonus: '+265 Spiritual Resistance' },
+                { pieces: 4, bonus: '+1 Path of Da Green Abilities' },
+                { pieces: 5, bonus: '+4% Healing Critical Chance' }
+            ],
+            totalStats: 'Armor: 925 | WP: 117, INT: 65, TOU: 34, INI: 35, WOU: 20'
+        },
+        'shaman_goblin_healer_rr45_onslaught': {
+            setName: 'Onslaught Set',
+            pieces: [
+                { slot: 'Head', name: 'Onslaught Morkyfeets', stats: 'Armor: 203 | TOU: 14, INI: 18, WOU: 18 | +2% Dodge' },
+                { slot: 'Chest', name: 'Onslaught Robefings', stats: 'Armor: 259 | WP: 22, TOU: 16, INI: 25 | +72 HP Every 4s' },
+                { slot: 'Hands', name: 'Onslaught Greenbringas', stats: 'Armor: 203 | WP: 24, TOU: 12, INI: 16, WOU: 12' },
+                { slot: 'Shoulders', name: 'Onslaught Sholdafings', stats: 'Armor: 231 | WP: 22, TOU: 20, INI: 16 | +2% Disrupt' },
+                { slot: 'Belt', name: 'Onslaught Waaaghat', stats: 'Armor: 231 | WP: 16, TOU: 18, INI: 27 | +1% Reduction in being Crit' }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: '+58 Willpower' },
+                { pieces: 3, bonus: '+64 Wounds' },
+                { pieces: 4, bonus: 'Vivacious - On Heal: 10% chance to recover 50 AP' },
+                { pieces: 5, bonus: '+5% Healing Critical Chance' }
+            ],
+            totalStats: 'Armor: 1127 | WP: 84, TOU: 80, INI: 102, WOU: 30'
+        },
+        'shaman_goblin_healer_rr45_beastlord': {
+            setName: 'Beastlord Set',
+            pieces: [
+                { slot: 'Shoulders', name: 'Beastlord Sholdafings', stats: 'Armor: 203 | WP: 14, INT: 24, WOU: 14 | 30 ERe, 25 CRe' },
+                { slot: 'Belt', name: 'Beastlord Waaaghat', stats: 'Armor: 203 | WP: 12, INT: 20, WOU: 20 | 25 SRe, 30 CRe' },
+                { slot: 'Chest', name: 'Beastlord Robefings', stats: 'Armor: 225 | WP: 14, INT: 15, WOU: 30 | 30 SRe, 30 ERe, 30 CRe' },
+                { slot: 'Ring', name: 'Beastlord Waaagh Beads', stats: 'INT: 24, WOU: 13 | +1 AP Per Second | 60 SRe, 60 ERe, 64 CRe' },
+                { slot: 'Cloak', name: 'Beastlord Cloak', stats: 'INT: 24, WOU: 32 | 72 SRe, 84 ERe, 72 CRe' },
+                { slot: 'Trophy', name: 'Beastlord Hunting Guide', stats: 'On Use: Increases AP Regeneration for 15s on all party members. 30m cooldown' }
+            ],
+            setBonuses: [
+                { pieces: 3, bonus: '+225 Armor Bonus' },
+                { pieces: 4, bonus: '+60 Willpower' },
+                { pieces: 5, bonus: '+5% Reduced Chance to be Disrupted' },
+                { pieces: 6, bonus: 'Caretaker - On Hit: 10% chance to heal defensive target for 235 health' }
+            ],
+            totalStats: 'Armor: 631 | WP: 40, INT: 107, WOU: 109 | 187 SRe, 174 ERe, 221 CRe'
+        },
+        'shaman_goblin_healer_rr45_rarefortune': {
+            setName: 'Rare Fortune Set',
+            pieces: [
+                { slot: 'Head', name: 'Rare Fortune Morkyfeets', stats: 'Armor: 190 | WP: 25, TOU: 11, INI: 10 | +2% Dodge' },
+                { slot: 'Chest', name: 'Rare Fortune Robefings', stats: 'Armor: 240 | WP: 24, TOU: 17, INI: 16 | +3 AP Per Second' },
+                { slot: 'Hands', name: 'Rare Fortune Greenbringas', stats: 'Armor: 190 | WP: 24, TOU: 11, INI: 13, WOU: 10' },
+                { slot: 'Shoulders', name: 'Rare Fortune Sholdafings', stats: 'Armor: 215 | WP: 24, INI: 16, WOU: 17 | +1% Healing Crit' },
+                { slot: 'Belt', name: 'Rare Fortune Waaaghat', stats: 'Armor: 215 | WP: 29, WOU: 14, INI: 16 | +12 Healing Power' }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: '+54 Initiative' },
+                { pieces: 3, bonus: '+59 Willpower' },
+                { pieces: 4, bonus: 'Aid X - On Direct Heal: 5% chance for your heal target to regain additional 354 health over 9s' },
+                { pieces: 5, bonus: '+5% Healing Critical Chance' }
+            ],
+            totalStats: 'Armor: 1050 | WP: 126, TOU: 22, INI: 60, WOU: 69'
         },
         'shaman_goblin_healer_rr45': {
             setName: 'Conqueror Set',
@@ -537,6 +729,109 @@ const gearDatabase = {
             ],
             totalStats: 'Armor: 1248 | WP: 171, TOU: 43, INI: 82, WOU: 79'
         },
+        'shaman_goblin_healer_rr60_redeye': {
+            setName: 'Redeye Set',
+            pieces: [
+                { slot: 'Head', name: 'Redeye Morkyfeets', stats: 'Armor: 190 | WP: 15, TOU: 17, WOU: 16 | +1% Reduction in being Crit' },
+                { slot: 'Chest', name: 'Redeye Robefings', stats: 'Armor: 240 | WP: 17, TOU: 27, INI: 17 | +3 AP Per Second' },
+                { slot: 'Hands', name: 'Redeye Greenbringas', stats: 'Armor: 190 | WP: 21, INT: 12, TOU: 11, INI: 13, WOU: 12' },
+                { slot: 'Shoulders', name: 'Redeye Sholdafings', stats: 'Armor: 215 | WP: 13, TOU: 20, INI: 22, WOU: 22 | +2% Reduced Armor Pen' },
+                { slot: 'Belt', name: 'Redeye Waaaghat', stats: 'Armor: 215 | WP: 22, INT: 13, TOU: 14, INI: 27, WOU: 12 | +12 Healing Power' },
+                { slot: 'Cloak', name: 'Redeye Greencloak', stats: 'WP: 17, TOU: 21, INI: 21 | 91 SRe, 76 ERe, 73 CRe' }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: '+3% Reduction in being Critically Hit' },
+                { pieces: 3, bonus: '+59 Willpower' },
+                { pieces: 4, bonus: '+64 Intelligence' },
+                { pieces: 5, bonus: 'Quickening - On Being Hit: 10% chance to reduce build times by half a second for 10s' },
+                { pieces: 6, bonus: '+5% Healing Critical Chance' }
+            ],
+            totalStats: 'Armor: 1050 | WP: 105, INT: 25, TOU: 99, INI: 116, WOU: 12 | 91 SRe, 76 ERe, 73 CRe'
+        },
+        'shaman_goblin_healer_rr60_sentinel': {
+            setName: 'Sentinel Set',
+            pieces: [
+                { slot: 'Head', name: 'Sentinel Morkyfeets', stats: 'Armor: 203 | WP: 27, TOU: 15, WOU: 8 | +2% Dodge' },
+                { slot: 'Chest', name: 'Sentinel Robefings', stats: 'Armor: 259 | WP: 35, TOU: 19, INI: 17 | +60 HP Every 4s' },
+                { slot: 'Hands', name: 'Sentinel Greenbringas', stats: 'Armor: 203 | WP: 23, TOU: 15, INI: 10 | +21 Healing Power' },
+                { slot: 'Shoulders', name: 'Sentinel Sholdafings', stats: 'Armor: 231 | WP: 30, TOU: 17, INI: 12 | +2% Reduction in being Crit' },
+                { slot: 'Belt', name: 'Sentinel Waaaghat', stats: 'Armor: 231 | WP: 27, TOU: 10, INI: 14 | +2% Healing Crit' },
+                { slot: 'Accessory', name: 'Sentinel Bitskeepa', stats: 'WP: 24, TOU: 18, INI: 12, WOU: 9 | 80 SRe, 90 ERe, 95 CRe' },
+                { slot: 'Ring', name: 'Sentinel Waaagh Beads', stats: 'WP: 27, INI: 17 | +3 AP Per Second | Talisman Slot | 70 SRe, 70 ERe, 71 CRe' }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: '+58 Willpower' },
+                { pieces: 3, bonus: '+64 Wounds' },
+                { pieces: 4, bonus: '+70 Initiative' },
+                { pieces: 5, bonus: 'Compulsion - On Being Attacked: 10% chance to reduce your cooldowns by 1 second for 10s' },
+                { pieces: 6, bonus: '+5% Healing Critical Chance' },
+                { pieces: 7, bonus: 'Woz\'nt Me! - Cooldown on Look Over There! reduced by 5 seconds' }
+            ],
+            totalStats: 'Armor: 1127 | WP: 193, TOU: 94, INI: 90, WOU: 9 | 150 SRe, 160 ERe, 166 CRe'
+        },
+        'shaman_goblin_healer_rr60_valewalker': {
+            setName: 'Vale Walker Set',
+            pieces: [
+                { slot: 'Head', name: 'Vale Walker Morkyfeets', stats: 'Armor: 216 | WP: 13, TOU: 20, INI: 13 | +2% Healing Crit' },
+                { slot: 'Chest', name: 'Valewalker Robefings', stats: 'Armor: 278 | WP: 24, TOU: 30 | 35 ERe, 35 CRe' },
+                { slot: 'Hands', name: 'Vale Walker Greenbringas', stats: 'Armor: 216 | WP: 10, TOU: 26, INI: 18 | +2% Reduced Armor Pen' },
+                { slot: 'Shoulders', name: 'Vale Walker Sholdafings', stats: 'Armor: 247 | WP: 18, INI: 24 | +2% Healing Crit | 30 SRe, 35 ERe' },
+                { slot: 'Belt', name: 'Vale Walker Waaaghat', stats: 'Armor: 247 | WP: 18, TOU: 22, INI: 18 | 40 SRe, 35 ERe' },
+                { slot: 'Accessory', name: 'Vale Walker Bitskeepa', stats: 'WP: 11, INI: 32, WOU: 24 | 90 SRe, 90 ERe, 90 CRe' },
+                { slot: 'Cloak', name: 'Vale Walker Waaaghchain', stats: 'WP: 24, INI: 21 | +48 HP Every 4s, +1% Reduced Armor Pen | 66 SRe, 80 ERe, 80 CRe' }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: '+249 Armor Bonus' },
+                { pieces: 3, bonus: '+69 Wounds' },
+                { pieces: 4, bonus: '+76 Willpower' },
+                { pieces: 5, bonus: '+5% Healing Critical Chance' },
+                { pieces: 6, bonus: 'Guidance II - On Direct Heal: 5% chance to increase the power of your heals by 6% for 10s' },
+                { pieces: 7, bonus: 'Absolve I - On Direct Heal: 5% chance to remove a Hex, Curse or Ailment from your heal target' }
+            ],
+            totalStats: 'Armor: 1204 | WP: 125, TOU: 95, INI: 168, WOU: 24 | 226 SRe, 275 ERe, 205 CRe'
+        },
+        'shaman_goblin_healer_rr60_triumphant': {
+            setName: 'Triumphant Set (Ranked)',
+            pieces: [
+                { slot: 'Head', name: 'Triumphant Morkyfeets', stats: 'Armor: 235 | WP: 20, WOU: 14, INI: 17 | +2% Healing Crit' },
+                { slot: 'Chest', name: 'Triumphant Robefings', stats: 'Armor: 308 | WP: 35, INI: 21, WOU: 19 | +4 AP Per Second' },
+                { slot: 'Hands', name: 'Triumphant Greenbringas', stats: 'Armor: 235 | WP: 15, INI: 25, WOU: 13 | +3% Reduced Armor Pen' },
+                { slot: 'Shoulders', name: 'Triumphant Sholdafings', stats: 'Armor: 275 | WP: 26, INI: 22, WOU: 15 | +2% Healing Crit' },
+                { slot: 'Belt', name: 'Triumphant Waaaghat', stats: 'Armor: 275 | WP: 21, INI: 30, WOU: 14 | +3% Disrupt' },
+                { slot: 'Accessory', name: 'Triumphant Bitskeepa', stats: 'WP: 22, INI: 25, WOU: 12 | +2% Reduction in being Crit | 94 SRe, 94 ERe, 94 CRe' },
+                { slot: 'Cloak', name: 'Triumphant Greencloak', stats: 'WP: 20, TOU: 11, INI: 25 | +3 AP Per Second | 94 SRe, 94 ERe, 94 CRe' }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: '+71 Willpower' },
+                { pieces: 3, bonus: '+78 Wounds' },
+                { pieces: 4, bonus: 'Exuberance - On Casting Heal: 20% chance to recover 35 AP' },
+                { pieces: 5, bonus: '+5% Healing Critical Chance' },
+                { pieces: 6, bonus: 'Increasing Impetus - On Attacking Target or Direct Heal Dealt: 5% chance to reduce build times by 25% for 5s' },
+                { pieces: 7, bonus: 'On Being Attacked: 10% chance to reduce incoming damage by 4% for 10s' }
+            ],
+            totalStats: 'Armor: 1328 | WP: 159, TOU: 11, INI: 162, WOU: 90 | 188 SRe, 188 ERe, 188 CRe'
+        },
+        'shaman_goblin_healer_rr60': {
+            setName: 'Invader Set',
+            pieces: [
+                { slot: 'Head', name: 'Invader Morkyfeets', stats: 'Armor: 221 | WP: 27, INI: 12, WOU: 18 | +2 Morale Per Second' },
+                { slot: 'Chest', name: 'Invader Robefings', stats: 'Armor: 292 | WP: 26, TOU: 16, INI: 21, WOU: 16 | +1 AP Per Second' },
+                { slot: 'Hands', name: 'Invader Greenbringas', stats: 'Armor: 221 | WP: 25, INI: 17, WOU: 15 | +15 Healing Power' },
+                { slot: 'Shoulders', name: 'Invader Sholdafings', stats: 'Armor: 257 | WP: 21, TOU: 12, INI: 20 | +2% Healing Crit' },
+                { slot: 'Belt', name: 'Invader Waaaghat', stats: 'Armor: 257 | WP: 27, TOU: 15, WOU: 18 | +27 Healing Power' },
+                { slot: 'Accessory', name: 'Invader Bitskeepa', stats: 'WP: 18, WOU: 12 | +2% Dodge, +2% Disrupt | 91 SRe, 91 ERe, 91 CRe' },
+                { slot: 'Cloak', name: 'Invader Waaaghchain', stats: 'WP: 27, INI: 12 | +2 AP Per Second, +2% Reduced Armor Pen | 79 SRe, 78 ERe, 78 CRe' }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: '+66 Willpower' },
+                { pieces: 3, bonus: '+73 Wounds' },
+                { pieces: 4, bonus: '+80 Toughness' },
+                { pieces: 5, bonus: '+5% Healing Critical Chance' },
+                { pieces: 6, bonus: 'Absolve I - On Direct Heal: 5% chance to remove a Hex, Curse, or Ailment from heal target' },
+                { pieces: 7, bonus: 'Much Good Green - All healing abilities have 10% chance to increase Crit Heal by 9% and crit value by 12% for 10s' }
+            ],
+            totalStats: 'Armor: 1248 | WP: 171, TOU: 43, INI: 82, WOU: 79'
+        },
         'shaman_goblin_healer_rr70': {
             setName: 'Sovereign Set of da Great Green',
             pieces: [
@@ -562,6 +857,19 @@ const gearDatabase = {
         },
 
         // ========== SHAMAN DPS SETS ==========
+        'shaman_goblin_dps_rr8_hunter': {
+            setName: 'Hunter\'s Set',
+            pieces: [
+                { slot: 'Head', name: 'Hunter\'s Morkyfeets', stats: 'Armor: 40 | INT: 4, TOU: 3, WP: 5, WOU: 5' },
+                { slot: 'Chest', name: 'Hunter\'s Robefings', stats: 'Armor: 50 | INT: 8, WP: 4, WOU: 5 | +1% Disrupt' },
+                { slot: 'Hands', name: 'Hunter\'s Greenbringas', stats: 'Armor: 40 | INT: 4, TOU: 8, WP: 5' }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: '+17 Toughness' },
+                { pieces: 3, bonus: '+2% Magic Critical Chance' }
+            ],
+            totalStats: 'Armor: 130 | INT: 16, TOU: 11, WP: 14, WOU: 10'
+        },
         'shaman_goblin_dps_rr8': {
             setName: 'Set of the Braggart',
             pieces: [
@@ -685,6 +993,71 @@ const gearDatabase = {
             ],
             totalStats: 'Armor: 1377 | TOU: 84, INI: 196, INT: 56, WOU: 179'
         },
+        'shaman_goblin_dps_rr60_bloodlord': {
+            setName: 'Bloodlord Set',
+            pieces: [
+                { slot: 'Head', name: 'Bloodlord Morkyfeets', stats: 'Armor: 221 | INT: 27, INI: 10, WOU: 18 | +2% Dodge' },
+                { slot: 'Chest', name: 'Bloodlord Robefings', stats: 'Armor: 292 | INT: 29, TOU: 12, INI: 25, WOU: 19 | +1 Morale Per Second' },
+                { slot: 'Hands', name: 'Bloodlord Greenbringas', stats: 'Armor: 221 | INT: 26, TOU: 10, INI: 15, WOU: 16' },
+                { slot: 'Shoulders', name: 'Bloodlord Sholdafings', stats: 'Armor: 257 | INT: 27, INI: 21, WOU: 10 | +2% Magic Crit' },
+                { slot: 'Belt', name: 'Bloodlord Waaaghat', stats: 'Armor: 257 | INT: 29, TOU: 14, INI: 17 | +3% Disrupt' },
+                { slot: 'Accessory', name: 'Bloodlord Bitskeepa', stats: 'INT: 21, INI: 15, WOU: 17 | +3 Morale Per Second | 91 SRe, 91 ERe, 91 CRe' },
+                { slot: 'Cloak', name: 'Bloodlord Greencloak', stats: 'INT: 22, INI: 15, WOU: 15 | +24 Magic Power | 91 SRe, 91 ERe, 91 CRe' }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: '+66 Wounds' },
+                { pieces: 3, bonus: '+73 Initiative' },
+                { pieces: 4, bonus: 'Boost II - On Hit: 5% chance to increase your critical hit for 10s' },
+                { pieces: 5, bonus: '+87 Intelligence' },
+                { pieces: 6, bonus: 'On Hit: 10% chance to increase all damage taken by your target for 10s' },
+                { pieces: 7, bonus: 'Surging - On Hit: 10% chance to deal damage to an additional target within range' }
+            ],
+            totalStats: 'Armor: 1248 | INT: 181, TOU: 36, INI: 118, WOU: 95 | 182 SRe, 182 ERe, 182 CRe'
+        },
+        'shaman_goblin_dps_rr60_victorious': {
+            setName: 'Victorious Set (Ranked)',
+            pieces: [
+                { slot: 'Head', name: 'Victorious Morkyfeets', stats: 'Armor: 235 | INT: 19, INI: 14, WOU: 18 | +2% Magic Crit' },
+                { slot: 'Chest', name: 'Victorious Robefings', stats: 'Armor: 308 | INT: 28, INI: 24 | +4 AP Per Second, +23 Magic Power' },
+                { slot: 'Hands', name: 'Victorious Greenbringas', stats: 'Armor: 235 | INT: 30, TOU: 11, INI: 11, WOU: 11 | +3% Reduced Chance to be Disrupted' },
+                { slot: 'Shoulders', name: 'Victorious Sholdafings', stats: 'Armor: 275 | INT: 32, TOU: 10, INI: 20 | +2% Magic Crit' },
+                { slot: 'Belt', name: 'Victorious Waaaghat', stats: 'Armor: 275 | INT: 27, INI: 15, WOU: 23 | +3% Reduced Chance to be Disrupted' },
+                { slot: 'Accessory', name: 'Victorious Bitskeepa', stats: 'INT: 25, INI: 23, WOU: 12 | +36 Magic Power | 94 SRe, 94 ERe, 94 CRe' },
+                { slot: 'Cloak', name: 'Victorious Greencloak', stats: 'INT: 16, INI: 10, WOU: 25 | +2% Magic Crit | 94 SRe, 94 ERe, 94 CRe' }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: '+71 Intelligence' },
+                { pieces: 3, bonus: '+78 Wounds' },
+                { pieces: 4, bonus: 'Endure - On Being Hit: 15% chance to reduce attackers STR, BS and INT by 130 while increasing your INI by 130 for 10s' },
+                { pieces: 5, bonus: '+5% Magic Critical Chance' },
+                { pieces: 6, bonus: 'Increasing Impetus - On Attacking Target or Direct Heal Dealt: 5% chance to reduce build times by 25% for 5s' },
+                { pieces: 7, bonus: 'Boost III - On Hit: 5% chance to increase your critical hit rate by 9% for 9s' }
+            ],
+            totalStats: 'Armor: 1328 | INT: 186, TOU: 33, INI: 129, WOU: 45 | 188 SRe, 188 ERe, 188 CRe'
+        },
+        'shaman_goblin_dps_rr60': {
+            setName: 'Warlord Set',
+            pieces: [
+                { slot: 'Head', name: 'Warlord Morkyfeets', stats: 'Armor: 241 | TOU: 10, INI: 20, INT: 20, WOU: 28' },
+                { slot: 'Chest', name: 'Warlord Robefings', stats: 'Armor: 323 | TOU: 19, INI: 28, INT: 18, WOU: 20 | +80 HP Every 4s' },
+                { slot: 'Hands', name: 'Warlord Greenbringas', stats: 'Armor: 241 | TOU: 22, INI: 18, INT: 18 | +2% Magic Crit' },
+                { slot: 'Shoulders', name: 'Warlord Sholdafings', stats: 'Armor: 286 | TOU: 21, INI: 26, WOU: 20 | +4% Reduced Armor Pen' },
+                { slot: 'Belt', name: 'Warlord Waaaghat', stats: 'Armor: 286 | TOU: 20, INI: 30, WOU: 21 | +2% Magic Crit' },
+                { slot: 'Accessory', name: 'Warlord Bitskeepa', stats: 'INI: 20, INT: 34 | +2% Dodge, +2% Disrupt' },
+                { slot: 'Cloak', name: 'Warlord Greencloak', stats: 'TOU: 14, INI: 25, WOU: 24 | +3 AP Per Second | 102 SRe, 101 ERe, 101 CRe' },
+                { slot: 'Ring', name: 'Warlord Waaagh Beads', stats: 'INI: 25, WOU: 14 | +2 Morale Per Second, +2% Magic Crit | 87 SRe, 87 ERe, 86 CRe' }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: '+75 Intelligence' },
+                { pieces: 3, bonus: '+83 Wounds' },
+                { pieces: 4, bonus: '+6% Reduced Chance to be Disrupted' },
+                { pieces: 5, bonus: '+99 Magic Power' },
+                { pieces: 6, bonus: '+2 Path of Da Green Abilities' },
+                { pieces: 7, bonus: 'Boost V - On Hit: 10% chance to increase crit rate by 9% and crit damage by 12% for 9s' },
+                { pieces: 8, bonus: 'Gain ability: Just a bit mor\'' }
+            ],
+            totalStats: 'Armor: 1377 | TOU: 84, INI: 196, INT: 56, WOU: 179'
+        },
         'shaman_goblin_dps_rr70': {
             setName: 'Sovereign Set of da Windbreaker',
             pieces: [
@@ -735,15 +1108,30 @@ const gearDatabase = {
             tier = 'rr5';
         }
 
-        // Try role-specific gear first
+        // Find ALL matching sets for this tier
+        const allSets = [];
         const roleKey = role ? `${classId}_${role.toLowerCase()}_${tier}` : null;
-        if (roleKey && this.recommendations[roleKey]) {
-            return this.recommendations[roleKey];
+        const classKey = `${classId}_${tier}`;
+        
+        // Search through all recommendations for matching keys
+        for (const key in this.recommendations) {
+            // Check if this key matches the current class, role, and tier
+            if (roleKey && key.startsWith(roleKey)) {
+                allSets.push(this.recommendations[key]);
+            } else if (!key.includes('_healer_') && !key.includes('_dps_') && !key.includes('_tank_') && key === classKey) {
+                allSets.push(this.recommendations[key]);
+            }
         }
-
-        // Fall back to non-role specific
-        const key = `${classId}_${tier}`;
-        return this.recommendations[key] || this.recommendations[`default_${tier}`] || this.recommendations[`default_starter`];
+        
+        // If no sets found, try fallback
+        if (allSets.length === 0) {
+            const fallback = this.recommendations[`default_${tier}`] || this.recommendations[`default_starter`];
+            if (fallback) {
+                allSets.push(fallback);
+            }
+        }
+        
+        return allSets;
     },
 
     // Get class by ID

@@ -110,12 +110,12 @@ function fetchGearRecommendations() {
         return;
     }
 
-    const gearSet = gearDatabase.getRecommendations(classId, level, renown, role);
+    const gearSets = gearDatabase.getRecommendations(classId, level, renown, role);
 
-    displayRecommendations(classObj, level, renown, role, gearSet);
+    displayRecommendations(classObj, level, renown, role, gearSets);
 }
 
-function displayRecommendations(classObj, level, renown, role, gearSet) {
+function displayRecommendations(classObj, level, renown, role, gearSets) {
     const resultsDiv = document.getElementById('results');
     
     // Determine tier for display
@@ -150,17 +150,26 @@ function displayRecommendations(classObj, level, renown, role, gearSet) {
                 <span class="stat-label">Gear Tier:</span>
                 <span class="stat-value">${tierName}</span>
             </div>
+            <div class="stat-line">
+                <span class="stat-label">Available Sets:</span>
+                <span class="stat-value" style="color: #5dff8c; font-weight: 700;">${gearSets.length}</span>
+            </div>
         </div>
     `;
 
-    // Display gear recommendations
-    if (gearSet && Object.keys(gearSet).length > 0) {
-        // Show set name if available
-        if (gearSet.setName) {
-            html += `<div class="gear-item" style="background: rgba(255, 184, 28, 0.25); border-left-width: 5px; margin-bottom: 20px;">
-                <div class="gear-slot" style="font-size: 1.2rem; color: #ffb81c;">⚔️ Recommended Set</div>
-                <div class="gear-name" style="font-size: 1.1rem; font-weight: 700; margin-top: 5px;">${gearSet.setName}</div>
-            </div>`;
+    // Display all available gear sets
+    if (gearSets && gearSets.length > 0) {
+        gearSets.forEach((gearSet, index) => {
+            // Add separator between sets
+            if (index > 0) {
+                html += `<div style="height: 3px; background: linear-gradient(90deg, rgba(255,184,28,0) 0%, rgba(255,184,28,0.5) 50%, rgba(255,184,28,0) 100%); margin: 40px 0;"></div>`;
+            }
+            // Show set name if available
+            if (gearSet.setName) {
+                html += `<div class="gear-item" style="background: rgba(255, 184, 28, 0.25); border-left-width: 5px; margin-bottom: 20px;">
+                    <div class="gear-slot" style="font-size: 1.2rem; color: #ffb81c;">⚔️ Set ${index + 1} of ${gearSets.length}</div>
+                    <div class="gear-name" style="font-size: 1.1rem; font-weight: 700; margin-top: 5px;">${gearSet.setName}</div>
+                </div>`;
         }
         
         // Display individual pieces with stats
@@ -196,7 +205,8 @@ function displayRecommendations(classObj, level, renown, role, gearSet) {
                 });
                 html += '</div>';
             }
-        } else {
+        }); // End forEach
+    } else {
             // Fallback for old format
             html += '<div>';
             Object.entries(gearSet).forEach(([slot, item]) => {
