@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warhammer RoR - Gear Recommendation Tool</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #ffb81c;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #b0b0b0;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .input-section, .results-section {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .input-section h2, .results-section h2 {
+            color: #ffb81c;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #d0d0d0;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            color: #e0e0e0;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        select:hover, input:hover {
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        select:focus, input:focus {
+            outline: none;
+            border-color: #ffb81c;
+            box-shadow: 0 0 8px rgba(255, 184, 28, 0.3);
+        }
+
+        select option {
+            background: #2d2d2d;
+            color: #e0e0e0;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #ffb81c;
+            color: #000;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            background: #ffc93f;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 184, 28, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .gear-item {
+            background: rgba(255, 184, 28, 0.1);
+            border-left: 3px solid #ffb81c;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .gear-item:hover {
+            background: rgba(255, 184, 28, 0.15);
+            transform: translateX(5px);
+        }
+
+        .gear-slot {
+            font-weight: 600;
+            color: #ffb81c;
+            margin-bottom: 5px;
+        }
+
+        .gear-name {
+            color: #e0e0e0;
+            font-size: 0.95rem;
+        }
+
+        .gear-rarity {
+            font-size: 0.85rem;
+            color: #b0b0b0;
+            margin-top: 5px;
+        }
+
+        .no-results {
+            text-align: center;
+            color: #b0b0b0;
+            padding: 40px 20px;
+            font-style: italic;
+        }
+
+        .stats-display {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .stat-line {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-line:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            color: #b0b0b0;
+        }
+
+        .stat-value {
+            color: #ffb81c;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        .recommended-label {
+            background: #ffb81c;
+            color: #000;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚔️ WARHAMMER RoR ⚔️</h1>
+            <p class="subtitle">Gear Recommendation Tool</p>
+        </header>
+
+        <div class="main-grid">
+            <div class="input-section">
+                <h2>Your Character</h2>
+                <form id="gearForm">
+                    <div class="form-group">
+                        <label for="class">Class:</label>
+                        <select id="class" required>
+                            <option value="">Select a class...</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="level">Level:</label>
+                        <input type="number" id="level" min="1" max="40" value="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="renown">Renown Rank:</label>
+                        <input type="number" id="renown" min="1" max="80" value="1" required>
+                    </div>
+
+                    <button type="submit">Get Gear Recommendations</button>
+                </form>
+            </div>
+
+            <div class="results-section">
+                <h2>Recommended Gear</h2>
+                <div id="results" class="no-results">
+                    Fill in your character info and click "Get Gear Recommendations"
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="gearData.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
