@@ -176,18 +176,17 @@ function displayRecommendations(classObj, level, renown, role, gearSets) {
         if (gearSet.pieces && Array.isArray(gearSet.pieces)) {
             html += '<div style="margin-bottom: 20px;">';
             gearSet.pieces.forEach(piece => {
-                // Build cost display if available
-                const costDisplay = piece.cost && piece.currency ? 
-                    `<div style="margin-top: 6px; padding: 4px 8px; background: rgba(255, 215, 0, 0.15); border-radius: 4px; display: inline-block;">
-                        <span style="color: #ffd700; font-size: 0.85rem;">💰 ${piece.cost} ${piece.currency}</span>
-                    </div>` : '';
+                // Cost display temporarily disabled - data preserved for future use
+                // const costDisplay = piece.cost && piece.currency ? 
+                //     `<div style="margin-top: 6px; padding: 4px 8px; background: rgba(255, 215, 0, 0.15); border-radius: 4px; display: inline-block;">
+                //         <span style="color: #ffd700; font-size: 0.85rem;">💰 ${piece.cost} ${piece.currency}</span>
+                //     </div>` : '';
                 
                 html += `
                     <div class="gear-item">
                         <div class="gear-slot" style="color: #ffb81c;">${piece.slot}:</div>
                         <div class="gear-name" style="font-weight: 600; margin-top: 3px;">${piece.name}</div>
                         <div class="gear-rarity" style="margin-top: 8px; padding: 5px 0; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: #b8b8b8; line-height: 1.4;">${piece.stats}</div>
-                        ${costDisplay}
                     </div>
                 `;
             });
