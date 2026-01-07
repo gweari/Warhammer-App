@@ -169,9 +169,9 @@ function displayRecommendations(classObj, level, renown, role, gearSet) {
             gearSet.pieces.forEach(piece => {
                 html += `
                     <div class="gear-item">
-                        <div class="gear-slot">${piece.slot}</div>
-                        <div class="gear-name" style="font-weight: 600;">${piece.name}</div>
-                        <div class="gear-rarity" style="margin-top: 5px; color: #a0a0a0;">${piece.stats}</div>
+                        <div class="gear-slot" style="color: #ffb81c;">${piece.slot}:</div>
+                        <div class="gear-name" style="font-weight: 600; margin-top: 3px;">${piece.name}</div>
+                        <div class="gear-rarity" style="margin-top: 8px; padding: 5px 0; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: #b8b8b8; line-height: 1.4;">${piece.stats}</div>
                     </div>
                 `;
             });
@@ -179,19 +179,19 @@ function displayRecommendations(classObj, level, renown, role, gearSet) {
             
             // Show total stats if available
             if (gearSet.totalStats) {
-                html += `<div class="gear-item" style="background: rgba(100, 100, 255, 0.15); border-left-color: #6b9eff;">
-                    <div class="gear-slot" style="color: #8bb4ff;">📊 Total Stats</div>
-                    <div class="gear-name" style="font-size: 0.95rem;">${gearSet.totalStats}</div>
+                html += `<div class="gear-item" style="background: rgba(100, 100, 255, 0.15); border-left-color: #6b9eff; margin-bottom: 15px;">
+                    <div class="gear-slot" style="color: #8bb4ff;">📊 Total Set Stats</div>
+                    <div class="gear-name" style="font-size: 0.95rem; margin-top: 5px;">${gearSet.totalStats}</div>
                 </div>`;
             }
             
             // Show set bonuses
             if (gearSet.setBonuses && Array.isArray(gearSet.setBonuses)) {
-                html += `<div class="gear-item" style="background: rgba(0, 255, 100, 0.1); border-left-color: #5dff8c; margin-top: 15px;">
-                    <div class="gear-slot" style="color: #5dff8c;">✨ Set Bonuses</div>`;
+                html += `<div class="gear-item" style="background: rgba(0, 255, 100, 0.1); border-left-color: #5dff8c;">
+                    <div class="gear-slot" style="color: #5dff8c; font-size: 1.05rem;">✨ Set Bonuses</div>`;
                 gearSet.setBonuses.forEach(bonus => {
-                    html += `<div class="gear-name" style="font-size: 0.9rem; padding: 3px 0; color: #d0d0d0;">
-                        <span style="color: #5dff8c; font-weight: 600;">${bonus.pieces} pieces:</span> ${bonus.bonus}
+                    html += `<div class="gear-name" style="font-size: 0.9rem; padding: 5px 0; color: #d0d0d0;">
+                        <span style="color: #5dff8c; font-weight: 700;">${bonus.pieces} Pieces:</span> ${bonus.bonus}
                     </div>`;
                 });
                 html += '</div>';
