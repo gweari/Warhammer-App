@@ -1188,8 +1188,9 @@ const gearDatabase = {
                 if (stats.includes('Crit') && !stats.includes('Healing Crit')) score += 50;
                 if (stats.includes('AP Per Second')) score += 60;
             } else if (isTank) {
-                score += touMatch ? parseInt(touMatch[1]) * 3 : 0;
-                score += wouMatch ? parseInt(wouMatch[1]) * 2.5 : 0;
+                score += wouMatch ? parseInt(wouMatch[1]) * 3.5 : 0;  // Wounds most important for defense
+                score += touMatch ? parseInt(touMatch[1]) * 3 : 0;     // Toughness second
+                score += iniMatch ? parseInt(iniMatch[1]) * 2.5 : 0;   // Initiative third
                 score += armorMatch ? parseInt(armorMatch[1]) * 0.5 : 0;
                 score += strMatch ? parseInt(strMatch[1]) * 1.5 : 0;
                 
