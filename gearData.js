@@ -1131,14 +1131,14 @@ const gearDatabase = {
             }
         }
         
-        // Sort sets by score (best first)
-        allSets.sort((a, b) => this.calculateSetScore(b, role) - this.calculateSetScore(a, role));
+        // Sort sets by score (best first) - pass level and renown for context
+        allSets.sort((a, b) => this.calculateSetScore(b, role, level, renown, tier) - this.calculateSetScore(a, role, level, renown, tier));
         
         return allSets;
     },
 
     // Calculate score for a gear set to determine BiS
-    calculateSetScore: function(gearSet, role) {
+    calculateSetScore: function(gearSet, role, level, renown, tier) {
         if (!gearSet || !gearSet.pieces || !Array.isArray(gearSet.pieces)) {
             return 0;
         }
@@ -1147,6 +1147,40 @@ const gearDatabase = {
         const isHealer = role && role.toLowerCase() === 'healer';
         const isDPS = role && role.toLowerCase() === 'dps';
         const isTank = role && role.toLowerCase() === 'tank';
+        
+        // Determine if this is a PvE set based on set name patterns
+        const setName = gearSet.setName || '';
+        const isPvESet = setName.includes('Keeper') || 
+                         setName.includes('Havoc') || 
+                         setName.includes('Tracker') || 
+                         setName.includes('Ruin') ||
+                         setName.includes('Stalker') ||
+                         setName.includes('Genesis') ||
+                         setName.includes('Warrant') ||
+                         setName.includes('Redeye') ||
+                         setName.includes('Sentinel') ||
+                         setName.includes('Bloodlord');
+        
+        // Get the required RR for the current tier
+        const tierRRRequirement = {
+            'rr8': 8, 'rr16': 16, 'rr26': 26, 'rr35': 35,
+            'rr45': 45, 'rr55': 55, 'rr60': 60, 'rr70': 70
+        };
+        const requiredRR = tierRRRequirement[tier] || 0;
+        
+        // If player's RR is significantly below tier requirement, heavily favor PvE sets
+        if (renown < requiredRR - 2) {
+            if (isPvESet) {
+                score += 500; // Huge bonus for PvE sets when undergeared in RR
+            } else {
+                score -= 300; // Penalty for RvR sets when undergeared
+            }
+        } else if (renown >= requiredRR) {
+            // At or above RR requirement, slightly favor RvR sets (they're usually BiS at cap)
+            if (!isPvESet) {
+                score += 50;
+            }
+        }
         
         // Parse stats from pieces
         gearSet.pieces.forEach(piece => {
