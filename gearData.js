@@ -4,42 +4,42 @@ const gearDatabase = {
     // Classes available in the game
     classes: [
         // Empire
-        { id: 'knight', name: 'Knight of the Blazing Sun', faction: 'Empire', type: 'Melee Tank' },
-        { id: 'witch_hunter', name: 'Witch Hunter', faction: 'Empire', type: 'Melee DPS' },
-        { id: 'bright_wizard', name: 'Bright Wizard', faction: 'Empire', type: 'Ranged DPS' },
-        { id: 'priest_sigmar', name: 'Warrior Priest', faction: 'Empire', type: 'Healer' },
+        { id: 'knight', name: 'Knight of the Blazing Sun', faction: 'Empire', type: 'Melee Tank', roles: ['Tank', 'DPS'] },
+        { id: 'witch_hunter', name: 'Witch Hunter', faction: 'Empire', type: 'Melee DPS', roles: ['DPS'] },
+        { id: 'bright_wizard', name: 'Bright Wizard', faction: 'Empire', type: 'Ranged DPS', roles: ['DPS'] },
+        { id: 'priest_sigmar', name: 'Warrior Priest', faction: 'Empire', type: 'Healer', roles: ['Healer', 'DPS'] },
         
         // Dwarf
-        { id: 'ironbreaker', name: 'Ironbreaker', faction: 'Dwarf', type: 'Melee Tank' },
-        { id: 'slayer', name: 'Slayer', faction: 'Dwarf', type: 'Melee DPS' },
-        { id: 'engineer', name: 'Engineer', faction: 'Dwarf', type: 'Ranged DPS' },
-        { id: 'runepriest', name: 'Runepriest', faction: 'Dwarf', type: 'Healer' },
+        { id: 'ironbreaker', name: 'Ironbreaker', faction: 'Dwarf', type: 'Melee Tank', roles: ['Tank', 'DPS'] },
+        { id: 'slayer', name: 'Slayer', faction: 'Dwarf', type: 'Melee DPS', roles: ['DPS'] },
+        { id: 'engineer', name: 'Engineer', faction: 'Dwarf', type: 'Ranged DPS', roles: ['DPS'] },
+        { id: 'runepriest', name: 'Runepriest', faction: 'Dwarf', type: 'Healer', roles: ['Healer', 'DPS'] },
         
         // High Elf
-        { id: 'lion_guard', name: 'White Lion', faction: 'High Elf', type: 'Melee Tank' },
-        { id: 'shadow_warrior', name: 'Shadow Warrior', faction: 'High Elf', type: 'Melee DPS' },
-        { id: 'mage', name: 'Archmage', faction: 'High Elf', type: 'Ranged DPS' },
-        { id: 'warrior_priest', name: 'Swordmaster', faction: 'High Elf', type: 'Healer' },
+        { id: 'lion_guard', name: 'White Lion', faction: 'High Elf', type: 'Melee Tank', roles: ['DPS'] },
+        { id: 'shadow_warrior', name: 'Shadow Warrior', faction: 'High Elf', type: 'Melee DPS', roles: ['DPS'] },
+        { id: 'mage', name: 'Archmage', faction: 'High Elf', type: 'Ranged DPS', roles: ['Healer', 'DPS'] },
+        { id: 'warrior_priest', name: 'Swordmaster', faction: 'High Elf', type: 'Melee Tank', roles: ['Tank', 'DPS'] },
         
         
         // Chaos
-        { id: 'chaos_knight', name: 'Chosen', faction: 'Chaos', type: 'Melee Tank' },
-        { id: 'marauder', name: 'Marauder', faction: 'Chaos', type: 'Melee DPS' },
-        { id: 'magus', name: 'Magus', faction: 'Chaos', type: 'Ranged DPS' },
-        { id: 'zealot', name: 'Zealot', faction: 'Chaos', type: 'Healer' },
+        { id: 'chaos_knight', name: 'Chosen', faction: 'Chaos', type: 'Melee Tank', roles: ['Tank', 'DPS'] },
+        { id: 'marauder', name: 'Marauder', faction: 'Chaos', type: 'Melee DPS', roles: ['DPS'] },
+        { id: 'magus', name: 'Magus', faction: 'Chaos', type: 'Ranged DPS', roles: ['DPS'] },
+        { id: 'zealot', name: 'Zealot', faction: 'Chaos', type: 'Healer', roles: ['Healer', 'DPS'] },
         
         // Dark Elf
-        { id: 'corsair', name: 'Black Guard', faction: 'Dark Elf', type: 'Melee Tank' },
-        { id: 'witch_elf', name: 'Witch Elf', faction: 'Dark Elf', type: 'Melee DPS' },
-        { id: 'dark_elf_ranged', name: 'Sorceress', faction: 'Dark Elf', type: 'Ranged DPS' },
-        { id: 'disciple_khaine', name: 'Disciple of Khaine', faction: 'Dark Elf', type: 'Healer' },
+        { id: 'corsair', name: 'Black Guard', faction: 'Dark Elf', type: 'Melee Tank', roles: ['Tank', 'DPS'] },
+        { id: 'witch_elf', name: 'Witch Elf', faction: 'Dark Elf', type: 'Melee DPS', roles: ['DPS'] },
+        { id: 'dark_elf_ranged', name: 'Sorceress', faction: 'Dark Elf', type: 'Ranged DPS', roles: ['DPS'] },
+        { id: 'disciple_khaine', name: 'Disciple of Khaine', faction: 'Dark Elf', type: 'Healer', roles: ['Healer', 'DPS'] },
              
         
         // Greenskin
-        { id: 'squig_herder', name: 'Squig Herder', faction: 'Greenskin', type: 'Ranged DPS' },
-        { id: 'black_orc', name: 'Black Orc', faction: 'Greenskin', type: 'Melee Tank' },
-        { id: 'choppa', name: 'Choppa', faction: 'Greenskin', type: 'Melee DPS' },
-        { id: 'shaman_goblin', name: 'Shaman', faction: 'Greenskin', type: 'Healer' }
+        { id: 'squig_herder', name: 'Squig Herder', faction: 'Greenskin', type: 'Ranged DPS', roles: ['DPS'] },
+        { id: 'black_orc', name: 'Black Orc', faction: 'Greenskin', type: 'Melee Tank', roles: ['Tank', 'DPS'] },
+        { id: 'choppa', name: 'Choppa', faction: 'Greenskin', type: 'Melee DPS', roles: ['DPS'] },
+        { id: 'shaman_goblin', name: 'Shaman', faction: 'Greenskin', type: 'Healer', roles: ['Healer', 'DPS'] }
     ],
 
     // Level ranges for gear recommendations
@@ -413,11 +413,87 @@ const gearDatabase = {
             hands: 'High Tier Hands',
             legs: 'High Tier Legs',
             feet: 'High Tier Feet'
+        },
+
+        // Shaman Healer Sets
+        'shaman_goblin_healer_starter': {
+            setName: 'Carnage Set',
+            head: 'Carnage Morkyfeets',
+            chest: 'Carnage Robefings',
+            hands: 'Carnage Greenbringas',
+            stats: 'Focus: Willpower, Wounds, Toughness'
+        },
+        'shaman_goblin_healer_low': {
+            setName: 'Obliterator Set',
+            head: 'Obliterator Morkyfeets',
+            chest: 'Obliterator Robefings', 
+            hands: 'Obliterator Greenbringas',
+            shoulders: 'Obliterator Waaaghat',
+            stats: '2pc: +32 WP | 3pc: +38 Wounds | 4pc: +3% Disrupt'
+        },
+        'shaman_goblin_healer_mid': {
+            setName: 'Devastator Set',
+            head: 'Devastator Morkyfeets',
+            chest: 'Devastator Robefings',
+            hands: 'Devastator Greenbringas',
+            shoulders: 'Devastator Sholdafings',
+            belt: 'Devastator Waaaghat',
+            stats: '2pc: +47 WP | 4pc: On Hit Wounds Boost | 5pc: +4% Heal Crit'
+        },
+        'shaman_goblin_healer_high': {
+            setName: 'Sovereign Set of da Great Green',
+            head: 'Sovereign Morkyfeets of da Great Green',
+            chest: 'Sovereign Robefings of da Great Green',
+            hands: 'Sovereign Greenbringas of da Great Green',
+            shoulders: 'Sovereign Sholdafings of da Great Green',
+            belt: 'Sovereign Waaaghat of da Great Green',
+            cloak: 'Sovereign Waaaghchain of da Great Green',
+            ring: 'Sovereign Bitskeepa of da Great Green',
+            ring2: 'Sovereign Waaaghfings of da Great Green',
+            stats: '6pc: +2 Path of Mork | 7pc: 10% Recover 60 AP | 8pc: Absolute Preservation'
+        },
+
+        // Shaman DPS Sets
+        'shaman_goblin_dps_starter': {
+            setName: 'Set of the Braggart',
+            head: 'Braggart Morkyfeets',
+            chest: 'Braggart Robefings',
+            hands: 'Braggart Bits Keepa',
+            stats: 'Focus: Intelligence, Toughness, Initiative'
+        },
+        'shaman_goblin_dps_low': {
+            setName: 'Challenger Set',
+            head: 'Challenger Morkyfeets',
+            chest: 'Challenger Robefings',
+            hands: 'Challenger Greenbringas',
+            shoulders: 'Challenger Shouldafings',
+            stats: '2pc: +32 INT | 3pc: +38 Wounds | 4pc: +2% Magic Crit'
+        },
+        'shaman_goblin_dps_mid': {
+            setName: 'Duelist Set',
+            head: 'Morkyfeets of the Duelist',
+            chest: 'Robefings of the Duelist',
+            hands: 'Greenbringas of the Duelist',
+            shoulders: 'Sholdafings of the Duelist',
+            belt: 'Waaaghat of the Duelist',
+            stats: '2pc: +47 INT | 4pc: Quickening on Hit | 5pc: +4% Magic Crit'
+        },
+        'shaman_goblin_dps_high': {
+            setName: 'Sovereign Set of da Windbreaker',
+            head: 'Sovereign Morkyfeets of da Windbreaker',
+            chest: 'Sovereign Robefings of da Windbreaker',
+            hands: 'Sovereign Greenbringas of da Windbreaker',
+            shoulders: 'Sovereign Sholdafings of da Windbreaker',
+            belt: 'Sovereign Waaaghat of da Windbreaker',
+            cloak: 'Sovereign Waaaghchain of da Windbreaker',
+            ring: 'Sovereign Bitskeepa of da Windbreaker',
+            ring2: 'Sovereign Waaaghfings of da Windbreaker',
+            stats: '6pc: +2 Path of Gork | 7pc: 10% Target Crit Vuln | 8pc: Unshackled Freedom'
         }
     },
 
-    // Get gear recommendations based on class, level, and renown
-    getRecommendations: function(classId, level, renown) {
+    // Get gear recommendations based on class, level, renown, and role
+    getRecommendations: function(classId, level, renown, role) {
         let tier = 'starter';
         
         if (level >= 31 && renown >= 61) {
@@ -428,6 +504,13 @@ const gearDatabase = {
             tier = 'low';
         }
 
+        // Try role-specific gear first
+        const roleKey = role ? `${classId}_${role.toLowerCase()}_${tier}` : null;
+        if (roleKey && this.recommendations[roleKey]) {
+            return this.recommendations[roleKey];
+        }
+
+        // Fall back to non-role specific
         const key = `${classId}_${tier}`;
         return this.recommendations[key] || this.recommendations[`default_${tier}`];
     },

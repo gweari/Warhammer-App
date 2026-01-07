@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function initializeApp() {
     populateClassDropdown();
     setupFormListener();
+    setupClassChangeListener();
 }
 
 function populateClassDropdown() {
@@ -30,10 +31,45 @@ function populateClassDropdown() {
             const option = document.createElement('option');
             option.value = classObj.id;
             option.textContent = `${classObj.name} (${classObj.type})`;
+            option.dataset.roles = JSON.stringify(classObj.roles);
             optgroup.appendChild(option);
         });
         
         classSelect.appendChild(optgroup);
+    });
+}
+
+function setupClassChangeListener() {
+    const classSelect = document.getElementById('class');
+    const roleGroup = document.getElementById('roleGroup');
+    const roleSelect = document.getElementById('role');
+    
+    classSelect.addEventListener('change', function() {
+        const selectedOption = classSelect.options[classSelect.selectedIndex];
+        
+        if (selectedOption.value && selectedOption.dataset.roles) {
+            const roles = JSON.parse(selectedOption.dataset.roles);
+            
+            if (roles.length > 1) {
+                // Show role selector
+                roleSelect.innerHTML = '<option value="">Select a role...</option>';
+                roles.forEach(role => {
+                    const option = document.createElement('option');
+                    option.value = role;
+                    option.textContent = role;
+                    roleSelect.appendChild(option);
+                });
+                roleGroup.style.display = 'block';
+                roleSelect.required = true;
+            } else {
+                // Hide role selector for single-role classes
+                roleGroup.style.display = 'none';
+                roleSelect.required = false;
+            }
+        } else {
+            roleGroup.style.display = 'none';
+            roleSelect.required = false;
+        }
     });
 }
 
@@ -49,9 +85,18 @@ function fetchGearRecommendations() {
     const classId = document.getElementById('class').value;
     const level = parseInt(document.getElementById('level').value);
     const renown = parseInt(document.getElementById('renown').value);
+    const role = document.getElementById('role').value;
 
     if (!classId) {
         showError('Please select a class');
+        return;
+    }
+
+    const classObj = gearDatabase.getClassById(classId);
+    
+    // Check if role is required
+    if (classObj.roles.length > 1 && !role) {
+        showError('Please select a role');
         return;
     }
 
@@ -65,13 +110,12 @@ function fetchGearRecommendations() {
         return;
     }
 
-    const classObj = gearDatabase.getClassById(classId);
-    const gearSet = gearDatabase.getRecommendations(classId, level, renown);
+    const gearSet = gearDatabase.getRecommendations(classId, level, renown, role);
 
-    displayRecommendations(classObj, level, renown, gearSet);
+    displayRecommendations(classObj, level, renown, role, gearSet);
 }
 
-function displayRecommendations(classObj, level, renown, gearSet) {
+function displayRecommendations(classObj, level, renown, role, gearSet) {
     const resultsDiv = document.getElementById('results');
     
     // Determine tier for display
@@ -92,7 +136,7 @@ function displayRecommendations(classObj, level, renown, gearSet) {
             </div>
             <div class="stat-line">
                 <span class="stat-label">Role:</span>
-                <span class="stat-value">${classObj.type}</span>
+                <span class="stat-value">${role || classObj.type}</span>
             </div>
             <div class="stat-line">
                 <span class="stat-label">Level:</span>
