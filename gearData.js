@@ -1131,7 +1131,92 @@ const gearDatabase = {
             }
         }
         
+        // Sort sets by score (best first)
+        allSets.sort((a, b) => this.calculateSetScore(b, role) - this.calculateSetScore(a, role));
+        
         return allSets;
+    },
+
+    // Calculate score for a gear set to determine BiS
+    calculateSetScore: function(gearSet, role) {
+        if (!gearSet || !gearSet.pieces || !Array.isArray(gearSet.pieces)) {
+            return 0;
+        }
+        
+        let score = 0;
+        const isHealer = role && role.toLowerCase() === 'healer';
+        const isDPS = role && role.toLowerCase() === 'dps';
+        const isTank = role && role.toLowerCase() === 'tank';
+        
+        // Parse stats from pieces
+        gearSet.pieces.forEach(piece => {
+            if (!piece.stats) return;
+            
+            const stats = piece.stats;
+            
+            // Extract numeric values for primary stats
+            const wpMatch = stats.match(/WP:\s*(\d+)/i);
+            const intMatch = stats.match(/INT:\s*(\d+)/i);
+            const strMatch = stats.match(/STR:\s*(\d+)/i);
+            const touMatch = stats.match(/TOU:\s*(\d+)/i);
+            const wouMatch = stats.match(/WOU:\s*(\d+)/i);
+            const iniMatch = stats.match(/INI:\s*(\d+)/i);
+            const armorMatch = stats.match(/Armor:\s*(\d+)/i);
+            
+            // Role-based scoring weights
+            if (isHealer) {
+                score += wpMatch ? parseInt(wpMatch[1]) * 3 : 0;  // Willpower most important
+                score += touMatch ? parseInt(touMatch[1]) * 1.5 : 0;
+                score += wouMatch ? parseInt(wouMatch[1]) * 1.5 : 0;
+                score += armorMatch ? parseInt(armorMatch[1]) * 0.3 : 0;
+                
+                // Healing-specific bonuses
+                if (stats.includes('Healing Crit') || stats.includes('Healing Critical')) score += 50;
+                if (stats.includes('Healing Power')) {
+                    const healPowerMatch = stats.match(/(\d+)\s*Healing Power/i);
+                    score += healPowerMatch ? parseInt(healPowerMatch[1]) * 2 : 0;
+                }
+                if (stats.includes('AP Per Second')) score += 40;
+            } else if (isDPS) {
+                score += intMatch ? parseInt(intMatch[1]) * 3 : 0;
+                score += strMatch ? parseInt(strMatch[1]) * 3 : 0;
+                score += wpMatch ? parseInt(wpMatch[1]) * 3 : 0;
+                score += iniMatch ? parseInt(iniMatch[1]) * 2 : 0;
+                score += armorMatch ? parseInt(armorMatch[1]) * 0.2 : 0;
+                
+                // DPS-specific bonuses
+                if (stats.includes('Crit') && !stats.includes('Healing Crit')) score += 50;
+                if (stats.includes('AP Per Second')) score += 60;
+            } else if (isTank) {
+                score += touMatch ? parseInt(touMatch[1]) * 3 : 0;
+                score += wouMatch ? parseInt(wouMatch[1]) * 2.5 : 0;
+                score += armorMatch ? parseInt(armorMatch[1]) * 0.5 : 0;
+                score += strMatch ? parseInt(strMatch[1]) * 1.5 : 0;
+                
+                // Tank-specific bonuses
+                if (stats.includes('Block') || stats.includes('Parry')) score += 60;
+                if (stats.includes('Reduce') && stats.includes('Damage')) score += 50;
+            }
+            
+            // Universal valuable stats
+            if (stats.includes('Morale')) score += 30;
+            if (stats.includes('Disrupt')) score += 25;
+            if (stats.includes('Dodge')) score += 20;
+        });
+        
+        // Add bonus for set bonuses quality
+        if (gearSet.setBonuses && Array.isArray(gearSet.setBonuses)) {
+            score += gearSet.setBonuses.length * 40;
+            
+            // Bonus for set completion
+            const maxPieces = Math.max(...gearSet.setBonuses.map(b => b.pieces));
+            if (maxPieces >= 5) score += 100;
+        }
+        
+        // Bonus for number of pieces (more complete sets are better)
+        score += gearSet.pieces.length * 20;
+        
+        return score;
     },
 
     // Get class by ID
