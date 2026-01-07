@@ -155,8 +155,19 @@ function displayRecommendations(classObj, level, renown, role, gearSet) {
 
     // Display gear recommendations
     if (gearSet && Object.keys(gearSet).length > 0) {
+        // Show set name if available
+        if (gearSet.setName) {
+            html += `<div class="gear-item" style="background: rgba(255, 184, 28, 0.2); border-left-width: 5px;">
+                <div class="gear-slot" style="font-size: 1.1rem;">Recommended Set:</div>
+                <div class="gear-name" style="font-size: 1.05rem; font-weight: 700;">${gearSet.setName}</div>
+            </div>`;
+        }
+        
         html += '<div>';
         Object.entries(gearSet).forEach(([slot, item]) => {
+            // Skip special fields
+            if (slot === 'setName' || slot === 'stats') return;
+            
             // Format slot name nicely
             const slotName = slot.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
             
@@ -167,6 +178,15 @@ function displayRecommendations(classObj, level, renown, role, gearSet) {
                 </div>
             `;
         });
+        
+        // Show stats summary if available
+        if (gearSet.stats) {
+            html += `<div class="gear-item" style="background: rgba(0, 0, 0, 0.3);">
+                <div class="gear-slot">Set Bonuses:</div>
+                <div class="gear-name" style="font-size: 0.9rem;">${gearSet.stats}</div>
+            </div>`;
+        }
+        
         html += '</div>';
     } else {
         html += '<div class="no-results">No gear recommendations found for this combination.</div>';

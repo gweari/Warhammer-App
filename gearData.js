@@ -415,80 +415,175 @@ const gearDatabase = {
             feet: 'High Tier Feet'
         },
 
-        // Shaman Healer Sets
-        'shaman_goblin_healer_starter': {
+        // ========== SHAMAN HEALER SETS ==========
+        'shaman_goblin_healer_rr5': {
             setName: 'Carnage Set',
             head: 'Carnage Morkyfeets',
             chest: 'Carnage Robefings',
             hands: 'Carnage Greenbringas',
-            stats: 'Focus: Willpower, Wounds, Toughness'
+            stats: 'CR 5 | 45 Armor | INT 13, TOU 12, WP 17, WOU 10 | 3pc: +20 Willpower'
         },
-        'shaman_goblin_healer_low': {
+        'shaman_goblin_healer_rr8': {
+            setName: 'Decimator Set',
+            head: 'Decimator Morkyfeets',
+            chest: 'Decimator Robefings',
+            hands: 'Decimator Bits Keepa',
+            stats: 'CR 8/RR 8 | 55 Armor | TOU 12, WP 20, WOU 12 | 2pc: +18 WP | 3pc: +22 Wounds'
+        },
+        'shaman_goblin_healer_rr16': {
             setName: 'Obliterator Set',
             head: 'Obliterator Morkyfeets',
-            chest: 'Obliterator Robefings', 
+            chest: 'Obliterator Robefings',
             hands: 'Obliterator Greenbringas',
             shoulders: 'Obliterator Waaaghat',
-            stats: '2pc: +32 WP | 3pc: +38 Wounds | 4pc: +3% Disrupt'
+            stats: 'CR 17/RR 17 | 105 Armor | TOU 24, WP 60, WOU 33 | 2pc: +32 WP | 4pc: +3% Disrupt'
         },
-        'shaman_goblin_healer_mid': {
+        'shaman_goblin_healer_rr26': {
             setName: 'Devastator Set',
             head: 'Devastator Morkyfeets',
             chest: 'Devastator Robefings',
             hands: 'Devastator Greenbringas',
             shoulders: 'Devastator Sholdafings',
             belt: 'Devastator Waaaghat',
-            stats: '2pc: +47 WP | 4pc: On Hit Wounds Boost | 5pc: +4% Heal Crit'
+            stats: 'CR 29/RR 29 | 190 Armor | WP 136, TOU 32, WOU 36 | 2pc: +47 WP | 5pc: +4% Heal Crit'
         },
-        'shaman_goblin_healer_high': {
+        'shaman_goblin_healer_rr35': {
+            setName: 'Annihilator Set',
+            head: 'Annihilator Morkyfeets',
+            chest: 'Annihilator Robefings',
+            hands: 'Annihilator Greenbringas',
+            shoulders: 'Annihilator Sholdafings',
+            belt: 'Annihilator Waaaghat',
+            stats: 'CR 35/RR 39 | 236 Armor | WP 124, TOU 36, WOU 49 | 2pc: +53 WP | 5pc: +5% Heal Crit'
+        },
+        'shaman_goblin_healer_rr45': {
+            setName: 'Conqueror Set',
+            head: 'Conqueror Morkyfeets',
+            chest: 'Conqueror Robefings',
+            hands: 'Conqueror Greenbringas',
+            shoulders: 'Conqueror Sholdafings',
+            belt: 'Conqueror Waaaghat',
+            accessory: 'Conqueror Bitskeepa',
+            stats: 'CR 40/RR 45 | 255 Armor | WP 136, TOU 60, WOU 85 | 2pc: +57 WP | 6pc: +5% Heal Crit'
+        },
+        'shaman_goblin_healer_rr55': {
+            setName: 'Vanquisher Set',
+            head: 'Vanquisher Morkyfeets',
+            chest: 'Vanquisher Robefings',
+            hands: 'Vanquisher Greenbringas',
+            shoulders: 'Vanquisher Shouldafings',
+            belt: 'Vanquisher Waaaghat',
+            accessory: 'Vanquisher Bitskeepa',
+            stats: 'CR 40/RR 58 | 274 Armor | WP 134 | 5pc: +5% Heal Crit | 6pc: Increasing Impetus'
+        },
+        'shaman_goblin_healer_rr60': {
+            setName: 'Invader Set',
+            head: 'Invader Morkyfeets',
+            chest: 'Invader Robefings',
+            hands: 'Invader Greenbringas',
+            shoulders: 'Invader Sholdafings',
+            belt: 'Invader Waaaghat',
+            accessory: 'Invader Bitskeepa',
+            cloak: 'Invader Waaaghchain',
+            stats: 'CR 40/RR 63 | 292 Armor | WP 171, TOU 43, WOU 82 | 6pc: Absolve I | 7pc: Much Good Green'
+        },
+        'shaman_goblin_healer_rr70': {
             setName: 'Sovereign Set of da Great Green',
             head: 'Sovereign Morkyfeets of da Great Green',
             chest: 'Sovereign Robefings of da Great Green',
             hands: 'Sovereign Greenbringas of da Great Green',
             shoulders: 'Sovereign Sholdafings of da Great Green',
             belt: 'Sovereign Waaaghat of da Great Green',
+            accessory: 'Sovereign Bitskeepa of da Great Green',
             cloak: 'Sovereign Waaaghchain of da Great Green',
-            ring: 'Sovereign Bitskeepa of da Great Green',
-            ring2: 'Sovereign Waaaghfings of da Great Green',
-            stats: '6pc: +2 Path of Mork | 7pc: 10% Recover 60 AP | 8pc: Absolute Preservation'
+            ring: 'Sovereign Waaaghfings of da Great Green',
+            stats: 'CR 40/RR 78 | 334 Armor | WP 215, TOU 60, WOU 137 | 6pc: +2 Path of Mork | 8pc: Absolute Preservation'
         },
 
-        // Shaman DPS Sets
-        'shaman_goblin_dps_starter': {
+        // ========== SHAMAN DPS SETS ==========
+        'shaman_goblin_dps_rr5': {
+            setName: 'Carnage Set',
+            head: 'Carnage Morkyfeets',
+            chest: 'Carnage Robefings',
+            hands: 'Carnage Greenbringas',
+            stats: 'CR 5 | 45 Armor | INT 13, TOU 12, WP 17, WOU 10 | Can use for early DPS'
+        },
+        'shaman_goblin_dps_rr8': {
             setName: 'Set of the Braggart',
             head: 'Braggart Morkyfeets',
             chest: 'Braggart Robefings',
             hands: 'Braggart Bits Keepa',
-            stats: 'Focus: Intelligence, Toughness, Initiative'
+            stats: 'CR 8/RR 8 | 55 Armor | INT 18, TOU 9 | 2pc: +18 INT | 3pc: +22 Toughness'
         },
-        'shaman_goblin_dps_low': {
-            setName: 'Challenger Set',
+        'shaman_goblin_dps_rr16': {
+            setName: 'Set of the Challenger',
             head: 'Challenger Morkyfeets',
             chest: 'Challenger Robefings',
             hands: 'Challenger Greenbringas',
             shoulders: 'Challenger Shouldafings',
-            stats: '2pc: +32 INT | 3pc: +38 Wounds | 4pc: +2% Magic Crit'
+            stats: 'CR 17/RR 17 | 105 Armor | INT 50, TOU 34 | 2pc: +32 INT | 4pc: +2% Magic Crit'
         },
-        'shaman_goblin_dps_mid': {
+        'shaman_goblin_dps_rr26': {
             setName: 'Duelist Set',
             head: 'Morkyfeets of the Duelist',
             chest: 'Robefings of the Duelist',
             hands: 'Greenbringas of the Duelist',
             shoulders: 'Sholdafings of the Duelist',
             belt: 'Waaaghat of the Duelist',
-            stats: '2pc: +47 INT | 4pc: Quickening on Hit | 5pc: +4% Magic Crit'
+            stats: 'CR 29/RR 29 | 190 Armor | INT 136, TOU 32 | 2pc: +47 INT | 5pc: +4% Magic Crit'
         },
-        'shaman_goblin_dps_high': {
+        'shaman_goblin_dps_rr35': {
+            setName: 'Mercenary Set',
+            head: 'Morkyfeets of the Mercenary',
+            chest: 'Robefings of the Mercenary',
+            hands: 'Greenbringas of the Mercenary',
+            shoulders: 'Sholdafings of the Mercenary',
+            belt: 'Waaaghat of the Mercenary',
+            stats: 'CR 35/RR 39 | 236 Armor | INT 29, TOU 28 | 4pc: +1 Path of Gork | 5pc: +5% Magic Crit'
+        },
+        'shaman_goblin_dps_rr45': {
+            setName: 'Dominator Set',
+            head: 'Dominator Morkyfeets',
+            chest: 'Dominator Robefings',
+            hands: 'Dominator Greenbringas',
+            shoulders: 'Dominator Sholdafings',
+            belt: 'Dominator Waaaghat',
+            accessory: 'Dominator Bitskeepa',
+            stats: 'CR 40/RR 45 | 255 Armor | INT 133, TOU 52, WOU 79 | 5pc: Domination | 6pc: +5% Magic Crit'
+        },
+        'shaman_goblin_dps_rr55': {
+            setName: 'Oppressor Set',
+            head: 'Oppressor Morkyfeets',
+            chest: 'Oppressor Robefings',
+            hands: 'Oppressor Greenbringas',
+            shoulders: 'Oppressor Sholdafings',
+            belt: 'Oppressor Waaaghat',
+            accessory: 'Oppressor Bitskeepa',
+            stats: 'CR 40/RR 58 | 274 Armor | INT 148, TOU 30, WOU 107 | 5pc: +5% Magic Crit | 6pc: Increasing Impetus'
+        },
+        'shaman_goblin_dps_rr60': {
+            setName: 'Warlord Set',
+            head: 'Warlord Morkyfeets',
+            chest: 'Warlord Robefings',
+            hands: 'Warlord Greenbringas',
+            shoulders: 'Warlord Sholdafings',
+            belt: 'Warlord Waaaghat',
+            accessory: 'Warlord Bitskeepa',
+            cloak: 'Warlord Greencloak',
+            ring: 'Warlord Waaagh Beads',
+            stats: 'CR 40/RR 73 | 323 Armor | INT 179, TOU 84, WOU 56 | 6pc: +2 Path of Da Green | 8pc: Just a bit mor\''
+        },
+        'shaman_goblin_dps_rr70': {
             setName: 'Sovereign Set of da Windbreaker',
             head: 'Sovereign Morkyfeets of da Windbreaker',
             chest: 'Sovereign Robefings of da Windbreaker',
             hands: 'Sovereign Greenbringas of da Windbreaker',
             shoulders: 'Sovereign Sholdafings of da Windbreaker',
             belt: 'Sovereign Waaaghat of da Windbreaker',
+            accessory: 'Sovereign Bitskeepa of da Windbreaker',
             cloak: 'Sovereign Waaaghchain of da Windbreaker',
-            ring: 'Sovereign Bitskeepa of da Windbreaker',
-            ring2: 'Sovereign Waaaghfings of da Windbreaker',
-            stats: '6pc: +2 Path of Gork | 7pc: 10% Target Crit Vuln | 8pc: Unshackled Freedom'
+            ring: 'Sovereign Waaaghfings of da Windbreaker',
+            stats: 'CR 40/RR 78 | 334 Armor | INT 203, TOU 27, WOU 114 | 6pc: +2 Path of Gork | 8pc: Unshackled Freedom'
         }
     },
 
@@ -496,12 +591,25 @@ const gearDatabase = {
     getRecommendations: function(classId, level, renown, role) {
         let tier = 'starter';
         
-        if (level >= 31 && renown >= 61) {
-            tier = 'high';
-        } else if (level >= 21 && renown >= 31) {
-            tier = 'mid';
-        } else if (level >= 11 && renown >= 11) {
-            tier = 'low';
+        // More granular tier system based on renown rank
+        if (level >= 40 && renown >= 70) {
+            tier = 'rr70';
+        } else if (level >= 40 && renown >= 60) {
+            tier = 'rr60';
+        } else if (level >= 40 && renown >= 55) {
+            tier = 'rr55';
+        } else if (level >= 40 && renown >= 45) {
+            tier = 'rr45';
+        } else if (level >= 35 && renown >= 35) {
+            tier = 'rr35';
+        } else if (level >= 26 && renown >= 26) {
+            tier = 'rr26';
+        } else if (level >= 16 && renown >= 16) {
+            tier = 'rr16';
+        } else if (level >= 8 && renown >= 8) {
+            tier = 'rr8';
+        } else if (level >= 5) {
+            tier = 'rr5';
         }
 
         // Try role-specific gear first
@@ -512,7 +620,7 @@ const gearDatabase = {
 
         // Fall back to non-role specific
         const key = `${classId}_${tier}`;
-        return this.recommendations[key] || this.recommendations[`default_${tier}`];
+        return this.recommendations[key] || this.recommendations[`default_${tier}`] || this.recommendations[`default_starter`];
     },
 
     // Get class by ID
