@@ -445,9 +445,9 @@ const gearDatabase = {
         'shaman_goblin_healer_rr8': {
             setName: 'Decimator Set',
             pieces: [
-                { slot: 'Head', name: 'Decimator Morkyfeets', stats: 'Armor: 44 | TOU: 4, INI: 2, WP: 8, WOU: 4' },
-                { slot: 'Chest', name: 'Decimator Robefings', stats: 'Armor: 55 | TOU: 6, WP: 8, WOU: 5 | +1% Disrupt' },
-                { slot: 'Hands', name: 'Decimator Bits Keepa', stats: 'TOU: 2, WP: 4, WOU: 3 | +1% Healing Crit | 33 SRe, 20 ERe, 20 CRe' }
+                { slot: 'Head', name: 'Decimator Morkyfeets', stats: 'Armor: 44 | TOU: 4, INI: 2, WP: 8, WOU: 4', cost: 22, currency: 'War Crests' },
+                { slot: 'Chest', name: 'Decimator Robefings', stats: 'Armor: 55 | TOU: 6, WP: 8, WOU: 5 | +1% Disrupt', cost: 40, currency: 'War Crests' },
+                { slot: 'Hands', name: 'Decimator Bits Keepa', stats: 'TOU: 2, WP: 4, WOU: 3 | +1% Healing Crit | 33 SRe, 20 ERe, 20 CRe', cost: 13, currency: 'War Crests' }
             ],
             setBonuses: [
                 { pieces: 2, bonus: '+18 Willpower' },
@@ -458,11 +458,11 @@ const gearDatabase = {
         'shaman_goblin_healer_rr16_keeper': {
             setName: 'Keeper\'s Set',
             pieces: [
-                { slot: 'Head', name: 'Keeper\'s Morkyfeets', stats: 'Armor: 80 | TOU: 7, INI: 7, WP: 8, WOU: 10' },
-                { slot: 'Chest', name: 'Keeper\'s Robefings', stats: 'Armor: 100 | TOU: 10, WP: 15, WOU: 12 | +2 Morale' },
-                { slot: 'Hands', name: 'Keeper\'s Greenbringas', stats: 'Armor: 80 | TOU: 9, INI: 4, WP: 13, WOU: 6' },
-                { slot: 'Shoulders', name: 'Keeper\'s Sholdafings', stats: 'Armor: 90 | TOU: 15, WP: 13 | +1% Healing Crit' },
-                { slot: 'Belt', name: 'Keeper\'s Waaaghat', stats: 'Armor: 90 | TOU: 8, INI: 5, WP: 16, WOU: 9' }
+                { slot: 'Head', name: 'Keeper\'s Morkyfeets', stats: 'Armor: 80 | TOU: 7, INI: 7, WP: 8, WOU: 10', cost: 1, currency: 'Keeper\'s Karl' },
+                { slot: 'Chest', name: 'Keeper\'s Robefings', stats: 'Armor: 100 | TOU: 10, WP: 15, WOU: 12 | +2 Morale', cost: 1, currency: 'Keeper\'s Karl' },
+                { slot: 'Hands', name: 'Keeper\'s Greenbringas', stats: 'Armor: 80 | TOU: 9, INI: 4, WP: 13, WOU: 6', cost: 1, currency: 'Keeper\'s Karl' },
+                { slot: 'Shoulders', name: 'Keeper\'s Sholdafings', stats: 'Armor: 90 | TOU: 15, WP: 13 | +1% Healing Crit', cost: 1, currency: 'Keeper\'s Karl' },
+                { slot: 'Belt', name: 'Keeper\'s Waaaghat', stats: 'Armor: 90 | TOU: 8, INI: 5, WP: 16, WOU: 9', cost: 1, currency: 'Keeper\'s Karl' }
             ],
             setBonuses: [
                 { pieces: 3, bonus: '+37 Willpower' },
@@ -474,10 +474,10 @@ const gearDatabase = {
         'shaman_goblin_healer_rr16_havoc': {
             setName: 'Set of Havoc',
             pieces: [
-                { slot: 'Head', name: 'Havoc Morkyfeets', stats: 'Armor: 76 | TOU: 7, WP: 10, WOU: 4 | +1% Healing Crit' },
-                { slot: 'Chest', name: 'Havoc Robefings', stats: 'Armor: 95 | TOU: 8, WP: 12, WOU: 9 | +2% Dodge' },
-                { slot: 'Hands', name: 'Havoc Greenbringas', stats: 'Armor: 76 | TOU: 5, INI: 7, WP: 10, WOU: 9' },
-                { slot: 'Shoulders', name: 'Havoc Shouldafings', stats: 'Armor: 86 | TOU: 6, INI: 4, WP: 11, WOU: 15' }
+                { slot: 'Head', name: 'Havoc Morkyfeets', stats: 'Armor: 76 | TOU: 7, WP: 10, WOU: 4 | +1% Healing Crit', cost: 39, currency: 'War Tokens' },
+                { slot: 'Chest', name: 'Havoc Robefings', stats: 'Armor: 95 | TOU: 8, WP: 12, WOU: 9 | +2% Dodge', cost: 70, currency: 'War Tokens' },
+                { slot: 'Hands', name: 'Havoc Greenbringas', stats: 'Armor: 76 | TOU: 5, INI: 7, WP: 10, WOU: 9', cost: 33, currency: 'War Tokens' },
+                { slot: 'Shoulders', name: 'Havoc Shouldafings', stats: 'Armor: 86 | TOU: 6, INI: 4, WP: 11, WOU: 15', cost: 55, currency: 'War Tokens' }
             ],
             setBonuses: [
                 { pieces: 2, bonus: '+29 Wounds' },
@@ -504,10 +504,10 @@ const gearDatabase = {
         'shaman_goblin_healer_rr16': {
             setName: 'Obliterator Set',
             pieces: [
-                { slot: 'Head', name: 'Obliterator Morkyfeets', stats: 'Armor: 84 | TOU: 5, INI: 7, WP: 15, WOU: 9' },
-                { slot: 'Chest', name: 'Obliterator Robefings', stats: 'Armor: 105 | TOU: 2, INI: 6, WP: 18, WOU: 9 | +2% Disrupt' },
-                { slot: 'Hands', name: 'Obliterator Greenbringas', stats: 'Armor: 84 | TOU: 9, INI: 3, WP: 19, WOU: 5' },
-                { slot: 'Shoulders', name: 'Obliterator Waaaghat', stats: 'Armor: 95 | TOU: 8, INI: 6, WP: 8, WOU: 10 | +1% Healing Crit' }
+                { slot: 'Head', name: 'Obliterator Morkyfeets', stats: 'Armor: 84 | TOU: 5, INI: 7, WP: 15, WOU: 9', cost: 28, currency: 'War Crests' },
+                { slot: 'Chest', name: 'Obliterator Robefings', stats: 'Armor: 105 | TOU: 2, INI: 6, WP: 18, WOU: 9 | +2% Disrupt', cost: 50, currency: 'War Crests' },
+                { slot: 'Hands', name: 'Obliterator Greenbringas', stats: 'Armor: 84 | TOU: 9, INI: 3, WP: 19, WOU: 5', cost: 24, currency: 'War Crests' },
+                { slot: 'Shoulders', name: 'Obliterator Waaaghat', stats: 'Armor: 95 | TOU: 8, INI: 6, WP: 8, WOU: 10 | +1% Healing Crit', cost: 40, currency: 'War Crests' }
             ],
             setBonuses: [
                 { pieces: 2, bonus: '+32 Willpower' },
@@ -673,12 +673,12 @@ const gearDatabase = {
         'shaman_goblin_healer_rr45': {
             setName: 'Conqueror Set',
             pieces: [
-                { slot: 'Head', name: 'Conqueror Morkyfeets', stats: 'Armor: 192 | WP: 14, INI: 16, WOU: 10 | +2% Healing Crit' },
-                { slot: 'Chest', name: 'Conqueror Robefings', stats: 'Armor: 255 | WP: 33, TOU: 19, INI: 13 | +3 AP Per Second' },
-                { slot: 'Hands', name: 'Conqueror Greenbringas', stats: 'Armor: 192 | WP: 25, TOU: 15, INI: 8 | +2% Disrupt' },
-                { slot: 'Shoulders', name: 'Conqueror Sholdafings', stats: 'Armor: 225 | WP: 29, TOU: 16, INI: 12 | +2% Reduce Armor Pen' },
-                { slot: 'Belt', name: 'Conqueror Waaaghat', stats: 'Armor: 225 | WP: 17, TOU: 10, INI: 30 | +2% Dodge' },
-                { slot: 'Accessory', name: 'Conqueror Bitskeepa', stats: 'WP: 18, INI: 6, WOU: 12 | +36 Healing Power | 83 SRe, 77 ERe, 83 CRe' }
+                { slot: 'Head', name: 'Conqueror Morkyfeets', stats: 'Armor: 192 | WP: 14, INI: 16, WOU: 10 | +2% Healing Crit', cost: 70, currency: 'War Crests' },
+                { slot: 'Chest', name: 'Conqueror Robefings', stats: 'Armor: 255 | WP: 33, TOU: 19, INI: 13 | +3 AP Per Second', cost: 147, currency: 'War Crests' },
+                { slot: 'Hands', name: 'Conqueror Greenbringas', stats: 'Armor: 192 | WP: 25, TOU: 15, INI: 8 | +2% Disrupt', cost: 81, currency: 'War Crests' },
+                { slot: 'Shoulders', name: 'Conqueror Sholdafings', stats: 'Armor: 225 | WP: 29, TOU: 16, INI: 12 | +2% Reduce Armor Pen', cost: 111, currency: 'War Crests' },
+                { slot: 'Belt', name: 'Conqueror Waaaghat', stats: 'Armor: 225 | WP: 17, TOU: 10, INI: 30 | +2% Dodge', cost: 122, currency: 'War Crests' },
+                { slot: 'Accessory', name: 'Conqueror Bitskeepa', stats: 'WP: 18, INI: 6, WOU: 12 | +36 Healing Power | 83 SRe, 77 ERe, 83 CRe', cost: 49, currency: 'War Crests' }
             ],
             setBonuses: [
                 { pieces: 2, bonus: '+57 Willpower' },
