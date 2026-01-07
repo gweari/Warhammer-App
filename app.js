@@ -234,11 +234,21 @@ function displayRecommendations(classObj, level, renown, role, gearSets) {
                 //         <span style="color: #ffd700; font-size: 0.85rem;">💰 ${piece.cost} ${piece.currency}</span>
                 //     </div>` : '';
                 
+                // Requirements display
+                const reqParts = [];
+                if (piece.level) reqParts.push(`Level ${piece.level}`);
+                if (piece.renown) reqParts.push(`RR ${piece.renown}`);
+                const reqDisplay = reqParts.length > 0 ? 
+                    `<div style="margin-top: 6px; padding: 3px 8px; background: rgba(107, 158, 255, 0.15); border-radius: 3px; display: inline-block;">
+                        <span style="color: #6b9eff; font-size: 0.8rem;">📋 ${reqParts.join(' | ')}</span>
+                    </div>` : '';
+                
                 html += `
                     <div class="gear-item">
                         <div class="gear-slot" style="color: #ffb81c;">${piece.slot}:</div>
                         <div class="gear-name" style="font-weight: 600; margin-top: 3px;">${piece.name}</div>
                         <div class="gear-rarity" style="margin-top: 8px; padding: 5px 0; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: #b8b8b8; line-height: 1.4;">${piece.stats}</div>
+                        ${reqDisplay}
                     </div>
                 `;
             });

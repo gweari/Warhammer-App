@@ -445,9 +445,9 @@ const gearDatabase = {
         'shaman_goblin_healer_rr8': {
             setName: 'Decimator Set',
             pieces: [
-                { slot: 'Head', name: 'Decimator Morkyfeets', stats: 'Armor: 44 | TOU: 4, INI: 2, WP: 8, WOU: 4', cost: 22, currency: 'War Crests' },
-                { slot: 'Chest', name: 'Decimator Robefings', stats: 'Armor: 55 | TOU: 6, WP: 8, WOU: 5 | +1% Disrupt', cost: 40, currency: 'War Crests' },
-                { slot: 'Hands', name: 'Decimator Bits Keepa', stats: 'TOU: 2, WP: 4, WOU: 3 | +1% Healing Crit | 33 SRe, 20 ERe, 20 CRe', cost: 13, currency: 'War Crests' }
+                { slot: 'Head', name: 'Decimator Morkyfeets', stats: 'Armor: 44 | TOU: 4, INI: 2, WP: 8, WOU: 4', cost: 22, currency: 'War Crests', level: 8, renown: 8 },
+                { slot: 'Chest', name: 'Decimator Robefings', stats: 'Armor: 55 | TOU: 6, WP: 8, WOU: 5 | +1% Disrupt', cost: 40, currency: 'War Crests', level: 8, renown: 8 },
+                { slot: 'Hands', name: 'Decimator Bits Keepa', stats: 'TOU: 2, WP: 4, WOU: 3 | +1% Healing Crit | 33 SRe, 20 ERe, 20 CRe', cost: 13, currency: 'War Crests', level: 8, renown: 8 }
             ],
             setBonuses: [
                 { pieces: 2, bonus: '+18 Willpower' },
@@ -458,11 +458,11 @@ const gearDatabase = {
         'shaman_goblin_healer_rr16_keeper': {
             setName: 'Keeper\'s Set',
             pieces: [
-                { slot: 'Head', name: 'Keeper\'s Morkyfeets', stats: 'Armor: 80 | TOU: 7, INI: 7, WP: 8, WOU: 10', cost: 1, currency: 'Keeper\'s Karl' },
-                { slot: 'Chest', name: 'Keeper\'s Robefings', stats: 'Armor: 100 | TOU: 10, WP: 15, WOU: 12 | +2 Morale', cost: 1, currency: 'Keeper\'s Karl' },
-                { slot: 'Hands', name: 'Keeper\'s Greenbringas', stats: 'Armor: 80 | TOU: 9, INI: 4, WP: 13, WOU: 6', cost: 1, currency: 'Keeper\'s Karl' },
-                { slot: 'Shoulders', name: 'Keeper\'s Sholdafings', stats: 'Armor: 90 | TOU: 15, WP: 13 | +1% Healing Crit', cost: 1, currency: 'Keeper\'s Karl' },
-                { slot: 'Belt', name: 'Keeper\'s Waaaghat', stats: 'Armor: 90 | TOU: 8, INI: 5, WP: 16, WOU: 9', cost: 1, currency: 'Keeper\'s Karl' }
+                { slot: 'Head', name: 'Keeper\'s Morkyfeets', stats: 'Armor: 80 | TOU: 7, INI: 7, WP: 8, WOU: 10', cost: 1, currency: 'Keeper\'s Karl', level: 16 },
+                { slot: 'Chest', name: 'Keeper\'s Robefings', stats: 'Armor: 100 | TOU: 10, WP: 15, WOU: 12 | +2 Morale', cost: 1, currency: 'Keeper\'s Karl', level: 16 },
+                { slot: 'Hands', name: 'Keeper\'s Greenbringas', stats: 'Armor: 80 | TOU: 9, INI: 4, WP: 13, WOU: 6', cost: 1, currency: 'Keeper\'s Karl', level: 16 },
+                { slot: 'Shoulders', name: 'Keeper\'s Sholdafings', stats: 'Armor: 90 | TOU: 15, WP: 13 | +1% Healing Crit', cost: 1, currency: 'Keeper\'s Karl', level: 16 },
+                { slot: 'Belt', name: 'Keeper\'s Waaaghat', stats: 'Armor: 90 | TOU: 8, INI: 5, WP: 16, WOU: 9', cost: 1, currency: 'Keeper\'s Karl', level: 16 }
             ],
             setBonuses: [
                 { pieces: 3, bonus: '+37 Willpower' },
@@ -504,10 +504,10 @@ const gearDatabase = {
         'shaman_goblin_healer_rr16': {
             setName: 'Obliterator Set',
             pieces: [
-                { slot: 'Head', name: 'Obliterator Morkyfeets', stats: 'Armor: 84 | TOU: 5, INI: 7, WP: 15, WOU: 9', cost: 28, currency: 'War Crests' },
-                { slot: 'Chest', name: 'Obliterator Robefings', stats: 'Armor: 105 | TOU: 2, INI: 6, WP: 18, WOU: 9 | +2% Disrupt', cost: 50, currency: 'War Crests' },
-                { slot: 'Hands', name: 'Obliterator Greenbringas', stats: 'Armor: 84 | TOU: 9, INI: 3, WP: 19, WOU: 5', cost: 24, currency: 'War Crests' },
-                { slot: 'Shoulders', name: 'Obliterator Waaaghat', stats: 'Armor: 95 | TOU: 8, INI: 6, WP: 8, WOU: 10 | +1% Healing Crit', cost: 40, currency: 'War Crests' }
+                { slot: 'Head', name: 'Obliterator Morkyfeets', stats: 'Armor: 84 | TOU: 5, INI: 7, WP: 15, WOU: 9', cost: 28, currency: 'War Crests', level: 16, renown: 16 },
+                { slot: 'Chest', name: 'Obliterator Robefings', stats: 'Armor: 105 | TOU: 2, INI: 6, WP: 18, WOU: 9 | +2% Disrupt', cost: 50, currency: 'War Crests', level: 16, renown: 16 },
+                { slot: 'Hands', name: 'Obliterator Greenbringas', stats: 'Armor: 84 | TOU: 9, INI: 3, WP: 19, WOU: 5', cost: 24, currency: 'War Crests', level: 16, renown: 16 },
+                { slot: 'Shoulders', name: 'Obliterator Waaaghat', stats: 'Armor: 95 | TOU: 8, INI: 6, WP: 8, WOU: 10 | +1% Healing Crit', cost: 40, currency: 'War Crests', level: 16, renown: 16 }
             ],
             setBonuses: [
                 { pieces: 2, bonus: '+32 Willpower' },
