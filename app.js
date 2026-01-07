@@ -211,8 +211,7 @@ function displayRecommendations(classObj, level, renown, role, gearSets) {
                 });
                 html += '</div>';
             }
-        }); // End forEach
-    } else {
+        } else {
             // Fallback for old format
             html += '<div>';
             Object.entries(gearSet).forEach(([slot, item]) => {
@@ -240,6 +239,7 @@ function displayRecommendations(classObj, level, renown, role, gearSets) {
             
             html += '</div>';
         }
+        }); // End forEach
     } else {
         html += '<div class="no-results">No gear recommendations found for this combination.</div>';
     }
