@@ -1108,22 +1108,37 @@ const gearDatabase = {
             tier = 'rr5';
         }
 
-        // Find ALL matching sets for this tier
+        // Find ALL matching sets for this tier AND lower tiers
         const allSets = [];
         const roleKey = role ? `${classId}_${role.toLowerCase()}_${tier}` : null;
         const classKey = `${classId}_${tier}`;
         
+        // Define tier hierarchy for filtering
+        const tierOrder = ['rr5', 'rr8', 'rr16', 'rr26', 'rr35', 'rr45', 'rr55', 'rr60', 'rr70'];
+        const currentTierIndex = tierOrder.indexOf(tier);
+        const allowedTiers = currentTierIndex >= 0 ? tierOrder.slice(0, currentTierIndex + 1) : [tier];
+        
         // Search through all recommendations for matching keys
         for (const key in this.recommendations) {
-            // Check if this key matches the current class, role, and tier
-            if (roleKey && key.startsWith(roleKey)) {
+            // Extract the tier from the key (e.g., 'shaman_goblin_healer_rr26' -> 'rr26')
+            const keyTierMatch = key.match(/_rr(\d+)/);
+            const keyTier = keyTierMatch ? `rr${keyTierMatch[1]}` : null;
+            
+            // Skip sets from higher tiers than player qualifies for
+            if (keyTier && !allowedTiers.includes(keyTier)) continue;
+            
+            // Check if this key matches the current class and role
+            const rolePrefix = role ? `${classId}_${role.toLowerCase()}_` : null;
+            const classPrefix = `${classId}_`;
+            
+            if (rolePrefix && key.startsWith(rolePrefix)) {
                 allSets.push(this.recommendations[key]);
-            } else if (!key.includes('_healer_') && !key.includes('_dps_') && !key.includes('_tank_') && key === classKey) {
+            } else if (!key.includes('_healer_') && !key.includes('_dps_') && !key.includes('_tank_') && key.startsWith(classPrefix)) {
                 allSets.push(this.recommendations[key]);
             }
         }
         
-        // Filter out sets with pieces the player can't equip
+        // Filter out sets with pieces the player can't equip (additional check for explicit requirements)
         const wearableSets = allSets.filter(set => {
             if (!set.pieces || !Array.isArray(set.pieces)) return true;
             
