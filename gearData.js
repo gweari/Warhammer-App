@@ -65,46 +65,16 @@ const gearDatabase = {
     // Gear sets by class for direct lookup (fix for Chosen and others)
     gearSets: {
         chaos_knight: {
-            decimator: {
-                setName: "Decimator Set",
-                pieces: [
-                    { slot: "body", name: "Decimator Carapace", level: 8, renown: 8, armor: 165, str: 4, tou: 8, ini: 4, wounds: 4, bonus: "+1% Block" },
-                    { slot: "boots", name: "Decimator Darkboots", level: 8, renown: 8, armor: 132, str: 2, tou: 6, ws: 4, wounds: 6 },
-                    { slot: "belt", name: "Decimator Deathgirdle", level: 7, renown: 7, str: 2, tou: 3, wounds: 4, bonus: "+1% Reduced chance to be Critically Hit", sres: 33, eres: 20, cres: 20 }
-                ],
-                setBonuses: [
-                    { pieces: 2, bonus: "+18 Toughness" },
-                    { pieces: 3, bonus: "+22 Wounds" }
-                ],
-                totalStats: "Armor: 297 | STR: 8 | TOU: 17 | WS: 4 | INI: 4 | WOU: 10 | SRes: 33 | ERes: 20 | CRes: 20"
+            tank: {
+                decimator: { setName: "Decimator Set", pieces: [ { slot: "body", name: "Decimator Carapace", level: 8, renown: 8, armor: 165, str: 4, tou: 8, ini: 4, wounds: 4, bonus: "+1% Block" }, { slot: "boots", name: "Decimator Darkboots", level: 8, renown: 8, armor: 132, str: 2, tou: 6, ws: 4, wounds: 6 }, { slot: "belt", name: "Decimator Deathgirdle", level: 7, renown: 7, str: 2, tou: 3, wounds: 4, bonus: "+1% Reduced chance to be Critically Hit", sres: 33, eres: 20, cres: 20 } ], setBonuses: [ { pieces: 2, bonus: "+18 Toughness" }, { pieces: 3, bonus: "+22 Wounds" } ], totalStats: "Armor: 297 | STR: 8 | TOU: 17 | WS: 4 | INI: 4 | WOU: 10 | SRes: 33 | ERes: 20 | CRes: 20" },
+                braggart: { setName: "Set of the Braggart", pieces: [ { slot: "body", name: "Braggart Carapace", level: 8, renown: 8, armor: 165, str: 6, wounds: 8, ws: 5, bonus: "+1% Reduced chance to be Parried" }, { slot: "boots", name: "Braggart Darkboots", level: 7, renown: 7, armor: 132, str: 6, tou: 2, ws: 4, wounds: 6 }, { slot: "belt", name: "Braggart Deathgirdle", level: 7, renown: 7, str: 4, tou: 2, wounds: 3, bonus: "+1% Melee Critical Chance", sres: 23, eres: 25, cres: 25 } ], setBonuses: [ { pieces: 2, bonus: "+18 Strength" }, { pieces: 3, bonus: "+22 Toughness" } ], totalStats: "Armor: 297 | STR: 16 | TOU: 4 | WS: 12 | WOU: 14 | SRes: 23 | ERes: 25 | CRes: 25" },
+                carnage: { setName: "Set of Carnage", pieces: [ { slot: "body", name: "Carnage Carapace", level: 5, armor: 135, str: 4, tou: 7, ini: 5, wounds: 6 }, { slot: "gloves", name: "Carnage Gauntlets", level: 5, armor: 108, str: 4, tou: 4, wounds: 3, ini: 5 }, { slot: "boots", name: "Carnage Darkboots", level: 5, armor: 108, str: 5, tou: 6, ws: 2, wounds: 3 } ], setBonuses: [ { pieces: 2, bonus: "+135 Armor" }, { pieces: 3, bonus: "+20 Weapon Skill" } ], totalStats: "Armor: 351 | STR: 13 | TOU: 17 | WS: 7 | INI: 3 | WOU: 14" },
+                // ... (add all other tank sets from chosenGearData.js here, following the same structure)
             },
-            braggart: {
-                setName: "Set of the Braggart",
-                pieces: [
-                    { slot: "body", name: "Braggart Carapace", level: 8, renown: 8, armor: 165, str: 6, wounds: 8, ws: 5, bonus: "+1% Reduced chance to be Parried" },
-                    { slot: "boots", name: "Braggart Darkboots", level: 7, renown: 7, armor: 132, str: 6, tou: 2, ws: 4, wounds: 6 },
-                    { slot: "belt", name: "Braggart Deathgirdle", level: 7, renown: 7, str: 4, tou: 2, wounds: 3, bonus: "+1% Melee Critical Chance", sres: 23, eres: 25, cres: 25 }
-                ],
-                setBonuses: [
-                    { pieces: 2, bonus: "+18 Strength" },
-                    { pieces: 3, bonus: "+22 Toughness" }
-                ],
-                totalStats: "Armor: 297 | STR: 16 | TOU: 4 | WS: 12 | WOU: 14 | SRes: 23 | ERes: 25 | CRes: 25"
-            },
-            carnage: {
-                setName: "Set of Carnage",
-                pieces: [
-                    { slot: "body", name: "Carnage Carapace", level: 5, armor: 135, str: 4, tou: 7, ini: 5, wounds: 6 },
-                    { slot: "gloves", name: "Carnage Gauntlets", level: 5, armor: 108, str: 4, tou: 4, wounds: 3, ini: 5 },
-                    { slot: "boots", name: "Carnage Darkboots", level: 5, armor: 108, str: 5, tou: 6, ws: 2, wounds: 3 }
-                ],
-                setBonuses: [
-                    { pieces: 2, bonus: "+135 Armor" },
-                    { pieces: 3, bonus: "+20 Weapon Skill" }
-                ],
-                totalStats: "Armor: 351 | STR: 13 | TOU: 17 | WS: 7 | INI: 3 | WOU: 14"
+            dps: {
+                // Chosen currently has no unique DPS sets in chosenGearData.js, but this structure is required for logic to work.
+                // Add any Chosen DPS sets here in the same format as tank sets if/when they exist.
             }
-            // ... (add more sets as needed from chosenGearData.js)
         }
     },
     // Gear recommendations by class and level tier
