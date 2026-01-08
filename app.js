@@ -213,7 +213,20 @@ function displayRecommendations(classObj, level, renown, role, gearSets, crestSa
     let html = '';
 
     if (gearSets && gearSets.length > 0) {
-        // Show BiS (first set) summary at the top
+        // 1. Show summary info at the top
+        const availableSetNames = gearSets.map(set => set.setName).filter(Boolean).join(', ');
+        html += `<div class="gear-item" style="background: rgba(255,255,255,0.07); border-left: 4px solid #ffb81c; margin-bottom: 18px;">
+            <div style="font-size: 1.08rem; color: #ffb81c; font-weight: 700;">Class: <span style="color:#fff; font-weight:400;">${classObj.name}</span></div>
+            <div style="font-size: 1.08rem; color: #ffb81c; font-weight: 700;">Role: <span style="color:#fff; font-weight:400;">${role || classObj.roles[0]}</span></div>
+            <div style="font-size: 1.08rem; color: #ffb81c; font-weight: 700;">Level: <span style="color:#fff; font-weight:400;">${level}</span></div>
+            <div style="font-size: 1.08rem; color: #ffb81c; font-weight: 700;">Renown Rank: <span style="color:#fff; font-weight:400;">${renown}</span></div>
+            <div style="font-size: 1.08rem; color: #ffb81c; font-weight: 700;">Available Sets: <span style="color:#fff; font-weight:400;">${availableSetNames}</span></div>
+        </div>`;
+
+        // 2. Show BiS (first set) breakdown
+        displayGearSet(gearSets[0], 0, true);
+
+        // 3. Show total stats for BiS set (below breakdown)
         let bisSet = gearSets[0];
         if (bisSet.totalStats) {
             let displayStats = bisSet.totalStats;
@@ -251,9 +264,20 @@ function displayRecommendations(classObj, level, renown, role, gearSets, crestSa
                 <div class="gear-name" style="font-size: 0.95rem; margin-top: 5px;">${displayStats}</div>
             </div>`;
         }
-        // Show BiS (first set) breakdown
-        displayGearSet(gearSets[0], 0, true);
-        // If there are additional sets, add a button to show them
+
+        // 4. Show set bonuses for BiS set
+        if (bisSet.setBonuses && Array.isArray(bisSet.setBonuses)) {
+            html += `<div class="gear-item" style="background: rgba(0, 255, 100, 0.1); border-left-color: #5dff8c;">
+                <div class="gear-slot" style="color: #5dff8c; font-size: 1.05rem;">✨ Set Bonuses</div>`;
+            bisSet.setBonuses.forEach(bonus => {
+                html += `<div class="gear-name" style="font-size: 0.9rem; padding: 5px 0; color: #d0d0d0;">
+                    <span style="color: #5dff8c; font-weight: 700;">${bonus.pieces} Pieces:</span> ${bonus.bonus}
+                </div>`;
+            });
+            html += '</div>';
+        }
+
+        // 5. If there are additional sets, add a button to show them
         if (gearSets.length > 1) {
             html += `
                 <div style="text-align: center; margin: 30px 0;">
