@@ -40,47 +40,15 @@ const setCostData = {
 };
 // Main application logic
 
-// Unified Gear Database - Merges data from gearData.js and endgameGearData.js
+// Unified Gear Database - Uses flat recommendations structure
 const UnifiedGearDatabase = {
-    // Merge gear sets from both sources
-    getGearSets: function(classId) {
-        const primarySets = gearData.gearSets[classId] || {};
-        const endgameSets = (typeof EndgameGearData !== 'undefined' && EndgameGearData.classes[classId]) || {};
-        
-        // Merge both sources - endgame data takes precedence if there are conflicts
-        return { ...primarySets, ...endgameSets };
-    },
-    
-    // Get class list (uses existing gearDatabase structure)
     classes: gearDatabase.classes,
-    
     getClassById: function(classId) {
         return gearDatabase.getClassById(classId);
     },
-    
-    // Get recommendations from both data sources
     getRecommendations: function(classId, level, renown, role) {
-        const primaryRecs = gearData.getRecommendations(classId, level, renown, role);
-        let endgameRecs = [];
-        
-        // Try to get endgame recommendations if available
-        if (typeof EndgameGearData !== 'undefined' && EndgameGearData.getRecommendations) {
-            endgameRecs = EndgameGearData.getRecommendations(classId, level, renown, role);
-        }
-        
-        // Merge results, removing duplicates by set name
-        const allRecs = [...primaryRecs, ...endgameRecs];
-        const uniqueSets = {};
-        
-        allRecs.forEach(set => {
-            const key = set.setName || 'Unknown';
-            // Keep the set with more data (more pieces or more complete info)
-            if (!uniqueSets[key] || (set.pieces && set.pieces.length > (uniqueSets[key].pieces?.length || 0))) {
-                uniqueSets[key] = set;
-            }
-        });
-        
-        return Object.values(uniqueSets);
+        // Use flat recommendations structure
+        return gearDatabase.getRecommendations(classId, level, renown, role);
     }
 };
 
