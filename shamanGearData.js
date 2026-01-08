@@ -29,7 +29,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 2, bonus: '+4% Dodge' },
                 { pieces: 3, bonus: '+2% Reduced chance to be Critically Hit' }
             ],
-            totalStats: 'Armor: 135 | INT: 4, TOU: 10, INI: 7, WP: 23, WOU: 16'
+            totalStats: 'Armor: 135 | INT: 4, TOU: 10, INI: 7, WP: 23, WOU: 16 | +4 HP Every 4s'
         },
         'shaman_goblin_healer_rr8_hunter': {
             setName: 'Hunter\'s Set',
@@ -42,7 +42,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 2, bonus: '+17 Toughness' },
                 { pieces: 3, bonus: '+2% Magic Critical Chance' }
             ],
-            totalStats: 'Armor: 130 | INT: 16, TOU: 11, WP: 14, WOU: 10'
+            totalStats: 'Armor: 130 | INT: 16, TOU: 11, WP: 14, WOU: 10 | +1% Disrupt'
         },
         'shaman_goblin_healer_rr8_braggart': {
             setName: 'Set of the Braggart',
@@ -55,7 +55,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 2, bonus: '+18 Intelligence' },
                 { pieces: 3, bonus: '+22 Toughness' }
             ],
-            totalStats: 'Armor: 99 | INT: 18, TOU: 9, INI: 7, WOU: 12 | 23 SRe, 25 ERe, 25 CRe'
+            totalStats: 'Armor: 99 | INT: 18, TOU: 9, INI: 7, WOU: 12 | 23 SRe, 25 ERe, 25 CRe | +1% Reduced chance to be Disrupted | +1% Magic Crit'
         },
         'shaman_goblin_healer_rr8': {
             setName: 'Decimator Set',
@@ -68,7 +68,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 2, bonus: '+18 Willpower' },
                 { pieces: 3, bonus: '+22 Wounds' }
             ],
-            totalStats: 'Armor: 99 | TOU: 12, INI: 2, WP: 20, WOU: 12 | 33 SRe, 20 ERe, 20 CRe'
+            totalStats: 'Armor: 99 | TOU: 12, INI: 2, WP: 20, WOU: 12 | 33 SRe, 20 ERe, 20 CRe | +1% Disrupt | +1% Healing Crit'
         },
         'shaman_goblin_healer_rr16_keeper': {
             setName: 'Keeper\'s Set',
@@ -84,7 +84,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 4, bonus: '+2% Healing Critical Chance' },
                 { pieces: 5, bonus: 'Quickening - On Being Hit: 10% chance to reduce build times by half a second for 10 seconds' }
             ],
-            totalStats: 'Armor: 440 | TOU: 49, INI: 16, WP: 65, WOU: 37'
+            totalStats: 'Armor: 440 | TOU: 49, INI: 16, WP: 65, WOU: 37 | +2 Morale | +1% Healing Crit'
         },
         'shaman_goblin_healer_rr16_havoc': {
             setName: 'Set of Havoc',
@@ -99,7 +99,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 3, bonus: '+35 Willpower' },
                 { pieces: 4, bonus: '+2% Healing Critical Chance' }
             ],
-            totalStats: 'Armor: 333 | TOU: 26, INI: 11, WP: 43, WOU: 37'
+            totalStats: 'Armor: 333 | TOU: 26, INI: 11, WP: 43, WOU: 37 | +1% Healing Crit | +2% Dodge'
         },
         'shaman_goblin_healer_rr16_tracker': {
             setName: 'Tracker\'s Set',
@@ -114,7 +114,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 3, bonus: '+20 HP Every 4s' },
                 { pieces: 4, bonus: '+3% Disrupt' }
             ],
-            totalStats: 'Armor: 350 | INT: 32, TOU: 25, INI: 10, WP: 40, WOU: 32'
+            totalStats: 'Armor: 350 | INT: 32, TOU: 25, INI: 10, WP: 40, WOU: 32 | +1% Disrupt'
         },
         'shaman_goblin_healer_rr16_challenger': {
             setName: 'Set of the Challenger',
@@ -129,7 +129,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 3, bonus: '+38 Wounds' },
                 { pieces: 4, bonus: '+2% Magic Critical Chance' }
             ],
-            totalStats: 'Armor: 368 | INT: 50, TOU: 34, INI: 24, WOU: 31'
+            totalStats: 'Armor: 368 | INT: 50, TOU: 34, INI: 24, WOU: 31 | +2% Reduced chance to be Disrupted | +1% Magic Crit'
         },
 
         'shaman_goblin_healer_rr16': {
@@ -145,7 +145,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 3, bonus: '+38 Wounds' },
                 { pieces: 4, bonus: '+3% Disrupt' }
             ],
-            totalStats: 'Armor: 368 | TOU: 24, INI: 22, WP: 60, WOU: 33'
+            totalStats: 'Armor: 368 | TOU: 24, INI: 22, WP: 60, WOU: 33 | +2% Disrupt | +1% Healing Crit'
         },
         'shaman_goblin_healer_rr26_mayhem': {
             setName: 'Mayhem Set',
@@ -162,7 +162,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 4, bonus: '+5% Disrupt' },
                 { pieces: 5, bonus: 'Superiority - On Hit: 25% chance to reduce target\'s Willpower by 58 while increasing your Intelligence by 58 for 10s' }
             ],
-            totalStats: 'Armor: 625 | WP: 88, INT: 26, TOU: 37, INI: 23, WOU: 15'
+            totalStats: 'Armor: 625 | WP: 88, INT: 26, TOU: 37, INI: 23, WOU: 15 | +32 HP Every 4s | +2% Reduction in being Crit | +1% Disrupt Strikethrough'
         },
         'shaman_goblin_healer_rr26_stalker': {
             setName: 'Stalker Set',
@@ -177,7 +177,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 3, bonus: '+2 Morale Per Second' },
                 { pieces: 4, bonus: '+34 Toughness' }
             ],
-            totalStats: 'Armor: 633 | WP: 67, INT: 27, TOU: 19, INI: 10, WOU: 15'
+            totalStats: 'Armor: 633 | WP: 67, INT: 27, TOU: 19, INI: 10, WOU: 15 | +2% Dodge | +2% Disrupt | +1% Healing Crit'
         },
         'shaman_goblin_healer_rr26_duelist': {
             setName: 'Duelist Set (Scenario)',
@@ -194,7 +194,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 4, bonus: 'On Being Hit: 10% chance to reduce build times by half a second for 10 seconds' },
                 { pieces: 5, bonus: '+4% Magic Critical Chance' }
             ],
-            totalStats: 'Armor: 795 | INT: 136, TOU: 32, INI: 35, WOU: 36'
+            totalStats: 'Armor: 795 | INT: 136, TOU: 32, INI: 35, WOU: 36 | +40 HP Every 4s | +2% Magic Crit | +1% Disrupt Strikethrough'
         },
         'shaman_goblin_healer_rr26': {
             setName: 'Devastator Set',
@@ -211,7 +211,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 4, bonus: 'On Being Hit: 10% Chance to increase Wounds for 20s' },
                 { pieces: 5, bonus: '+4% Healing Critical Chance' }
             ],
-            totalStats: 'Armor: 795 | WP: 136, TOU: 32, INI: 35, WOU: 36'
+            totalStats: 'Armor: 795 | WP: 136, TOU: 32, INI: 35, WOU: 36 | +40 HP Every 4s | +2% Healing Crit | +1% Disrupt'
         },
         'shaman_goblin_healer_rr35': {
             setName: 'Annihilator Set',
@@ -228,7 +228,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 4, bonus: '+1 Path of Mork Abilities' },
                 { pieces: 5, bonus: '+5% Healing Critical Chance' }
             ],
-            totalStats: 'Armor: 1026 | WP: 124, TOU: 36, INI: 58, WOU: 49'
+            totalStats: 'Armor: 1026 | WP: 124, TOU: 36, INI: 58, WOU: 49 | +2% Dodge | +3 AP Per Second | +1% Reduction in being Crit | +2% Disrupt'
         },
         'shaman_goblin_healer_rr35_mercenary': {
             setName: 'Mercenary Set (Scenario)',
@@ -245,7 +245,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 4, bonus: '+1 Path of Gork Abilities' },
                 { pieces: 5, bonus: '+5% Magic Critical Chance' }
             ],
-            totalStats: 'Armor: 1026 | INT: 29, TOU: 124, INI: 28, WOU: 61, WOU: 26'
+            totalStats: 'Armor: 1026 | INT: 29, TOU: 124, INI: 28, WOU: 61, WOU: 26 | +2% Dodge | +3 AP Per Second | +1% Reduction in being Crit | +2% Disrupt'
         },
         'shaman_goblin_healer_rr45': {
             setName: 'Conqueror Set',
@@ -264,7 +264,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 5, bonus: 'Reactionary - On Defense: 25% chance to increase Parry, Evade and Disrupt by 10% for 10s' },
                 { pieces: 6, bonus: '+5% Healing Critical Chance' }
             ],
-            totalStats: 'Armor: 1089 | WP: 136, TOU: 60, INI: 85, WOU: 22 | 83 SRe, 77 ERe, 83 CRe'
+            totalStats: 'Armor: 1089 | WP: 136, TOU: 60, INI: 85, WOU: 22 | 83 SRe, 77 ERe, 83 CRe | +2% Healing Crit | +3 AP Per Second | +2% Disrupt | +2% Reduce Armor Pen | +2% Dodge | +36 Healing Power'
         },
         'shaman_goblin_healer_rr45_dominator': {
             setName: 'Dominator Set (Scenario)',
@@ -283,7 +283,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 5, bonus: 'Domination - On Hit: 25% chance to steal 100 Toughness from your target for 10 seconds' },
                 { pieces: 6, bonus: '+5% Magic Critical Chance' }
             ],
-            totalStats: 'Armor: 1086 | INT: 133, TOU: 52, INI: 79, WOU: 43 | 83 SRe, 77 ERe, 83 CRe'
+            totalStats: 'Armor: 1086 | INT: 133, TOU: 52, INI: 79, WOU: 43 | 83 SRe, 77 ERe, 83 CRe | +2% Magic Crit | +3 AP Per Second | +2% Reduced Chance to be Disrupted | +2 Morale Per Second | +36 Magic Power'
         },
         'shaman_goblin_healer_rr45_ruin': {
             setName: 'Ruin Set (PQ)',
@@ -300,7 +300,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 4, bonus: '+1 Path of Da Green Abilities' },
                 { pieces: 5, bonus: '+4% Healing Critical Chance' }
             ],
-            totalStats: 'Armor: 925 | WP: 117, INT: 65, TOU: 34, INI: 35, WOU: 20'
+            totalStats: 'Armor: 925 | WP: 117, INT: 65, TOU: 34, INI: 35, WOU: 20 | +2 Morale Per Second | +2% Disrupt | +1% Healing Crit'
         },
         'shaman_goblin_healer_rr45_onslaught': {
             setName: 'Onslaught Set (PQ)',
@@ -317,7 +317,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 4, bonus: 'Vivacious - On Heal: 10% chance to recover 50 AP' },
                 { pieces: 5, bonus: '+5% Healing Critical Chance' }
             ],
-            totalStats: 'Armor: 1127 | WP: 84, TOU: 80, INI: 102, WOU: 30'
+            totalStats: 'Armor: 1127 | WP: 84, TOU: 80, INI: 102, WOU: 30 | +2% Dodge | +72 HP Every 4s | +2% Disrupt | +1% Reduction in being Crit'
         },
         'shaman_goblin_healer_rr45_beastlord': {
             setName: 'Beastlord Set (PvE)',
@@ -335,7 +335,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 5, bonus: '+5% Reduced Chance to be Disrupted' },
                 { pieces: 6, bonus: 'Caretaker - On Hit: 10% chance to heal defensive target for 235 health' }
             ],
-            totalStats: 'Armor: 631 | WP: 40, INT: 107, WOU: 109 | 187 SRe, 174 ERe, 221 CRe'
+            totalStats: 'Armor: 631 | WP: 40, INT: 107, WOU: 109 | 187 SRe, 174 ERe, 221 CRe | +1 AP Per Second'
         },
         'shaman_goblin_healer_rr45_rarefortune': {
             setName: 'Rare Fortune Set (PvE)',
@@ -352,7 +352,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 4, bonus: 'Aid X - On Direct Heal: 5% chance for your heal target to regain additional 354 health over 9s' },
                 { pieces: 5, bonus: '+5% Healing Critical Chance' }
             ],
-            totalStats: 'Armor: 1050 | WP: 126, TOU: 22, INI: 60, WOU: 69'
+            totalStats: 'Armor: 1050 | WP: 126, TOU: 22, INI: 60, WOU: 69 | +2% Dodge | +3 AP Per Second | +1% Healing Crit | +12 Healing Power'
         },
         'shaman_goblin_healer_rr45': {
             setName: 'Conqueror Set',
@@ -371,7 +371,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 5, bonus: 'Reactionary - On Defense: 25% chance to increase Parry, Evade and Disrupt by 10% for 10s' },
                 { pieces: 6, bonus: '+5% Healing Critical Chance' }
             ],
-            totalStats: 'Armor: 1089 | WP: 136, TOU: 60, INI: 85, WOU: 22'
+            totalStats: 'Armor: 1089 | WP: 136, TOU: 60, INI: 85, WOU: 22 | +2% Healing Crit | +3 AP Per Second | +2% Disrupt | +2% Reduce Armor Pen | +2% Dodge | +36 Healing Power'
         },
         'shaman_goblin_healer_rr55': {
             setName: 'Vanquisher Set',
@@ -390,7 +390,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 5, bonus: '+5% Healing Critical Chance' },
                 { pieces: 6, bonus: 'Increasing Impetus - On Heal: 5% chance to reduce build times by 25% for 5s' }
             ],
-            totalStats: 'Armor: 1174 | WP: 134, INI: 123, WOU: 69 | 87 SRe, 86 ERe, 86 CRe'
+            totalStats: 'Armor: 1174 | WP: 134, INI: 123, WOU: 69 | 87 SRe, 86 ERe, 86 CRe | +2% Healing Crit | +3 AP Per Second | +2% Reduced Armor Pen | +3% Disrupt | +2% Reduction in being Crit'
         },
         'shaman_goblin_healer_rr55_oppressor': {
             setName: 'Oppressor Set (Scenario)',
@@ -409,7 +409,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 5, bonus: '+5% Magic Critical Chance' },
                 { pieces: 6, bonus: 'Increasing Impetus - On Attacking Target or Direct Heal Dealt: 5% chance to reduce build times by 25% for 5s' }
             ],
-            totalStats: 'Armor: 1174 | INT: 148, TOU: 30, INI: 107, WOU: 22 | 87 SRe, 86 ERe, 86 CRe'
+            totalStats: 'Armor: 1174 | INT: 148, TOU: 30, INI: 107, WOU: 22 | 87 SRe, 86 ERe, 86 CRe | +2% Magic Crit | +23 Magic Power | +3% Reduced Chance to be Disrupted | +1% Magic Crit | +36 Magic Power'
         },
         'shaman_goblin_healer_rr60': {
             setName: 'Invader Set',
@@ -430,7 +430,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 6, bonus: 'Absolve I - On Direct Heal: 5% chance to remove a Hex, Curse, or Ailment from heal target' },
                 { pieces: 7, bonus: 'Much Good Green - All healing abilities have 10% chance to increase Crit Heal by 9% and crit value by 12% for 10s' }
             ],
-            totalStats: 'Armor: 1248 | WP: 171, TOU: 43, INI: 82, WOU: 79 | 170 SRe, 169 ERe, 169 CRe'
+            totalStats: 'Armor: 1248 | WP: 171, TOU: 43, INI: 82, WOU: 79 | 170 SRe, 169 ERe, 169 CRe | +2 Morale Per Second | +1 AP Per Second | +15 Healing Power | +2% Healing Crit | +27 Healing Power | +2% Dodge, +2% Disrupt | +2% Reduced Armor Pen | +2 AP Per Second'
         },
         'shaman_goblin_healer_rr60_redeye': {
             setName: 'Redeye Set (Instance)',
@@ -449,7 +449,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 5, bonus: 'Quickening - On Being Hit: 10% chance to reduce build times by half a second for 10s' },
                 { pieces: 6, bonus: '+5% Healing Critical Chance' }
             ],
-            totalStats: 'Armor: 1050 | WP: 105, INT: 25, TOU: 99, INI: 116, WOU: 12 | 91 SRe, 76 ERe, 73 CRe'
+            totalStats: 'Armor: 1050 | WP: 105, INT: 25, TOU: 99, INI: 116, WOU: 12 | 91 SRe, 76 ERe, 73 CRe | +1% Reduction in being Crit | +3 AP Per Second | +2% Reduced Armor Pen'
         },
         'shaman_goblin_healer_rr60_sentinel': {
             setName: 'Sentinel Set (Instance)',
@@ -470,7 +470,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 6, bonus: '+5% Healing Critical Chance' },
                 { pieces: 7, bonus: 'Woz\'nt Me! - Cooldown on Look Over There! reduced by 5 seconds' }
             ],
-            totalStats: 'Armor: 1127 | WP: 193, TOU: 94, INI: 90, WOU: 9 | 150 SRe, 160 ERe, 166 CRe'
+            totalStats: 'Armor: 1127 | WP: 193, TOU: 94, INI: 90, WOU: 9 | 150 SRe, 160 ERe, 166 CRe | +2% Dodge | +60 HP Every 4s | +21 Healing Power | +2% Reduction in being Crit | +2% Healing Crit | +3 AP Per Second'
         },
         'shaman_goblin_healer_rr60_valewalker': {
             setName: 'Vale Walker Set (Instance)',
@@ -491,7 +491,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 6, bonus: 'Guidance II - On Direct Heal: 5% chance to increase the power of your heals by 6% for 10s' },
                 { pieces: 7, bonus: 'Absolve I - On Direct Heal: 5% chance to remove a Hex, Curse or Ailment from your heal target' }
             ],
-            totalStats: 'Armor: 1204 | WP: 125, TOU: 95, INI: 168, WOU: 24 | 226 SRe, 275 ERe, 205 CRe'
+            totalStats: 'Armor: 1204 | WP: 125, TOU: 95, INI: 168, WOU: 24 | 226 SRe, 275 ERe, 205 CRe | +2% Healing Crit | +2% Reduced Armor Pen | +1% Reduced Armor Pen | +48 HP Every 4s'
         },
         'shaman_goblin_healer_rr60_triumphant': {
             setName: 'Triumphant Set (Ranked)',
@@ -512,7 +512,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 6, bonus: 'Increasing Impetus - On Attacking Target or Direct Heal Dealt: 5% chance to reduce build times by 25% for 5s' },
                 { pieces: 7, bonus: 'On Being Attacked: 10% chance to reduce incoming damage by 4% for 10s' }
             ],
-            totalStats: 'Armor: 1328 | WP: 159, TOU: 11, INI: 162, WOU: 90 | 188 SRe, 188 ERe, 188 CRe'
+            totalStats: 'Armor: 1328 | WP: 159, TOU: 11, INI: 162, WOU: 90 | 188 SRe, 188 ERe, 188 CRe | +2% Healing Crit | +4 AP Per Second | +3% Reduced Armor Pen | +3% Disrupt | +2% Reduction in being Crit | +3 AP Per Second'
         },
         'shaman_goblin_healer_rr60_victorious': {
             setName: 'Victorious Set (Ranked)',
@@ -533,7 +533,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 6, bonus: 'Increasing Impetus - On Attacking Target or Direct Heal Dealt: 5% chance to reduce build times by 25% for 5s' },
                 { pieces: 7, bonus: 'Boost III - On Hit: 5% chance to increase your critical hit rate by 9% for 9s' }
             ],
-            totalStats: 'Armor: 1328 | INT: 186, TOU: 33, INI: 129, WOU: 45 | 188 SRe, 188 ERe, 188 CRe'
+            totalStats: 'Armor: 1328 | INT: 186, TOU: 33, INI: 129, WOU: 45 | 188 SRe, 188 ERe, 188 CRe | +2% Magic Crit | +4 AP Per Second | +23 Magic Power | +3% Reduced Chance to be Disrupted | +36 Magic Power'
         },
         'shaman_goblin_healer_rr70': {
             setName: 'Sovereign Set of da Great Green',
@@ -556,7 +556,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 7, bonus: 'On Heal: 10% chance to recover 60 Action Points over 3 seconds' },
                 { pieces: 8, bonus: 'Gain ability: Absolute Preservation' }
             ],
-            totalStats: 'Armor: 1420 | WP: 215, TOU: 60, INI: 137, WOU: 119 | 290 SRe, 289 ERe, 289 CRe'
+            totalStats: 'Armor: 1420 | WP: 215, TOU: 60, INI: 137, WOU: 119 | 290 SRe, 289 ERe, 289 CRe | +2 Morale Per Second | +2 AP Per Second | +17 Healing Power | +2% Healing Crit | +30 Healing Power | +2% Dodge, +2% Disrupt | +2% Reduced Armor Pen'
         },
         'shaman_goblin_healer_rr70_windbreaker': {
             setName: 'Sovereign Set of da Windbreaker',
@@ -579,7 +579,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 7, bonus: 'On Hit: 10% chance to increase target\'s chance to be critically hit by 7% for 10 seconds' },
                 { pieces: 8, bonus: 'Gain ability: Unshackled Freedom' }
             ],
-            totalStats: 'Armor: 1420 | INT: 203, TOU: 27, INI: 171, WOU: 114 | 290 SRe, 289 ERe, 289 CRe'
+            totalStats: 'Armor: 1420 | INT: 203, TOU: 27, INI: 171, WOU: 114 | 290 SRe, 289 ERe, 289 CRe | +2% Magic Crit | +4 AP Per Second | +20 Magic Power | +25 Magic Power | +2% Dodge, +2% Disrupt'
         },
         'shaman_goblin_healer_rr70_overlord': {
             // ...existing code...
@@ -590,7 +590,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             setBonuses: [
                 { pieces: 2, bonus: '+61 Wounds' }
             ],
-            totalStats: 'Armor: 480 | WP: 51, TOU: 18, INI: 22, WOU: 28'
+            totalStats: 'Armor: 480 | WP: 51, TOU: 18, INI: 22, WOU: 28 | +2% Reduction in being Crit | +2% Reduction in being Crit, +12 Healing Power | +12 Healing Power'
         },
         'shaman_goblin_healer_rr70_imperator': {
             // ...existing code...
@@ -601,7 +601,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             setBonuses: [
                 { pieces: 2, bonus: '+61 Initiative' }
             ],
-            totalStats: 'Armor: 480 | INT: 51, TOU: 12, INI: 25, WOU: 28'
+            totalStats: 'Armor: 480 | INT: 51, TOU: 12, INI: 25, WOU: 28 | +2% Reduced Chance to be Disrupted | +2% Reduced Chance to be Disrupted, +12 Magic Power | +12 Magic Power'
         },
         'shaman_goblin_healer_rr70_genesis_curative': {
             // ...existing code...
@@ -618,7 +618,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 4, bonus: '+3% Armor Penetration Reduced' },
                 { pieces: 5, bonus: '+3% Healing Critical Chance' }
             ],
-            totalStats: 'WP: 48, INI: 24, WOU: 24 | 293 SRe, 293 ERe, 293 CRe'
+            totalStats: 'WP: 48, INI: 24, WOU: 24 | 293 SRe, 293 ERe, 293 CRe | +36 Healing Power | +1% Dodge, +1% Disrupt | +2% Dodge, +2% Disrupt | +4 AP Per Second'
         },
         'shaman_goblin_healer_rr70_genesis_scholar': {
             // ...existing code...
@@ -635,7 +635,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 4, bonus: '+3% Reduce Chance to be Critically Hit' },
                 { pieces: 5, bonus: '+3% Magic Critical Chance' }
             ],
-            totalStats: 'INT: 76, INI: 24, WOU: 4 | 293 SRe, 293 ERe, 293 CRe'
+            totalStats: 'INT: 76, INI: 24, WOU: 4 | 293 SRe, 293 ERe, 293 CRe | +36 Magic Power | +1% Dodge, +1% Disrupt | +2% Dodge, +2% Disrupt | +4 AP Per Second'
         },
         'shaman_goblin_healer_rr70_warrant_medic': {
             // ...existing code...
@@ -647,7 +647,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             setBonuses: [
                 { pieces: 3, bonus: '+4 Morale Per Second' }
             ],
-            totalStats: 'WP: 57, INI: 12, WOU: 13 | 195 SRe, 195 ERe, 195 CRe'
+            totalStats: 'WP: 57, INI: 12, WOU: 13 | 195 SRe, 195 ERe, 195 CRe | +1% Disrupt | +2 AP Per Second | +18 Healing Power'
         },
         'shaman_goblin_healer_rr70_warrant_mender': {
             // ...existing code...
@@ -659,7 +659,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             setBonuses: [
                 { pieces: 3, bonus: '+3% Reduction to be Critically Hit' }
             ],
-            totalStats: 'WP: 55, INI: 16, WOU: 16 | 206 SRe, 206 ERe, 206 CRe'
+            totalStats: 'WP: 55, INI: 16, WOU: 16 | 206 SRe, 206 ERe, 206 CRe | +2% Disrupt | +2 AP Per Second | +18 Healing Power'
         },
         'shaman_goblin_healer_rr70_warrant_arcanist': {
             // ...existing code...
@@ -671,7 +671,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             setBonuses: [
                 { pieces: 3, bonus: '+4 Morale Per Second' }
             ],
-            totalStats: 'INT: 57, INI: 12, WOU: 28 | 190 SRe, 190 ERe, 190 CRe'
+            totalStats: 'INT: 57, INI: 12, WOU: 28 | 190 SRe, 190 ERe, 190 CRe | +1% Disrupt | +18 Magic Power'
         },
         'shaman_goblin_healer_rr70_warrant_seer': {
             // ...existing code...
@@ -683,7 +683,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             setBonuses: [
                 { pieces: 3, bonus: '+3% Reduced Chance to be Disrupted' }
             ],
-            totalStats: 'INT: 55, INI: 16, WOU: 16 | 206 SRe, 206 ERe, 206 CRe'
+            totalStats: 'INT: 55, INI: 16, WOU: 16 | 206 SRe, 206 ERe, 206 CRe | +2% Disrupt | +2 AP Per Second | +18 Magic Power'
         },
 
         // ========== SHAMAN DPS SETS ==========
@@ -698,7 +698,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 2, bonus: '+17 Toughness' },
                 { pieces: 3, bonus: '+2% Magic Critical Chance' }
             ],
-            totalStats: 'Armor: 130 | INT: 16, TOU: 11, WP: 14, WOU: 10'
+            totalStats: 'Armor: 130 | INT: 16, TOU: 11, WP: 14, WOU: 10 | +1% Disrupt'
         },
         'shaman_goblin_dps_rr8': {
             setName: 'Set of the Braggart',
@@ -711,7 +711,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 2, bonus: '+18 Intelligence' },
                 { pieces: 3, bonus: '+22 Toughness' }
             ],
-            totalStats: 'Armor: 99 | INT: 18, TOU: 9, INI: 7, WOU: 12'
+            totalStats: 'Armor: 99 | INT: 18, TOU: 9, INI: 7, WOU: 12 | +1% Reduced chance to be Disrupted | +1% Magic Crit'
         },
         'shaman_goblin_dps_rr16': {
             setName: 'Set of the Challenger',
@@ -726,7 +726,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 3, bonus: '+38 Wounds' },
                 { pieces: 4, bonus: '+2% Magic Critical Chance' }
             ],
-            totalStats: 'Armor: 368 | INT: 50, TOU: 34, INI: 24, WOU: 31'
+            totalStats: 'Armor: 368 | INT: 50, TOU: 34, INI: 24, WOU: 31 | +2% Reduced chance to be Disrupted | +1% Magic Crit'
         },
         'shaman_goblin_dps_rr26': {
             setName: 'Duelist Set',
@@ -743,7 +743,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 4, bonus: 'On Being Hit: 10% chance to reduce build times by half a second for 10s' },
                 { pieces: 5, bonus: '+4% Magic Critical Chance' }
             ],
-            totalStats: 'Armor: 795 | INT: 136, TOU: 32, INI: 35, WOU: 36'
+            totalStats: 'Armor: 795 | INT: 136, TOU: 32, INI: 35, WOU: 36 | +40 HP Every 4s | +2% Magic Crit | +1% Disrupt Strikethrough'
         },
         'shaman_goblin_dps_rr35': {
             setName: 'Mercenary Set',
@@ -760,7 +760,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 4, bonus: '+1 Path of Gork Abilities' },
                 { pieces: 5, bonus: '+5% Magic Critical Chance' }
             ],
-            totalStats: 'Armor: 1026 | INT: 29, TOU: 28, INI: 61, WOU: 26'
+            totalStats: 'Armor: 1026 | INT: 29, TOU: 28, INI: 61, WOU: 26 | +2% Dodge | +3 AP Per Second | +1% Reduction in being Crit | +2% Disrupt'
         },
         'shaman_goblin_dps_rr45': {
             setName: 'Dominator Set',
@@ -779,7 +779,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 5, bonus: 'Domination - On Hit: 25% chance to steal 100 Toughness from target for 10s' },
                 { pieces: 6, bonus: '+5% Magic Critical Chance' }
             ],
-            totalStats: 'Armor: 1089 | INT: 133, TOU: 52, INI: 79, WOU: 43'
+            totalStats: 'Armor: 1089 | INT: 133, TOU: 52, INI: 79, WOU: 43 | +2% Magic Crit | +3 AP Per Second | +2% Reduced Chance to be Disrupted | +2 Morale Per Second | +36 Magic Power'
         },
         'shaman_goblin_dps_rr55': {
             setName: 'Oppressor Set',
@@ -798,7 +798,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 5, bonus: '+5% Magic Critical Chance' },
                 { pieces: 6, bonus: 'Increasing Impetus - On Attack or Direct Heal: 5% chance to reduce build times by 25% for 5s' }
             ],
-            totalStats: 'Armor: 1174 | INT: 148, TOU: 30, INI: 107, WOU: 22'
+            totalStats: 'Armor: 1174 | INT: 148, TOU: 30, INI: 107, WOU: 22 | +2% Magic Crit | +23 Magic Power | +3% Reduced Chance to be Disrupted | +1% Magic Crit | +36 Magic Power'
         },
         'shaman_goblin_dps_rr60': {
             setName: 'Warlord Set',
@@ -821,7 +821,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 7, bonus: 'Boost V - On Hit: 10% chance to increase crit rate by 9% and crit damage by 12% for 9s' },
                 { pieces: 8, bonus: 'Gain ability: Just a bit mor\'' }
             ],
-            totalStats: 'Armor: 1377 | TOU: 84, INI: 196, INT: 56, WOU: 179'
+            totalStats: 'Armor: 1377 | TOU: 84, INI: 196, INT: 56, WOU: 179 | +80 HP Every 4s | +2% Magic Crit | +4% Reduced Armor Pen | +2% Dodge, +2% Disrupt | +3 AP Per Second | +2 Morale Per Second'
         },
         'shaman_goblin_dps_rr60_bloodlord': {
             setName: 'Bloodlord Set',
@@ -842,7 +842,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 6, bonus: 'On Hit: 10% chance to increase all damage taken by your target for 10s' },
                 { pieces: 7, bonus: 'Surging - On Hit: 10% chance to deal damage to an additional target within range' }
             ],
-            totalStats: 'Armor: 1248 | INT: 181, TOU: 36, INI: 118, WOU: 95 | 182 SRe, 182 ERe, 182 CRe'
+            totalStats: 'Armor: 1248 | INT: 181, TOU: 36, INI: 118, WOU: 95 | 182 SRe, 182 ERe, 182 CRe | +2% Dodge | +1 Morale Per Second | +2% Magic Crit | +3% Disrupt | +3 Morale Per Second | +24 Magic Power'
         },
         'shaman_goblin_dps_rr60_victorious': {
             setName: 'Victorious Set (Ranked)',
@@ -863,7 +863,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 6, bonus: 'Increasing Impetus - On Attacking Target or Direct Heal Dealt: 5% chance to reduce build times by 25% for 5s' },
                 { pieces: 7, bonus: 'Boost III - On Hit: 5% chance to increase your critical hit rate by 9% for 9s' }
             ],
-            totalStats: 'Armor: 1328 | INT: 186, TOU: 33, INI: 129, WOU: 45 | 188 SRe, 188 ERe, 188 CRe'
+            totalStats: 'Armor: 1328 | INT: 186, TOU: 33, INI: 129, WOU: 45 | 188 SRe, 188 ERe, 188 CRe | +2% Magic Crit | +4 AP Per Second | +23 Magic Power | +3% Reduced Chance to be Disrupted | +36 Magic Power'
         },
         'shaman_goblin_dps_rr70': {
             setName: 'Sovereign Set of da Windbreaker',
@@ -886,7 +886,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 7, bonus: 'On Hit: 10% chance to increase target\'s chance to be critically hit by 7% for 10s' },
                 { pieces: 8, bonus: 'Gain ability: Unshackled Freedom' }
             ],
-            totalStats: 'Armor: 1420 | TOU: 27, INI: 171, INT: 114, WOU: 203'
+            totalStats: 'Armor: 1420 | TOU: 27, INI: 171, INT: 114, WOU: 203 | +2% Magic Crit | +4 AP Per Second | +20 Magic Power | +25 Magic Power | +2% Dodge, +2% Disrupt'
         }
     });
 }
