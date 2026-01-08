@@ -239,12 +239,12 @@
 
                     <div class="form-group">
                         <label for="level">Level:</label>
-                        <input type="number" id="level" min="1" max="40" value="1" required>
+                        <input type="number" id="level" min="1" max="40" value="1" required oninput="if(this.value > 40) this.value = 40; if(this.value < 1) this.value = 1;">
                     </div>
 
                     <div class="form-group">
                         <label for="renown">Renown Rank:</label>
-                        <input type="number" id="renown" min="1" max="80" value="1" required>
+                        <input type="number" id="renown" min="1" max="80" value="1" required oninput="if(this.value > 80) this.value = 80; if(this.value < 1) this.value = 1;">
                     </div>
 
                     <button type="submit">Get Gear Recommendations</button>
