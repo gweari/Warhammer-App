@@ -260,5 +260,179 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             ],
             totalStats: "Armor: 1902 | TOU: 72 | WOU: 23 | INI: 7 | STR: 21 | WS: 15"
         }
+        ,
+        chosen_annihilator_rr39: {
+            name: "Annihilator Set",
+            class: "chosen",
+            role: "tank",
+            requiredLevel: 35,
+            requiredRenown: 39,
+            pieces: [
+                { slot: "boots", name: "Annihilator Darkboots", level: 35, renown: 35, armor: 549, tou: 10, ini: 13, str: 21, bonus: "+2% Dodge" },
+                { slot: "gloves", name: "Annihilator Gauntlets", level: 35, renown: 36, armor: 549, tou: 11, ini: 14, str: 9, wounds: 23 },
+                { slot: "shoulders", name: "Annihilator Shoulderguards", level: 35, renown: 37, armor: 636, tou: 12, ini: 18, wounds: 25, bonus: "+1% Reduction in being Critically Hit" },
+                { slot: "helm", name: "Annihilator Skullcase", level: 35, renown: 38, armor: 636, tou: 13, str: 15, wounds: 25, bonus: "+2% Disrupt" },
+                { slot: "body", name: "Annihilator Carapace", level: 35, renown: 39, armor: 708, tou: 23, ini: 15, str: 32, bonus: "+60 HP Every 4 Seconds" }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+53 Toughness" },
+                { pieces: 3, bonus: "+290 Elemental Resistance" },
+                { pieces: 4, bonus: "+1 Path of Discord Abilities" },
+                { pieces: 5, bonus: "+5% Parry" }
+            ],
+            totalStats: "Armor: 3084 | TOU: 69 | WOU: 60 | INI: 45 | STR: 105"
+        },
+        chosen_conqueror_rr45: {
+            name: "Conqueror Set",
+            class: "chosen",
+            role: "tank",
+            requiredLevel: 40,
+            requiredRenown: 45,
+            pieces: [
+                { slot: "boots", name: "Conqueror Darkboots", level: 40, renown: 40, armor: 588, tou: 16, ini: 24, ws: 10, bonus: "+2% Block" },
+                { slot: "gloves", name: "Conqueror Gauntlets", level: 40, renown: 41, armor: 588, tou: 15, ws: 8, wounds: 25, bonus: "+2% Parry" },
+                { slot: "belt", name: "Conqueror Deathgirdle", level: 40, renown: 42, tou: 18, ini: 12, str: 24, ws: 6, sres: 83, eres: 77, cres: 83 },
+                { slot: "shoulders", name: "Conqueror Shoulderguards", level: 40, renown: 43, armor: 676, tou: 29, ini: 12, ws: 16, bonus: "+2% Reduced Armor Penetration" },
+                { slot: "helm", name: "Conqueror Skullcase", level: 40, renown: 44, armor: 676, tou: 30, ini: 10, str: 17, bonus: "+2% Disrupt" },
+                { slot: "body", name: "Conqueror Carapace", level: 40, renown: 45, armor: 765, tou: 33, ws: 19, ini: 13, bonus: "+3 AP Per Second" }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+57 Toughness" },
+                { pieces: 3, bonus: "+63 Wounds" },
+                { pieces: 4, bonus: "+5% Reduction in being Critically Hit" },
+                { pieces: 5, bonus: "Preservation - On Being Hit: 10% chance to increase Wounds by 100 for 20 seconds" },
+                { pieces: 6, bonus: "+5% Block" }
+            ],
+            totalStats: "Armor: 3293 | TOU: 141 | WOU: 58 | INI: 41 | STR: 49 | WS: 48 | SRes: 83 | ERes: 77 | CRes: 83"
+        },
+        chosen_vanquisher_rr58: {
+            name: "Vanquisher Set",
+            class: "chosen",
+            role: "tank",
+            requiredLevel: 40,
+            requiredRenown: 58,
+            pieces: [
+                { slot: "boots", name: "Vanquisher Darkboots", level: 40, renown: 56, armor: 623, tou: 16, ini: 17, ws: 18, bonus: "+2% Dodge" },
+                { slot: "gloves", name: "Vanquisher Gauntlets", level: 40, renown: 56, armor: 623, tou: 18, ini: 17, str: 16, bonus: "+2% Parry" },
+                { slot: "belt", name: "Vanquisher Deathgirdle", level: 40, renown: 55, tou: 8, ini: 22, ws: 22, bonus: "+2% Reduction in being Critically Hit", sres: 87, eres: 86, cres: 86 },
+                { slot: "shoulders", name: "Vanquisher Shoulderguards", level: 40, renown: 57, armor: 723, tou: 26, ini: 20, ws: 16, bonus: "+2% Block" },
+                { slot: "helm", name: "Vanquisher Skullcase", level: 40, renown: 57, armor: 723, tou: 34, ini: 15, str: 13, bonus: "+2% Disrupt" },
+                { slot: "body", name: "Vanquisher Carapace", level: 40, renown: 58, armor: 822, tou: 15, ini: 35, str: 15, bonus: "+2% Reduction in being Critically Hit" }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+62 Toughness" },
+                { pieces: 3, bonus: "+68 Wounds" },
+                { pieces: 4, bonus: "Active Defences - On Attacking Target: 10% chance to increase Parry, Block, Disrupt and Dodge by 7% for 10 seconds." },
+                { pieces: 5, bonus: "+5% Block" },
+                { pieces: 6, bonus: "Bulwarking Presence - On Being Hit: 10% chance to reduce the damage being taken by your Group within 30ft by 3% for 10 seconds." }
+            ],
+            totalStats: "Armor: 3514 | TOU: 117 | WOU: 126 | INI: 44 | STR: 56 | WS: 56 | SRes: 87 | ERes: 86 | CRes: 86"
+        },
+        chosen_invader_rr63: {
+            name: "Invader Set",
+            class: "chosen",
+            role: "tank",
+            requiredLevel: 40,
+            requiredRenown: 63,
+            pieces: [
+                { slot: "boots", name: "Invader Darkboots", level: 40, renown: 61, armor: 663, tou: 18, str: 20, ws: 17, bonus: "+2% Reduced Armor Penetration" },
+                { slot: "gloves", name: "Invader Gauntlets", level: 40, renown: 61, armor: 663, tou: 20, ini: 13, ws: 16, bonus: "+3% Reduced Chance to be Parried" },
+                { slot: "belt", name: "Invader Deathgirdle", level: 40, renown: 60, tou: 18, ws: 12, bonus: "+2% Dodge, +2% Disrupt", sres: 91, eres: 91, cres: 91 },
+                { slot: "shoulders", name: "Invader Shoulderguards", level: 40, renown: 62, armor: 771, tou: 26, ini: 18, str: 18, bonus: "+3% Block" },
+                { slot: "helm", name: "Invader Skullcase", level: 40, renown: 62, armor: 771, tou: 24, ini: 18, str: 16, bonus: "+4 Morale Per Second" },
+                { slot: "body", name: "Invader Carapace", level: 40, renown: 63, armor: 876, tou: 24, ini: 18, ws: 28, bonus: "+1 AP Per Second" },
+                { slot: "jewel", name: "Invader Change Gem", level: 40, renown: 63, ini: 27, str: 12, bonus: "+2% Block, +2 AP Per Second", sres: 79, eres: 78, cres: 78 }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+66 Strength" },
+                { pieces: 3, bonus: "+73 Wounds" },
+                { pieces: 4, bonus: "+80 Toughness" },
+                { pieces: 5, bonus: "+5% Block" },
+                { pieces: 6, bonus: "Mending Wounds - On Block: 10% chance to restore 500 Health Points and gain 50 Action Points" },
+                { pieces: 7, bonus: "Shield Spikes - Each time you block an attack, low damage is dealt back to them and reduce their outgoing damage by 5%" }
+            ],
+            totalStats: "Armor: 3744 | TOU: 130 | WOU: 94 | INI: 66 | STR: 56 | WS: 31 | SRes: 170 | ERes: 169 | CRes: 169"
+        },
+        chosen_warlord_rr73: {
+            name: "Warlord Set",
+            class: "chosen",
+            role: "tank",
+            requiredLevel: 40,
+            requiredRenown: 73,
+            pieces: [
+                { slot: "boots", name: "Warlord Darkboots", level: 40, renown: 71, armor: 723, tou: 30, ini: 14, ws: 18, bonus: "+2% Parry, +40 HP Every 4 Seconds" },
+                { slot: "gloves", name: "Warlord Gauntlets", level: 40, renown: 71, armor: 723, tou: 18, ws: 14, wounds: 30, bonus: "+1% Reduced Armor Penetration, +1% Reduction in being Critically Hit" },
+                { slot: "belt", name: "Warlord Deathgirdle", level: 40, renown: 70, ini: 16, str: 23, ws: 15, bonus: "+2% Dodge, +2% Disrupt", sres: 102, eres: 101, cres: 101 },
+                { slot: "shoulders", name: "Warlord Shoulderguards", level: 40, renown: 72, armor: 858, tou: 21, ini: 31, str: 21, bonus: "+3% Disrupt" },
+                { slot: "helm", name: "Warlord Skullcase", level: 40, renown: 72, armor: 858, tou: 34, ini: 16, str: 21, bonus: "+2% Reduction in being Critically Hit" },
+                { slot: "body", name: "Warlord Carapace", level: 40, renown: 73, armor: 969, tou: 24, ini: 24, str: 10, ws: 10, wounds: 17, bonus: "+80 HP Every 4 Seconds" },
+                { slot: "jewel", name: "Warlord Chaos Seal", level: 40, renown: 73, wounds: 25, ini: 15, str: 14, bonus: "+3 AP Per Second", sres: 87, eres: 87, cres: 86 },
+                { slot: "cloak", name: "Warlord Changehide", level: 40, renown: 70, wounds: 25, ini: 10, str: 21, ws: 10, bonus: "+2% Parry", sres: 101, eres: 101, cres: 102 }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+75 Strength" },
+                { pieces: 3, bonus: "+83 Weapon Skill" },
+                { pieces: 4, bonus: "+6% Armor Penetration" },
+                { pieces: 5, bonus: "+99 Melee Power" },
+                { pieces: 6, bonus: "+2 Path of Discord Abilities" },
+                { pieces: 7, bonus: "Evasive - On Being Hit: 10% chance to detaunt target." },
+                { pieces: 8, bonus: "Gain Ability: Desolation" }
+            ],
+            totalStats: "Armor: 4131 | TOU: 177 | WOU: 126 | INI: 89 | STR: 70 | WS: 65 | SRes: 290 | ERes: 289 | CRes: 289"
+        },
+        chosen_sovereign_dreadshield_rr78: {
+            name: "Sovereign Set of Dreadshield (Primary)",
+            class: "chosen",
+            role: "tank",
+            requiredLevel: 40,
+            requiredRenown: 78,
+            pieces: [
+                { slot: "boots", name: "Sovereign Darkboots", level: 40, renown: 76, armor: 741, tou: 24, str: 22, ws: 20, bonus: "+2% Reduced Armor Penetration" },
+                { slot: "gloves", name: "Sovereign Gauntlets", level: 40, renown: 76, armor: 741, tou: 26, ini: 20, ws: 20, bonus: "+2% Reduced Chance to be Parried" },
+                { slot: "belt", name: "Sovereign Deathgirdle", level: 40, renown: 75, tou: 24, ini: 20, ws: 10, bonus: "+2% Dodge, +2% Disrupt", sres: 102, eres: 101, cres: 101 },
+                { slot: "shoulders", name: "Sovereign Shoulderguards", level: 40, renown: 77, armor: 888, tou: 31, ini: 21, ws: 21, bonus: "+3% Block" },
+                { slot: "helm", name: "Sovereign Skullcase", level: 40, renown: 77, armor: 888, tou: 31, ini: 20, str: 20, bonus: "+4 Morale per Second" },
+                { slot: "body", name: "Sovereign Carapace", level: 40, renown: 78, armor: 1002, tou: 24, ini: 24, ws: 20, wounds: 17, bonus: "+2 AP Per Second, +1% Reduction in being Critically Hit" },
+                { slot: "jewel", name: "Sovereign Change Gem", level: 40, renown: 78, ini: 22, str: 15, bonus: "+2 AP Per Second", sres: 87, eres: 87, cres: 86 },
+                { slot: "cloak", name: "Sovereign Changehide", level: 40, renown: 75, ini: 21, str: 25, ws: 20, bonus: "+2% Block", sres: 101, eres: 101, cres: 102 }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+80 Wounds" },
+                { pieces: 3, bonus: "+88 Toughness" },
+                { pieces: 4, bonus: "+6% Block" },
+                { pieces: 5, bonus: "+6% Reduction in being Critically Hit" },
+                { pieces: 6, bonus: "+2 Path of Corruption Abilities" },
+                { pieces: 7, bonus: "On Being Attacked: 10% chance to increase Parry, Block, Disrupt and Dodge by 10% for 10 seconds" },
+                { pieces: 8, bonus: "Gain Ability: Leading The Charge" }
+            ],
+            totalStats: "Armor: 4260 | TOU: 203 | WOU: 127 | INI: 103 | STR: 70 | WS: 37 | SRes: 290 | ERes: 289 | CRes: 289"
+        },
+        chosen_sovereign_dreadsword_rr78: {
+            name: "Sovereign Set of Dreadsword (Secondary)",
+            class: "chosen",
+            role: "tank",
+            requiredLevel: 40,
+            requiredRenown: 78,
+            pieces: [
+                { slot: "boots", name: "Sovereign Darkboots", level: 40, renown: 76, armor: 741, tou: 27, ini: 19, ws: 22, bonus: "+2 AP Per Second" },
+                { slot: "gloves", name: "Sovereign Gauntlets", level: 40, renown: 76, armor: 741, tou: 18, ws: 22, wounds: 18, bonus: "+2% Reduction in being Critically Hit" },
+                { slot: "belt", name: "Sovereign Deathgirdle", level: 40, renown: 75, tou: 27, ws: 27, bonus: "+2% Parry, +2% Disrupt", sres: 102, eres: 101, cres: 101 },
+                { slot: "shoulders", name: "Sovereign Shoulderguards", level: 40, renown: 77, armor: 888, tou: 28, ini: 31, ws: 20, bonus: "+2 Morale Per Second, +64 HP Every 4 Seconds" },
+                { slot: "helm", name: "Sovereign Skullcase", level: 40, renown: 77, armor: 888, tou: 27, ini: 17, ws: 23, bonus: "+4% Reduced Armor Penetration" },
+                { slot: "body", name: "Sovereign Carapace", level: 40, renown: 78, armor: 1002, tou: 40, ini: 21, ws: 24, bonus: "+4 AP Per Second" },
+                { slot: "jewel", name: "Sovereign Change Gem", level: 40, renown: 78, ini: 30, str: 13, ws: 15, bonus: "+2 Morale Per Second", sres: 87, eres: 87, cres: 86 },
+                { slot: "cloak", name: "Sovereign Changehide", level: 40, renown: 75, ini: 30, str: 18, ws: 18, bonus: "+2% Dodge", sres: 101, eres: 101, cres: 102 }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+80 Strength" },
+                { pieces: 3, bonus: "+88 Wounds" },
+                { pieces: 4, bonus: "+15% Critical Damage" },
+                { pieces: 5, bonus: "+6% Melee Critical Chance" },
+                { pieces: 6, bonus: "+2 Path of Dread Abilities" },
+                { pieces: 7, bonus: "On Hit: 10% chance to increase Block Strikethrough and Parry Strikethrough by 10% for 10 seconds." },
+                { pieces: 8, bonus: "Gain Ability: Mindless Fear" }
+            ],
+            totalStats: "Armor: 4260 | TOU: 227 | WOU: 106 | INI: 33 | STR: 124 | WS: 45 | SRes: 290 | ERes: 289 | CRes: 289"
+        }
     });
 }
