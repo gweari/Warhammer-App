@@ -4,6 +4,25 @@
 // Add Chosen gear to the main gearDatabase
 if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
     Object.assign(gearDatabase.recommendations, {
+        chosen_decimator_rr11: {
+            name: "Decimator Set",
+            class: "chosen",
+            role: "tank",
+            requiredLevel: 11,
+            requiredRenown: 11,
+            pieces: [
+                { slot: "body", name: "Decimator Carapace", level: 11, renown: 11, armor: 210, str: 7, tou: 7, wounds: 7 },
+                { slot: "gloves", name: "Decimator Gauntlets", level: 10, renown: 10, armor: 168, str: 6, tou: 6, wounds: 6 },
+                { slot: "boots", name: "Decimator Darkboots", level: 10, renown: 10, armor: 168, str: 6, tou: 6, wounds: 6 },
+                { slot: "helm", name: "Decimator Skullcase", level: 11, renown: 11, armor: 189, str: 7, tou: 7, wounds: 7 }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+14 Strength" },
+                { pieces: 3, bonus: "+14 Toughness" },
+                { pieces: 4, bonus: "+14 Wounds" }
+            ],
+            totalStats: "Armor: 735 | STR: 26 | TOU: 26 | WOU: 26"
+        },
         chosen_carnage_rr5: {
             name: "Set of Carnage",
             class: "chosen",
