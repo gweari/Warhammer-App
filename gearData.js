@@ -44,7 +44,7 @@ const gearDatabase = {
         { id: 'r8', label: 'Renown Rank 71-80', min: 71, max: 80 }
     ],
     recommendations: {
-        chaos_knight_tank_decimator: {
+        chaos_knight_tank_rr8: {
             setName: "Decimator Set",
             pieces: [
                 {slot: "body", name: "Decimator Carapace", level: 8, renown: 8, armor: 165, str: 4, tou: 8, ini: 4, wounds: 4, bonus: "+1% Block"},
@@ -57,7 +57,7 @@ const gearDatabase = {
             ],
             totalStats: "Armor: 297 | Strength: 8 | Toughness: 17 | Weapon Skill: 4 | Initiative: 4 | Wounds: 10 | Spirit Resist: 33 | Elemental Resist: 20 | Corporeal Resist: 20"
         },
-        chaos_knight_tank_braggart: {
+        chaos_knight_dps_rr8: {
             setName: "Set of the Braggart",
             pieces: [
                 {slot: "body", name: "Braggart Carapace", level: 8, renown: 8, armor: 165, str: 6, wounds: 8, ws: 5, bonus: "+1% Reduced chance to be Parried"},
@@ -70,7 +70,7 @@ const gearDatabase = {
             ],
             totalStats: "Armor: 297 | Strength: 16 | Toughness: 4 | Weapon Skill: 12 | Wounds: 14 | Spirit Resist: 23 | Elemental Resist: 25 | Corporeal Resist: 25"
         },
-        chaos_knight_tank_carnage: {
+        chaos_knight_tank_rr5: {
             setName: "Set of Carnage",
             pieces: [
                 {slot: "body", name: "Carnage Carapace", level: 5, armor: 135, str: 4, tou: 7, ini: 5, wounds: 6},
@@ -92,7 +92,8 @@ const gearDatabase = {
         let total = 0;
         gearSet.pieces.forEach(piece => {
             if (!piece.stats) return;
-            const stats = piece.stats;
+                    const normalizedRole = role ? role.toLowerCase() : null;
+                    const rolePrefix = normalizedRole ? `${classId}_${normalizedRole}_` : null;
             // Extract and sum all numeric values
             const numbers = stats.match(/:\s*(\d+)/g);
             if (numbers) {
