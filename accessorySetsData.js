@@ -4,6 +4,341 @@
 // Add accessory sets to the main gearDatabase
 if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
     Object.assign(gearDatabase.recommendations, {
+        // PvE Accessories
+        "Sundered Rings Set": {
+            setName: "Sundered Rings Set",
+            items: [
+                {
+                    name: "Cytheril",
+                    rank: 35,
+                    wounds: null,
+                    initiative: 17,
+                    toughness: 17,
+                    weaponSkill: null,
+                    spiritResist: 61,
+                    elementalResist: 74,
+                    corporealResist: 51
+                },
+                {
+                    name: "Foserain",
+                    rank: 35,
+                    wounds: 14,
+                    initiative: null,
+                    toughness: null,
+                    weaponSkill: 17,
+                    spiritResist: 51,
+                    elementalResist: 65,
+                    corporealResist: 74
+                }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+25 Wounds" }
+            ]
+        },
+        "Divided Set": {
+            setName: "Divided Set",
+            items: [
+                {
+                    name: "The Seeping Larva",
+                    rank: 35,
+                    wounds: null,
+                    initiative: 15,
+                    toughness: 15,
+                    weaponSkill: null,
+                    spiritResist: 67,
+                    elementalResist: 77,
+                    corporealResist: 79
+                },
+                {
+                    name: "Writhing Shackles",
+                    rank: 35,
+                    wounds: 15,
+                    initiative: null,
+                    toughness: null,
+                    weaponSkill: 15,
+                    spiritResist: 77,
+                    elementalResist: 79,
+                    corporealResist: 67
+                },
+                {
+                    name: "Fated Veil",
+                    rank: 35,
+                    wounds: null,
+                    initiative: 15,
+                    toughness: 15,
+                    weaponSkill: null,
+                    spiritResist: 79,
+                    elementalResist: 67,
+                    corporealResist: 77
+                },
+                {
+                    name: "Bloodied Fracture",
+                    rank: 35,
+                    wounds: 15,
+                    initiative: null,
+                    toughness: null,
+                    weaponSkill: 15,
+                    spiritResist: 76,
+                    elementalResist: 72,
+                    corporealResist: 72
+                }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+3% Dodge" },
+                { pieces: 3, bonus: "+3% Disrupt" },
+                { pieces: 4, bonus: "Clarity - Any Ability: 10% chance to reduce the cost of the next ability used within 10 seconds to 0 Action Points" }
+            ]
+        },
+        "Fortune's Baubles Set": {
+            setName: "Fortune's Baubles Set",
+            items: [
+                {
+                    name: "Hapless Ha'penny",
+                    rank: 35,
+                    wounds: null,
+                    initiative: 8,
+                    toughness: 17,
+                    weaponSkill: null,
+                    bonus1: "+2% Parry",
+                    spiritResist: 46,
+                    elementalResist: 57,
+                    corporealResist: 46
+                },
+                {
+                    name: "Gorkamork",
+                    rank: 35,
+                    wounds: 17,
+                    initiative: null,
+                    toughness: null,
+                    weaponSkill: 8,
+                    bonus1: "+2% Dodge",
+                    spiritResist: 46,
+                    elementalResist: 46,
+                    corporealResist: 57
+                },
+                {
+                    name: "Wind of Change",
+                    rank: 35,
+                    wounds: null,
+                    initiative: 17,
+                    toughness: 8,
+                    weaponSkill: null,
+                    bonus1: "+2% Disrupt",
+                    spiritResist: 57,
+                    elementalResist: 46,
+                    corporealResist: 46
+                },
+                {
+                    name: "Fullbelly's Lucky Foot",
+                    rank: 35,
+                    wounds: 8,
+                    initiative: null,
+                    toughness: null,
+                    weaponSkill: 17,
+                    bonus1: "+2% Reduced Armor Penetration",
+                    spiritResist: 50,
+                    elementalResist: 50,
+                    corporealResist: 50
+                }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+2 Morale per Second" },
+                { pieces: 3, bonus: "+2 AP per Second" },
+                { pieces: 4, bonus: "+52 HP every 4 seconds" }
+            ]
+        },
+        "Winds Impervious Set": {
+            setName: "Winds Impervious Set",
+            items: [
+                {
+                    name: "Crow Caller Chain",
+                    rank: 35,
+                    wounds: null,
+                    initiative: null,
+                    toughness: 4,
+                    weaponSkill: 12,
+                    spiritResist: 104,
+                    elementalResist: 89,
+                    corporealResist: 178
+                },
+                {
+                    name: "The Obdurate Seal",
+                    rank: 35,
+                    wounds: 12,
+                    initiative: null,
+                    toughness: 4,
+                    weaponSkill: null,
+                    spiritResist: 89,
+                    elementalResist: 178,
+                    corporealResist: 104
+                },
+                {
+                    name: "Wordbreaker Band",
+                    rank: 35,
+                    wounds: null,
+                    initiative: 12,
+                    toughness: 4,
+                    weaponSkill: null,
+                    spiritResist: 178,
+                    elementalResist: 104,
+                    corporealResist: 89
+                }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+25 Initiative" },
+                { pieces: 3, bonus: "+210 Armor Bonus" }
+            ]
+        },
+        "Great Oathstones Set": {
+            setName: "Great Oathstones Set",
+            items: [
+                {
+                    name: "Oathstone of Karaz-a-Karak",
+                    rank: 35,
+                    wounds: null,
+                    initiative: null,
+                    toughness: 4,
+                    weaponSkill: 17,
+                    bonus1: "+2% Dodge",
+                    spiritResist: 47,
+                    elementalResist: 41,
+                    corporealResist: 61
+                },
+                {
+                    name: "Oathstone of Karak Eight Peaks",
+                    rank: 35,
+                    wounds: 4,
+                    initiative: 17,
+                    toughness: null,
+                    weaponSkill: null,
+                    bonus1: "+2% Dodge",
+                    spiritResist: 41,
+                    elementalResist: 61,
+                    corporealResist: 47
+                }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+15% Auto Attack Haste" }
+            ]
+        },
+        "Broken Covenant Set": {
+            setName: "Broken Covenant Set",
+            items: [
+                {
+                    name: "The Ascendant Verses",
+                    rank: 35,
+                    wounds: null,
+                    initiative: null,
+                    toughness: 17,
+                    weaponSkill: 4,
+                    bonus1: "+2% Disrupt",
+                    spiritResist: 61,
+                    elementalResist: 48,
+                    corporealResist: 40
+                },
+                {
+                    name: "The Deep Oaths",
+                    rank: 35,
+                    wounds: 17,
+                    initiative: 4,
+                    toughness: null,
+                    weaponSkill: null,
+                    bonus1: "+2% Disrupt",
+                    spiritResist: 61,
+                    elementalResist: 40,
+                    corporealResist: 48
+                }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+3 AP per Second" }
+            ]
+        },
+        "Da Waaagh! Teef Set": {
+            setName: "Da Waaagh! Teef Set",
+            items: [
+                {
+                    name: "Black Toof",
+                    rank: 35,
+                    wounds: 17,
+                    initiative: 17,
+                    toughness: null,
+                    weaponSkill: null,
+                    spiritResist: 44,
+                    elementalResist: 64,
+                    corporealResist: 78
+                },
+                {
+                    name: "One Tusk",
+                    rank: 35,
+                    wounds: null,
+                    initiative: null,
+                    toughness: 17,
+                    weaponSkill: 17,
+                    spiritResist: 93,
+                    elementalResist: 33,
+                    corporealResist: 60
+                },
+                {
+                    name: "Broke Toof",
+                    rank: 35,
+                    wounds: null,
+                    initiative: 17,
+                    toughness: 17,
+                    weaponSkill: null,
+                    spiritResist: 33,
+                    elementalResist: 89,
+                    corporealResist: 64
+                },
+                {
+                    name: "Moon Fang",
+                    rank: 35,
+                    wounds: 17,
+                    initiative: null,
+                    toughness: null,
+                    weaponSkill: 17,
+                    spiritResist: 65,
+                    elementalResist: 57,
+                    corporealResist: 65
+                }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+2% Reduction in being Critically Hit" },
+                { pieces: 3, bonus: "+2% Reduced Armor Penetration" },
+                { pieces: 4, bonus: "+20 Additional AP Pool" }
+            ]
+        },
+        "Blood-soaked Sigils Set": {
+            setName: "Blood-soaked Sigils Set",
+            items: [
+                {
+                    name: "Strife",
+                    rank: 35,
+                    wounds: 10,
+                    initiative: null,
+                    toughness: 12,
+                    weaponSkill: null,
+                    bonus1: "+2% Parry",
+                    spiritResist: 23,
+                    elementalResist: 98,
+                    corporealResist: 28
+                },
+                {
+                    name: "Torment",
+                    rank: 35,
+                    wounds: null,
+                    initiative: 12,
+                    toughness: null,
+                    weaponSkill: 10,
+                    bonus1: "+2% Parry",
+                    spiritResist: 98,
+                    elementalResist: 28,
+                    corporealResist: 23
+                }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+2% Reduced Chance to be Parried" }
+            ]
+        },
         // RvR Auxiliary
         "Overlord Set": {
             setName: "Overlord Set",
