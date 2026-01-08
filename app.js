@@ -65,13 +65,7 @@ function initializeApp() {
     setupClassChangeListener();
 }
 
-// Add any additional closing braces needed to properly terminate all open functions/blocks
-}
-}
-}
-}
-}
-}
+// ...existing code...
 
 function populateClassDropdown() {
     const classSelect = document.getElementById('class');
