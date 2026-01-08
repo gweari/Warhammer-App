@@ -11,9 +11,9 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             requiredLevel: 8,
             requiredRenown: 8,
             pieces: [
-                { slot: "body", name: "Decimator Carapace", level: 8, renown: 8, armor: 165, str: 4, tou: 8, ini: 4, wounds: 4, bonus: "+1% Block" },
-                { slot: "boots", name: "Decimator Darkboots", level: 8, renown: 8, armor: 132, str: 2, tou: 6, ws: 4, wounds: 6 },
-                { slot: "belt", name: "Decimator Deathgirdle", level: 7, renown: 7, str: 2, tou: 3, wounds: 4, bonus: "+1% Reduced chance to be Critically Hit", sres: 33, eres: 20, cres: 20 }
+                { slot: "body", name: "Decimator Carapace", level: 8, renown: 8, armor: 165, str: 4, tou: 8, ini: 4, wounds: 4, bonus: "+1% Block", stats: "Armor: 165 | STR: 4 | TOU: 8 | INI: 4 | WOU: 4 | +1% Block" },
+                { slot: "boots", name: "Decimator Darkboots", level: 8, renown: 8, armor: 132, str: 2, tou: 6, ws: 4, wounds: 6, stats: "Armor: 132 | STR: 2 | TOU: 6 | WS: 4 | WOU: 6" },
+                { slot: "belt", name: "Decimator Deathgirdle", level: 7, renown: 7, str: 2, tou: 3, wounds: 4, bonus: "+1% Reduced chance to be Critically Hit", sres: 33, eres: 20, cres: 20, stats: "STR: 2 | TOU: 3 | WOU: 4 | +1% Reduced chance to be Critically Hit | SRes: 33 | ERes: 20 | CRes: 20" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+18 Toughness" },
@@ -28,9 +28,9 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             requiredLevel: 8,
             requiredRenown: 8,
             pieces: [
-                { slot: "body", name: "Braggart Carapace", level: 8, renown: 8, armor: 165, str: 6, ws: 8, wounds: 5, bonus: "+1% Reduced chance to be Parried" },
-                { slot: "boots", name: "Braggart Darkboots", level: 7, renown: 7, armor: 132, str: 6, tou: 2, ws: 4, wounds: 6 },
-                { slot: "belt", name: "Braggart Deathgirdle", level: 7, renown: 7, str: 4, tou: 2, wounds: 3, bonus: "+1% Melee Critical Chance", sres: 23, eres: 25, cres: 25 }
+                { slot: "body", name: "Braggart Carapace", level: 8, renown: 8, armor: 165, str: 6, ws: 8, wounds: 5, bonus: "+1% Reduced chance to be Parried", stats: "Armor: 165 | STR: 6 | WS: 8 | WOU: 5 | +1% Reduced chance to be Parried" },
+                { slot: "boots", name: "Braggart Darkboots", level: 7, renown: 7, armor: 132, str: 6, tou: 2, ws: 4, wounds: 6, stats: "Armor: 132 | STR: 6 | TOU: 2 | WS: 4 | WOU: 6" },
+                { slot: "belt", name: "Braggart Deathgirdle", level: 7, renown: 7, str: 4, tou: 2, wounds: 3, bonus: "+1% Melee Critical Chance", sres: 23, eres: 25, cres: 25, stats: "STR: 4 | TOU: 2 | WOU: 3 | +1% Melee Critical Chance | SRes: 23 | ERes: 25 | CRes: 25" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+18 Strength" },
