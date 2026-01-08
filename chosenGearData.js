@@ -4,7 +4,7 @@
 // Add Chosen gear to the main gearDatabase in the same structure as Shaman (Decimator & Braggart only for test)
 if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
     Object.assign(gearDatabase.recommendations, {
-        'chosen_tank_rr8': {
+        'chaos_knight_tank_rr8': {
             setName: 'Decimator Set',
             pieces: [
                 { slot: 'Body', name: 'Decimator Carapace', stats: 'Armor: 165 | STR: 4 | TOU: 8 | INI: 4 | WOU: 4 | +1% Block', level: 8, renown: 8 },
@@ -17,7 +17,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             ],
             totalStats: 'Armor: 297 | STR: 8 | TOU: 17 | WS: 4 | INI: 4 | WOU: 10 | SRes: 33 | ERes: 20 | CRes: 20'
         },
-        'chosen_dps_rr8': {
+        'chaos_knight_dps_rr8': {
             setName: 'Set of the Braggart',
             pieces: [
                 { slot: 'Body', name: 'Braggart Carapace', stats: 'Armor: 165 | STR: 6 | WS: 8 | WOU: 5 | +1% Reduced chance to be Parried', level: 8, renown: 8 },
