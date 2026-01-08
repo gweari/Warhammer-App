@@ -213,55 +213,67 @@ function displayRecommendations(classObj, level, renown, role, gearSets, crestSa
     let html = '';
 
     if (gearSets && gearSets.length > 0) {
-        // 1. Restore classic summary section (class, level, role, renown)
-        html += `<div class="summary-block" style="background: rgba(255,255,255,0.07); border-left: 4px solid #ffb81c; margin-bottom: 18px; padding: 10px 18px 8px 18px; font-size: 1.08rem; color: #fff;">
-            <span style="color:#ffb81c; font-weight:700;">Class:</span> ${classObj.name} &nbsp; | &nbsp;
-            <span style="color:#ffb81c; font-weight:700;">Role:</span> ${role || classObj.roles[0]} &nbsp; | &nbsp;
-            <span style="color:#ffb81c; font-weight:700;">Level:</span> ${level} &nbsp; | &nbsp;
-            <span style="color:#ffb81c; font-weight:700;">Renown:</span> ${renown}
-        </div>`;
+            // 1. Classic summary section (class, level, role, renown)
+            html += `<div class="summary-block" style="background: rgba(255,255,255,0.07); border-left: 4px solid #ffb81c; margin-bottom: 18px; padding: 10px 18px 8px 18px; font-size: 1.08rem; color: #fff;">
+                <span style="color:#ffb81c; font-weight:700;">Class:</span> ${classObj.name} &nbsp; | &nbsp;
+                <span style="color:#ffb81c; font-weight:700;">Role:</span> ${role || classObj.roles[0]} &nbsp; | &nbsp;
+                <span style="color:#ffb81c; font-weight:700;">Level:</span> ${level} &nbsp; | &nbsp;
+                <span style="color:#ffb81c; font-weight:700;">Renown:</span> ${renown}
+            </div>`;
 
-        // 2. Show BiS (first set) breakdown
-        displayGearSet(gearSets[0], 0, true);
+            // 2. BiS set breakdown
+            displayGearSet(gearSets[0], 0, true);
 
-        // 3. Show total stats for BiS set (below breakdown)
-        let bisSet = gearSets[0];
-        if (bisSet.totalStats) {
-            let displayStats = bisSet.totalStats;
-            if (bisSet.setBonuses && Array.isArray(bisSet.setBonuses)) {
-                const statBonuses = {};
-                bisSet.setBonuses.forEach(bonusEntry => {
-                    const bonus = bonusEntry.bonus;
-                    const matches = bonus.matchAll(/\+(\d+)(%?)\s+([^,|]+)/g);
-                    for (const match of matches) {
-                        const value = match[1];
-                        const isPercent = match[2];
-                        let statName = match[3].trim();
-                        if (!statBonuses[statName]) {
-                            statBonuses[statName] = { value: 0, isPercent: false };
+            // 3. Total set stats for BiS set
+            let bisSet = gearSets[0];
+            if (bisSet.totalStats) {
+                let displayStats = bisSet.totalStats;
+                if (bisSet.setBonuses && Array.isArray(bisSet.setBonuses)) {
+                    const statBonuses = {};
+                    bisSet.setBonuses.forEach(bonusEntry => {
+                        const bonus = bonusEntry.bonus;
+                        const matches = bonus.matchAll(/\+(\d+)(%?)\s+([^,|]+)/g);
+                        for (const match of matches) {
+                            const value = match[1];
+                            const isPercent = match[2];
+                            let statName = match[3].trim();
+                            if (!statBonuses[statName]) {
+                                statBonuses[statName] = { value: 0, isPercent: false };
+                            }
+                            statBonuses[statName].value += parseInt(value);
+                            if (isPercent) statBonuses[statName].isPercent = true;
                         }
-                        statBonuses[statName].value += parseInt(value);
-                        if (isPercent) statBonuses[statName].isPercent = true;
-                    }
-                });
-                for (const [statName, bonus] of Object.entries(statBonuses)) {
-                    const bonusStr = bonus.isPercent ? `+${bonus.value}%` : `+${bonus.value}`;
-                    const pattern = new RegExp(`(${statName}:\s*)(\d+)`, 'i');
-                    if (pattern.test(displayStats)) {
-                        displayStats = displayStats.replace(pattern, (match, prefix, currentValue) => {
-                            const newValue = parseInt(currentValue) + (bonus.isPercent ? 0 : bonus.value);
-                            return `${prefix}${newValue}`;
-                        });
-                    } else {
-                        displayStats += ` | ${bonusStr} ${statName}`;
+                    });
+                    for (const [statName, bonus] of Object.entries(statBonuses)) {
+                        const bonusStr = bonus.isPercent ? `+${bonus.value}%` : `+${bonus.value}`;
+                        const pattern = new RegExp(`(${statName}:\s*)(\d+)`, 'i');
+                        if (pattern.test(displayStats)) {
+                            displayStats = displayStats.replace(pattern, (match, prefix, currentValue) => {
+                                const newValue = parseInt(currentValue) + (bonus.isPercent ? 0 : bonus.value);
+                                return `${prefix}${newValue}`;
+                            });
+                        } else {
+                            displayStats += ` | ${bonusStr} ${statName}`;
+                        }
                     }
                 }
+                html += `<div class="gear-item" style="background: rgba(100, 100, 255, 0.15); border-left-color: #6b9eff; margin-bottom: 15px;">
+                    <div class="gear-slot" style="color: #8bb4ff;">📊 Total Set Stats (with Set Bonuses)</div>
+                    <div class="gear-name" style="font-size: 0.95rem; margin-top: 5px;">${displayStats}</div>
+                </div>`;
             }
-            html += `<div class="gear-item" style="background: rgba(100, 100, 255, 0.15); border-left-color: #6b9eff; margin-bottom: 15px;">
-                <div class="gear-slot" style="color: #8bb4ff;">📊 Total Set Stats (with Set Bonuses)</div>
-                <div class="gear-name" style="font-size: 0.95rem; margin-top: 5px;">${displayStats}</div>
-            </div>`;
-        }
+
+            // 4. Show set bonuses for BiS set
+            if (bisSet.setBonuses && Array.isArray(bisSet.setBonuses)) {
+                html += `<div class="gear-item" style="background: rgba(0, 255, 100, 0.1); border-left-color: #5dff8c;">
+                    <div class="gear-slot" style="color: #5dff8c; font-size: 1.05rem;">✨ Set Bonuses</div>`;
+                bisSet.setBonuses.forEach(bonus => {
+                    html += `<div class="gear-name" style="font-size: 0.9rem; padding: 5px 0; color: #d0d0d0;">
+                        <span style="color: #5dff8c; font-weight: 700;">${bonus.pieces} Pieces:</span> ${bonus.bonus}
+                    </div>`;
+                });
+                html += '</div>';
+            }
 
         // 4. Show set bonuses for BiS set
         if (bisSet.setBonuses && Array.isArray(bisSet.setBonuses)) {
