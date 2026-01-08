@@ -211,16 +211,16 @@ function fetchGearRecommendations() {
 function displayRecommendations(classObj, level, renown, role, gearSets, crestSaver, pveProgression) {
     const resultsDiv = document.getElementById('results');
     let html = '';
+
     if (gearSets && gearSets.length > 0) {
-        // Loop over each gearSet and process
-        gearSets.forEach((gearSet, idx) => {
-            let displayStats = gearSet.totalStats;
-            // Parse and add set bonuses to the total stats using only full stat names
-            if (gearSet.setBonuses && Array.isArray(gearSet.setBonuses)) {
+        // Show BiS (first set) summary at the top
+        let bisSet = gearSets[0];
+        if (bisSet.totalStats) {
+            let displayStats = bisSet.totalStats;
+            if (bisSet.setBonuses && Array.isArray(bisSet.setBonuses)) {
                 const statBonuses = {};
-                gearSet.setBonuses.forEach(bonusEntry => {
+                bisSet.setBonuses.forEach(bonusEntry => {
                     const bonus = bonusEntry.bonus;
-                    // Match patterns like "+45 Armor", "+20 Willpower", "+4% Dodge", "+4 HP Every 4s", etc.
                     const matches = bonus.matchAll(/\+(\d+)(%?)\s+([^,|]+)/g);
                     for (const match of matches) {
                         const value = match[1];
@@ -233,19 +233,15 @@ function displayRecommendations(classObj, level, renown, role, gearSets, crestSa
                         if (isPercent) statBonuses[statName].isPercent = true;
                     }
                 });
-                // Add bonuses to the displayStats string
                 for (const [statName, bonus] of Object.entries(statBonuses)) {
                     const bonusStr = bonus.isPercent ? `+${bonus.value}%` : `+${bonus.value}`;
-                    // Try to match stat in displayStats by full name (case-insensitive)
-                    const pattern = new RegExp(`(${statName}:\\s*)(\\d+)`, 'i');
+                    const pattern = new RegExp(`(${statName}:\s*)(\d+)`, 'i');
                     if (pattern.test(displayStats)) {
-                        // Add to existing stat
                         displayStats = displayStats.replace(pattern, (match, prefix, currentValue) => {
                             const newValue = parseInt(currentValue) + (bonus.isPercent ? 0 : bonus.value);
                             return `${prefix}${newValue}`;
                         });
                     } else {
-                        // Append new stat (for percentage bonuses not in base stats)
                         displayStats += ` | ${bonusStr} ${statName}`;
                     }
                 }
@@ -254,9 +250,8 @@ function displayRecommendations(classObj, level, renown, role, gearSets, crestSa
                 <div class="gear-slot" style="color: #8bb4ff;">📊 Total Set Stats (with Set Bonuses)</div>
                 <div class="gear-name" style="font-size: 0.95rem; margin-top: 5px;">${displayStats}</div>
             </div>`;
-            // ...existing code for displaying each gearSet...
-        });
-        // Show BiS (first set) always
+        }
+        // Show BiS (first set) breakdown
         displayGearSet(gearSets[0], 0, true);
         // If there are additional sets, add a button to show them
         if (gearSets.length > 1) {
@@ -278,7 +273,6 @@ function displayRecommendations(classObj, level, renown, role, gearSets, crestSa
                 </div>
                 <div id="otherSets" style="display: none;">
             `;
-            // Add other sets (hidden initially)
             gearSets.slice(1).forEach((gearSet, index) => {
                 html += `<div style="height: 3px; background: linear-gradient(90deg, rgba(255,184,28,0) 0%, rgba(255,184,28,0.5) 50%, rgba(255,184,28,0) 100%); margin: 40px 0;"></div>`;
                 displayGearSet(gearSet, index + 1, false);
