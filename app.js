@@ -63,6 +63,15 @@ function initializeApp() {
     populateClassDropdown();
     setupFormListener();
     setupClassChangeListener();
+}
+
+// Add any additional closing braces needed to properly terminate all open functions/blocks
+}
+}
+}
+}
+}
+}
 
 function populateClassDropdown() {
     const classSelect = document.getElementById('class');
