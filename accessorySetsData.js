@@ -4,6 +4,415 @@
 // Add accessory sets to the main gearDatabase
 if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
     Object.assign(gearDatabase.recommendations, {
+        // RvR Auxiliary
+        "Overlord Set": {
+            setName: "Overlord Set",
+            items: [
+                {
+                    name: "Sholdafings of the Overlord",
+                    rank: 40,
+                    cost: "80 / 120",
+                    armor: 240,
+                    willpower: 23,
+                    toughness: 18,
+                    wounds: 12,
+                    initiative: 14,
+                    bonus1: "+2% Reduction in being Critically Hit",
+                    bonus2: null
+                },
+                {
+                    name: "Waaaghat of the Overlord",
+                    rank: 40,
+                    cost: "80 / 120",
+                    armor: 240,
+                    willpower: 28,
+                    toughness: null,
+                    wounds: 10,
+                    initiative: 14,
+                    bonus1: "+2% Reduction in being Critically Hit",
+                    bonus2: "+12 Healing Power"
+                }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+61 Wounds" }
+            ]
+        },
+        "Imperator Set": {
+            setName: "Imperator Set",
+            items: [
+                {
+                    name: "Sholdafings of the Imperator",
+                    rank: 40,
+                    cost: "80 / 120",
+                    armor: 240,
+                    intelligence: 23,
+                    toughness: 12,
+                    wounds: 15,
+                    initiative: 14,
+                    bonus1: "+2% Reduced Chance to be Disrupted",
+                    bonus2: null
+                },
+                {
+                    name: "Waaaghat of the Imperator",
+                    rank: 40,
+                    cost: "80 / 120",
+                    armor: 240,
+                    intelligence: 28,
+                    toughness: null,
+                    wounds: 10,
+                    initiative: 14,
+                    bonus1: "+2% Reduced Chance to be Disrupted",
+                    bonus2: "+12 Magic Power"
+                }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+61 Initiative" }
+            ]
+        },
+
+        // Genesis Accessories
+        "Genesis Curative Set": {
+            setName: "Genesis Curative Set",
+            items: [
+                {
+                    name: "Genesis Aspect of the Curative",
+                    rank: 36,
+                    cost: "1 Genesis Aspect",
+                    willpower: null,
+                    wounds: null,
+                    initiative: 24,
+                    bonus1: "+36 Healing Power",
+                    bonus2: null,
+                    spiritResist: 64,
+                    elementalResist: 64,
+                    corporealResist: 64
+                },
+                {
+                    name: "Genesis Fragment of the Curative",
+                    rank: 36,
+                    cost: "1 Genesis Fragment",
+                    willpower: 24,
+                    wounds: null,
+                    initiative: null,
+                    bonus1: "+1% Dodge",
+                    bonus2: "+1% Disrupt",
+                    spiritResist: 57,
+                    elementalResist: 57,
+                    corporealResist: 57
+                },
+                {
+                    name: "Genesis Remnant of the Curative",
+                    rank: 36,
+                    cost: "1 Genesis Remnant",
+                    willpower: 24,
+                    wounds: 24,
+                    initiative: null,
+                    bonus1: null,
+                    bonus2: null,
+                    spiritResist: 64,
+                    elementalResist: 64,
+                    corporealResist: 64
+                },
+                {
+                    name: "Genesis Shard of the Curative",
+                    rank: 36,
+                    cost: "1 Genesis Shard",
+                    willpower: null,
+                    wounds: null,
+                    initiative: null,
+                    bonus1: "+2% Dodge",
+                    bonus2: "+2% Disrupt",
+                    spiritResist: 55,
+                    elementalResist: 55,
+                    corporealResist: 55
+                },
+                {
+                    name: "Genesis Cloak of the Curative",
+                    rank: 36,
+                    cost: "1 Genesis Cloak",
+                    willpower: null,
+                    wounds: null,
+                    initiative: null,
+                    bonus1: "+4 AP Per Second",
+                    bonus2: null,
+                    spiritResist: 53,
+                    elementalResist: 53,
+                    corporealResist: 53
+                }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+37 Willpower" },
+                { pieces: 3, bonus: "+3% Reduction to be Critically Hit" },
+                { pieces: 4, bonus: "+3% Armor Penetration Reduced" },
+                { pieces: 5, bonus: "+3% Healing Critical Chance" }
+            ]
+        },
+        "Genesis Scholar Set": {
+            setName: "Genesis Scholar Set",
+            items: [
+                {
+                    name: "Genesis Aspect of the Scholar",
+                    rank: 36,
+                    cost: "1 Genesis Aspect",
+                    intelligence: null,
+                    wounds: null,
+                    initiative: 24,
+                    bonus1: "+36 Magic Power",
+                    bonus2: null,
+                    spiritResist: 64,
+                    elementalResist: 64,
+                    corporealResist: 64
+                },
+                {
+                    name: "Genesis Fragment of the Scholar",
+                    rank: 36,
+                    cost: "1 Genesis Fragment",
+                    intelligence: 24,
+                    wounds: null,
+                    initiative: null,
+                    bonus1: "+1% Dodge",
+                    bonus2: "+1% Disrupt",
+                    spiritResist: 57,
+                    elementalResist: 57,
+                    corporealResist: 57
+                },
+                {
+                    name: "Genesis Remnant of the Scholar",
+                    rank: 36,
+                    cost: "1 Genesis Remnant",
+                    intelligence: 24,
+                    wounds: 24,
+                    initiative: null,
+                    bonus1: null,
+                    bonus2: null,
+                    spiritResist: 64,
+                    elementalResist: 64,
+                    corporealResist: 64
+                },
+                {
+                    name: "Genesis Shard of the Scholar",
+                    rank: 36,
+                    cost: "1 Genesis Shard",
+                    intelligence: null,
+                    wounds: null,
+                    initiative: null,
+                    bonus1: "+2% Dodge",
+                    bonus2: "+2% Disrupt",
+                    spiritResist: 55,
+                    elementalResist: 55,
+                    corporealResist: 55
+                },
+                {
+                    name: "Genesis Cloak of the Scholar",
+                    rank: 36,
+                    cost: "1 Genesis Cloak",
+                    intelligence: 28,
+                    wounds: null,
+                    initiative: null,
+                    bonus1: "+4 AP Per Second",
+                    bonus2: null,
+                    spiritResist: 53,
+                    elementalResist: 53,
+                    corporealResist: 53
+                }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+37 Intelligence" },
+                { pieces: 3, bonus: "+3% Reduce Chance to be Disrupt" },
+                { pieces: 4, bonus: "+3% Reduce Chance to be Critically Hit" },
+                { pieces: 5, bonus: "+3% Magic Critical Chance" }
+            ]
+        },
+
+        // Warrant Accessories
+        "Arcanist Set": {
+            setName: "Arcanist Set",
+            items: [
+                {
+                    name: "Icon of the Arcanist",
+                    rank: 36,
+                    cost: 1,
+                    intelligence: 17,
+                    wounds: 12,
+                    initiative: 13,
+                    bonus1: null,
+                    bonus2: null,
+                    spiritResist: 62,
+                    elementalResist: 62,
+                    corporealResist: 62
+                },
+                {
+                    name: "Mark of the Arcanist",
+                    rank: 36,
+                    cost: 1,
+                    intelligence: 24,
+                    wounds: null,
+                    initiative: null,
+                    bonus1: "+1% Disrupt",
+                    bonus2: null,
+                    spiritResist: 68,
+                    elementalResist: 68,
+                    corporealResist: 68
+                },
+                {
+                    name: "Cincture of the Arcanist",
+                    rank: 36,
+                    cost: 1,
+                    intelligence: 16,
+                    wounds: null,
+                    initiative: 15,
+                    bonus1: "+18 Magic Power",
+                    bonus2: null,
+                    spiritResist: 60,
+                    elementalResist: 60,
+                    corporealResist: 60
+                }
+            ],
+            setBonuses: [
+                { pieces: 3, bonus: "+4 Morale Per Second" }
+            ]
+        },
+        "Medic Set": {
+            setName: "Medic Set",
+            items: [
+                {
+                    name: "Icon of the Medic",
+                    rank: 36,
+                    cost: 1,
+                    willpower: 17,
+                    wounds: 12,
+                    initiative: 13,
+                    bonus1: null,
+                    bonus2: null,
+                    spiritResist: 62,
+                    elementalResist: 62,
+                    corporealResist: 62
+                },
+                {
+                    name: "Mark of the Medic",
+                    rank: 36,
+                    cost: 1,
+                    willpower: 24,
+                    wounds: null,
+                    initiative: null,
+                    bonus1: "+1% Disrupt",
+                    bonus2: null,
+                    spiritResist: 68,
+                    elementalResist: 68,
+                    corporealResist: 68
+                },
+                {
+                    name: "Cincture of the Medic",
+                    rank: 36,
+                    cost: 1,
+                    willpower: 16,
+                    wounds: null,
+                    initiative: null,
+                    bonus1: "+2 AP Per Second",
+                    bonus2: "+18 Healing Power",
+                    spiritResist: 65,
+                    elementalResist: 65,
+                    corporealResist: 65
+                }
+            ],
+            setBonuses: [
+                { pieces: 3, bonus: "+4 Morale Per Second" }
+            ]
+        },
+        "Mender Set": {
+            setName: "Mender Set",
+            items: [
+                {
+                    name: "Icon of the Mender",
+                    rank: 36,
+                    cost: 1,
+                    willpower: 20,
+                    wounds: 16,
+                    initiative: 16,
+                    bonus1: null,
+                    bonus2: null,
+                    spiritResist: 69,
+                    elementalResist: 69,
+                    corporealResist: 69
+                },
+                {
+                    name: "Mark of the Mender",
+                    rank: 36,
+                    cost: 1,
+                    willpower: 19,
+                    wounds: null,
+                    initiative: null,
+                    bonus1: "+2% Disrupt",
+                    bonus2: null,
+                    spiritResist: 72,
+                    elementalResist: 72,
+                    corporealResist: 72
+                },
+                {
+                    name: "Cloak of the Mender",
+                    rank: 36,
+                    cost: 1,
+                    willpower: 16,
+                    wounds: null,
+                    initiative: null,
+                    bonus1: "+2 AP Per Second",
+                    bonus2: "+18 Healing Power",
+                    spiritResist: 65,
+                    elementalResist: 65,
+                    corporealResist: 65
+                }
+            ],
+            setBonuses: [
+                { pieces: 3, bonus: "+3% Reduction to be Critically Hit" }
+            ]
+        },
+        "Seer Set": {
+            setName: "Seer Set",
+            items: [
+                {
+                    name: "Icon of the Seer",
+                    rank: 36,
+                    cost: 1,
+                    intelligence: 20,
+                    wounds: 16,
+                    initiative: 16,
+                    bonus1: null,
+                    bonus2: null,
+                    spiritResist: 69,
+                    elementalResist: 69,
+                    corporealResist: 69
+                },
+                {
+                    name: "Mark of the Seer",
+                    rank: 36,
+                    cost: 1,
+                    intelligence: 19,
+                    wounds: null,
+                    initiative: null,
+                    bonus1: "+2% Disrupt",
+                    bonus2: null,
+                    spiritResist: 72,
+                    elementalResist: 72,
+                    corporealResist: 72
+                },
+                {
+                    name: "Cloak of the Seer",
+                    rank: 36,
+                    cost: 1,
+                    intelligence: 16,
+                    wounds: null,
+                    initiative: null,
+                    bonus1: "+2 AP Per Second",
+                    bonus2: "+18 Magic Power",
+                    spiritResist: 65,
+                    elementalResist: 65,
+                    corporealResist: 65
+                }
+            ],
+            setBonuses: [
+                { pieces: 3, bonus: "+3% Reduced Chance to be Disrupted" }
+            ]
+        },
         accessory_overlord_r40: {
             name: "Overlord Set",
             type: "accessory",
