@@ -1,4 +1,89 @@
+// Mapping of set names to their crest/token costs and currency type
+const setCostData = {
+    // Recruit Ward
+    'Decimator': { cost: 75, currency: 'War Crests' },
+    'Braggart': { cost: 75, currency: 'War Crests' },
+    'Carnage': { cost: 61, currency: 'War Tokens' },
+    // Scout Ward
+    'Obliterator': { cost: 142, currency: 'War Crests' },
+    'Challenger': { cost: 142, currency: 'War Crests' },
+    'Havoc': { cost: 197, currency: 'War Tokens' },
+    'Keeper': { cost: 0, currency: 'Dungeon' }, // Dungeon: Sewers/Sacellum
+    // Soldier Ward
+    'Devastator': { cost: 220, currency: 'War Crests' },
+    'Duelist': { cost: 220, currency: 'War Crests' },
+    'Mayhem': { cost: 379, currency: 'War Tokens' },
+    // Officer Ward
+    'Annihilator': { cost: 352, currency: 'War Crests' },
+    'Mercenary': { cost: 352, currency: 'War Crests' },
+    'Ruin': { cost: 612, currency: 'War Tokens' },
+    // Conqueror Ward
+    'Conqueror': { cost: 849, currency: 'War Crests' },
+    'Dominator': { cost: 849, currency: 'War Crests' },
+    'Red-Eye': { cost: 0, currency: 'Dungeon' }, // Dungeon: Gunbad
+    // Vanquisher Ward
+    'Oppressor': { cost: 1691, currency: 'War Crests' },
+    'Vanquisher': { cost: 1691, currency: 'War Crests' },
+    'Onslaught': { cost: 0, currency: 'PQ' }, // PQ Chapter 22
+    'Sentinel': { cost: 0, currency: 'Dungeon' }, // Dungeon: Crypts/Bilerot
+    // Invader Ward
+    'Invader': { cost: 4567, currency: 'War Crests' },
+    'Victorious': { cost: 6128, currency: 'War Crests' },
+    'Triumphant': { cost: 6128, currency: 'War Crests' },
+    'Bloodlord': { cost: 0, currency: 'Dungeon' }, // Dungeon: Bastion Stairs
+    // PvE sets (no wards)
+    'Beastlord': { cost: 0, currency: 'Boss' }, // Open World Bosses
+    'Vale-Walker': { cost: 0, currency: 'Dungeon' }, // Dungeon: Hunter's Vale
+    // End Game
+    'Warlord': { cost: 7922, currency: 'War Crests' },
+    'Sovereign': { cost: 10333, currency: 'War Crests' }
+};
 // Main application logic
+
+// Unified Gear Database - Merges data from gearData.js and endgameGearData.js
+const UnifiedGearDatabase = {
+    // Merge gear sets from both sources
+    getGearSets: function(classId) {
+        const primarySets = gearData.gearSets[classId] || {};
+        const endgameSets = (typeof EndgameGearData !== 'undefined' && EndgameGearData.classes[classId]) || {};
+        
+        // Merge both sources - endgame data takes precedence if there are conflicts
+        return { ...primarySets, ...endgameSets };
+    },
+    
+    // Get class list (uses existing gearDatabase structure)
+    classes: gearDatabase.classes,
+    
+    getClassById: function(classId) {
+        return gearDatabase.getClassById(classId);
+    },
+    
+    // Get recommendations from both data sources
+    getRecommendations: function(classId, level, renown, role) {
+        const primaryRecs = gearData.getRecommendations(classId, level, renown, role);
+        let endgameRecs = [];
+        
+        // Try to get endgame recommendations if available
+        if (typeof EndgameGearData !== 'undefined' && EndgameGearData.getRecommendations) {
+            endgameRecs = EndgameGearData.getRecommendations(classId, level, renown, role);
+        }
+        
+        // Merge results, removing duplicates by set name
+        const allRecs = [...primaryRecs, ...endgameRecs];
+        const uniqueSets = {};
+        
+        allRecs.forEach(set => {
+            const key = set.setName || 'Unknown';
+            // Keep the set with more data (more pieces or more complete info)
+            if (!uniqueSets[key] || (set.pieces && set.pieces.length > (uniqueSets[key].pieces?.length || 0))) {
+                uniqueSets[key] = set;
+            }
+        });
+        
+        return Object.values(uniqueSets);
+    }
+};
+
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
 });
@@ -7,7 +92,6 @@ function initializeApp() {
     populateClassDropdown();
     setupFormListener();
     setupClassChangeListener();
-}
 
 function populateClassDropdown() {
     const classSelect = document.getElementById('class');
@@ -15,7 +99,7 @@ function populateClassDropdown() {
     
     // Group classes by faction
     const factions = {};
-    gearDatabase.classes.forEach(classObj => {
+    UnifiedGearDatabase.classes.forEach(classObj => {
         if (!factions[classObj.faction]) {
             factions[classObj.faction] = [];
         }
@@ -86,82 +170,121 @@ function fetchGearRecommendations() {
     const level = parseInt(document.getElementById('level').value);
     const renown = parseInt(document.getElementById('renown').value);
     const role = document.getElementById('role').value;
+    const crestSaver = document.getElementById('crestSaver') && document.getElementById('crestSaver').checked;
 
     if (!classId) {
         showError('Please select a class');
         return;
     }
 
-    const classObj = gearDatabase.getClassById(classId);
-    
+    const classObj = UnifiedGearDatabase.getClassById(classId);
     // Check if role is required
     if (classObj.roles.length > 1 && !role) {
         showError('Please select a role');
         return;
     }
-
     if (level < 1 || level > 40) {
         showError('Level must be between 1 and 40');
         return;
     }
-
     if (renown < 1 || renown > 80) {
         showError('Renown Rank must be between 1 and 80');
         return;
     }
 
-    const gearSets = gearDatabase.getRecommendations(classId, level, renown, role);
+    let gearSets = UnifiedGearDatabase.getRecommendations(classId, level, renown, role);
 
-    displayRecommendations(classObj, level, renown, role, gearSets);
+    // PvE progression order (edit as needed)
+    const pveProgression = [
+        'Ruin',
+        'Beastlord',
+        'Sentinel',
+        'Bloodlord'
+    ];
+
+    // Helper: get/set obtained sets from localStorage
+    function getObtainedSets() {
+        try {
+            return JSON.parse(localStorage.getItem('obtainedPveSets') || '[]');
+        } catch { return []; }
+    }
+    function setObtainedSets(arr) {
+        localStorage.setItem('obtainedPveSets', JSON.stringify(arr));
+    }
+
+    // If Crest Saver Mode is enabled and level 40, only recommend the next uncompleted PvE set in order
+    if (crestSaver && level === 40) {
+        const obtained = getObtainedSets();
+        // Find the next PvE set in progression not yet obtained
+        let nextSetName = null;
+        for (const setName of pveProgression) {
+            if (!obtained.includes(setName)) {
+                nextSetName = setName;
+                break;
+            }
+        }
+        if (nextSetName) {
+            // Only show the next set in progression
+            gearSets = gearSets.filter(set => (set.setName || '').toLowerCase().includes(nextSetName.toLowerCase()));
+        } else {
+            // All PvE sets obtained, show all sets as fallback
+        }
+    }
+
+    displayRecommendations(classObj, level, renown, role, gearSets, crestSaver, pveProgression);
 }
 
-function displayRecommendations(classObj, level, renown, role, gearSets) {
+function displayRecommendations(classObj, level, renown, role, gearSets, crestSaver, pveProgression) {
     const resultsDiv = document.getElementById('results');
     
     // Determine tier for display
-    let tierName = 'Starter';
-    if (level >= 31 && renown >= 61) {
-        tierName = 'Endgame';
-    } else if (level >= 21 && renown >= 31) {
-        tierName = 'Mid-Tier';
-    } else if (level >= 11 && renown >= 11) {
-        tierName = 'Low-Tier';
+                let displayStats = gearSet.totalStats;
+                // Parse and add set bonuses to the total stats using only full stat names
+                if (gearSet.setBonuses && Array.isArray(gearSet.setBonuses)) {
+                    const statBonuses = {};
+                    gearSet.setBonuses.forEach(bonusEntry => {
+                        const bonus = bonusEntry.bonus;
+                        // Match patterns like "+45 Armor", "+20 Willpower", "+4% Dodge", "+4 HP Every 4s", etc.
+                        const matches = bonus.matchAll(/\+(\d+)(%?)\s+([^,|]+)/g);
+                        for (const match of matches) {
+                            const value = match[1];
+                            const isPercent = match[2];
+                            let statName = match[3].trim().replace(/\s+/g, ' ');
+                            if (!statBonuses[statName]) {
+                                statBonuses[statName] = { value: 0, isPercent: false };
+                            }
+                            statBonuses[statName].value += parseInt(value);
+                            if (isPercent) statBonuses[statName].isPercent = true;
+                        }
+                    });
+                    // Add bonuses to the displayStats string
+                    for (const [statName, bonus] of Object.entries(statBonuses)) {
+                        const bonusStr = bonus.isPercent ? `+${bonus.value}%` : `+${bonus.value}`;
+                        // Try to match stat in displayStats by full name (case-insensitive)
+                        const pattern = new RegExp(`(${statName}:\\s*)(\\d+)`, 'i');
+                        if (pattern.test(displayStats)) {
+                            // Add to existing stat
+                            displayStats = displayStats.replace(pattern, (match, prefix, currentValue) => {
+                                const newValue = parseInt(currentValue) + (bonus.isPercent ? 0 : bonus.value);
+                                return `${prefix}${newValue}`;
+                            });
+                        } else {
+                            // Append new stat (for percentage bonuses not in base stats)
+                            displayStats += ` | ${bonusStr} ${statName}`;
+                        }
+                    }
+                }
+                html += `<div class="gear-item" style="background: rgba(100, 100, 255, 0.15); border-left-color: #6b9eff; margin-bottom: 15px;">
+                    <div class="gear-slot" style="color: #8bb4ff;">📊 Total Set Stats (with Set Bonuses)</div>
+                    <div class="gear-name" style="font-size: 0.95rem; margin-top: 5px;">${displayStats}</div>
+                </div>`;
+                // ...existing code...
     }
-
-    let html = `
-        <div class="stats-display">
-            <div class="stat-line">
-                <span class="stat-label">Class:</span>
-                <span class="stat-value">${classObj.name}</span>
-            </div>
-            <div class="stat-line">
-                <span class="stat-label">Role:</span>
-                <span class="stat-value">${role || classObj.type}</span>
-            </div>
-            <div class="stat-line">
-                <span class="stat-label">Level:</span>
-                <span class="stat-value">${level}</span>
-            </div>
-            <div class="stat-line">
-                <span class="stat-label">Renown Rank:</span>
-                <span class="stat-value">${renown}</span>
-            </div>
-            <div class="stat-line">
-                <span class="stat-label">Gear Tier:</span>
-                <span class="stat-value">${tierName}</span>
-            </div>
-            <div class="stat-line">
-                <span class="stat-label">Available Sets:</span>
-                <span class="stat-value" style="color: #5dff8c; font-weight: 700;">${gearSets.length}</span>
-            </div>
-        </div>
-    `;
 
     // Display all available gear sets
     if (gearSets && gearSets.length > 0) {
         // Show BiS (first set) always
         displayGearSet(gearSets[0], 0, true);
-        
         // If there are additional sets, add a button to show them
         if (gearSets.length > 1) {
             html += `
@@ -182,13 +305,11 @@ function displayRecommendations(classObj, level, renown, role, gearSets) {
                 </div>
                 <div id="otherSets" style="display: none;">
             `;
-            
             // Add other sets (hidden initially)
             gearSets.slice(1).forEach((gearSet, index) => {
                 html += `<div style="height: 3px; background: linear-gradient(90deg, rgba(255,184,28,0) 0%, rgba(255,184,28,0.5) 50%, rgba(255,184,28,0) 100%); margin: 40px 0;"></div>`;
                 displayGearSet(gearSet, index + 1, false);
             });
-            
             html += '</div>';
         }
     } else {
@@ -196,7 +317,7 @@ function displayRecommendations(classObj, level, renown, role, gearSets) {
     }
 
     resultsDiv.innerHTML = html;
-    
+
     // Add click handler for show others button
     if (gearSets && gearSets.length > 1) {
         const showOthersBtn = document.getElementById('showOthersBtn');
@@ -213,13 +334,66 @@ function displayRecommendations(classObj, level, renown, role, gearSets) {
             });
         }
     }
+
+    // PvE progression checklist and Ward checklist logic (Crest Saver Mode)
+    if (crestSaver && level === 40) {
+        // PvE checklist
+        const checklist = document.getElementById('pveProgressionChecklist');
+        if (checklist) {
+            checklist.querySelectorAll('.pve-prog-checkbox').forEach(cb => {
+                cb.addEventListener('change', function() {
+                    let obtained = [];
+                    try { obtained = JSON.parse(localStorage.getItem('obtainedPveSets') || '[]'); } catch { obtained = []; }
+                    if (this.checked) {
+                        if (!obtained.includes(this.dataset.set)) obtained.push(this.dataset.set);
+                    } else {
+                        obtained = obtained.filter(s => s !== this.dataset.set);
+                    }
+                    localStorage.setItem('obtainedPveSets', JSON.stringify(obtained));
+                    fetchGearRecommendations();
+                });
+            });
+        }
+        // Ward checklist
+        const wardChecklist = document.getElementById('wardProgressionChecklist');
+        if (wardChecklist) {
+            wardChecklist.querySelectorAll('.ward-prog-checkbox').forEach(cb => {
+                cb.addEventListener('change', function() {
+                    let obtainedWards = [];
+                    try { obtainedWards = JSON.parse(localStorage.getItem('obtainedWards') || '[]'); } catch { obtainedWards = []; }
+                    if (this.checked) {
+                        if (!obtainedWards.includes(this.dataset.ward)) obtainedWards.push(this.dataset.ward);
+                    } else {
+                        obtainedWards = obtainedWards.filter(w => w !== this.dataset.ward);
+                    }
+                    localStorage.setItem('obtainedWards', JSON.stringify(obtainedWards));
+                });
+            });
+        }
+    }
     
     function displayGearSet(gearSet, index, isBiS) {
         // Show set name if available
         const setLabel = isBiS ? '🏆 Best in Slot' : `Alternative Set ${index}`;
         if (gearSet.setName) {
+            // Show cost if available
+            let costHtml = '';
+            const costInfo = setCostData[gearSet.setName.replace(/ .*/,"")]; // Match by base set name
+            if (costInfo) {
+                if (costInfo.currency === 'War Crests') {
+                    costHtml = `<span style="color:#ff4d4d; font-weight:600; margin-left:12px;">${costInfo.cost} <span title='War Crests' style='font-size:1.1em;'>🟥</span></span>`;
+                } else if (costInfo.currency === 'War Tokens') {
+                    costHtml = `<span style="color:#4db8ff; font-weight:600; margin-left:12px;">${costInfo.cost} <span title='War Tokens' style='font-size:1.1em;'>🟦</span></span>`;
+                } else if (costInfo.currency === 'Dungeon') {
+                    costHtml = `<span style="color:#ffd700; font-weight:600; margin-left:12px;">Dungeon</span>`;
+                } else if (costInfo.currency === 'PQ') {
+                    costHtml = `<span style="color:#ffd700; font-weight:600; margin-left:12px;">PQ/Chapter 22</span>`;
+                } else if (costInfo.currency === 'Boss') {
+                    costHtml = `<span style="color:#ffd700; font-weight:600; margin-left:12px;">Open World Bosses</span>`;
+                }
+            }
             html += `<div class="gear-item" style="background: rgba(255, 184, 28, ${isBiS ? '0.35' : '0.15'}); border-left-width: 5px; margin-bottom: 20px;">
-                <div class="gear-slot" style="font-size: 1.2rem; color: #ffb81c;">${setLabel}</div>
+                <div class="gear-slot" style="font-size: 1.2rem; color: #ffb81c;">${setLabel}${costHtml}</div>
                 <div class="gear-name" style="font-size: 1.1rem; font-weight: 700; margin-top: 5px;">${gearSet.setName}</div>
             </div>`;
         }
@@ -254,15 +428,52 @@ function displayRecommendations(classObj, level, renown, role, gearSets) {
             });
             html += '</div>';
             
-            // Show total stats if available
+            // Show total stats if available - calculate with set bonuses included
             if (gearSet.totalStats) {
+                let displayStats = gearSet.totalStats;
+                // Parse and add set bonuses to the total stats using only full stat names
+                if (gearSet.setBonuses && Array.isArray(gearSet.setBonuses)) {
+                    const statBonuses = {};
+                    gearSet.setBonuses.forEach(bonusEntry => {
+                        const bonus = bonusEntry.bonus;
+                        // Match patterns like "+45 Armor", "+20 Willpower", "+4% Dodge", "+4 HP Every 4s", etc.
+                        const matches = bonus.matchAll(/\+(\d+)(%?)\s+([^,|]+)/g);
+                        for (const match of matches) {
+                            const value = match[1];
+                            const isPercent = match[2];
+                            // Use stat name exactly as in the bonus (trimmed)
+                            let statName = match[3].trim();
+                            if (!statBonuses[statName]) {
+                                statBonuses[statName] = { value: 0, isPercent: false };
+                            }
+                            statBonuses[statName].value += parseInt(value);
+                            if (isPercent) statBonuses[statName].isPercent = true;
+                        }
+                    });
+                    // Add bonuses to the displayStats string
+                    for (const [statName, bonus] of Object.entries(statBonuses)) {
+                        const bonusStr = bonus.isPercent ? `+${bonus.value}%` : `+${bonus.value}`;
+                        // Try to match stat in displayStats by full name (case-insensitive)
+                        const pattern = new RegExp(`(${statName}:\\s*)(\\d+)`, 'i');
+                        if (pattern.test(displayStats)) {
+                            // Add to existing stat
+                            displayStats = displayStats.replace(pattern, (match, prefix, currentValue) => {
+                                const newValue = parseInt(currentValue) + (bonus.isPercent ? 0 : bonus.value);
+                                return `${prefix}${newValue}`;
+                            });
+                        } else {
+                            // Append new stat (for percentage bonuses not in base stats)
+                            displayStats += ` | ${bonusStr} ${statName}`;
+                        }
+                    }
+                }
                 html += `<div class="gear-item" style="background: rgba(100, 100, 255, 0.15); border-left-color: #6b9eff; margin-bottom: 15px;">
-                    <div class="gear-slot" style="color: #8bb4ff;">📊 Total Set Stats</div>
-                    <div class="gear-name" style="font-size: 0.95rem; margin-top: 5px;">${gearSet.totalStats}</div>
+                    <div class="gear-slot" style="color: #8bb4ff;">📊 Total Set Stats (with Set Bonuses)</div>
+                    <div class="gear-name" style="font-size: 0.95rem; margin-top: 5px;">${displayStats}</div>
                 </div>`;
             }
             
-            // Show set bonuses
+            // Show set bonuses separately
             if (gearSet.setBonuses && Array.isArray(gearSet.setBonuses)) {
                 html += `<div class="gear-item" style="background: rgba(0, 255, 100, 0.1); border-left-color: #5dff8c;">
                     <div class="gear-slot" style="color: #5dff8c; font-size: 1.05rem;">✨ Set Bonuses</div>`;
