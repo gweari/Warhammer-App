@@ -985,21 +985,6 @@ const gearDatabase = {
         'shaman_goblin_healer_rr70': {
             setName: 'Sovereign Set of da Great Green',
             pieces: [
-                { slot: 'Head', name: 'Sovereign Morkyfeets of da Great Green', stats: 'Armor: 247 | WP: 30, INI: 17, WOU: 21 | +2 Morale Per Second' },
-                { slot: 'Chest', name: 'Sovereign Robefings of da Great Green', stats: 'Armor: 334 | WP: 30, TOU: 20, INI: 25, WOU: 20 | +2 AP Per Second' },
-                { slot: 'Hands', name: 'Sovereign Greenbringas of da Great Green', stats: 'Armor: 247 | WP: 28, INI: 19, WOU: 20 | +17 Healing Power' },
-                { slot: 'Shoulders', name: 'Sovereign Sholdafings of da Great Green', stats: 'Armor: 296 | WP: 29, TOU: 20, INI: 22 | +2% Healing Crit' },
-                { slot: 'Belt', name: 'Sovereign Waaaghat of da Great Green', stats: 'Armor: 296 | WP: 31, TOU: 20, WOU: 20 | +30 Healing Power' },
-                { slot: 'Accessory', name: 'Sovereign Bitskeepa of da Great Green', stats: 'WP: 20, TOU: 14, INI: 20 | +2% Dodge, +2% Disrupt | 101 SRe, 101 ERe, 102 CRe' },
-                { slot: 'Cloak', name: 'Sovereign Waaaghchain of da Great Green', stats: 'WP: 29, INI: 18 | +2 AP Per Second, +2% Reduced Armor Pen | 87 SRe, 87 ERe, 86 CRe' },
-                { slot: 'Ring', name: 'Sovereign Waaaghfings of da Great Green', stats: 'WP: 18, INI: 22, WOU: 18 | +2% Healing Crit | 102 SRe, 101 ERe, 101 CRe' }
-            ],
-            setBonuses: [
-                { pieces: 2, bonus: '+80 Willpower' },
-                { pieces: 3, bonus: '+88 Wounds' },
-        'shaman_goblin_healer_rr70': {
-            setName: 'Sovereign Set of da Great Green',
-            pieces: [
                 { slot: 'Head', name: 'Sovereign Morkyfeets of da Great Green', stats: 'Armor: 247 | WP: 30, INI: 17, WOU: 21 | +2 Morale Per Second', cost: 44, currency: 'War Crests', level: 40, renown: 76 },
                 { slot: 'Chest', name: 'Sovereign Robefings of da Great Green', stats: 'Armor: 334 | WP: 30, TOU: 20, INI: 25, WOU: 20 | +2 AP Per Second', cost: 79, currency: 'War Crests', level: 40, renown: 78 },
                 { slot: 'Hands', name: 'Sovereign Greenbringas of da Great Green', stats: 'Armor: 247 | WP: 28, INI: 19, WOU: 20 | +17 Healing Power', cost: 38, currency: 'War Crests', level: 40, renown: 76 },
