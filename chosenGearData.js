@@ -434,5 +434,164 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             ],
             totalStats: "Armor: 4260 | TOU: 227 | WOU: 106 | INI: 33 | STR: 124 | WS: 45 | SRes: 290 | ERes: 289 | CRes: 289"
         }
+        ,
+        chosen_mercenary_rr39: {
+            name: "Mercenary Set",
+            class: "chosen",
+            role: "tank",
+            requiredLevel: 35,
+            requiredRenown: 39,
+            pieces: [
+                { slot: "boots", name: "Darkboots of the Mercenary", level: 35, renown: 35, armor: 549, tou: 10, ini: 21, str: 13, bonus: "+2% Dodge" },
+                { slot: "gloves", name: "Gauntlets of the Mercenary", level: 35, renown: 36, armor: 549, tou: 11, ini: 14, str: 9, wounds: 23 },
+                { slot: "shoulders", name: "Shoulderguards of the Mercenary", level: 35, renown: 37, armor: 636, tou: 12, ini: 23, str: 18, bonus: "+3% Reduced Chance to be Parried" },
+                { slot: "helm", name: "Skullcase of the Mercenary", level: 35, renown: 38, armor: 636, tou: 13, str: 15, wounds: 25, bonus: "+2% Disrupt" },
+                { slot: "body", name: "Carapace of the Mercenary", level: 35, renown: 39, armor: 708, tou: 12, ini: 17, str: 30, bonus: "+3 AP Per Second" }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+53 Strength" },
+                { pieces: 3, bonus: "+290 Elemental Resistance" },
+                { pieces: 4, bonus: "+1 to Path of Dread Abilities" },
+                { pieces: 5, bonus: "+5% Melee Critical Chance" }
+            ],
+            totalStats: "Armor: 3078 | TOU: 58 | WOU: 75 | INI: 55 | STR: 78"
+        },
+        chosen_dominator_rr45: {
+            name: "Dominator Set",
+            class: "chosen",
+            role: "tank",
+            requiredLevel: 40,
+            requiredRenown: 45,
+            pieces: [
+                { slot: "boots", name: "Dominator Darkboots", level: 40, renown: 40, armor: 588, tou: 10, ini: 14, ws: 16, bonus: "+2% Melee Critical Chance" },
+                { slot: "gloves", name: "Dominator Gauntlets", level: 40, renown: 41, armor: 588, ws: 8, wounds: 15, bonus: "+2% Reduced Chance to be Parried" },
+                { slot: "belt", name: "Dominator Deathgirdle", level: 40, renown: 42, tou: 6, ini: 12, ws: 18, bonus: "+36 Melee Power", sres: 83, eres: 77, cres: 83 },
+                { slot: "shoulders", name: "Dominator Shoulderguards", level: 40, renown: 43, armor: 675, ini: 12, ws: 18, wounds: 29, bonus: "+10% Auto Attack Haste" },
+                { slot: "helm", name: "Dominator Skullcase", level: 40, renown: 44, armor: 675, ini: 10, ws: 30, wounds: 17, bonus: "+2% Reduced Chance to be Blocked" },
+                { slot: "body", name: "Dominator Carapace", level: 40, renown: 45, armor: 765, tou: 19, ws: 33, ini: 13, bonus: "+3 AP Per Second" }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+57 Strength" },
+                { pieces: 3, bonus: "+63 Wounds" },
+                { pieces: 4, bonus: "+5% Reduced Chance to be Parried" },
+                { pieces: 5, bonus: "Aggrovation - On Hit: 10% Chance to Taunt Target" },
+                { pieces: 6, bonus: "+5% Melee Critical Chance" }
+            ],
+            totalStats: "Armor: 3291 | TOU: 35 | WOU: 48 | INI: 8 | STR: 160 | WS: 102 | SRes: 83 | ERes: 77 | CRes: 83"
+        },
+        chosen_oppressor_rr58: {
+            name: "Oppressor Set",
+            class: "chosen",
+            role: "tank",
+            requiredLevel: 40,
+            requiredRenown: 58,
+            pieces: [
+                { slot: "boots", name: "Oppressor Darkboots", level: 40, renown: 56, armor: 623, wounds: 13, ini: 10, ws: 20, bonus: "+2% Melee Critical Chance" },
+                { slot: "gloves", name: "Oppressor Gauntlets", level: 40, renown: 56, armor: 623, wounds: 14, ws: 20, ini: 17, bonus: "+2% Reduced chance to be Parried" },
+                { slot: "belt", name: "Oppressor Deathgirdle", level: 40, renown: 55, wounds: 12, ini: 20, ws: 24, bonus: "+2% Melee Critical Chance", sres: 87, eres: 86, cres: 86 },
+                { slot: "shoulders", name: "Oppressor Shoulderguards", level: 40, renown: 57, armor: 723, wounds: 23, ws: 20, ini: 11, bonus: "+20 Melee Power" },
+                { slot: "helm", name: "Oppressor Skullcase", level: 40, renown: 57, armor: 723, wounds: 13, ws: 32, ini: 17, bonus: "+2% Parry" },
+                { slot: "body", name: "Oppressor Carapace", level: 40, renown: 58, armor: 822, wounds: 17, ws: 36, ini: 20, bonus: "+2% Reduced Armor Penetration" }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+62 Strength" },
+                { pieces: 3, bonus: "+68 Wounds" },
+                { pieces: 4, bonus: "Aggression - On Attacking Target: 10% chance to increase outgoing damage by 1% for 10 seconds. Stacks up to 5 times" },
+                { pieces: 5, bonus: "+5% Melee Critical Chance" },
+                { pieces: 6, bonus: "+5% Critical Damage" }
+            ],
+            totalStats: "Armor: 3514 | WOU: 92 | INI: 30 | STR: 152 | WS: 65 | SRes: 87 | ERes: 86 | CRes: 86"
+        },
+        chosen_triumphant_rr68: {
+            name: "Triumphant Set",
+            class: "chosen",
+            role: "tank",
+            requiredLevel: 40,
+            requiredRenown: 68,
+            pieces: [
+                { slot: "boots", name: "Triumphant Darkboots", level: 40, renown: 66, armor: 705, tou: 20, ini: 21, ws: 18, bonus: "+2% Dodge" },
+                { slot: "gloves", name: "Triumphant Gauntlets", level: 40, renown: 66, armor: 705, tou: 20, ini: 17, str: 16, bonus: "+3% Parry" },
+                { slot: "belt", name: "Triumphant Deathgirdle", level: 40, renown: 65, tou: 12, ini: 22, ws: 25, bonus: "+2% Reduction in being Critically Hit", sres: 94, eres: 94, cres: 94 },
+                { slot: "shoulders", name: "Triumphant Shoulderguards", level: 40, renown: 67, armor: 825, tou: 26, ini: 20, ws: 20, bonus: "+3% Block" },
+                { slot: "helm", name: "Triumphant Skullcase", level: 40, renown: 67, armor: 825, tou: 37, ini: 18, str: 16, bonus: "+2% Disrupt" },
+                { slot: "body", name: "Triumphant Carapace", level: 40, renown: 68, armor: 924, tou: 15, ini: 40, ws: 20, bonus: "+2% Reduction in being Critically Hit" },
+                { slot: "cloak", name: "Triumphant Changehide", level: 40, renown: 65, tou: 21, ini: 10, str: 18, ws: 10, bonus: "+2% Block", sres: 94, eres: 94, cres: 94 }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+71 Toughness" },
+                { pieces: 3, bonus: "+78 Wounds" },
+                { pieces: 4, bonus: "Active Defences - On Attacking Target: 10% chance to increase Parry, Block, Disrupt and Dodge by 7% for 10 seconds." },
+                { pieces: 5, bonus: "+5% Block" },
+                { pieces: 6, bonus: "Bulwarking Presence - On Being Hit: 10% chance to reduce the damage being taken by your Group within 30ft by 3% for 10 seconds." },
+                { pieces: 7, bonus: "Endure - On Being Hit: 15% chance to reduce attackers Strength, Ballistic Skill and Intelligence by 130 while increasing your Initiative by 130 for 10 seconds." }
+            ],
+            totalStats: "Armor: 3744 | TOU: 151 | WOU: 148 | INI: 70 | STR: 73 | WS: 73 | SRes: 188 | ERes: 188 | CRes: 188"
+        },
+        chosen_victorious_rr68: {
+            name: "Victorious Set",
+            class: "chosen",
+            role: "tank",
+            requiredLevel: 40,
+            requiredRenown: 68,
+            pieces: [
+                { slot: "boots", name: "Victorious Darkboots", level: 40, renown: 66, armor: 705, ini: 17, str: 14, ws: 20, bonus: "+2% Melee Critical Chance" },
+                { slot: "gloves", name: "Victorious Gauntlets", level: 40, renown: 66, armor: 705, ini: 14, ws: 22, wounds: 17, bonus: "+3% Reduced chance to be Parried" },
+                { slot: "belt", name: "Victorious Deathgirdle", level: 40, renown: 65, ini: 17, str: 20, ws: 26, bonus: "+2% Melee Critical Chance", sres: 94, eres: 94, cres: 94 },
+                { slot: "shoulders", name: "Victorious Shoulderguards", level: 40, renown: 67, armor: 825, ini: 28, ws: 20, str: 21, bonus: "+20 Melee Power" },
+                { slot: "helm", name: "Victorious Skullcase", level: 40, renown: 67, armor: 825, ini: 16, ws: 35, str: 20, bonus: "+2% Parry" },
+                { slot: "body", name: "Victorious Carapace", level: 40, renown: 68, armor: 924, ini: 17, ws: 40, str: 20, bonus: "+3% Reduced Armor Penetration" },
+                { slot: "cloak", name: "Victorious Changehide", level: 40, renown: 65, ini: 10, ws: 18, str: 21, bonus: "+2% Parry", sres: 94, eres: 94, cres: 94 }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+71 Strength" },
+                { pieces: 3, bonus: "+78 Wounds" },
+                { pieces: 4, bonus: "Aggression - On Attacking Target: 10% chance to increase outgoing damage by 1% for 10 seconds. Stacks up to 5 times" },
+                { pieces: 5, bonus: "+5% Melee Critical Chance" },
+                { pieces: 6, bonus: "+5% Critical Damage" },
+                { pieces: 7, bonus: "Red Mist - Cooldown of Taunt reduced by 5 seconds." }
+            ],
+            totalStats: "Armor: 3744 | TOU: 10 | WOU: 127 | INI: 44 | STR: 163 | WS: 99 | SRes: 188 | ERes: 188 | CRes: 188"
+        },
+        chosen_ruin_r36: {
+            name: "Ruin Set",
+            class: "chosen",
+            role: "tank",
+            requiredLevel: 36,
+            pieces: [
+                { slot: "boots", name: "Darkboots of Ruin", level: 34, armor: 492, tou: 10, ini: 20, str: 9, ws: 11 },
+                { slot: "gloves", name: "Gauntlets of Ruin", level: 35, armor: 492, tou: 20, ws: 8, wounds: 10, bonus: "+2% Parry" },
+                { slot: "shoulders", name: "Shoulderguards of Ruin", level: 36, armor: 567, tou: 23, ws: 11, wounds: 13, bonus: "+2% Block" },
+                { slot: "helm", name: "Skullcase of Ruin", level: 35, armor: 567, tou: 23, ini: 11, ws: 14, wounds: 11 },
+                { slot: "body", name: "Carapace of Ruin", level: 36, armor: 645, tou: 29, ini: 14, ws: 15, bonus: "+2 Morale Per Second" }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+581 Armor" },
+                { pieces: 3, bonus: "+53 Toughness" },
+                { pieces: 4, bonus: "+1 to Path of Corruption Abilities" },
+                { pieces: 5, bonus: "+5% Block" }
+            ],
+            totalStats: "Armor: 2763 | TOU: 105 | WOU: 45 | INI: 31 | STR: 47 | WS: 24"
+        },
+        chosen_onslaught_rr32: {
+            name: "Onslaught Set",
+            class: "chosen",
+            role: "tank",
+            requiredLevel: 40,
+            requiredRenown: 32,
+            pieces: [
+                { slot: "boots", name: "Onslaught Darkboots", level: 40, renown: 32, armor: 609, tou: 14, ini: 18, ws: 18, bonus: "+2% Block" },
+                { slot: "gloves", name: "Onslaught Gauntlets", level: 40, renown: 32, armor: 609, tou: 12, ini: 16, ws: 12, wounds: 24 },
+                { slot: "shoulders", name: "Onslaught Shoulderguards", level: 40, renown: 32, armor: 693, tou: 20, ini: 16, ws: 23, bonus: "+2% Disrupt" },
+                { slot: "helm", name: "Onslaught Skullcase", level: 40, renown: 32, armor: 693, tou: 18, ini: 27, ws: 16, bonus: "+1% Reduction in being Critically Hit" },
+                { slot: "body", name: "Onslaught Carapace", level: 40, renown: 32, armor: 777, tou: 16, ini: 25, ws: 22, bonus: "+72 HP Every 4 Seconds" }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+58 Wounds" },
+                { pieces: 3, bonus: "+64 Strength" },
+                { pieces: 4, bonus: "On Being Hit: 10% chance to steal 112 health from your attacker" },
+                { pieces: 5, bonus: "+5% Block" }
+            ],
+            totalStats: "Armor: 3381 | TOU: 80 | WOU: 102 | INI: 30 | STR: 85"
+        }
     });
 }
