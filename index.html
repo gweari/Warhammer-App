@@ -254,6 +254,16 @@
                         <label for="renown">Renown Rank:</label>
                         <input type="number" id="renown" min="1" max="80" value="1" required oninput="if(this.value > 80) this.value = 80; if(this.value < 1) this.value = 1;">
                     </div>
+                    <div class="form-group" style="margin-bottom: 18px;">
+                        <label style="font-weight: 500;">My Currency:</label>
+                        <div style="display: flex; gap: 16px; align-items: center; margin-top: 4px;">
+                            <span style="color:#ff4d4d;">🟥 War Crests:</span>
+                            <input type="number" id="myWarCrests" min="0" value="0" style="width: 80px;">
+                            <span style="color:#4db8ff;">🟦 War Tokens:</span>
+                            <input type="number" id="myWarTokens" min="0" value="0" style="width: 80px;">
+                        </div>
+                        <div style="font-size: 0.9em; color: #b0b0b0; margin-top: 2px;">Track your current War Crests and War Tokens to see if you can afford a set.</div>
+                    </div>
 
                     <button type="submit">Get Gear Recommendations</button>
                 </form>
