@@ -4,40 +4,6 @@
 // Add Chosen gear to the main gearDatabase
 if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
     Object.assign(gearDatabase.recommendations, {
-        chosen_decimator_rr8: {
-            name: "Decimator Set",
-            class: "chosen",
-            role: "tank",
-            requiredLevel: 8,
-            requiredRenown: 8,
-            pieces: [
-                { slot: "body", name: "Decimator Carapace", level: 8, renown: 8, armor: 165, str: 4, tou: 8, ini: 4, wounds: 4, bonus: "+1% Block" },
-                { slot: "boots", name: "Decimator Darkboots", level: 8, renown: 8, armor: 132, str: 2, tou: 6, ws: 4, wounds: 6 },
-                { slot: "belt", name: "Decimator Deathgirdle", level: 7, renown: 7, str: 2, tou: 3, wounds: 4, bonus: "+1% Reduced chance to be Critically Hit", sres: 33, eres: 20, cres: 20 }
-            ],
-            setBonuses: [
-                { pieces: 2, bonus: "+18 Toughness" },
-                { pieces: 3, bonus: "+22 Wounds" }
-            ],
-            totalStats: "Armor: 297 | STR: 8 | TOU: 17 | WS: 4 | INI: 4 | WOU: 10 | SRes: 33 | ERes: 20 | CRes: 20"
-        },
-        chosen_braggart_rr8: {
-            name: "Set of the Braggart",
-            class: "chosen",
-            role: "tank",
-            requiredLevel: 8,
-            requiredRenown: 8,
-            pieces: [
-                { slot: "body", name: "Braggart Carapace", level: 8, renown: 8, armor: 165, str: 6, wounds: 8, ws: 5, bonus: "+1% Reduced chance to be Parried" },
-                { slot: "boots", name: "Braggart Darkboots", level: 7, renown: 7, armor: 132, str: 6, tou: 2, ws: 4, wounds: 6 },
-                { slot: "belt", name: "Braggart Deathgirdle", level: 7, renown: 7, str: 4, tou: 2, wounds: 3, bonus: "+1% Melee Critical Chance", sres: 23, eres: 25, cres: 25 }
-            ],
-            setBonuses: [
-                { pieces: 2, bonus: "+18 Strength" },
-                { pieces: 3, bonus: "+22 Toughness" }
-            ],
-            totalStats: "Armor: 297 | STR: 16 | TOU: 4 | WS: 12 | WOU: 14 | SRes: 23 | ERes: 25 | CRes: 25"
-        },
         chosen_carnage_rr5: {
             name: "Set of Carnage",
             class: "chosen",

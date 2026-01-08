@@ -85,42 +85,50 @@ const gearDatabase = {
 
     // Get gear recommendations based on class, level, renown, and role
     getRecommendations: function(classId, level, renown, role) {
-        const allSets = [];
-        
-        // Search through all recommendations for matching class and role
-        for (const key in this.recommendations) {
-            const rolePrefix = role ? `${classId}_${role.toLowerCase()}_` : null;
-            const classPrefix = `${classId}_`;
-            
-            if (rolePrefix && key.startsWith(rolePrefix)) {
-                allSets.push(this.recommendations[key]);
-            } else if (!key.includes('_healer_') && !key.includes('_dps_') && !key.includes('_tank_') && key.startsWith(classPrefix)) {
-                allSets.push(this.recommendations[key]);
+        let allSets = [];
+
+        // Always check gearSets for any class/role (future-proof for all classes)
+        if (this.gearSets && this.gearSets[classId]) {
+            const setsByRole = this.gearSets[classId];
+            if (role && setsByRole[role.toLowerCase()]) {
+                allSets = allSets.concat(Object.values(setsByRole[role.toLowerCase()]));
+            } else {
+                // Flatten all sets for all roles (tank/dps/healer/etc.)
+                allSets = allSets.concat(Object.values(setsByRole).flatMap(roleSets => Object.values(roleSets)));
             }
         }
-        
+
+        // Also pull from legacy recommendations for backward compatibility
+        if (this.recommendations) {
+            for (const key in this.recommendations) {
+                const rolePrefix = role ? `${classId}_${role.toLowerCase()}_` : null;
+                const classPrefix = `${classId}_`;
+                if (rolePrefix && key.startsWith(rolePrefix)) {
+                    allSets.push(this.recommendations[key]);
+                } else if (!key.includes('_healer_') && !key.includes('_dps_') && !key.includes('_tank_') && key.startsWith(classPrefix)) {
+                    allSets.push(this.recommendations[key]);
+                }
+            }
+        }
+
         // Filter: only include sets where ALL pieces meet level AND renown requirements
         const wearableSets = allSets.filter(set => {
-            if (!set.pieces || !Array.isArray(set.pieces) || set.pieces.length === 0) return false;
-            
-            // Check every piece - if ANY piece can't be equipped, reject the whole set
+            if (!set || !set.pieces || !Array.isArray(set.pieces) || set.pieces.length === 0) return false;
             for (const piece of set.pieces) {
-                // If piece has level requirement and player doesn't meet it, reject set
                 if (piece.level && piece.level > level) return false;
-                // If piece has renown requirement and player doesn't meet it, reject set
                 if (piece.renown && piece.renown > renown) return false;
             }
             return true;
         });
-        
+
         // Sort by total stats (sum all numeric stats)
         wearableSets.sort((a, b) => {
             const scoreA = this.calculateTotalStats(a);
             const scoreB = this.calculateTotalStats(b);
             return scoreB - scoreA;
         });
-        
-        // Return top 3 best sets
+
+        // Always return at least an empty array (never undefined/null)
         return wearableSets.slice(0, 3);
     },
 
