@@ -44,9 +44,9 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             role: "tank",
             requiredLevel: 5,
             pieces: [
-                { slot: "body", name: "Carnage Carapace", level: 5, armor: 135, str: 4, tou: 7, ini: 5, wounds: 6 },
-                { slot: "gloves", name: "Carnage Gauntlets", level: 5, armor: 108, str: 4, tou: 4, wounds: 3, ini: 5 },
-                { slot: "boots", name: "Carnage Darkboots", level: 5, armor: 108, str: 5, tou: 6, ws: 2, wounds: 3 }
+                { slot: "body", name: "Carnage Carapace", level: 5, armor: 135, str: 4, tou: 7, ini: 5, wounds: 6, stats: "Armor: 135 | STR: 4 | TOU: 7 | INI: 5 | WOU: 6" },
+                { slot: "gloves", name: "Carnage Gauntlets", level: 5, armor: 108, str: 4, tou: 4, wounds: 3, ini: 5, stats: "Armor: 108 | STR: 4 | TOU: 4 | INI: 5 | WOU: 3" },
+                { slot: "boots", name: "Carnage Darkboots", level: 5, armor: 108, str: 5, tou: 6, ws: 2, wounds: 3, stats: "Armor: 108 | STR: 5 | TOU: 6 | WS: 2 | WOU: 3" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+135 Armor" },
