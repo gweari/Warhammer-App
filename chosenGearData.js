@@ -593,5 +593,47 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             ],
             totalStats: "Armor: 3381 | TOU: 80 | WOU: 102 | INI: 30 | STR: 85"
         }
+        ,
+        chosen_beastlord_r40: {
+            name: "Beastlord Set",
+            class: "chosen",
+            role: "tank",
+            requiredLevel: 40,
+            pieces: [
+                { slot: "jewel", name: "Beastlord Chaos Seal", level: 40, str: 24, ws: 13, bonus: "+1 AP Per Second", sres: 60, eres: 60, cres: 64 },
+                { slot: "cloak", name: "Beastlord Cloak", level: 40, tou: 32, ws: 24, sres: 72, eres: 84, cres: 72 },
+                { slot: "pocket", name: "Beastlord Hunting Guide", level: 40, bonus: "On Use: Increases AP Regeneration for 15s on all party members. 30m cooldown" },
+                { slot: "shoulders", name: "Beastlord Shoulderguards", level: 40, armor: 609, tou: 14, str: 24, ws: 14, cres: 30, eres: 25 },
+                { slot: "helm", name: "Beastlord Skullcase", level: 40, armor: 609, wounds: 20, str: 20, ws: 12, cres: 25, eres: 30 },
+                { slot: "body", name: "Beastlord Carapace", level: 40, armor: 675, tou: 14, wounds: 30, ws: 15, sres: 30, cres: 30 }
+            ],
+            setBonuses: [
+                { pieces: 3, bonus: "+55 Weaponskill" },
+                { pieces: 4, bonus: "+60 Strength" },
+                { pieces: 5, bonus: "+5% Parry" },
+                { pieces: 6, bonus: "On Hit: +10% Chance to Reduce Enemy's Armor by 960" }
+            ],
+            totalStats: "Armor: 1893 | TOU: 34 | WOU: 76 | STR: 68 | WS: 78 | SRes: 162 | ERes: 199 | CRes: 221"
+        },
+        chosen_rarefortune_r39: {
+            name: "Rare Fortune Set",
+            class: "chosen",
+            role: "tank",
+            requiredLevel: 39,
+            pieces: [
+                { slot: "boots", name: "Rare Fortune Darkboots", level: 37, armor: 570, tou: 24, ini: 14, str: 13, bonus: "+2% Dodge" },
+                { slot: "gloves", name: "Rare Fortune Gauntlets", level: 37, armor: 570, tou: 19, ini: 6, str: 12, ws: 21 },
+                { slot: "shoulders", name: "Rare Fortune Shoulderguards", level: 39, armor: 645, tou: 18, ini: 18, str: 19, bonus: "+2% Reduced Armor Penetration" },
+                { slot: "helm", name: "Rare Fortune Skullcase", level: 38, armor: 645, tou: 12, ini: 20, str: 18, ws: 17 },
+                { slot: "body", name: "Rare Fortune Carapace", level: 39, armor: 720, tou: 22, ini: 27, ws: 12, bonus: "+3 AP Per Second" }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+54 Initiative" },
+                { pieces: 3, bonus: "+59 Strength" },
+                { pieces: 4, bonus: "Barrier - On Being Hit: 10% chance to form a protective barrier that will absorb 163 damage over 5 seconds" },
+                { pieces: 5, bonus: "+5% Block" }
+            ],
+            totalStats: "Armor: 3150 | TOU: 95 | WOU: 85 | INI: 62 | STR: 50"
+        }
     });
 }
