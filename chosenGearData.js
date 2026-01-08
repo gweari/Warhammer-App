@@ -1,28 +1,38 @@
 // Chosen Gear Data
 // This file contains all gear sets for the Chosen (Chaos) class
 
-// Add Chosen gear to the main gearDatabase
+// Add Chosen gear to the main gearDatabase in the same structure as Shaman (Decimator & Braggart only for test)
 if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
     Object.assign(gearDatabase.recommendations, {
-        chosen_decimator_rr8: {
-            name: "Decimator Set",
-            class: "chosen",
-            role: "tank",
-            requiredLevel: 8,
-            requiredRenown: 8,
+        'chosen_tank_rr8': {
+            setName: 'Decimator Set',
             pieces: [
-                { slot: "body", name: "Decimator Carapace", level: 8, renown: 8, armor: 165, str: 4, tou: 8, ini: 4, wounds: 4, bonus: "+1% Block", stats: "Armor: 165 | STR: 4 | TOU: 8 | INI: 4 | WOU: 4 | +1% Block" },
-                { slot: "boots", name: "Decimator Darkboots", level: 8, renown: 8, armor: 132, str: 2, tou: 6, ws: 4, wounds: 6, stats: "Armor: 132 | STR: 2 | TOU: 6 | WS: 4 | WOU: 6" },
-                { slot: "belt", name: "Decimator Deathgirdle", level: 7, renown: 7, str: 2, tou: 3, wounds: 4, bonus: "+1% Reduced chance to be Critically Hit", sres: 33, eres: 20, cres: 20, stats: "STR: 2 | TOU: 3 | WOU: 4 | +1% Reduced chance to be Critically Hit | SRes: 33 | ERes: 20 | CRes: 20" }
+                { slot: 'Body', name: 'Decimator Carapace', stats: 'Armor: 165 | STR: 4 | TOU: 8 | INI: 4 | WOU: 4 | +1% Block', level: 8, renown: 8 },
+                { slot: 'Boots', name: 'Decimator Darkboots', stats: 'Armor: 132 | STR: 2 | TOU: 6 | WS: 4 | WOU: 6', level: 8, renown: 8 },
+                { slot: 'Belt', name: 'Decimator Deathgirdle', stats: 'STR: 2 | TOU: 3 | WOU: 4 | +1% Reduced chance to be Critically Hit | SRes: 33 | ERes: 20 | CRes: 20', level: 7, renown: 7 }
             ],
             setBonuses: [
-                { pieces: 2, bonus: "+18 Toughness" },
-                { pieces: 3, bonus: "+22 Wounds" }
+                { pieces: 2, bonus: '+18 Toughness' },
+                { pieces: 3, bonus: '+22 Wounds' }
             ],
-            totalStats: "Armor: 297 | STR: 8 | TOU: 17 | WS: 4 | INI: 4 | WOU: 10 | SRes: 33 | ERes: 20 | CRes: 20"
+            totalStats: 'Armor: 297 | STR: 8 | TOU: 17 | WS: 4 | INI: 4 | WOU: 10 | SRes: 33 | ERes: 20 | CRes: 20'
         },
-        chosen_braggart_rr8: {
-            name: "Set of the Braggart",
+        'chosen_tank_rr8_braggart': {
+            setName: 'Set of the Braggart',
+            pieces: [
+                { slot: 'Body', name: 'Braggart Carapace', stats: 'Armor: 165 | STR: 6 | WS: 8 | WOU: 5 | +1% Reduced chance to be Parried', level: 8, renown: 8 },
+                { slot: 'Boots', name: 'Braggart Darkboots', stats: 'Armor: 132 | STR: 6 | TOU: 2 | WS: 4 | WOU: 6', level: 7, renown: 7 },
+                { slot: 'Belt', name: 'Braggart Deathgirdle', stats: 'STR: 4 | TOU: 2 | WOU: 3 | +1% Melee Critical Chance | SRes: 23 | ERes: 25 | CRes: 25', level: 7, renown: 7 }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: '+18 Strength' },
+                { pieces: 3, bonus: '+22 Toughness' }
+            ],
+            totalStats: 'Armor: 297 | STR: 16 | TOU: 4 | WS: 12 | WOU: 14 | SRes: 23 | ERes: 25 | CRes: 25'
+        }
+    });
+}
+
             class: "chosen",
             role: "tank",
             requiredLevel: 8,
@@ -118,41 +128,6 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { slot: "shoulders", name: "Challenger Shoulderguard", level: 17, renown: 15, armor: 285, str: 6, tou: 9, ini: 8, wounds: 9, bonus: "+1% Melee Critical Chance", stats: "Armor: 285 | STR: 6 | TOU: 9 | INI: 8 | WOU: 9 | +1% Melee Critical Chance" }
             ],
             setBonuses: [
-                { pieces: 2, bonus: "+32 Strength" },
-                { pieces: 3, bonus: "+38 Wounds" },
-                { pieces: 4, bonus: "+2% Melee Critical Chance" }
-            ],
-                name: "Overlord Set",
-        },
-        chosen_havoc_rr16: {
-            name: "Set of Havoc",
-            class: "chosen",
-            role: "tank",
-            requiredLevel: 16,
-            pieces: [
-                { slot: "body", name: "Havoc Carapace", level: 16, armor: 285, str: 5, tou: 12, wounds: 3, ini: 9, bonus: "+2% Disrupt", stats: "Armor: 285 | STR: 5 | TOU: 12 | INI: 9 | WOU: 3 | +2% Disrupt" },
-                { slot: "gloves", name: "Havoc Gauntlets", level: 13, armor: 228, str: 14, tou: 7, ini: 4, wounds: 6, stats: "Armor: 228 | STR: 14 | TOU: 7 | INI: 4 | WOU: 6" },
-                { slot: "boots", name: "Havoc Darkboots", level: 13, armor: 228, tou: 10, ws: 3, wounds: 8, bonus: "+1% Reduced chance to be Critically Hit", stats: "Armor: 228 | TOU: 10 | WS: 3 | WOU: 8 | +1% Reduced chance to be Critically Hit" },
-                { slot: "shoulders", name: "Havoc Shoulderguard", level: 16, armor: 258, str: 8, tou: 9, ini: 8, wounds: 3, stats: "Armor: 258 | STR: 8 | TOU: 9 | INI: 8 | WOU: 3" }
-            ],
-            setBonuses: [
-                { pieces: 2, bonus: "+285 Armor" },
-                { pieces: 3, bonus: "+35 Toughness" },
-                { pieces: 4, bonus: "+2% Reduced chance to be Critically Hit" }
-            ],
-            totalStats: "Armor: 999 | STR: 27 | TOU: 38 | WS: 15 | INI: 6 | WOU: 31"
-        },
-        chosen_tracker_rr17: {
-            name: "Tracker's Set",
-            class: "chosen",
-            role: "tank",
-            requiredLevel: 17,
-            pieces: [
-                { slot: "body", name: "Tracker's Carapace", level: 17, armor: 300, str: 8, tou: 16, ws: 6, wounds: 13, stats: "Armor: 300 | STR: 8 | TOU: 16 | WS: 6 | WOU: 13" },
-                { slot: "gloves", name: "Tracker's Gauntlets", level: 15, armor: 240, tou: 12, ws: 10, wounds: 5, ini: 5, stats: "Armor: 240 | TOU: 12 | WS: 10 | INI: 5 | WOU: 5" },
-                { slot: "boots", name: "Tracker's Darkboots", level: 13, armor: 240, str: 10, tou: 10, wounds: 4, ini: 8, stats: "Armor: 240 | STR: 10 | TOU: 10 | INI: 8 | WOU: 4" },
-                { slot: "shoulders", name: "Tracker's Shoulderguard", level: 16, armor: 270, str: 12, tou: 10, wounds: 10, bonus: "+1% Parry", stats: "Armor: 270 | STR: 12 | TOU: 10 | WOU: 10 | +1% Parry" }
-            ],
             setBonuses: [
                 { pieces: 2, bonus: "+31 Initiative" },
                 { pieces: 3, bonus: "+20 Hit Points every 4s" },
