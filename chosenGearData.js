@@ -635,5 +635,100 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             ],
             totalStats: "Armor: 3150 | TOU: 95 | WOU: 85 | INI: 62 | STR: 50"
         }
+        ,
+        chosen_redeye_r40: {
+            name: "Redeye Set",
+            class: "chosen",
+            role: "tank",
+            requiredLevel: 40,
+            pieces: [
+                { slot: "cloak", name: "Redeye Changehide", level: 40, tou: 21, wounds: 21, ws: 17, sres: 91, eres: 76, cres: 73 },
+                { slot: "boots", name: "Redeye Darkboots", level: 40, armor: 570, tou: 17, ini: 15, str: 16, bonus: "+1% Reduction in being Critically Hit" },
+                { slot: "gloves", name: "Redeye Gauntlets", level: 40, armor: 570, tou: 12, ini: 13, str: 12, ws: 21 },
+                { slot: "shoulders", name: "Redeye Shoulderguards", level: 40, armor: 645, tou: 20, ini: 22, ws: 13, bonus: "+2% Reduced Armor Penetration" },
+                { slot: "helm", name: "Redeye Skullcase", level: 40, armor: 645, tou: 14, ini: 27, str: 22, ws: 13 },
+                { slot: "body", name: "Redeye Carapace", level: 40, armor: 720, tou: 28, ws: 17, wounds: 18, bonus: "+3 AP Per Second" }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+3% Reduction in being Critically Hit" },
+                { pieces: 3, bonus: "+720 Armor" },
+                { pieces: 4, bonus: "+64 Strength" },
+                { pieces: 5, bonus: "+69 Toughness" },
+                { pieces: 6, bonus: "On Hit: 10% chance to lower target's Armor by 1080 for 10 seconds" }
+            ],
+            totalStats: "Armor: 3150 | TOU: 112 | WOU: 98 | INI: 28 | STR: 77 | WS: 44 | SRes: 91 | ERes: 76 | CRes: 73"
+        },
+        chosen_sentinel_r40: {
+            name: "Sentinel Set",
+            class: "chosen",
+            role: "tank",
+            requiredLevel: 40,
+            pieces: [
+                { slot: "boots", name: "Sentinel Darkboots", level: 40, armor: 609, tou: 27, wounds: 8, ws: 15, bonus: "+2% Parry" },
+                { slot: "gloves", name: "Sentinel Gauntlets", level: 40, armor: 609, tou: 15, ws: 10, wounds: 23, bonus: "+21 Melee Power" },
+                { slot: "belt", name: "Sentinel Deathgirdle", level: 40, tou: 18, wounds: 12, str: 24, ws: 9, sres: 80, eres: 90, cres: 95 },
+                { slot: "shoulders", name: "Sentinel Shoulderguards", level: 40, armor: 693, tou: 17, wounds: 30, str: 12, bonus: "+2% Disrupt" },
+                { slot: "helm", name: "Sentinel Skullcase", level: 40, armor: 693, tou: 27, wounds: 10, str: 14, bonus: "+2% Reduction in being Critically Hit" },
+                { slot: "body", name: "Sentinel Carapace", level: 40, armor: 777, tou: 35, wounds: 19, str: 17, bonus: "+60 HP Every 4 Seconds" },
+                { slot: "jewel", name: "Sentinel Chaos Seal", level: 40, str: 27, ws: 17, bonus: "+3 AP Per Second", sres: 70, eres: 70, cres: 71 }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+58 Strength" },
+                { pieces: 3, bonus: "+64 Wounds" },
+                { pieces: 4, bonus: "+70 Initiative" },
+                { pieces: 5, bonus: "Unconstrained - On Causing Single Target Damage: 10% chance to be immune from roots and snares for the next 5 seconds." },
+                { pieces: 6, bonus: "+5% Parry" },
+                { pieces: 7, bonus: "Red Mist - Cooldown of Taunt reduced by 5 seconds." }
+            ],
+            totalStats: "Armor: 3381 | TOU: 139 | WOU: 60 | INI: 12 | STR: 94 | WS: 81 | SRes: 150 | ERes: 160 | CRes: 166"
+        },
+        chosen_bloodlord_r40: {
+            name: "Bloodlord Set",
+            class: "chosen",
+            role: "tank",
+            requiredLevel: 40,
+            pieces: [
+                { slot: "boots", name: "Bloodlord Darkboots", level: 40, armor: 663, ini: 14, str: 14, ws: 27, bonus: "+2% Dodge" },
+                { slot: "gloves", name: "Bloodlord Gauntlets", level: 40, armor: 663, ini: 14, str: 15, ws: 25, wounds: 13 },
+                { slot: "belt", name: "Bloodlord Deathgirdle", level: 40, ini: 16, str: 12, ws: 22, bonus: "+2% Parry, +1% Disrupt", sres: 91, eres: 91, cres: 91 },
+                { slot: "shoulders", name: "Bloodlord Shoulderguards", level: 40, armor: 771, ini: 19, str: 18, ws: 29, bonus: "+2% Parry" },
+                { slot: "helm", name: "Bloodlord Skullcase", level: 40, armor: 771, ini: 20, str: 10, ws: 28, bonus: "+2% Reduction in being Critically Hit" },
+                { slot: "body", name: "Bloodlord Carapace", level: 40, armor: 876, tou: 21, wounds: 16, ws: 31, bonus: "" },
+                { slot: "cloak", name: "Bloodlord Changehide", level: 40, ini: 16, str: 12, ws: 30, bonus: "+1% Melee Critial Chance", sres: 91, eres: 91, cres: 91 }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+66 Wounds" },
+                { pieces: 3, bonus: "+73 Strength" },
+                { pieces: 4, bonus: "Boost II - On Hit: 5% chance to increase your critical hit rate by 6% for 9 seconds." },
+                { pieces: 5, bonus: "+5% Parry" },
+                { pieces: 6, bonus: "+5% Melee Critial Chance" },
+                { pieces: 7, bonus: "Reactionary - On Defense: 25% chance to increase Parry, Evade, and Disrupt by 10% for 10 seconds." }
+            ],
+            totalStats: "Armor: 3744 | TOU: 21 | WOU: 115 | INI: 81 | STR: 192 | WS: 35 | SRes: 182 | ERes: 182 | CRes: 182"
+        },
+        chosen_valewalker_r40: {
+            name: "Vale Walker Set",
+            class: "chosen",
+            role: "tank",
+            requiredLevel: 40,
+            pieces: [
+                { slot: "boots", name: "Vale Walker Darkboots", level: 40, armor: 648, tou: 16, wounds: 20, ini: 15, str: 15 },
+                { slot: "gloves", name: "Vale Walker Gauntlets", level: 40, armor: 648, tou: 15, wounds: 20, ws: 11, bonus: "+2% Melee Critical Chance" },
+                { slot: "belt", name: "Vale Walker Deathgirdle", level: 40, wounds: 21, ini: 28, bonus: "+1% Dodge, 2% Disrupt", sres: 90, eres: 90, cres: 90 },
+                { slot: "shoulders", name: "Vale Walker Shoulderguards", level: 40, armor: 741, wounds: 20, ws: 25, bonus: "+3% Parry", eres: 30, cres: 35 },
+                { slot: "helm", name: "Vale Walker Skullcase", level: 40, armor: 741, wounds: 25, ini: 16, ws: 20, bonus: "N/A", eres: 40, cres: 35 },
+                { slot: "body", name: "Valewalker Carapace", level: 40, armor: 834, tou: 19, wounds: 35, ini: 18, ws: 22, cres: 35 },
+                { slot: "jewel", name: "Vale Walker Change-Gem", level: 40, wounds: 24, ws: 24, bonus: "+1% Reduction in being Critically Hit", sres: 66, eres: 80, cres: 80 }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+62 Weaponskill" },
+                { pieces: 3, bonus: "+69 Toughness" },
+                { pieces: 4, bonus: "+76 Strength" },
+                { pieces: 5, bonus: "+5% Parry" },
+                { pieces: 6, bonus: "On Hit: 25% chance to reduce target's Weapon Skill by 118 while increasing your Strength by 118 for 10 seconds." },
+                { pieces: 7, bonus: "Corrosion - On Hit: 10% chance to lower target's Armor by 1038 for 10 seconds." }
+            ],
+            totalStats: "Armor: 3618 | TOU: 120 | WOU: 139 | INI: 49 | STR: 74 | WS: 33 | SRes: 226 | ERes: 275 | CRes: 205"
+        }
     });
 }
