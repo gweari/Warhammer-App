@@ -312,17 +312,17 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             requiredLevel: 40,
             requiredRenown: 58,
             pieces: [
-                { slot: "boots", name: "Vanquisher Darkboots", level: 40, renown: 56, armor: 623, tou: 16, ini: 17, ws: 18, bonus: "+2% Dodge" },
-                { slot: "gloves", name: "Vanquisher Gauntlets", level: 40, renown: 56, armor: 623, tou: 18, ini: 17, str: 16, bonus: "+2% Parry" },
-                { slot: "belt", name: "Vanquisher Deathgirdle", level: 40, renown: 55, tou: 8, ini: 22, ws: 22, bonus: "+2% Reduction in being Critically Hit", sres: 87, eres: 86, cres: 86 },
-                { slot: "shoulders", name: "Vanquisher Shoulderguards", level: 40, renown: 57, armor: 723, tou: 26, ini: 20, ws: 16, bonus: "+2% Block" },
-                { slot: "helm", name: "Vanquisher Skullcase", level: 40, renown: 57, armor: 723, tou: 34, ini: 15, str: 13, bonus: "+2% Disrupt" },
-                { slot: "body", name: "Vanquisher Carapace", level: 40, renown: 58, armor: 822, tou: 15, ini: 35, str: 15, bonus: "+2% Reduction in being Critically Hit" }
+                { slot: "boots", name: "Vanquisher Darkboots", level: 40, renown: 56, cost: 109, armor: 623, tou: 16, ini: 17, ws: 18, bonus: "+2% Dodge" },
+                { slot: "gloves", name: "Vanquisher Gauntlets", level: 40, renown: 56, cost: 126, armor: 623, tou: 18, ini: 17, str: 16, bonus: "+2% Parry" },
+                { slot: "belt", name: "Vanquisher Deathgirdle", level: 40, renown: 55, cost: 76, tou: 8, ini: 22, ws: 22, bonus: "+2% Reduction in being Critically Hit", sres: 87, eres: 86, cres: 86 },
+                { slot: "shoulders", name: "Vanquisher Shoulderguards", level: 40, renown: 57, cost: 172, armor: 723, tou: 26, ini: 20, ws: 16, bonus: "+2% Block" },
+                { slot: "helm", name: "Vanquisher Skullcase", level: 40, renown: 57, cost: 189, armor: 723, tou: 34, ini: 15, str: 13, bonus: "+2% Disrupt" },
+                { slot: "body", name: "Vanquisher Carapace", level: 40, renown: 58, cost: 229, armor: 822, tou: 15, ini: 35, str: 15, bonus: "+2% Reduction in being Critically Hit" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+62 Toughness" },
                 { pieces: 3, bonus: "+68 Wounds" },
-                name: "Imperator Set",
+                { pieces: 4, bonus: "Active Defences - On Attacking Target: 10% chance to increase Parry, Block, Disrupt and Dodge by 7% for 10 seconds." },
                 { pieces: 5, bonus: "+5% Block" },
                 { pieces: 6, bonus: "Bulwarking Presence - On Being Hit: 10% chance to reduce the damage being taken by your Group within 30ft by 3% for 10 seconds." }
             ],
