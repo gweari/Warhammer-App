@@ -179,5 +179,86 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             ],
             totalStats: "Armor: 1320 | STR: 46 | TOU: 36 | WS: 14 | INI: 16 | WOU: 39"
         }
+        ,
+        chosen_devastator_rr29: {
+            name: "Devastator Set",
+            class: "chosen",
+            role: "tank",
+            requiredLevel: 29,
+            requiredRenown: 29,
+            pieces: [
+                { slot: "boots", name: "Devastator Darkboots", level: 26, renown: 26, armor: 396, tou: 11, wounds: 20, ini: 9, str: 6 },
+                { slot: "gloves", name: "Devastator Gauntlets", level: 27, renown: 27, armor: 421, tou: 19, wounds: 12, str: 7, bonus: "+2% Reduction in being Critically Hit" },
+                { slot: "shoulders", name: "Devastator Shoulderguards", level: 28, renown: 28, armor: 514, tou: 23, str: 15, wounds: 9, bonus: "+1% Block" },
+                { slot: "helm", name: "Devastator Skullcase", level: 29, renown: 29, armor: 488, tou: 25, ini: 13, str: 9, wounds: 10 },
+                { slot: "body", name: "Devastator Carapace", level: 29, renown: 29, armor: 571, tou: 26, ini: 9, str: 16, bonus: "+40 HP Every 4 Seconds" }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+47 Toughness" },
+                { pieces: 3, bonus: "+240 Corporeal Resistance" },
+                { pieces: 4, bonus: "On Defense: 25% chance to increase Parry, Evade and Disrupt by 10% for 10 seconds" },
+                { pieces: 5, bonus: "+47 Wounds" }
+            ],
+            totalStats: "Armor: 2390 | TOU: 104 | WOU: 54 | INI: 40 | STR: 41"
+        },
+        chosen_duelist_rr29: {
+            name: "Duelist Set",
+            class: "chosen",
+            role: "tank",
+            requiredLevel: 29,
+            requiredRenown: 29,
+            pieces: [
+                { slot: "boots", name: "Darkboots of the Duelist", level: 26, renown: 26, armor: 396, tou: 8, ini: 7, str: 11, wounds: 20 },
+                { slot: "gloves", name: "Gauntlets of the Duelist", level: 27, renown: 27, armor: 421, ini: 7, str: 12, wounds: 19, bonus: "+2% Melee Critical Chance" },
+                { slot: "shoulders", name: "Shoulderguards of the Duelist", level: 28, renown: 28, armor: 514, ini: 15, str: 17, wounds: 15, bonus: "+1% Parry" },
+                { slot: "helm", name: "Skullcase of the Duelist", level: 29, renown: 29, armor: 488, tou: 25, ini: 13, str: 9, wounds: 10 },
+                { slot: "body", name: "Carapace of the Duelist", level: 29, renown: 29, armor: 571, tou: 16, ini: 19, str: 16, bonus: "+40 HP Every 4 Seconds" }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+47 Strength" },
+                { pieces: 3, bonus: "+240 Corporeal Resistance" },
+                { pieces: 4, bonus: "Aggravation - On Hit: 10% Chance to Taunt Target" },
+                { pieces: 5, bonus: "+4% Melee Critical Chance" }
+            ],
+            totalStats: "Armor: 2390 | TOU: 49 | WOU: 61 | INI: 49 | STR: 129"
+        },
+        chosen_mayhem_r25: {
+            name: "Mayhem Set",
+            class: "chosen",
+            role: "tank",
+            requiredLevel: 25,
+            pieces: [
+                { slot: "boots", name: "Darkboots of Mayhem", level: 22, armor: 324, tou: 17, ini: 7, ws: 6, wounds: 7 },
+                { slot: "gloves", name: "Gauntlets of Mayhem", level: 23, armor: 336, tou: 15, ini: 10, ws: 6, bonus: "+2% Reduction in being Critically Hit" },
+                { slot: "shoulders", name: "Shoulderguards of Mayhem", level: 24, armor: 392, tou: 18, ini: 7, ws: 11, bonus: "+1% Parry" },
+                { slot: "helm", name: "Skullcase of Mayhem", level: 25, armor: 390, tou: 25, ini: 8, str: 2, ws: 10, wounds: 8 },
+                { slot: "body", name: "Carapace of Mayhem", level: 24, armor: 436, tou: 20, ini: 7, ws: 13, bonus: "+32 HP Every 4 Seconds" }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+37 Initiative" },
+                { pieces: 3, bonus: "+192 Corporeal Resistance" },
+                { pieces: 4, bonus: "+37 Toughness" },
+                { pieces: 5, bonus: "On Being Healed: 10% Chance to recover an additional 95 health" }
+            ],
+            totalStats: "Armor: 1878 | TOU: 95 | WOU: 32 | INI: 9 | STR: 40 | WS: 14"
+        },
+        chosen_stalker_r30: {
+            name: "Stalker Set",
+            class: "chosen",
+            role: "tank",
+            requiredLevel: 30,
+            pieces: [
+                { slot: "boots", name: "Stalker's Darkboots", level: 26, armor: 396, tou: 12, ws: 4, wounds: 7, bonus: "+2% Dodge" },
+                { slot: "gloves", name: "Stalker's Gauntlets", level: 26, armor: 421, tou: 23, ws: 5, wounds: 8, bonus: "+1% Melee Critical Chance" },
+                { slot: "shoulders", name: "Stalker's Shoulderguards", level: 28, armor: 514, tou: 18, ini: 11, str: 7, ws: 5 },
+                { slot: "body", name: "Stalker's Carapace", level: 30, armor: 571, tou: 19, ini: 12, str: 7, bonus: "+2% Disrupt" }
+            ],
+            setBonuses: [
+                { pieces: 2, bonus: "+34 Strength" },
+                { pieces: 3, bonus: "+2 Morale Per Second" },
+                { pieces: 4, bonus: "+5% Melee Critical Chance" }
+            ],
+            totalStats: "Armor: 1902 | TOU: 72 | WOU: 23 | INI: 7 | STR: 21 | WS: 15"
+        }
     });
 }
