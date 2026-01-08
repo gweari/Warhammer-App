@@ -1152,9 +1152,9 @@ const gearDatabase = {
         'shaman_goblin_dps_rr8_hunter': {
             setName: 'Hunter\'s Set',
             pieces: [
-                { slot: 'Head', name: 'Hunter\'s Morkyfeets', stats: 'Armor: 40 | INT: 4, TOU: 3, WP: 5, WOU: 5' },
-                { slot: 'Chest', name: 'Hunter\'s Robefings', stats: 'Armor: 50 | INT: 8, WP: 4, WOU: 5 | +1% Disrupt' },
-                { slot: 'Hands', name: 'Hunter\'s Greenbringas', stats: 'Armor: 40 | INT: 4, TOU: 8, WP: 5' }
+                { slot: 'Head', name: 'Hunter\'s Morkyfeets', stats: 'Armor: 40 | INT: 4, TOU: 3, WP: 5, WOU: 5', level: 8, renown: 8 },
+                { slot: 'Chest', name: 'Hunter\'s Robefings', stats: 'Armor: 50 | INT: 8, WP: 4, WOU: 5 | +1% Disrupt', level: 8, renown: 8 },
+                { slot: 'Hands', name: 'Hunter\'s Greenbringas', stats: 'Armor: 40 | INT: 4, TOU: 8, WP: 5', level: 8, renown: 8 }
             ],
             setBonuses: [
                 { pieces: 2, bonus: '+17 Toughness' },
@@ -1165,9 +1165,9 @@ const gearDatabase = {
         'shaman_goblin_dps_rr8': {
             setName: 'Set of the Braggart',
             pieces: [
-                { slot: 'Head', name: 'Braggart Morkyfeets', stats: 'Armor: 44 | INT: 6, TOU: 4, INI: 4, WOU: 4' },
-                { slot: 'Chest', name: 'Braggart Robefings', stats: 'Armor: 55 | INT: 8, TOU: 5, WOU: 6 | +1% Reduced chance to be Disrupted' },
-                { slot: 'Hands', name: 'Braggart Bits Keepa', stats: 'INT: 4, INI: 3, WOU: 2 | +1% Magic Crit | 23 SRe, 25 ERe, 25 CRe' }
+                { slot: 'Head', name: 'Braggart Morkyfeets', stats: 'Armor: 44 | INT: 6, TOU: 4, INI: 4, WOU: 4', level: 8, renown: 8 },
+                { slot: 'Chest', name: 'Braggart Robefings', stats: 'Armor: 55 | INT: 8, TOU: 5, WOU: 6 | +1% Reduced chance to be Disrupted', level: 8, renown: 8 },
+                { slot: 'Hands', name: 'Braggart Bits Keepa', stats: 'INT: 4, INI: 3, WOU: 2 | +1% Magic Crit | 23 SRe, 25 ERe, 25 CRe', level: 8, renown: 8 }
             ],
             setBonuses: [
                 { pieces: 2, bonus: '+18 Intelligence' },
@@ -1178,10 +1178,10 @@ const gearDatabase = {
         'shaman_goblin_dps_rr16': {
             setName: 'Set of the Challenger',
             pieces: [
-                { slot: 'Head', name: 'Challenger Morkyfeets', stats: 'Armor: 84 | INT: 14, TOU: 7, INI: 7, WOU: 8' },
-                { slot: 'Chest', name: 'Challenger Robefings', stats: 'Armor: 105 | INT: 18, TOU: 5, INI: 3, WOU: 9 | +2% Reduced chance to be Disrupted' },
-                { slot: 'Hands', name: 'Challenger Greenbringas', stats: 'Armor: 84 | INT: 18, TOU: 8, INI: 4, WOU: 6' },
-                { slot: 'Shoulders', name: 'Challenger Shouldafings', stats: 'Armor: 95 | TOU: 14, INI: 10, WOU: 8 | +1% Magic Crit' }
+                { slot: 'Head', name: 'Challenger Morkyfeets', stats: 'Armor: 84 | INT: 14, TOU: 7, INI: 7, WOU: 8', level: 16, renown: 16 },
+                { slot: 'Chest', name: 'Challenger Robefings', stats: 'Armor: 105 | INT: 18, TOU: 5, INI: 3, WOU: 9 | +2% Reduced chance to be Disrupted', level: 16, renown: 16 },
+                { slot: 'Hands', name: 'Challenger Greenbringas', stats: 'Armor: 84 | INT: 18, TOU: 8, INI: 4, WOU: 6', level: 16, renown: 16 },
+                { slot: 'Shoulders', name: 'Challenger Shouldafings', stats: 'Armor: 95 | TOU: 14, INI: 10, WOU: 8 | +1% Magic Crit', level: 16, renown: 16 }
             ],
             setBonuses: [
                 { pieces: 2, bonus: '+32 Intelligence' },
@@ -1193,11 +1193,11 @@ const gearDatabase = {
         'shaman_goblin_dps_rr26': {
             setName: 'Duelist Set',
             pieces: [
-                { slot: 'Head', name: 'Morkyfeets of the Duelist', stats: 'Armor: 132 | INT: 24, TOU: 7, INI: 7, WOU: 8' },
-                { slot: 'Chest', name: 'Robefings of the Duelist', stats: 'Armor: 190 | INT: 32, INI: 9, WOU: 10 | +40 HP Every 4s' },
-                { slot: 'Hands', name: 'Greenbringas of the Duelist', stats: 'Armor: 140 | INT: 25, TOU: 7, INI: 6 | +2% Magic Crit' },
-                { slot: 'Shoulders', name: 'Sholdafings of the Duelist', stats: 'Armor: 171 | INT: 23, TOU: 15, INI: 9 | +1% Disrupt Strikethrough' },
-                { slot: 'Belt', name: 'Waaaghat of the Duelist', stats: 'Armor: 162 | INT: 32, TOU: 10, INI: 3, WOU: 12' }
+                { slot: 'Head', name: 'Morkyfeets of the Duelist', stats: 'Armor: 132 | INT: 24, TOU: 7, INI: 7, WOU: 8', level: 26, renown: 26 },
+                { slot: 'Chest', name: 'Robefings of the Duelist', stats: 'Armor: 190 | INT: 32, INI: 9, WOU: 10 | +40 HP Every 4s', level: 26, renown: 26 },
+                { slot: 'Hands', name: 'Greenbringas of the Duelist', stats: 'Armor: 140 | INT: 25, TOU: 7, INI: 6 | +2% Magic Crit', level: 26, renown: 26 },
+                { slot: 'Shoulders', name: 'Sholdafings of the Duelist', stats: 'Armor: 171 | INT: 23, TOU: 15, INI: 9 | +1% Disrupt Strikethrough', level: 26, renown: 26 },
+                { slot: 'Belt', name: 'Waaaghat of the Duelist', stats: 'Armor: 162 | INT: 32, TOU: 10, INI: 3, WOU: 12', level: 26, renown: 26 }
             ],
             setBonuses: [
                 { pieces: 2, bonus: '+47 Intelligence' },
@@ -1210,11 +1210,11 @@ const gearDatabase = {
         'shaman_goblin_dps_rr35': {
             setName: 'Mercenary Set',
             pieces: [
-                { slot: 'Head', name: 'Morkyfeets of the Mercenary', stats: 'Armor: 183 | INT: 21, TOU: 13, INI: 10 | +2% Dodge' },
-                { slot: 'Chest', name: 'Robefings of the Mercenary', stats: 'Armor: 236 | INT: 30, INI: 17, WOU: 12 | +3 AP Per Second' },
-                { slot: 'Hands', name: 'Greenbringas of the Mercenary', stats: 'Armor: 183 | INT: 11, TOU: 23, INI: 9, WOU: 14' },
-                { slot: 'Shoulders', name: 'Sholdafings of the Mercenary', stats: 'Armor: 212 | INT: 18, TOU: 25, INI: 12 | +1% Reduction in being Crit' },
-                { slot: 'Belt', name: 'Waaaghat of the Mercenary', stats: 'Armor: 212 | TOU: 15, INI: 13 | +2% Disrupt' }
+                { slot: 'Head', name: 'Morkyfeets of the Mercenary', stats: 'Armor: 183 | INT: 21, TOU: 13, INI: 10 | +2% Dodge', level: 35, renown: 35 },
+                { slot: 'Chest', name: 'Robefings of the Mercenary', stats: 'Armor: 236 | INT: 30, INI: 17, WOU: 12 | +3 AP Per Second', level: 35, renown: 35 },
+                { slot: 'Hands', name: 'Greenbringas of the Mercenary', stats: 'Armor: 183 | INT: 11, TOU: 23, INI: 9, WOU: 14', level: 35, renown: 35 },
+                { slot: 'Shoulders', name: 'Sholdafings of the Mercenary', stats: 'Armor: 212 | INT: 18, TOU: 25, INI: 12 | +1% Reduction in being Crit', level: 35, renown: 35 },
+                { slot: 'Belt', name: 'Waaaghat of the Mercenary', stats: 'Armor: 212 | TOU: 15, INI: 13 | +2% Disrupt', level: 35, renown: 35 }
             ],
             setBonuses: [
                 { pieces: 2, bonus: '+53 Intelligence' },
@@ -1227,12 +1227,12 @@ const gearDatabase = {
         'shaman_goblin_dps_rr45': {
             setName: 'Dominator Set',
             pieces: [
-                { slot: 'Head', name: 'Dominator Morkyfeets', stats: 'Armor: 192 | INT: 16, INI: 10, WOU: 14 | +2% Magic Crit' },
-                { slot: 'Chest', name: 'Dominator Robefings', stats: 'Armor: 255 | INT: 33, TOU: 19, INI: 13 | +3 AP Per Second' },
-                { slot: 'Hands', name: 'Dominator Greenbringas', stats: 'Armor: 192 | INT: 25, TOU: 15, INI: 8 | +2% Reduced Chance to be Disrupted' },
-                { slot: 'Shoulders', name: 'Dominator Sholdafings', stats: 'Armor: 225 | INT: 29, TOU: 18, INI: 12 | +2 Morale Per Second' },
-                { slot: 'Belt', name: 'Dominator Waaaghat', stats: 'Armor: 225 | INT: 10, INI: 30, WOU: 17 | +2% Reduced Chance to be Disrupted' },
-                { slot: 'Accessory', name: 'Dominator Bitskeepa', stats: 'INT: 18, INI: 6, WOU: 12 | +36 Magic Power | 83 SRe, 77 ERe, 83 CRe' }
+                { slot: 'Head', name: 'Dominator Morkyfeets', stats: 'Armor: 192 | INT: 16, INI: 10, WOU: 14 | +2% Magic Crit', level: 40, renown: 45 },
+                { slot: 'Chest', name: 'Dominator Robefings', stats: 'Armor: 255 | INT: 33, TOU: 19, INI: 13 | +3 AP Per Second', level: 40, renown: 45 },
+                { slot: 'Hands', name: 'Dominator Greenbringas', stats: 'Armor: 192 | INT: 25, TOU: 15, INI: 8 | +2% Reduced Chance to be Disrupted', level: 40, renown: 45 },
+                { slot: 'Shoulders', name: 'Dominator Sholdafings', stats: 'Armor: 225 | INT: 29, TOU: 18, INI: 12 | +2 Morale Per Second', level: 40, renown: 45 },
+                { slot: 'Belt', name: 'Dominator Waaaghat', stats: 'Armor: 225 | INT: 10, INI: 30, WOU: 17 | +2% Reduced Chance to be Disrupted', level: 40, renown: 45 },
+                { slot: 'Accessory', name: 'Dominator Bitskeepa', stats: 'INT: 18, INI: 6, WOU: 12 | +36 Magic Power | 83 SRe, 77 ERe, 83 CRe', level: 40, renown: 45 }
             ],
             setBonuses: [
                 { pieces: 2, bonus: '+57 Intelligence' },
@@ -1246,12 +1246,12 @@ const gearDatabase = {
         'shaman_goblin_dps_rr55': {
             setName: 'Oppressor Set',
             pieces: [
-                { slot: 'Head', name: 'Oppressor Morkyfeets', stats: 'Armor: 209 | INT: 15, INI: 18, WOU: 10 | +2% Magic Crit' },
-                { slot: 'Chest', name: 'Oppressor Robefings', stats: 'Armor: 274 | INT: 28, INI: 19 | +23 Magic Power' },
-                { slot: 'Hands', name: 'Oppressor Greenbringas', stats: 'Armor: 209 | INT: 26, TOU: 8, INI: 11 | +3% Reduced Chance to be Disrupted' },
-                { slot: 'Shoulders', name: 'Oppressor Sholdafings', stats: 'Armor: 241 | INT: 34, TOU: 10, INI: 20 | +1% Magic Crit' },
-                { slot: 'Belt', name: 'Oppressor Waaaghat', stats: 'Armor: 241 | INT: 24, INI: 20, WOU: 12 | +3% Reduced Chance to be Disrupted' },
-                { slot: 'Accessory', name: 'Oppressor Bitskeepa', stats: 'INT: 21, TOU: 12, INI: 19 | +36 Magic Power | 87 SRe, 86 ERe, 86 CRe' }
+                { slot: 'Head', name: 'Oppressor Morkyfeets', stats: 'Armor: 209 | INT: 15, INI: 18, WOU: 10 | +2% Magic Crit', level: 40, renown: 55 },
+                { slot: 'Chest', name: 'Oppressor Robefings', stats: 'Armor: 274 | INT: 28, INI: 19 | +23 Magic Power', level: 40, renown: 55 },
+                { slot: 'Hands', name: 'Oppressor Greenbringas', stats: 'Armor: 209 | INT: 26, TOU: 8, INI: 11 | +3% Reduced Chance to be Disrupted', level: 40, renown: 55 },
+                { slot: 'Shoulders', name: 'Oppressor Sholdafings', stats: 'Armor: 241 | INT: 34, TOU: 10, INI: 20 | +1% Magic Crit', level: 40, renown: 55 },
+                { slot: 'Belt', name: 'Oppressor Waaaghat', stats: 'Armor: 241 | INT: 24, INI: 20, WOU: 12 | +3% Reduced Chance to be Disrupted', level: 40, renown: 55 },
+                { slot: 'Accessory', name: 'Oppressor Bitskeepa', stats: 'INT: 21, TOU: 12, INI: 19 | +36 Magic Power | 87 SRe, 86 ERe, 86 CRe', level: 40, renown: 55 }
             ],
             setBonuses: [
                 { pieces: 2, bonus: '+62 Intelligence' },
@@ -1265,14 +1265,14 @@ const gearDatabase = {
         'shaman_goblin_dps_rr60': {
             setName: 'Warlord Set',
             pieces: [
-                { slot: 'Head', name: 'Warlord Morkyfeets', stats: 'Armor: 241 | TOU: 10, INI: 20, INT: 20, WOU: 28' },
-                { slot: 'Chest', name: 'Warlord Robefings', stats: 'Armor: 323 | TOU: 19, INI: 28, INT: 18, WOU: 20 | +80 HP Every 4s' },
-                { slot: 'Hands', name: 'Warlord Greenbringas', stats: 'Armor: 241 | TOU: 22, INI: 18, INT: 18 | +2% Magic Crit' },
-                { slot: 'Shoulders', name: 'Warlord Sholdafings', stats: 'Armor: 286 | TOU: 21, INI: 26, WOU: 20 | +4% Reduced Armor Pen' },
-                { slot: 'Belt', name: 'Warlord Waaaghat', stats: 'Armor: 286 | TOU: 20, INI: 30, WOU: 21 | +2% Magic Crit' },
-                { slot: 'Accessory', name: 'Warlord Bitskeepa', stats: 'INI: 20, INT: 34 | +2% Dodge, +2% Disrupt' },
-                { slot: 'Cloak', name: 'Warlord Greencloak', stats: 'TOU: 14, INI: 25, WOU: 24 | +3 AP Per Second | 102 SRe, 101 ERe, 101 CRe' },
-                { slot: 'Ring', name: 'Warlord Waaagh Beads', stats: 'INI: 25, WOU: 14 | +2 Morale Per Second, +2% Magic Crit | 87 SRe, 87 ERe, 86 CRe' }
+                { slot: 'Head', name: 'Warlord Morkyfeets', stats: 'Armor: 241 | TOU: 10, INI: 20, INT: 20, WOU: 28', level: 40, renown: 71 },
+                { slot: 'Chest', name: 'Warlord Robefings', stats: 'Armor: 323 | TOU: 19, INI: 28, INT: 18, WOU: 20 | +80 HP Every 4s', level: 40, renown: 73 },
+                { slot: 'Hands', name: 'Warlord Greenbringas', stats: 'Armor: 241 | TOU: 22, INI: 18, INT: 18 | +2% Magic Crit', level: 40, renown: 71 },
+                { slot: 'Shoulders', name: 'Warlord Sholdafings', stats: 'Armor: 286 | TOU: 21, INI: 26, WOU: 20 | +4% Reduced Armor Pen', level: 40, renown: 72 },
+                { slot: 'Belt', name: 'Warlord Waaaghat', stats: 'Armor: 286 | TOU: 20, INI: 30, WOU: 21 | +2% Magic Crit', level: 40, renown: 72 },
+                { slot: 'Accessory', name: 'Warlord Bitskeepa', stats: 'INI: 20, INT: 34 | +2% Dodge, +2% Disrupt', level: 40, renown: 70 },
+                { slot: 'Cloak', name: 'Warlord Greencloak', stats: 'TOU: 14, INI: 25, WOU: 24 | +3 AP Per Second | 102 SRe, 101 ERe, 101 CRe', level: 40, renown: 70 },
+                { slot: 'Ring', name: 'Warlord Waaagh Beads', stats: 'INI: 25, WOU: 14 | +2 Morale Per Second, +2% Magic Crit | 87 SRe, 87 ERe, 86 CRe', level: 40, renown: 73 }
             ],
             setBonuses: [
                 { pieces: 2, bonus: '+75 Intelligence' },
@@ -1288,13 +1288,13 @@ const gearDatabase = {
         'shaman_goblin_dps_rr60_bloodlord': {
             setName: 'Bloodlord Set',
             pieces: [
-                { slot: 'Head', name: 'Bloodlord Morkyfeets', stats: 'Armor: 221 | INT: 27, INI: 10, WOU: 18 | +2% Dodge' },
-                { slot: 'Chest', name: 'Bloodlord Robefings', stats: 'Armor: 292 | INT: 29, TOU: 12, INI: 25, WOU: 19 | +1 Morale Per Second' },
-                { slot: 'Hands', name: 'Bloodlord Greenbringas', stats: 'Armor: 221 | INT: 26, TOU: 10, INI: 15, WOU: 16' },
-                { slot: 'Shoulders', name: 'Bloodlord Sholdafings', stats: 'Armor: 257 | INT: 27, INI: 21, WOU: 10 | +2% Magic Crit' },
-                { slot: 'Belt', name: 'Bloodlord Waaaghat', stats: 'Armor: 257 | INT: 29, TOU: 14, INI: 17 | +3% Disrupt' },
-                { slot: 'Accessory', name: 'Bloodlord Bitskeepa', stats: 'INT: 21, INI: 15, WOU: 17 | +3 Morale Per Second | 91 SRe, 91 ERe, 91 CRe' },
-                { slot: 'Cloak', name: 'Bloodlord Greencloak', stats: 'INT: 22, INI: 15, WOU: 15 | +24 Magic Power | 91 SRe, 91 ERe, 91 CRe' }
+                { slot: 'Head', name: 'Bloodlord Morkyfeets', stats: 'Armor: 221 | INT: 27, INI: 10, WOU: 18 | +2% Dodge', level: 40 },
+                { slot: 'Chest', name: 'Bloodlord Robefings', stats: 'Armor: 292 | INT: 29, TOU: 12, INI: 25, WOU: 19 | +1 Morale Per Second', level: 40 },
+                { slot: 'Hands', name: 'Bloodlord Greenbringas', stats: 'Armor: 221 | INT: 26, TOU: 10, INI: 15, WOU: 16', level: 40 },
+                { slot: 'Shoulders', name: 'Bloodlord Sholdafings', stats: 'Armor: 257 | INT: 27, INI: 21, WOU: 10 | +2% Magic Crit', level: 40 },
+                { slot: 'Belt', name: 'Bloodlord Waaaghat', stats: 'Armor: 257 | INT: 29, TOU: 14, INI: 17 | +3% Disrupt', level: 40 },
+                { slot: 'Accessory', name: 'Bloodlord Bitskeepa', stats: 'INT: 21, INI: 15, WOU: 17 | +3 Morale Per Second | 91 SRe, 91 ERe, 91 CRe', level: 40 },
+                { slot: 'Cloak', name: 'Bloodlord Greencloak', stats: 'INT: 22, INI: 15, WOU: 15 | +24 Magic Power | 91 SRe, 91 ERe, 91 CRe', level: 40 }
             ],
             setBonuses: [
                 { pieces: 2, bonus: '+66 Wounds' },
@@ -1309,13 +1309,13 @@ const gearDatabase = {
         'shaman_goblin_dps_rr60_victorious': {
             setName: 'Victorious Set (Ranked)',
             pieces: [
-                { slot: 'Head', name: 'Victorious Morkyfeets', stats: 'Armor: 235 | INT: 19, INI: 14, WOU: 18 | +2% Magic Crit' },
-                { slot: 'Chest', name: 'Victorious Robefings', stats: 'Armor: 308 | INT: 28, INI: 24 | +4 AP Per Second, +23 Magic Power' },
-                { slot: 'Hands', name: 'Victorious Greenbringas', stats: 'Armor: 235 | INT: 30, TOU: 11, INI: 11, WOU: 11 | +3% Reduced Chance to be Disrupted' },
-                { slot: 'Shoulders', name: 'Victorious Sholdafings', stats: 'Armor: 275 | INT: 32, TOU: 10, INI: 20 | +2% Magic Crit' },
-                { slot: 'Belt', name: 'Victorious Waaaghat', stats: 'Armor: 275 | INT: 27, INI: 15, WOU: 23 | +3% Reduced Chance to be Disrupted' },
-                { slot: 'Accessory', name: 'Victorious Bitskeepa', stats: 'INT: 25, INI: 23, WOU: 12 | +36 Magic Power | 94 SRe, 94 ERe, 94 CRe' },
-                { slot: 'Cloak', name: 'Victorious Greencloak', stats: 'INT: 16, INI: 10, WOU: 25 | +2% Magic Crit | 94 SRe, 94 ERe, 94 CRe' }
+                { slot: 'Head', name: 'Victorious Morkyfeets', stats: 'Armor: 235 | INT: 19, INI: 14, WOU: 18 | +2% Magic Crit', level: 40, renown: 60 },
+                { slot: 'Chest', name: 'Victorious Robefings', stats: 'Armor: 308 | INT: 28, INI: 24 | +4 AP Per Second, +23 Magic Power', level: 40, renown: 62 },
+                { slot: 'Hands', name: 'Victorious Greenbringas', stats: 'Armor: 235 | INT: 30, TOU: 11, INI: 11, WOU: 11 | +3% Reduced Chance to be Disrupted', level: 40, renown: 60 },
+                { slot: 'Shoulders', name: 'Victorious Sholdafings', stats: 'Armor: 275 | INT: 32, TOU: 10, INI: 20 | +2% Magic Crit', level: 40, renown: 61 },
+                { slot: 'Belt', name: 'Victorious Waaaghat', stats: 'Armor: 275 | INT: 27, INI: 15, WOU: 23 | +3% Reduced Chance to be Disrupted', level: 40, renown: 61 },
+                { slot: 'Accessory', name: 'Victorious Bitskeepa', stats: 'INT: 25, INI: 23, WOU: 12 | +36 Magic Power | 94 SRe, 94 ERe, 94 CRe', level: 40, renown: 60 },
+                { slot: 'Cloak', name: 'Victorious Greencloak', stats: 'INT: 16, INI: 10, WOU: 25 | +2% Magic Crit | 94 SRe, 94 ERe, 94 CRe', level: 40, renown: 60 }
             ],
             setBonuses: [
                 { pieces: 2, bonus: '+71 Intelligence' },
@@ -1327,40 +1327,17 @@ const gearDatabase = {
             ],
             totalStats: 'Armor: 1328 | INT: 186, TOU: 33, INI: 129, WOU: 45 | 188 SRe, 188 ERe, 188 CRe'
         },
-        'shaman_goblin_dps_rr60': {
-            setName: 'Warlord Set',
-            pieces: [
-                { slot: 'Head', name: 'Warlord Morkyfeets', stats: 'Armor: 241 | TOU: 10, INI: 20, INT: 20, WOU: 28' },
-                { slot: 'Chest', name: 'Warlord Robefings', stats: 'Armor: 323 | TOU: 19, INI: 28, INT: 18, WOU: 20 | +80 HP Every 4s' },
-                { slot: 'Hands', name: 'Warlord Greenbringas', stats: 'Armor: 241 | TOU: 22, INI: 18, INT: 18 | +2% Magic Crit' },
-                { slot: 'Shoulders', name: 'Warlord Sholdafings', stats: 'Armor: 286 | TOU: 21, INI: 26, WOU: 20 | +4% Reduced Armor Pen' },
-                { slot: 'Belt', name: 'Warlord Waaaghat', stats: 'Armor: 286 | TOU: 20, INI: 30, WOU: 21 | +2% Magic Crit' },
-                { slot: 'Accessory', name: 'Warlord Bitskeepa', stats: 'INI: 20, INT: 34 | +2% Dodge, +2% Disrupt' },
-                { slot: 'Cloak', name: 'Warlord Greencloak', stats: 'TOU: 14, INI: 25, WOU: 24 | +3 AP Per Second | 102 SRe, 101 ERe, 101 CRe' },
-                { slot: 'Ring', name: 'Warlord Waaagh Beads', stats: 'INI: 25, WOU: 14 | +2 Morale Per Second, +2% Magic Crit | 87 SRe, 87 ERe, 86 CRe' }
-            ],
-            setBonuses: [
-                { pieces: 2, bonus: '+75 Intelligence' },
-                { pieces: 3, bonus: '+83 Wounds' },
-                { pieces: 4, bonus: '+6% Reduced Chance to be Disrupted' },
-                { pieces: 5, bonus: '+99 Magic Power' },
-                { pieces: 6, bonus: '+2 Path of Da Green Abilities' },
-                { pieces: 7, bonus: 'Boost V - On Hit: 10% chance to increase crit rate by 9% and crit damage by 12% for 9s' },
-                { pieces: 8, bonus: 'Gain ability: Just a bit mor\'' }
-            ],
-            totalStats: 'Armor: 1377 | TOU: 84, INI: 196, INT: 56, WOU: 179'
-        },
         'shaman_goblin_dps_rr70': {
             setName: 'Sovereign Set of da Windbreaker',
             pieces: [
-                { slot: 'Head', name: 'Sovereign Morkyfeets of da Windbreaker', stats: 'Armor: 247 | INT: 17, INI: 18, WOU: 23 | +2% Magic Crit' },
-                { slot: 'Chest', name: 'Sovereign Robefings of da Windbreaker', stats: 'Armor: 334 | TOU: 27, INI: 27, WOU: 31 | +4 AP Per Second' },
-                { slot: 'Hands', name: 'Sovereign Greenbringas of da Windbreaker', stats: 'Armor: 247 | INT: 19, INI: 20, WOU: 26 | +20 Magic Power' },
-                { slot: 'Shoulders', name: 'Sovereign Sholdafings of da Windbreaker', stats: 'Armor: 296 | INT: 21, INI: 20, WOU: 30 | +2% Magic Crit' },
-                { slot: 'Belt', name: 'Sovereign Waaaghat of da Windbreaker', stats: 'Armor: 296 | INT: 24, INI: 26, WOU: 25 | +25 Magic Power' },
-                { slot: 'Accessory', name: 'Sovereign Bitskeepa of da Windbreaker', stats: 'INT: 14, INI: 20, WOU: 20 | +2% Dodge, +2% Disrupt | 101 SRe, 101 ERe, 102 CRe' },
-                { slot: 'Cloak', name: 'Sovereign Waaaghchain of da Windbreaker', stats: 'INI: 22, WOU: 27 | +4 AP Per Second | 87 SRe, 87 ERe, 86 CRe' },
-                { slot: 'Ring', name: 'Sovereign Waaaghfings of da Windbreaker', stats: 'INT: 19, INI: 18, WOU: 21 | +2% Magic Crit | 102 SRe, 101 ERe, 101 CRe' }
+                { slot: 'Head', name: 'Sovereign Morkyfeets of da Windbreaker', stats: 'Armor: 247 | INT: 17, INI: 18, WOU: 23 | +2% Magic Crit', level: 40, renown: 74 },
+                { slot: 'Chest', name: 'Sovereign Robefings of da Windbreaker', stats: 'Armor: 334 | TOU: 27, INI: 27, WOU: 31 | +4 AP Per Second', level: 40, renown: 78 },
+                { slot: 'Hands', name: 'Sovereign Greenbringas of da Windbreaker', stats: 'Armor: 247 | INT: 19, INI: 20, WOU: 26 | +20 Magic Power', level: 40, renown: 74 },
+                { slot: 'Shoulders', name: 'Sovereign Sholdafings of da Windbreaker', stats: 'Armor: 296 | INT: 21, INI: 20, WOU: 30 | +2% Magic Crit', level: 40, renown: 76 },
+                { slot: 'Belt', name: 'Sovereign Waaaghat of da Windbreaker', stats: 'Armor: 296 | INT: 24, INI: 26, WOU: 25 | +25 Magic Power', level: 40, renown: 76 },
+                { slot: 'Accessory', name: 'Sovereign Bitskeepa of da Windbreaker', stats: 'INT: 14, INI: 20, WOU: 20 | +2% Dodge, +2% Disrupt | 101 SRe, 101 ERe, 102 CRe', level: 40, renown: 70 },
+                { slot: 'Cloak', name: 'Sovereign Waaaghchain of da Windbreaker', stats: 'INI: 22, WOU: 27 | +4 AP Per Second | 87 SRe, 87 ERe, 86 CRe', level: 40, renown: 70 },
+                { slot: 'Ring', name: 'Sovereign Waaaghfings of da Windbreaker', stats: 'INT: 19, INI: 18, WOU: 21 | +2% Magic Crit | 102 SRe, 101 ERe, 101 CRe', level: 40, renown: 78 }
             ],
             setBonuses: [
                 { pieces: 2, bonus: '+80 Intelligence' },
