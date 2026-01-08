@@ -83,227 +83,230 @@ const gearDatabase = {
             ],
             totalStats: "Armor: 351 | Strength: 13 | Toughness: 17 | Weapon Skill: 7 | Initiative: 3 | Wounds: 14"
         },
-    },
-
-    calculateTotalStats: function(gearSet) {
-        if (!gearSet || !gearSet.pieces || !Array.isArray(gearSet.pieces)) {
-            return 0;
-        }
-        let total = 0;
-        gearSet.pieces.forEach(piece => {
-            if (!piece.stats) return;
-                    const normalizedRole = role ? role.toLowerCase() : null;
-                    const rolePrefix = normalizedRole ? `${classId}_${normalizedRole}_` : null;
-            // Extract and sum all numeric values
-            const numbers = stats.match(/:\s*(\d+)/g);
-            if (numbers) {
-                numbers.forEach(num => {
-                    const value = parseInt(num.replace(/:\s*/, ''));
-                    total += value;
-                });
-            }
-        });
-        return total;
-    },
-
-    // Old calculateSetScore kept for compatibility
-    calculateSetScore: function(gearSet, role, level, renown, tier) {
-        if (!gearSet || !gearSet.pieces || !Array.isArray(gearSet.pieces)) {
-            return 0;
-        }
-        
-        let score = 0;
-        const isHealer = role && role.toLowerCase() === 'healer';
-        const isDPS = role && role.toLowerCase() === 'dps';
-        const isTank = role && role.toLowerCase() === 'tank';
-        
-        // Calculate average level requirement of the set
-        let totalLevel = 0;
-        let levelCount = 0;
-        gearSet.pieces.forEach(piece => {
-            if (piece.level) {
-                totalLevel += piece.level;
-                levelCount++;
-            }
-        });
-        const avgSetLevel = levelCount > 0 ? totalLevel / levelCount : 0;
-        
-        // HEAVILY penalize sets far below player's level (underleveled gear)
-        const levelDifference = level - avgSetLevel;
-        if (levelDifference > 8) {
-            score -= levelDifference * 100; // Massive penalty for showing low-level gear
-        } else if (levelDifference > 4) {
-            score -= levelDifference * 50; // Moderate penalty
-        } else if (levelDifference >= 0 && levelDifference <= 4) {
-            score += (4 - levelDifference) * 20; // Small bonus for gear at appropriate level
-        }
-        
-        // Determine if this is a PvE set based on set name patterns
-        const setName = gearSet.setName || '';
-        const isPvESet = setName.includes('Keeper') || 
-                         setName.includes('Havoc') || 
-                         setName.includes('Tracker') || 
-                         setName.includes('Ruin') ||
-                         setName.includes('Stalker') ||
-                         setName.includes('Genesis') ||
-                         setName.includes('Warrant') ||
-                         setName.includes('Redeye') ||
-                         setName.includes('Sentinel') ||
-                         setName.includes('Bloodlord');
-        
-        // Get the required RR for the current tier
-        const tierRRRequirement = {
-            'rr8': 8, 'rr16': 16, 'rr26': 26, 'rr35': 35,
-            'rr45': 45, 'rr55': 55, 'rr60': 60, 'rr70': 70
-        };
-        const requiredRR = tierRRRequirement[tier] || 0;
-        
-        // If player's RR is significantly below tier requirement, favor PvE sets
-        if (renown < requiredRR - 2) {
-            if (isPvESet) {
-                score += 200; // Bonus for PvE sets when undergeared in RR
-            } else {
-                score -= 200; // Penalty for RvR sets when undergeared
-            }
-        } else if (renown >= requiredRR) {
-            // At or above RR requirement, slightly favor RvR sets (they're usually BiS at cap)
-            if (!isPvESet) {
-                score += 50;
-            }
-        }
-        
-        // Parse stats from pieces
-        gearSet.pieces.forEach(piece => {
-            if (!piece.stats) return;
-            
-            const stats = piece.stats;
-            
-            // Extract numeric values for primary stats
-            const wpMatch = stats.match(/Willpower:\s*(\d+)/i);
-            const intMatch = stats.match(/Intelligence:\s*(\d+)/i);
-            const strMatch = stats.match(/Strength:\s*(\d+)/i);
-            const touMatch = stats.match(/Toughness:\s*(\d+)/i);
-            const wouMatch = stats.match(/Wounds:\s*(\d+)/i);
-            const iniMatch = stats.match(/Initiative:\s*(\d+)/i);
-            const armorMatch = stats.match(/Armor:\s*(\d+)/i);
-            
-            // Role-based scoring weights (Main Stat > Wounds > Initiative > Toughness)
-            if (isHealer) {
-                score += wpMatch ? parseInt(wpMatch[1]) * 4 : 0;      // Willpower (main stat)
-                score += wouMatch ? parseInt(wouMatch[1]) * 3 : 0;     // Wounds
-                score += iniMatch ? parseInt(iniMatch[1]) * 2.5 : 0;   // Initiative
-                score += touMatch ? parseInt(touMatch[1]) * 2 : 0;     // Toughness
-                score += armorMatch ? parseInt(armorMatch[1]) * 0.3 : 0;
-                
-                // Healing-specific bonuses
-                if (stats.includes('Healing Crit') || stats.includes('Healing Critical')) score += 50;
-                if (stats.includes('Healing Power')) {
-                    const healPowerMatch = stats.match(/(\d+)\s*Healing Power/i);
-                    score += healPowerMatch ? parseInt(healPowerMatch[1]) * 2 : 0;
-                }
-                if (stats.includes('AP Per Second')) score += 40;
-            } else if (isDPS) {
-                score += intMatch ? parseInt(intMatch[1]) * 4 : 0;     // Intelligence (main stat)
-                score += strMatch ? parseInt(strMatch[1]) * 4 : 0;     // Strength (main stat)
-                score += wpMatch ? parseInt(wpMatch[1]) * 4 : 0;       // Willpower (main stat for casters)
-                score += wouMatch ? parseInt(wouMatch[1]) * 3 : 0;     // Wounds
-                score += iniMatch ? parseInt(iniMatch[1]) * 2.5 : 0;   // Initiative
-                score += touMatch ? parseInt(touMatch[1]) * 2 : 0;     // Toughness
-                score += armorMatch ? parseInt(armorMatch[1]) * 0.2 : 0;
-                
-                // DPS-specific bonuses
-                if (stats.includes('Crit') && !stats.includes('Healing Crit')) score += 50;
-                if (stats.includes('AP Per Second')) score += 60;
-            } else if (isTank) {
-                score += wouMatch ? parseInt(wouMatch[1]) * 4 : 0;     // Wounds (most important for tank)
-                score += iniMatch ? parseInt(iniMatch[1]) * 3.5 : 0;   // Initiative
-                score += touMatch ? parseInt(touMatch[1]) * 3 : 0;     // Toughness
-                score += armorMatch ? parseInt(armorMatch[1]) * 0.8 : 0;
-                score += strMatch ? parseInt(strMatch[1]) * 1 : 0;     // Strength less important for tanks
-                
-                // Tank-specific bonuses
-                if (stats.includes('Block') || stats.includes('Parry')) score += 60;
-                if (stats.includes('Reduce') && stats.includes('Damage')) score += 50;
-            }
-            
-            // Universal valuable stats
-            if (stats.includes('Morale')) score += 30;
-            if (stats.includes('Disrupt')) score += 25;
-            if (stats.includes('Dodge')) score += 20;
-        });
-        
-        // Add bonus for set bonuses quality (heavily weighted)
-        if (gearSet.setBonuses && Array.isArray(gearSet.setBonuses)) {
-            score += gearSet.setBonuses.length * 150;  // Increased from 40 to 150
-            
-            // Analyze set bonus quality
-            gearSet.setBonuses.forEach(bonus => {
-                const bonusText = bonus.bonus.toLowerCase();
-                
-                // High value bonuses
-                if (bonusText.includes('critical') || bonusText.includes('crit')) score += 120;
-                if (bonusText.includes('ap per second') || bonusText.includes('action point')) score += 150;
-                if (bonusText.includes('healing power')) score += 140;
-                if (bonusText.includes('morale')) score += 100;
-                
-                // Defensive bonuses
-                if (bonusText.includes('block') || bonusText.includes('parry') || bonusText.includes('dodge')) score += 100;
-                if (bonusText.includes('reduce') && bonusText.includes('damage')) score += 110;
-                if (bonusText.includes('wounds') || bonusText.includes('toughness')) score += 90;
-                
-                // Proc bonuses (Reactionary, Superiority, etc.)
-                if (bonusText.includes('on hit') || bonusText.includes('on being hit') || bonusText.includes('on defense')) score += 130;
-                if (bonusText.includes('chance to')) score += 110;
-            });
-            
-            // Bonus for set completion
-            const maxPieces = Math.max(...gearSet.setBonuses.map(b => b.pieces));
-            if (maxPieces >= 6) score += 300;  // Increased from 100
-            else if (maxPieces >= 5) score += 200;
-            else if (maxPieces >= 4) score += 100;
-        }
-        
-        // Parse and score totalStats if available (heavily weighted)
-        if (gearSet.totalStats) {
-            const totalStats = gearSet.totalStats;
-            
-            // Extract totals
-            const totalWP = totalStats.match(/Willpower:\s*(\d+)/i);
-            const totalINT = totalStats.match(/Intelligence:\s*(\d+)/i);
-            const totalSTR = totalStats.match(/Strength:\s*(\d+)/i);
-            const totalTOU = totalStats.match(/Toughness:\s*(\d+)/i);
-            const totalWOU = totalStats.match(/Wounds:\s*(\d+)/i);
-            const totalINI = totalStats.match(/Initiative:\s*(\d+)/i);
-            const totalArmor = totalStats.match(/Armor:\s*(\d+)/i);
-            
-            // Apply role-based scoring to totals with high multipliers
-            if (isHealer) {
-                score += totalWP ? parseInt(totalWP[1]) * 2 : 0;
-                score += totalWOU ? parseInt(totalWOU[1]) * 1.5 : 0;
-                score += totalINI ? parseInt(totalINI[1]) * 1.2 : 0;
-                score += totalTOU ? parseInt(totalTOU[1]) * 1 : 0;
-            } else if (isDPS) {
-                score += totalINT ? parseInt(totalINT[1]) * 2 : 0;
-                score += totalSTR ? parseInt(totalSTR[1]) * 2 : 0;
-                score += totalWP ? parseInt(totalWP[1]) * 2 : 0;
-                score += totalWOU ? parseInt(totalWOU[1]) * 1.5 : 0;
-                score += totalINI ? parseInt(totalINI[1]) * 1.2 : 0;
-            } else if (isTank) {
-                score += totalWOU ? parseInt(totalWOU[1]) * 2 : 0;
-                score += totalINI ? parseInt(totalINI[1]) * 1.8 : 0;
-                score += totalTOU ? parseInt(totalTOU[1]) * 1.5 : 0;
-                score += totalArmor ? parseInt(totalArmor[1]) * 0.4 : 0;
-            }
-        }
-        
-        // Bonus for number of pieces (more complete sets are better)
-        score += gearSet.pieces.length * 30;  // Increased from 20
-        
-        return score;
-    },
-
-    // Get class by ID
-    getClassById: function(classId) {
-        return this.classes.find(c => c.id === classId);
     }
+};
+
+// Attach methods to gearDatabase after object literal
+gearDatabase.getRecommendations = function(classId, level, renown, role) {
+    let allSets = [];
+    if (this.recommendations) {
+        for (const key in this.recommendations) {
+            const normalizedRole = role ? role.toLowerCase() : null;
+            const rolePrefix = normalizedRole ? `${classId}_${normalizedRole}_` : null;
+            const classPrefix = `${classId}_`;
+            if (rolePrefix && key.startsWith(rolePrefix)) {
+                allSets.push(this.recommendations[key]);
+            } else if (!key.includes('_healer_') && !key.includes('_dps_') && !key.includes('_tank_') && key.startsWith(classPrefix)) {
+                allSets.push(this.recommendations[key]);
+            }
+        }
+    }
+    const wearableSets = allSets.filter(set => {
+        if (!set || !set.pieces || !Array.isArray(set.pieces) || set.pieces.length === 0) return false;
+        for (const piece of set.pieces) {
+            if (piece.level && piece.level > level) return false;
+            if (piece.renown && piece.renown > renown) return false;
+        }
+        return true;
+    });
+    wearableSets.sort((a, b) => {
+        const scoreA = this.calculateTotalStats(a);
+        const scoreB = this.calculateTotalStats(b);
+        return scoreB - scoreA;
+    });
+    return wearableSets.slice(0, 3);
+};
+
+gearDatabase.calculateTotalStats = function(gearSet) {
+    if (!gearSet || !gearSet.pieces || !Array.isArray(gearSet.pieces)) {
+        return 0;
+    }
+    let total = 0;
+    gearSet.pieces.forEach(piece => {
+        if (!piece.stats) return;
+        const stats = piece.stats;
+        // Extract and sum all numeric values
+        const numbers = stats.match(/:\s*(\d+)/g);
+        if (numbers) {
+            numbers.forEach(num => {
+                const value = parseInt(num.replace(/:\s*/, ''));
+                total += value;
+            });
+        }
+    });
+    return total;
+};
+
+gearDatabase.calculateSetScore = function(gearSet, role, level, renown, tier) {
+    if (!gearSet || !gearSet.pieces || !Array.isArray(gearSet.pieces)) {
+        return 0;
+    }
+    let score = 0;
+    const isHealer = role && role.toLowerCase() === 'healer';
+    const isDPS = role && role.toLowerCase() === 'dps';
+    const isTank = role && role.toLowerCase() === 'tank';
+    // Calculate average level requirement of the set
+    let totalLevel = 0;
+    let levelCount = 0;
+    gearSet.pieces.forEach(piece => {
+        if (piece.level) {
+            totalLevel += piece.level;
+            levelCount++;
+        }
+    });
+    const avgSetLevel = levelCount > 0 ? totalLevel / levelCount : 0;
+    // HEAVILY penalize sets far below player's level (underleveled gear)
+    const levelDifference = level - avgSetLevel;
+    if (levelDifference > 8) {
+        score -= levelDifference * 100; // Massive penalty for showing low-level gear
+    } else if (levelDifference > 4) {
+        score -= levelDifference * 50; // Moderate penalty
+    } else if (levelDifference >= 0 && levelDifference <= 4) {
+        score += (4 - levelDifference) * 20; // Small bonus for gear at appropriate level
+    }
+    // Determine if this is a PvE set based on set name patterns
+    const setName = gearSet.setName || '';
+    const isPvESet = setName.includes('Keeper') || 
+                     setName.includes('Havoc') || 
+                     setName.includes('Tracker') || 
+                     setName.includes('Ruin') ||
+                     setName.includes('Stalker') ||
+                     setName.includes('Genesis') ||
+                     setName.includes('Warrant') ||
+                     setName.includes('Redeye') ||
+                     setName.includes('Sentinel') ||
+                     setName.includes('Bloodlord');
+    // Get the required RR for the current tier
+    const tierRRRequirement = {
+        'rr8': 8, 'rr16': 16, 'rr26': 26, 'rr35': 35,
+        'rr45': 45, 'rr55': 55, 'rr60': 60, 'rr70': 70
+    };
+    const requiredRR = tierRRRequirement[tier] || 0;
+    // If player's RR is significantly below tier requirement, favor PvE sets
+    if (renown < requiredRR - 2) {
+        if (isPvESet) {
+            score += 200; // Bonus for PvE sets when undergeared in RR
+        } else {
+            score -= 200; // Penalty for RvR sets when undergeared
+        }
+    } else if (renown >= requiredRR) {
+        // At or above RR requirement, slightly favor RvR sets (they're usually BiS at cap)
+        if (!isPvESet) {
+            score += 50;
+        }
+    }
+    // Parse stats from pieces
+    gearSet.pieces.forEach(piece => {
+        if (!piece.stats) return;
+        const stats = piece.stats;
+        // Extract numeric values for primary stats
+        const wpMatch = stats.match(/Willpower:\s*(\d+)/i);
+        const intMatch = stats.match(/Intelligence:\s*(\d+)/i);
+        const strMatch = stats.match(/Strength:\s*(\d+)/i);
+        const touMatch = stats.match(/Toughness:\s*(\d+)/i);
+        const wouMatch = stats.match(/Wounds:\s*(\d+)/i);
+        const iniMatch = stats.match(/Initiative:\s*(\d+)/i);
+        const armorMatch = stats.match(/Armor:\s*(\d+)/i);
+        // Role-based scoring weights (Main Stat > Wounds > Initiative > Toughness)
+        if (isHealer) {
+            score += wpMatch ? parseInt(wpMatch[1]) * 4 : 0;      // Willpower (main stat)
+            score += wouMatch ? parseInt(wouMatch[1]) * 3 : 0;     // Wounds
+            score += iniMatch ? parseInt(iniMatch[1]) * 2.5 : 0;   // Initiative
+            score += touMatch ? parseInt(touMatch[1]) * 2 : 0;     // Toughness
+            score += armorMatch ? parseInt(armorMatch[1]) * 0.3 : 0;
+            // Healing-specific bonuses
+            if (stats.includes('Healing Crit') || stats.includes('Healing Critical')) score += 50;
+            if (stats.includes('Healing Power')) {
+                const healPowerMatch = stats.match(/(\d+)\s*Healing Power/i);
+                score += healPowerMatch ? parseInt(healPowerMatch[1]) * 2 : 0;
+            }
+            if (stats.includes('AP Per Second')) score += 40;
+        } else if (isDPS) {
+            score += intMatch ? parseInt(intMatch[1]) * 4 : 0;     // Intelligence (main stat)
+            score += strMatch ? parseInt(strMatch[1]) * 4 : 0;     // Strength (main stat)
+            score += wpMatch ? parseInt(wpMatch[1]) * 4 : 0;       // Willpower (main stat for casters)
+            score += wouMatch ? parseInt(wouMatch[1]) * 3 : 0;     // Wounds
+            score += iniMatch ? parseInt(iniMatch[1]) * 2.5 : 0;   // Initiative
+            score += touMatch ? parseInt(touMatch[1]) * 2 : 0;     // Toughness
+            score += armorMatch ? parseInt(armorMatch[1]) * 0.2 : 0;
+            // DPS-specific bonuses
+            if (stats.includes('Crit') && !stats.includes('Healing Crit')) score += 50;
+            if (stats.includes('AP Per Second')) score += 60;
+        } else if (isTank) {
+            score += wouMatch ? parseInt(wouMatch[1]) * 4 : 0;     // Wounds (most important for tank)
+            score += iniMatch ? parseInt(iniMatch[1]) * 3.5 : 0;   // Initiative
+            score += touMatch ? parseInt(touMatch[1]) * 3 : 0;     // Toughness
+            score += armorMatch ? parseInt(armorMatch[1]) * 0.8 : 0;
+            score += strMatch ? parseInt(strMatch[1]) * 1 : 0;     // Strength less important for tanks
+            // Tank-specific bonuses
+            if (stats.includes('Block') || stats.includes('Parry')) score += 60;
+            if (stats.includes('Reduce') && stats.includes('Damage')) score += 50;
+        }
+        // Universal valuable stats
+        if (stats.includes('Morale')) score += 30;
+        if (stats.includes('Disrupt')) score += 25;
+        if (stats.includes('Dodge')) score += 20;
+    });
+    // Add bonus for set bonuses quality (heavily weighted)
+    if (gearSet.setBonuses && Array.isArray(gearSet.setBonuses)) {
+        score += gearSet.setBonuses.length * 150;  // Increased from 40 to 150
+        // Analyze set bonus quality
+        gearSet.setBonuses.forEach(bonus => {
+            const bonusText = bonus.bonus.toLowerCase();
+            // High value bonuses
+            if (bonusText.includes('critical') || bonusText.includes('crit')) score += 120;
+            if (bonusText.includes('ap per second') || bonusText.includes('action point')) score += 150;
+            if (bonusText.includes('healing power')) score += 140;
+            if (bonusText.includes('morale')) score += 100;
+            // Defensive bonuses
+            if (bonusText.includes('block') || bonusText.includes('parry') || bonusText.includes('dodge')) score += 100;
+            if (bonusText.includes('reduce') && bonusText.includes('damage')) score += 110;
+            if (bonusText.includes('wounds') || bonusText.includes('toughness')) score += 90;
+            // Proc bonuses (Reactionary, Superiority, etc.)
+            if (bonusText.includes('on hit') || bonusText.includes('on being hit') || bonusText.includes('on defense')) score += 130;
+            if (bonusText.includes('chance to')) score += 110;
+        });
+        // Bonus for set completion
+        const maxPieces = Math.max(...gearSet.setBonuses.map(b => b.pieces));
+        if (maxPieces >= 6) score += 300;  // Increased from 100
+        else if (maxPieces >= 5) score += 200;
+        else if (maxPieces >= 4) score += 100;
+    }
+    // Parse and score totalStats if available (heavily weighted)
+    if (gearSet.totalStats) {
+        const totalStats = gearSet.totalStats;
+        // Extract totals
+        const totalWP = totalStats.match(/Willpower:\s*(\d+)/i);
+        const totalINT = totalStats.match(/Intelligence:\s*(\d+)/i);
+        const totalSTR = totalStats.match(/Strength:\s*(\d+)/i);
+        const totalTOU = totalStats.match(/Toughness:\s*(\d+)/i);
+        const totalWOU = totalStats.match(/Wounds:\s*(\d+)/i);
+        const totalINI = totalStats.match(/Initiative:\s*(\d+)/i);
+        const totalArmor = totalStats.match(/Armor:\s*(\d+)/i);
+        // Apply role-based scoring to totals with high multipliers
+        if (isHealer) {
+            score += totalWP ? parseInt(totalWP[1]) * 2 : 0;
+            score += totalWOU ? parseInt(totalWOU[1]) * 1.5 : 0;
+            score += totalINI ? parseInt(totalINI[1]) * 1.2 : 0;
+            score += totalTOU ? parseInt(totalTOU[1]) * 1 : 0;
+        } else if (isDPS) {
+            score += totalINT ? parseInt(totalINT[1]) * 2 : 0;
+            score += totalSTR ? parseInt(totalSTR[1]) * 2 : 0;
+            score += totalWP ? parseInt(totalWP[1]) * 2 : 0;
+            score += totalWOU ? parseInt(totalWOU[1]) * 1.5 : 0;
+            score += totalINI ? parseInt(totalINI[1]) * 1.2 : 0;
+        } else if (isTank) {
+            score += totalWOU ? parseInt(totalWOU[1]) * 2 : 0;
+            score += totalINI ? parseInt(totalINI[1]) * 1.8 : 0;
+            score += totalTOU ? parseInt(totalTOU[1]) * 1.5 : 0;
+            score += totalArmor ? parseInt(totalArmor[1]) * 0.4 : 0;
+        }
+    }
+    // Bonus for number of pieces (more complete sets are better)
+    score += gearSet.pieces.length * 30;  // Increased from 20
+    return score;
+};
+
+gearDatabase.getClassById = function(classId) {
+    return this.classes.find(c => c.id === classId);
 };

@@ -1,0 +1,151 @@
+{
+    "chaos_knight_tank_decimator": {
+        "setName": "Decimator Set",
+        "pieces": [
+            {
+                "slot": "body",
+                "name": "Decimator Carapace",
+                "level": 8,
+                "renown": 8,
+                "armor": 165,
+                "str": 4,
+                "tou": 8,
+                "ini": 4,
+                "wounds": 4,
+                "bonus": "+1% Block"
+            },
+            {
+                "slot": "boots",
+                "name": "Decimator Darkboots",
+                "level": 8,
+                "renown": 8,
+                "armor": 132,
+                "str": 2,
+                "tou": 6,
+                "ws": 4,
+                "wounds": 6
+            },
+            {
+                "slot": "belt",
+                "name": "Decimator Deathgirdle",
+                "level": 7,
+                "renown": 7,
+                "str": 2,
+                "tou": 3,
+                "wounds": 4,
+                "bonus": "+1% Reduced chance to be Critically Hit",
+                "sres": 33,
+                "eres": 20,
+                "cres": 20
+            }
+        ],
+        "setBonuses": [
+            {
+                "pieces": 2,
+                "bonus": "+18 Toughness"
+            },
+            {
+                "pieces": 3,
+                "bonus": "+22 Wounds"
+            }
+        ],
+        "totalStats": "Armor: 297 | Strength: 8 | Toughness: 17 | Weapon Skill: 4 | Initiative: 4 | Wounds: 10 | Spirit Resist: 33 | Elemental Resist: 20 | Corporeal Resist: 20"
+    },
+    "chaos_knight_tank_braggart": {
+        "setName": "Set of the Braggart",
+        "pieces": [
+            {
+                "slot": "body",
+                "name": "Braggart Carapace",
+                "level": 8,
+                "renown": 8,
+                "armor": 165,
+                "str": 6,
+                "wounds": 8,
+                "ws": 5,
+                "bonus": "+1% Reduced chance to be Parried"
+            },
+            {
+                "slot": "boots",
+                "name": "Braggart Darkboots",
+                "level": 7,
+                "renown": 7,
+                "armor": 132,
+                "str": 6,
+                "tou": 2,
+                "ws": 4,
+                "wounds": 6
+            },
+            {
+                "slot": "belt",
+                "name": "Braggart Deathgirdle",
+                "level": 7,
+                "renown": 7,
+                "str": 4,
+                "tou": 2,
+                "wounds": 3,
+                "bonus": "+1% Melee Critical Chance",
+                "sres": 23,
+                "eres": 25,
+                "cres": 25
+            }
+        ],
+        "setBonuses": [
+            {
+                "pieces": 2,
+                "bonus": "+18 Strength"
+            },
+            {
+                "pieces": 3,
+                "bonus": "+22 Toughness"
+            }
+        ],
+        "totalStats": "Armor: 297 | Strength: 16 | Toughness: 4 | Weapon Skill: 12 | Wounds: 14 | Spirit Resist: 23 | Elemental Resist: 25 | Corporeal Resist: 25"
+    },
+    "chaos_knight_tank_carnage": {
+        "setName": "Set of Carnage",
+        "pieces": [
+            {
+                "slot": "body",
+                "name": "Carnage Carapace",
+                "level": 5,
+                "armor": 135,
+                "str": 4,
+                "tou": 7,
+                "ini": 5,
+                "wounds": 6
+            },
+            {
+                "slot": "gloves",
+                "name": "Carnage Gauntlets",
+                "level": 5,
+                "armor": 108,
+                "str": 4,
+                "tou": 4,
+                "wounds": 3,
+                "ini": 5
+            },
+            {
+                "slot": "boots",
+                "name": "Carnage Darkboots",
+                "level": 5,
+                "armor": 108,
+                "str": 5,
+                "tou": 6,
+                "ws": 2,
+                "wounds": 3
+            }
+        ],
+        "setBonuses": [
+            {
+                "pieces": 2,
+                "bonus": "+135 Armor"
+            },
+            {
+                "pieces": 3,
+                "bonus": "+20 Weapon Skill"
+            }
+        ],
+        "totalStats": "Armor: 351 | Strength: 13 | Toughness: 17 | Weapon Skill: 7 | Initiative: 3 | Wounds: 14"
+    }
+}
