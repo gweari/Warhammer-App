@@ -213,14 +213,11 @@ function displayRecommendations(classObj, level, renown, role, gearSets, crestSa
     let html = '';
 
     if (gearSets && gearSets.length > 0) {
-        // 1. Show summary info at the top
+        // 1. Restore old summary block: simple available sets list
         const availableSetNames = gearSets.map(set => set.setName).filter(Boolean).join(', ');
         html += `<div class="gear-item" style="background: rgba(255,255,255,0.07); border-left: 4px solid #ffb81c; margin-bottom: 18px;">
-            <div style="font-size: 1.08rem; color: #ffb81c; font-weight: 700;">Class: <span style="color:#fff; font-weight:400;">${classObj.name}</span></div>
-            <div style="font-size: 1.08rem; color: #ffb81c; font-weight: 700;">Role: <span style="color:#fff; font-weight:400;">${role || classObj.roles[0]}</span></div>
-            <div style="font-size: 1.08rem; color: #ffb81c; font-weight: 700;">Level: <span style="color:#fff; font-weight:400;">${level}</span></div>
-            <div style="font-size: 1.08rem; color: #ffb81c; font-weight: 700;">Renown Rank: <span style="color:#fff; font-weight:400;">${renown}</span></div>
-            <div style="font-size: 1.08rem; color: #ffb81c; font-weight: 700;">Available Sets: <span style="color:#fff; font-weight:400;">${availableSetNames}</span></div>
+            <div style="font-size: 1.05rem; color: #ffb81c; font-weight: 700;">Available Sets:</div>
+            <div style="font-size: 1.05rem; color: #fff; font-weight: 400;">${availableSetNames}</div>
         </div>`;
 
         // 2. Show BiS (first set) breakdown
