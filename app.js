@@ -213,11 +213,12 @@ function displayRecommendations(classObj, level, renown, role, gearSets, crestSa
     let html = '';
 
     if (gearSets && gearSets.length > 0) {
-        // 1. Restore old summary block: simple available sets list
-        const availableSetNames = gearSets.map(set => set.setName).filter(Boolean).join(', ');
-        html += `<div class="gear-item" style="background: rgba(255,255,255,0.07); border-left: 4px solid #ffb81c; margin-bottom: 18px;">
-            <div style="font-size: 1.05rem; color: #ffb81c; font-weight: 700;">Available Sets:</div>
-            <div style="font-size: 1.05rem; color: #fff; font-weight: 400;">${availableSetNames}</div>
+        // 1. Restore classic summary section (class, level, role, renown)
+        html += `<div class="summary-block" style="background: rgba(255,255,255,0.07); border-left: 4px solid #ffb81c; margin-bottom: 18px; padding: 10px 18px 8px 18px; font-size: 1.08rem; color: #fff;">
+            <span style="color:#ffb81c; font-weight:700;">Class:</span> ${classObj.name} &nbsp; | &nbsp;
+            <span style="color:#ffb81c; font-weight:700;">Role:</span> ${role || classObj.roles[0]} &nbsp; | &nbsp;
+            <span style="color:#ffb81c; font-weight:700;">Level:</span> ${level} &nbsp; | &nbsp;
+            <span style="color:#ffb81c; font-weight:700;">Renown:</span> ${renown}
         </div>`;
 
         // 2. Show BiS (first set) breakdown
