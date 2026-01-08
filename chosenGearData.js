@@ -60,9 +60,9 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             role: "tank",
             requiredLevel: 8,
             pieces: [
-                { slot: "body", name: "Hunter's Carapace", level: 8, armor: 150, str: 8, tou: 4, wounds: 5, bonus: "+1% Parry" },
-                { slot: "gloves", name: "Hunter's Gauntlets", level: 7, armor: 120, tou: 8, ws: 5, wounds: 4 },
-                { slot: "boots", name: "Hunter's Darkboots", level: 7, armor: 120, str: 5, tou: 5, ws: 3, wounds: 4 }
+                { slot: "body", name: "Hunter's Carapace", level: 8, armor: 150, str: 8, tou: 4, wounds: 5, bonus: "+1% Parry", stats: "Armor: 150 | STR: 8 | TOU: 4 | WOU: 5 | +1% Parry" },
+                { slot: "gloves", name: "Hunter's Gauntlets", level: 7, armor: 120, tou: 8, ws: 5, wounds: 4, stats: "Armor: 120 | TOU: 8 | WS: 5 | WOU: 4" },
+                { slot: "boots", name: "Hunter's Darkboots", level: 7, armor: 120, str: 5, tou: 5, ws: 3, wounds: 4, stats: "Armor: 120 | STR: 5 | TOU: 5 | WS: 3 | WOU: 4" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+17 Initiative" },
@@ -76,9 +76,9 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             role: "tank",
             requiredLevel: 8,
             pieces: [
-                { slot: "body", name: "Protector's Carapace", level: 8, armor: 150, str: 6, tou: 8, ws: 2, wounds: 7 },
-                { slot: "boots", name: "Protector's Darkboots", level: 7, armor: 120, tou: 7, wounds: 4, ini: 6 },
-                { slot: "helm", name: "Protector's Skullcase", level: 7, armor: 135, str: 4, tou: 7, ws: 3, wounds: 5, bonus: "+4 Hit Points every 4s" }
+                { slot: "body", name: "Protector's Carapace", level: 8, armor: 150, str: 6, tou: 8, ws: 2, wounds: 7, stats: "Armor: 150 | STR: 6 | TOU: 8 | WS: 2 | WOU: 7" },
+                { slot: "boots", name: "Protector's Darkboots", level: 7, armor: 120, tou: 7, wounds: 4, ini: 6, stats: "Armor: 120 | TOU: 7 | INI: 6 | WOU: 4" },
+                { slot: "helm", name: "Protector's Skullcase", level: 7, armor: 135, str: 4, tou: 7, ws: 3, wounds: 5, bonus: "+4 Hit Points every 4s", stats: "Armor: 135 | STR: 4 | TOU: 7 | WS: 3 | WOU: 5 | +4 Hit Points every 4s" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+2% Parry" },
@@ -93,10 +93,10 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             requiredLevel: 17,
             requiredRenown: 17,
             pieces: [
-                { slot: "body", name: "Obliterator Carapace", level: 17, renown: 17, armor: 315, str: 6, tou: 15, wounds: 8, bonus: "+2% Block" },
-                { slot: "gloves", name: "Obliterator Gauntlets", level: 16, renown: 16, armor: 252, str: 8, tou: 12, wounds: 9, ini: 7 },
-                { slot: "boots", name: "Obliterator Darkboots", level: 16, renown: 15, armor: 252, str: 5, tou: 9, ws: 14, wounds: 8 },
-                { slot: "helm", name: "Obliterator Skullcase", level: 17, armor: 285, str: 6, tou: 10, ini: 8, wounds: 8, bonus: "+1% Reduced chance to be Critically Hit" }
+                { slot: "body", name: "Obliterator Carapace", level: 17, renown: 17, armor: 315, str: 6, tou: 15, wounds: 8, bonus: "+2% Block", stats: "Armor: 315 | STR: 6 | TOU: 15 | WOU: 8 | +2% Block" },
+                { slot: "gloves", name: "Obliterator Gauntlets", level: 16, renown: 16, armor: 252, str: 8, tou: 12, wounds: 9, ini: 7, stats: "Armor: 252 | STR: 8 | TOU: 12 | INI: 7 | WOU: 9" },
+                { slot: "boots", name: "Obliterator Darkboots", level: 16, renown: 15, armor: 252, str: 5, tou: 9, ws: 14, wounds: 8, stats: "Armor: 252 | STR: 5 | TOU: 9 | WS: 14 | WOU: 8" },
+                { slot: "helm", name: "Obliterator Skullcase", level: 17, armor: 285, str: 6, tou: 10, ini: 8, wounds: 8, bonus: "+1% Reduced chance to be Critically Hit", stats: "Armor: 285 | STR: 6 | TOU: 10 | INI: 8 | WOU: 8 | +1% Reduced chance to be Critically Hit" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+32 Toughness" },
@@ -112,10 +112,10 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             requiredLevel: 17,
             requiredRenown: 17,
             pieces: [
-                { slot: "body", name: "Challenger Carapace", level: 17, renown: 17, armor: 315, str: 15, tou: 6, wounds: 5, ini: 9, bonus: "+2% Parry" },
-                { slot: "gloves", name: "Challenger Gauntlets", level: 16, renown: 16, armor: 252, str: 14, tou: 7, wounds: 7, ini: 8 },
-                { slot: "boots", name: "Challenger Darkboots", level: 16, renown: 15, armor: 252, str: 12, tou: 6, ws: 8, wounds: 10 },
-                { slot: "shoulders", name: "Challenger Shoulderguard", level: 17, renown: 15, armor: 285, str: 6, tou: 9, ini: 8, wounds: 9, bonus: "+1% Melee Critical Chance" }
+                { slot: "body", name: "Challenger Carapace", level: 17, renown: 17, armor: 315, str: 15, tou: 6, wounds: 5, ini: 9, bonus: "+2% Parry", stats: "Armor: 315 | STR: 15 | TOU: 6 | INI: 9 | WOU: 5 | +2% Parry" },
+                { slot: "gloves", name: "Challenger Gauntlets", level: 16, renown: 16, armor: 252, str: 14, tou: 7, wounds: 7, ini: 8, stats: "Armor: 252 | STR: 14 | TOU: 7 | INI: 8 | WOU: 7" },
+                { slot: "boots", name: "Challenger Darkboots", level: 16, renown: 15, armor: 252, str: 12, tou: 6, ws: 8, wounds: 10, stats: "Armor: 252 | STR: 12 | TOU: 6 | WS: 8 | WOU: 10" },
+                { slot: "shoulders", name: "Challenger Shoulderguard", level: 17, renown: 15, armor: 285, str: 6, tou: 9, ini: 8, wounds: 9, bonus: "+1% Melee Critical Chance", stats: "Armor: 285 | STR: 6 | TOU: 9 | INI: 8 | WOU: 9 | +1% Melee Critical Chance" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+32 Strength" },
@@ -130,10 +130,10 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             role: "tank",
             requiredLevel: 16,
             pieces: [
-                { slot: "body", name: "Havoc Carapace", level: 16, armor: 285, str: 5, tou: 12, wounds: 3, ini: 9, bonus: "+2% Disrupt" },
-                { slot: "gloves", name: "Havoc Gauntlets", level: 13, armor: 228, str: 14, tou: 7, ini: 4, wounds: 6 },
-                { slot: "boots", name: "Havoc Darkboots", level: 13, armor: 228, tou: 10, ws: 3, wounds: 8, bonus: "+1% Reduced chance to be Critically Hit" },
-                { slot: "shoulders", name: "Havoc Shoulderguard", level: 16, armor: 258, str: 8, tou: 9, ini: 8, wounds: 3 }
+                { slot: "body", name: "Havoc Carapace", level: 16, armor: 285, str: 5, tou: 12, wounds: 3, ini: 9, bonus: "+2% Disrupt", stats: "Armor: 285 | STR: 5 | TOU: 12 | INI: 9 | WOU: 3 | +2% Disrupt" },
+                { slot: "gloves", name: "Havoc Gauntlets", level: 13, armor: 228, str: 14, tou: 7, ini: 4, wounds: 6, stats: "Armor: 228 | STR: 14 | TOU: 7 | INI: 4 | WOU: 6" },
+                { slot: "boots", name: "Havoc Darkboots", level: 13, armor: 228, tou: 10, ws: 3, wounds: 8, bonus: "+1% Reduced chance to be Critically Hit", stats: "Armor: 228 | TOU: 10 | WS: 3 | WOU: 8 | +1% Reduced chance to be Critically Hit" },
+                { slot: "shoulders", name: "Havoc Shoulderguard", level: 16, armor: 258, str: 8, tou: 9, ini: 8, wounds: 3, stats: "Armor: 258 | STR: 8 | TOU: 9 | INI: 8 | WOU: 3" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+285 Armor" },
@@ -148,10 +148,10 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             role: "tank",
             requiredLevel: 17,
             pieces: [
-                { slot: "body", name: "Tracker's Carapace", level: 17, armor: 300, str: 8, tou: 16, ws: 6, wounds: 13 },
-                { slot: "gloves", name: "Tracker's Gauntlets", level: 15, armor: 240, tou: 12, ws: 10, wounds: 5, ini: 5 },
-                { slot: "boots", name: "Tracker's Darkboots", level: 13, armor: 240, str: 10, tou: 10, wounds: 4, ini: 8 },
-                { slot: "shoulders", name: "Tracker's Shoulderguard", level: 16, armor: 270, str: 12, tou: 10, wounds: 10, bonus: "+1% Parry" }
+                { slot: "body", name: "Tracker's Carapace", level: 17, armor: 300, str: 8, tou: 16, ws: 6, wounds: 13, stats: "Armor: 300 | STR: 8 | TOU: 16 | WS: 6 | WOU: 13" },
+                { slot: "gloves", name: "Tracker's Gauntlets", level: 15, armor: 240, tou: 12, ws: 10, wounds: 5, ini: 5, stats: "Armor: 240 | TOU: 12 | WS: 10 | INI: 5 | WOU: 5" },
+                { slot: "boots", name: "Tracker's Darkboots", level: 13, armor: 240, str: 10, tou: 10, wounds: 4, ini: 8, stats: "Armor: 240 | STR: 10 | TOU: 10 | INI: 8 | WOU: 4" },
+                { slot: "shoulders", name: "Tracker's Shoulderguard", level: 16, armor: 270, str: 12, tou: 10, wounds: 10, bonus: "+1% Parry", stats: "Armor: 270 | STR: 12 | TOU: 10 | WOU: 10 | +1% Parry" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+31 Initiative" },
@@ -166,11 +166,11 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             role: "tank",
             requiredLevel: 17,
             pieces: [
-                { slot: "body", name: "Keeper's Carapace", level: 17, armor: 300, str: 10, tou: 16, wounds: 11, bonus: "+2 Morale" },
-                { slot: "gloves", name: "Keeper's Gauntlets", level: 17, armor: 240, str: 8, tou: 13, ws: 7, wounds: 4 },
-                { slot: "boots", name: "Keeper's Darkboots", level: 17, armor: 240, tou: 8, ws: 7, wounds: 4, ini: 13 },
-                { slot: "helm", name: "Keeper's Skullcase", level: 17, armor: 270, str: 15, wounds: 8, ini: 15 },
-                { slot: "shoulders", name: "Keeper's Shoulderguards", level: 17, armor: 270, str: 13, tou: 15, bonus: "+1% Melee Critical Chance" }
+                { slot: "body", name: "Keeper's Carapace", level: 17, armor: 300, str: 10, tou: 16, wounds: 11, bonus: "+2 Morale", stats: "Armor: 300 | STR: 10 | TOU: 16 | WOU: 11 | +2 Morale" },
+                { slot: "gloves", name: "Keeper's Gauntlets", level: 17, armor: 240, str: 8, tou: 13, ws: 7, wounds: 4, stats: "Armor: 240 | STR: 8 | TOU: 13 | WS: 7 | WOU: 4" },
+                { slot: "boots", name: "Keeper's Darkboots", level: 17, armor: 240, tou: 8, ws: 7, wounds: 4, ini: 13, stats: "Armor: 240 | TOU: 8 | WS: 7 | INI: 13 | WOU: 4" },
+                { slot: "helm", name: "Keeper's Skullcase", level: 17, armor: 270, str: 15, wounds: 8, ini: 15, stats: "Armor: 270 | STR: 15 | INI: 15 | WOU: 8" },
+                { slot: "shoulders", name: "Keeper's Shoulderguards", level: 17, armor: 270, str: 13, tou: 15, bonus: "+1% Melee Critical Chance", stats: "Armor: 270 | STR: 13 | TOU: 15 | +1% Melee Critical Chance" }
             ],
             setBonuses: [
                 { pieces: 3, bonus: "+37 Strength" },
@@ -187,11 +187,11 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             requiredLevel: 29,
             requiredRenown: 29,
             pieces: [
-                { slot: "boots", name: "Devastator Darkboots", level: 26, renown: 26, armor: 396, tou: 11, wounds: 20, ini: 9, str: 6 },
-                { slot: "gloves", name: "Devastator Gauntlets", level: 27, renown: 27, armor: 421, tou: 19, wounds: 12, str: 7, bonus: "+2% Reduction in being Critically Hit" },
-                { slot: "shoulders", name: "Devastator Shoulderguards", level: 28, renown: 28, armor: 514, tou: 23, str: 15, wounds: 9, bonus: "+1% Block" },
-                { slot: "helm", name: "Devastator Skullcase", level: 29, renown: 29, armor: 488, tou: 25, ini: 13, str: 9, wounds: 10 },
-                { slot: "body", name: "Devastator Carapace", level: 29, renown: 29, armor: 571, tou: 26, ini: 9, str: 16, bonus: "+40 HP Every 4 Seconds" }
+                { slot: "boots", name: "Devastator Darkboots", level: 26, renown: 26, armor: 396, tou: 11, wounds: 20, ini: 9, str: 6, stats: "Armor: 396 | STR: 6 | TOU: 11 | INI: 9 | WOU: 20" },
+                { slot: "gloves", name: "Devastator Gauntlets", level: 27, renown: 27, armor: 421, tou: 19, wounds: 12, str: 7, bonus: "+2% Reduction in being Critically Hit", stats: "Armor: 421 | STR: 7 | TOU: 19 | WOU: 12 | +2% Reduction in being Critically Hit" },
+                { slot: "shoulders", name: "Devastator Shoulderguards", level: 28, renown: 28, armor: 514, tou: 23, str: 15, wounds: 9, bonus: "+1% Block", stats: "Armor: 514 | STR: 15 | TOU: 23 | WOU: 9 | +1% Block" },
+                { slot: "helm", name: "Devastator Skullcase", level: 29, renown: 29, armor: 488, tou: 25, ini: 13, str: 9, wounds: 10, stats: "Armor: 488 | STR: 9 | TOU: 25 | INI: 13 | WOU: 10" },
+                { slot: "body", name: "Devastator Carapace", level: 29, renown: 29, armor: 571, tou: 26, ini: 9, str: 16, bonus: "+40 HP Every 4 Seconds", stats: "Armor: 571 | STR: 16 | TOU: 26 | INI: 9 | +40 HP Every 4 Seconds" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+47 Toughness" },
@@ -208,11 +208,11 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             requiredLevel: 29,
             requiredRenown: 29,
             pieces: [
-                { slot: "boots", name: "Darkboots of the Duelist", level: 26, renown: 26, armor: 396, tou: 8, ini: 7, str: 11, wounds: 20 },
-                { slot: "gloves", name: "Gauntlets of the Duelist", level: 27, renown: 27, armor: 421, ini: 7, str: 12, wounds: 19, bonus: "+2% Melee Critical Chance" },
-                { slot: "shoulders", name: "Shoulderguards of the Duelist", level: 28, renown: 28, armor: 514, ini: 15, str: 17, wounds: 15, bonus: "+1% Parry" },
-                { slot: "helm", name: "Skullcase of the Duelist", level: 29, renown: 29, armor: 488, tou: 25, ini: 13, str: 9, wounds: 10 },
-                { slot: "body", name: "Carapace of the Duelist", level: 29, renown: 29, armor: 571, tou: 16, ini: 19, str: 16, bonus: "+40 HP Every 4 Seconds" }
+                { slot: "boots", name: "Darkboots of the Duelist", level: 26, renown: 26, armor: 396, tou: 8, ini: 7, str: 11, wounds: 20, stats: "Armor: 396 | STR: 11 | TOU: 8 | INI: 7 | WOU: 20" },
+                { slot: "gloves", name: "Gauntlets of the Duelist", level: 27, renown: 27, armor: 421, ini: 7, str: 12, wounds: 19, bonus: "+2% Melee Critical Chance", stats: "Armor: 421 | STR: 12 | INI: 7 | WOU: 19 | +2% Melee Critical Chance" },
+                { slot: "shoulders", name: "Shoulderguards of the Duelist", level: 28, renown: 28, armor: 514, ini: 15, str: 17, wounds: 15, bonus: "+1% Parry", stats: "Armor: 514 | STR: 17 | INI: 15 | WOU: 15 | +1% Parry" },
+                { slot: "helm", name: "Skullcase of the Duelist", level: 29, renown: 29, armor: 488, tou: 25, ini: 13, str: 9, wounds: 10, stats: "Armor: 488 | STR: 9 | TOU: 25 | INI: 13 | WOU: 10" },
+                { slot: "body", name: "Carapace of the Duelist", level: 29, renown: 29, armor: 571, tou: 16, ini: 19, str: 16, bonus: "+40 HP Every 4 Seconds", stats: "Armor: 571 | STR: 16 | TOU: 16 | INI: 19 | +40 HP Every 4 Seconds" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+47 Strength" },
@@ -228,11 +228,11 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             role: "tank",
             requiredLevel: 25,
             pieces: [
-                { slot: "boots", name: "Darkboots of Mayhem", level: 22, armor: 324, tou: 17, ini: 7, ws: 6, wounds: 7 },
-                { slot: "gloves", name: "Gauntlets of Mayhem", level: 23, armor: 336, tou: 15, ini: 10, ws: 6, bonus: "+2% Reduction in being Critically Hit" },
-                { slot: "shoulders", name: "Shoulderguards of Mayhem", level: 24, armor: 392, tou: 18, ini: 7, ws: 11, bonus: "+1% Parry" },
-                { slot: "helm", name: "Skullcase of Mayhem", level: 25, armor: 390, tou: 25, ini: 8, str: 2, ws: 10, wounds: 8 },
-                { slot: "body", name: "Carapace of Mayhem", level: 24, armor: 436, tou: 20, ini: 7, ws: 13, bonus: "+32 HP Every 4 Seconds" }
+                { slot: "boots", name: "Darkboots of Mayhem", level: 22, armor: 324, tou: 17, ini: 7, ws: 6, wounds: 7, stats: "Armor: 324 | TOU: 17 | INI: 7 | WS: 6 | WOU: 7" },
+                { slot: "gloves", name: "Gauntlets of Mayhem", level: 23, armor: 336, tou: 15, ini: 10, ws: 6, bonus: "+2% Reduction in being Critically Hit", stats: "Armor: 336 | TOU: 15 | INI: 10 | WS: 6 | +2% Reduction in being Critically Hit" },
+                { slot: "shoulders", name: "Shoulderguards of Mayhem", level: 24, armor: 392, tou: 18, ini: 7, ws: 11, bonus: "+1% Parry", stats: "Armor: 392 | TOU: 18 | INI: 7 | WS: 11 | +1% Parry" },
+                { slot: "helm", name: "Skullcase of Mayhem", level: 25, armor: 390, tou: 25, ini: 8, str: 2, ws: 10, wounds: 8, stats: "Armor: 390 | STR: 2 | TOU: 25 | INI: 8 | WS: 10 | WOU: 8" },
+                { slot: "body", name: "Carapace of Mayhem", level: 24, armor: 436, tou: 20, ini: 7, ws: 13, bonus: "+32 HP Every 4 Seconds", stats: "Armor: 436 | TOU: 20 | INI: 7 | WS: 13 | +32 HP Every 4 Seconds" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+37 Initiative" },
@@ -248,10 +248,10 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             role: "tank",
             requiredLevel: 30,
             pieces: [
-                { slot: "boots", name: "Stalker's Darkboots", level: 26, armor: 396, tou: 12, ws: 4, wounds: 7, bonus: "+2% Dodge" },
-                { slot: "gloves", name: "Stalker's Gauntlets", level: 26, armor: 421, tou: 23, ws: 5, wounds: 8, bonus: "+1% Melee Critical Chance" },
-                { slot: "shoulders", name: "Stalker's Shoulderguards", level: 28, armor: 514, tou: 18, ini: 11, str: 7, ws: 5 },
-                { slot: "body", name: "Stalker's Carapace", level: 30, armor: 571, tou: 19, ini: 12, str: 7, bonus: "+2% Disrupt" }
+                { slot: "boots", name: "Stalker's Darkboots", level: 26, armor: 396, tou: 12, ws: 4, wounds: 7, bonus: "+2% Dodge", stats: "Armor: 396 | TOU: 12 | WS: 4 | WOU: 7 | +2% Dodge" },
+                { slot: "gloves", name: "Stalker's Gauntlets", level: 26, armor: 421, tou: 23, ws: 5, wounds: 8, bonus: "+1% Melee Critical Chance", stats: "Armor: 421 | TOU: 23 | WS: 5 | WOU: 8 | +1% Melee Critical Chance" },
+                { slot: "shoulders", name: "Stalker's Shoulderguards", level: 28, armor: 514, tou: 18, ini: 11, str: 7, ws: 5, stats: "Armor: 514 | STR: 7 | TOU: 18 | INI: 11 | WS: 5" },
+                { slot: "body", name: "Stalker's Carapace", level: 30, armor: 571, tou: 19, ini: 12, str: 7, bonus: "+2% Disrupt", stats: "Armor: 571 | STR: 7 | TOU: 19 | INI: 12 | +2% Disrupt" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+34 Strength" },
@@ -268,11 +268,11 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             requiredLevel: 35,
             requiredRenown: 39,
             pieces: [
-                { slot: "boots", name: "Annihilator Darkboots", level: 35, renown: 35, armor: 549, tou: 10, ini: 13, str: 21, bonus: "+2% Dodge" },
-                { slot: "gloves", name: "Annihilator Gauntlets", level: 35, renown: 36, armor: 549, tou: 11, ini: 14, str: 9, wounds: 23 },
-                { slot: "shoulders", name: "Annihilator Shoulderguards", level: 35, renown: 37, armor: 636, tou: 12, ini: 18, wounds: 25, bonus: "+1% Reduction in being Critically Hit" },
-                { slot: "helm", name: "Annihilator Skullcase", level: 35, renown: 38, armor: 636, tou: 13, str: 15, wounds: 25, bonus: "+2% Disrupt" },
-                { slot: "body", name: "Annihilator Carapace", level: 35, renown: 39, armor: 708, tou: 23, ini: 15, str: 32, bonus: "+60 HP Every 4 Seconds" }
+                { slot: "boots", name: "Annihilator Darkboots", level: 35, renown: 35, armor: 549, tou: 10, ini: 13, str: 21, bonus: "+2% Dodge", stats: "Armor: 549 | STR: 21 | TOU: 10 | INI: 13 | +2% Dodge" },
+                { slot: "gloves", name: "Annihilator Gauntlets", level: 35, renown: 36, armor: 549, tou: 11, ini: 14, str: 9, wounds: 23, stats: "Armor: 549 | STR: 9 | TOU: 11 | INI: 14 | WOU: 23" },
+                { slot: "shoulders", name: "Annihilator Shoulderguards", level: 35, renown: 37, armor: 636, tou: 12, ini: 18, wounds: 25, bonus: "+1% Reduction in being Critically Hit", stats: "Armor: 636 | TOU: 12 | INI: 18 | WOU: 25 | +1% Reduction in being Critically Hit" },
+                { slot: "helm", name: "Annihilator Skullcase", level: 35, renown: 38, armor: 636, tou: 13, str: 15, wounds: 25, bonus: "+2% Disrupt", stats: "Armor: 636 | STR: 15 | TOU: 13 | WOU: 25 | +2% Disrupt" },
+                { slot: "body", name: "Annihilator Carapace", level: 35, renown: 39, armor: 708, tou: 23, ini: 15, str: 32, bonus: "+60 HP Every 4 Seconds", stats: "Armor: 708 | STR: 32 | TOU: 23 | INI: 15 | +60 HP Every 4 Seconds" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+53 Toughness" },
@@ -289,12 +289,12 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             requiredLevel: 40,
             requiredRenown: 45,
             pieces: [
-                { slot: "boots", name: "Conqueror Darkboots", level: 40, renown: 40, armor: 588, tou: 16, ini: 24, ws: 10, bonus: "+2% Block" },
-                { slot: "gloves", name: "Conqueror Gauntlets", level: 40, renown: 41, armor: 588, tou: 15, ws: 8, wounds: 25, bonus: "+2% Parry" },
-                { slot: "belt", name: "Conqueror Deathgirdle", level: 40, renown: 42, tou: 18, ini: 12, str: 24, ws: 6, sres: 83, eres: 77, cres: 83 },
-                { slot: "shoulders", name: "Conqueror Shoulderguards", level: 40, renown: 43, armor: 676, tou: 29, ini: 12, ws: 16, bonus: "+2% Reduced Armor Penetration" },
-                { slot: "helm", name: "Conqueror Skullcase", level: 40, renown: 44, armor: 676, tou: 30, ini: 10, str: 17, bonus: "+2% Disrupt" },
-                { slot: "body", name: "Conqueror Carapace", level: 40, renown: 45, armor: 765, tou: 33, ws: 19, ini: 13, bonus: "+3 AP Per Second" }
+                { slot: "boots", name: "Conqueror Darkboots", level: 40, renown: 40, armor: 588, tou: 16, ini: 24, ws: 10, bonus: "+2% Block", stats: "Armor: 588 | TOU: 16 | INI: 24 | WS: 10 | +2% Block" },
+                { slot: "gloves", name: "Conqueror Gauntlets", level: 40, renown: 41, armor: 588, tou: 15, ws: 8, wounds: 25, bonus: "+2% Parry", stats: "Armor: 588 | TOU: 15 | WS: 8 | WOU: 25 | +2% Parry" },
+                { slot: "belt", name: "Conqueror Deathgirdle", level: 40, renown: 42, tou: 18, ini: 12, str: 24, ws: 6, sres: 83, eres: 77, cres: 83, stats: "STR: 24 | TOU: 18 | INI: 12 | WS: 6 | SRes: 83 | ERes: 77 | CRes: 83" },
+                { slot: "shoulders", name: "Conqueror Shoulderguards", level: 40, renown: 43, armor: 676, tou: 29, ini: 12, ws: 16, bonus: "+2% Reduced Armor Penetration", stats: "Armor: 676 | TOU: 29 | INI: 12 | WS: 16 | +2% Reduced Armor Penetration" },
+                { slot: "helm", name: "Conqueror Skullcase", level: 40, renown: 44, armor: 676, tou: 30, ini: 10, str: 17, bonus: "+2% Disrupt", stats: "Armor: 676 | STR: 17 | TOU: 30 | INI: 10 | +2% Disrupt" },
+                { slot: "body", name: "Conqueror Carapace", level: 40, renown: 45, armor: 765, tou: 33, ws: 19, ini: 13, bonus: "+3 AP Per Second", stats: "Armor: 765 | TOU: 33 | WS: 19 | INI: 13 | +3 AP Per Second" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+57 Toughness" },
@@ -312,12 +312,12 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             requiredLevel: 40,
             requiredRenown: 58,
             pieces: [
-                { slot: "boots", name: "Vanquisher Darkboots", level: 40, renown: 56, cost: 109, armor: 623, tou: 16, ini: 17, ws: 18, bonus: "+2% Dodge" },
-                { slot: "gloves", name: "Vanquisher Gauntlets", level: 40, renown: 56, cost: 126, armor: 623, tou: 18, ini: 17, str: 16, bonus: "+2% Parry" },
-                { slot: "belt", name: "Vanquisher Deathgirdle", level: 40, renown: 55, cost: 76, tou: 8, ini: 22, ws: 22, bonus: "+2% Reduction in being Critically Hit", sres: 87, eres: 86, cres: 86 },
-                { slot: "shoulders", name: "Vanquisher Shoulderguards", level: 40, renown: 57, cost: 172, armor: 723, tou: 26, ini: 20, ws: 16, bonus: "+2% Block" },
-                { slot: "helm", name: "Vanquisher Skullcase", level: 40, renown: 57, cost: 189, armor: 723, tou: 34, ini: 15, str: 13, bonus: "+2% Disrupt" },
-                { slot: "body", name: "Vanquisher Carapace", level: 40, renown: 58, cost: 229, armor: 822, tou: 15, ini: 35, str: 15, bonus: "+2% Reduction in being Critically Hit" }
+                { slot: "boots", name: "Vanquisher Darkboots", level: 40, renown: 56, cost: 109, armor: 623, tou: 16, ini: 17, ws: 18, bonus: "+2% Dodge", stats: "Armor: 623 | TOU: 16 | INI: 17 | WS: 18 | +2% Dodge" },
+                { slot: "gloves", name: "Vanquisher Gauntlets", level: 40, renown: 56, cost: 126, armor: 623, tou: 18, ini: 17, str: 16, bonus: "+2% Parry", stats: "Armor: 623 | STR: 16 | TOU: 18 | INI: 17 | +2% Parry" },
+                { slot: "belt", name: "Vanquisher Deathgirdle", level: 40, renown: 55, cost: 76, tou: 8, ini: 22, ws: 22, bonus: "+2% Reduction in being Critically Hit", sres: 87, eres: 86, cres: 86, stats: "TOU: 8 | INI: 22 | WS: 22 | +2% Reduction in being Critically Hit | SRes: 87 | ERes: 86 | CRes: 86" },
+                { slot: "shoulders", name: "Vanquisher Shoulderguards", level: 40, renown: 57, cost: 172, armor: 723, tou: 26, ini: 20, ws: 16, bonus: "+2% Block", stats: "Armor: 723 | TOU: 26 | INI: 20 | WS: 16 | +2% Block" },
+                { slot: "helm", name: "Vanquisher Skullcase", level: 40, renown: 57, cost: 189, armor: 723, tou: 34, ini: 15, str: 13, bonus: "+2% Disrupt", stats: "Armor: 723 | STR: 13 | TOU: 34 | INI: 15 | +2% Disrupt" },
+                { slot: "body", name: "Vanquisher Carapace", level: 40, renown: 58, cost: 229, armor: 822, tou: 15, ini: 35, str: 15, bonus: "+2% Reduction in being Critically Hit", stats: "Armor: 822 | STR: 15 | TOU: 15 | INI: 35 | +2% Reduction in being Critically Hit" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+62 Toughness" },
@@ -335,13 +335,13 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             requiredLevel: 40,
             requiredRenown: 63,
             pieces: [
-                { slot: "boots", name: "Invader Darkboots", level: 40, renown: 61, armor: 663, tou: 18, str: 20, ws: 17, bonus: "+2% Reduced Armor Penetration" },
-                { slot: "gloves", name: "Invader Gauntlets", level: 40, renown: 61, armor: 663, tou: 20, ini: 13, ws: 16, bonus: "+3% Reduced Chance to be Parried" },
-                { slot: "belt", name: "Invader Deathgirdle", level: 40, renown: 60, tou: 18, ws: 12, bonus: "+2% Dodge, +2% Disrupt", sres: 91, eres: 91, cres: 91 },
-                { slot: "shoulders", name: "Invader Shoulderguards", level: 40, renown: 62, armor: 771, tou: 26, ini: 18, str: 18, bonus: "+3% Block" },
-                { slot: "helm", name: "Invader Skullcase", level: 40, renown: 62, armor: 771, tou: 24, ini: 18, str: 16, bonus: "+4 Morale Per Second" },
-                { slot: "body", name: "Invader Carapace", level: 40, renown: 63, armor: 876, tou: 24, ini: 18, ws: 28, bonus: "+1 AP Per Second" },
-                { slot: "jewel", name: "Invader Change Gem", level: 40, renown: 63, ini: 27, str: 12, bonus: "+2% Block, +2 AP Per Second", sres: 79, eres: 78, cres: 78 }
+                { slot: "boots", name: "Invader Darkboots", level: 40, renown: 61, armor: 663, tou: 18, str: 20, ws: 17, bonus: "+2% Reduced Armor Penetration", stats: "Armor: 663 | STR: 20 | TOU: 18 | WS: 17 | +2% Reduced Armor Penetration" },
+                { slot: "gloves", name: "Invader Gauntlets", level: 40, renown: 61, armor: 663, tou: 20, ini: 13, ws: 16, bonus: "+3% Reduced Chance to be Parried", stats: "Armor: 663 | TOU: 20 | INI: 13 | WS: 16 | +3% Reduced Chance to be Parried" },
+                { slot: "belt", name: "Invader Deathgirdle", level: 40, renown: 60, tou: 18, ws: 12, bonus: "+2% Dodge, +2% Disrupt", sres: 91, eres: 91, cres: 91, stats: "TOU: 18 | WS: 12 | +2% Dodge, +2% Disrupt | SRes: 91 | ERes: 91 | CRes: 91" },
+                { slot: "shoulders", name: "Invader Shoulderguards", level: 40, renown: 62, armor: 771, tou: 26, ini: 18, str: 18, bonus: "+3% Block", stats: "Armor: 771 | STR: 18 | TOU: 26 | INI: 18 | +3% Block" },
+                { slot: "helm", name: "Invader Skullcase", level: 40, renown: 62, armor: 771, tou: 24, ini: 18, str: 16, bonus: "+4 Morale Per Second", stats: "Armor: 771 | STR: 16 | TOU: 24 | INI: 18 | +4 Morale Per Second" },
+                { slot: "body", name: "Invader Carapace", level: 40, renown: 63, armor: 876, tou: 24, ini: 18, ws: 28, bonus: "+1 AP Per Second", stats: "Armor: 876 | TOU: 24 | INI: 18 | WS: 28 | +1 AP Per Second" },
+                { slot: "jewel", name: "Invader Change Gem", level: 40, renown: 63, ini: 27, str: 12, bonus: "+2% Block, +2 AP Per Second", sres: 79, eres: 78, cres: 78, stats: "STR: 12 | INI: 27 | +2% Block, +2 AP Per Second | SRes: 79 | ERes: 78 | CRes: 78" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+66 Strength" },
@@ -360,14 +360,14 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             requiredLevel: 40,
             requiredRenown: 73,
             pieces: [
-                { slot: "boots", name: "Warlord Darkboots", level: 40, renown: 71, armor: 723, tou: 30, ini: 14, ws: 18, bonus: "+2% Parry, +40 HP Every 4 Seconds" },
-                { slot: "gloves", name: "Warlord Gauntlets", level: 40, renown: 71, armor: 723, tou: 18, ws: 14, wounds: 30, bonus: "+1% Reduced Armor Penetration, +1% Reduction in being Critically Hit" },
-                { slot: "belt", name: "Warlord Deathgirdle", level: 40, renown: 70, ini: 16, str: 23, ws: 15, bonus: "+2% Dodge, +2% Disrupt", sres: 102, eres: 101, cres: 101 },
-                { slot: "shoulders", name: "Warlord Shoulderguards", level: 40, renown: 72, armor: 858, tou: 21, ini: 31, str: 21, bonus: "+3% Disrupt" },
-                { slot: "helm", name: "Warlord Skullcase", level: 40, renown: 72, armor: 858, tou: 34, ini: 16, str: 21, bonus: "+2% Reduction in being Critically Hit" },
-                { slot: "body", name: "Warlord Carapace", level: 40, renown: 73, armor: 969, tou: 24, ini: 24, str: 10, ws: 10, wounds: 17, bonus: "+80 HP Every 4 Seconds" },
-                { slot: "jewel", name: "Warlord Chaos Seal", level: 40, renown: 73, wounds: 25, ini: 15, str: 14, bonus: "+3 AP Per Second", sres: 87, eres: 87, cres: 86 },
-                { slot: "cloak", name: "Warlord Changehide", level: 40, renown: 70, wounds: 25, ini: 10, str: 21, ws: 10, bonus: "+2% Parry", sres: 101, eres: 101, cres: 102 }
+                { slot: "boots", name: "Warlord Darkboots", level: 40, renown: 71, armor: 723, tou: 30, ini: 14, ws: 18, bonus: "+2% Parry, +40 HP Every 4 Seconds", stats: "Armor: 723 | TOU: 30 | INI: 14 | WS: 18 | +2% Parry, +40 HP Every 4 Seconds" },
+                { slot: "gloves", name: "Warlord Gauntlets", level: 40, renown: 71, armor: 723, tou: 18, ws: 14, wounds: 30, bonus: "+1% Reduced Armor Penetration, +1% Reduction in being Critically Hit", stats: "Armor: 723 | TOU: 18 | WS: 14 | WOU: 30 | +1% Reduced Armor Penetration, +1% Reduction in being Critically Hit" },
+                { slot: "belt", name: "Warlord Deathgirdle", level: 40, renown: 70, ini: 16, str: 23, ws: 15, bonus: "+2% Dodge, +2% Disrupt", sres: 102, eres: 101, cres: 101, stats: "STR: 23 | INI: 16 | WS: 15 | +2% Dodge, +2% Disrupt | SRes: 102 | ERes: 101 | CRes: 101" },
+                { slot: "shoulders", name: "Warlord Shoulderguards", level: 40, renown: 72, armor: 858, tou: 21, ini: 31, str: 21, bonus: "+3% Disrupt", stats: "Armor: 858 | STR: 21 | TOU: 21 | INI: 31 | +3% Disrupt" },
+                { slot: "helm", name: "Warlord Skullcase", level: 40, renown: 72, armor: 858, tou: 34, ini: 16, str: 21, bonus: "+2% Reduction in being Critically Hit", stats: "Armor: 858 | STR: 21 | TOU: 34 | INI: 16 | +2% Reduction in being Critically Hit" },
+                { slot: "body", name: "Warlord Carapace", level: 40, renown: 73, armor: 969, tou: 24, ini: 24, str: 10, ws: 10, wounds: 17, bonus: "+80 HP Every 4 Seconds", stats: "Armor: 969 | STR: 10 | TOU: 24 | INI: 24 | WS: 10 | WOU: 17 | +80 HP Every 4 Seconds" },
+                { slot: "jewel", name: "Warlord Chaos Seal", level: 40, renown: 73, wounds: 25, ini: 15, str: 14, bonus: "+3 AP Per Second", sres: 87, eres: 87, cres: 86, stats: "STR: 14 | INI: 15 | WOU: 25 | +3 AP Per Second | SRes: 87 | ERes: 87 | CRes: 86" },
+                { slot: "cloak", name: "Warlord Changehide", level: 40, renown: 70, wounds: 25, ini: 10, str: 21, ws: 10, bonus: "+2% Parry", sres: 101, eres: 101, cres: 102, stats: "STR: 21 | INI: 10 | WS: 10 | WOU: 25 | +2% Parry | SRes: 101 | ERes: 101 | CRes: 102" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+75 Strength" },
@@ -387,14 +387,14 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             requiredLevel: 40,
             requiredRenown: 78,
             pieces: [
-                { slot: "boots", name: "Sovereign Darkboots", level: 40, renown: 76, armor: 741, tou: 24, str: 22, ws: 20, bonus: "+2% Reduced Armor Penetration" },
-                { slot: "gloves", name: "Sovereign Gauntlets", level: 40, renown: 76, armor: 741, tou: 26, ini: 20, ws: 20, bonus: "+2% Reduced Chance to be Parried" },
-                { slot: "belt", name: "Sovereign Deathgirdle", level: 40, renown: 75, tou: 24, ini: 20, ws: 10, bonus: "+2% Dodge, +2% Disrupt", sres: 102, eres: 101, cres: 101 },
-                { slot: "shoulders", name: "Sovereign Shoulderguards", level: 40, renown: 77, armor: 888, tou: 31, ini: 21, ws: 21, bonus: "+3% Block" },
-                { slot: "helm", name: "Sovereign Skullcase", level: 40, renown: 77, armor: 888, tou: 31, ini: 20, str: 20, bonus: "+4 Morale per Second" },
-                { slot: "body", name: "Sovereign Carapace", level: 40, renown: 78, armor: 1002, tou: 24, ini: 24, ws: 20, wounds: 17, bonus: "+2 AP Per Second, +1% Reduction in being Critically Hit" },
-                { slot: "jewel", name: "Sovereign Change Gem", level: 40, renown: 78, ini: 22, str: 15, bonus: "+2 AP Per Second", sres: 87, eres: 87, cres: 86 },
-                { slot: "cloak", name: "Sovereign Changehide", level: 40, renown: 75, ini: 21, str: 25, ws: 20, bonus: "+2% Block", sres: 101, eres: 101, cres: 102 }
+                { slot: "boots", name: "Sovereign Darkboots", level: 40, renown: 76, armor: 741, tou: 24, str: 22, ws: 20, bonus: "+2% Reduced Armor Penetration", stats: "Armor: 741 | STR: 22 | TOU: 24 | WS: 20 | +2% Reduced Armor Penetration" },
+                { slot: "gloves", name: "Sovereign Gauntlets", level: 40, renown: 76, armor: 741, tou: 26, ini: 20, ws: 20, bonus: "+2% Reduced Chance to be Parried", stats: "Armor: 741 | TOU: 26 | INI: 20 | WS: 20 | +2% Reduced Chance to be Parried" },
+                { slot: "belt", name: "Sovereign Deathgirdle", level: 40, renown: 75, tou: 24, ini: 20, ws: 10, bonus: "+2% Dodge, +2% Disrupt", sres: 102, eres: 101, cres: 101, stats: "TOU: 24 | INI: 20 | WS: 10 | +2% Dodge, +2% Disrupt | SRes: 102 | ERes: 101 | CRes: 101" },
+                { slot: "shoulders", name: "Sovereign Shoulderguards", level: 40, renown: 77, armor: 888, tou: 31, ini: 21, ws: 21, bonus: "+3% Block", stats: "Armor: 888 | TOU: 31 | INI: 21 | WS: 21 | +3% Block" },
+                { slot: "helm", name: "Sovereign Skullcase", level: 40, renown: 77, armor: 888, tou: 31, ini: 20, str: 20, bonus: "+4 Morale per Second", stats: "Armor: 888 | STR: 20 | TOU: 31 | INI: 20 | +4 Morale per Second" },
+                { slot: "body", name: "Sovereign Carapace", level: 40, renown: 78, armor: 1002, tou: 24, ini: 24, ws: 20, wounds: 17, bonus: "+2 AP Per Second, +1% Reduction in being Critically Hit", stats: "Armor: 1002 | TOU: 24 | INI: 24 | WS: 20 | WOU: 17 | +2 AP Per Second, +1% Reduction in being Critically Hit" },
+                { slot: "jewel", name: "Sovereign Change Gem", level: 40, renown: 78, ini: 22, str: 15, bonus: "+2 AP Per Second", sres: 87, eres: 87, cres: 86, stats: "STR: 15 | INI: 22 | +2 AP Per Second | SRes: 87 | ERes: 87 | CRes: 86" },
+                { slot: "cloak", name: "Sovereign Changehide", level: 40, renown: 75, ini: 21, str: 25, ws: 20, bonus: "+2% Block", sres: 101, eres: 101, cres: 102, stats: "STR: 25 | INI: 21 | WS: 20 | +2% Block | SRes: 101 | ERes: 101 | CRes: 102" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+80 Wounds" },
@@ -414,14 +414,14 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             requiredLevel: 40,
             requiredRenown: 78,
             pieces: [
-                { slot: "boots", name: "Sovereign Darkboots", level: 40, renown: 76, armor: 741, tou: 27, ini: 19, ws: 22, bonus: "+2 AP Per Second" },
-                { slot: "gloves", name: "Sovereign Gauntlets", level: 40, renown: 76, armor: 741, tou: 18, ws: 22, wounds: 18, bonus: "+2% Reduction in being Critically Hit" },
-                { slot: "belt", name: "Sovereign Deathgirdle", level: 40, renown: 75, tou: 27, ws: 27, bonus: "+2% Parry, +2% Disrupt", sres: 102, eres: 101, cres: 101 },
-                { slot: "shoulders", name: "Sovereign Shoulderguards", level: 40, renown: 77, armor: 888, tou: 28, ini: 31, ws: 20, bonus: "+2 Morale Per Second, +64 HP Every 4 Seconds" },
-                { slot: "helm", name: "Sovereign Skullcase", level: 40, renown: 77, armor: 888, tou: 27, ini: 17, ws: 23, bonus: "+4% Reduced Armor Penetration" },
-                { slot: "body", name: "Sovereign Carapace", level: 40, renown: 78, armor: 1002, tou: 40, ini: 21, ws: 24, bonus: "+4 AP Per Second" },
-                { slot: "jewel", name: "Sovereign Change Gem", level: 40, renown: 78, ini: 30, str: 13, ws: 15, bonus: "+2 Morale Per Second", sres: 87, eres: 87, cres: 86 },
-                { slot: "cloak", name: "Sovereign Changehide", level: 40, renown: 75, ini: 30, str: 18, ws: 18, bonus: "+2% Dodge", sres: 101, eres: 101, cres: 102 }
+                { slot: "boots", name: "Sovereign Darkboots", level: 40, renown: 76, armor: 741, tou: 27, ini: 19, ws: 22, bonus: "+2 AP Per Second", stats: "Armor: 741 | TOU: 27 | INI: 19 | WS: 22 | +2 AP Per Second" },
+                { slot: "gloves", name: "Sovereign Gauntlets", level: 40, renown: 76, armor: 741, tou: 18, ws: 22, wounds: 18, bonus: "+2% Reduction in being Critically Hit", stats: "Armor: 741 | TOU: 18 | WS: 22 | WOU: 18 | +2% Reduction in being Critically Hit" },
+                { slot: "belt", name: "Sovereign Deathgirdle", level: 40, renown: 75, tou: 27, ws: 27, bonus: "+2% Parry, +2% Disrupt", sres: 102, eres: 101, cres: 101, stats: "TOU: 27 | WS: 27 | +2% Parry, +2% Disrupt | SRes: 102 | ERes: 101 | CRes: 101" },
+                { slot: "shoulders", name: "Sovereign Shoulderguards", level: 40, renown: 77, armor: 888, tou: 28, ini: 31, ws: 20, bonus: "+2 Morale Per Second, +64 HP Every 4 Seconds", stats: "Armor: 888 | TOU: 28 | INI: 31 | WS: 20 | +2 Morale Per Second, +64 HP Every 4 Seconds" },
+                { slot: "helm", name: "Sovereign Skullcase", level: 40, renown: 77, armor: 888, tou: 27, ini: 17, ws: 23, bonus: "+4% Reduced Armor Penetration", stats: "Armor: 888 | TOU: 27 | INI: 17 | WS: 23 | +4% Reduced Armor Penetration" },
+                { slot: "body", name: "Sovereign Carapace", level: 40, renown: 78, armor: 1002, tou: 40, ini: 21, ws: 24, bonus: "+4 AP Per Second", stats: "Armor: 1002 | TOU: 40 | INI: 21 | WS: 24 | +4 AP Per Second" },
+                { slot: "jewel", name: "Sovereign Change Gem", level: 40, renown: 78, ini: 30, str: 13, ws: 15, bonus: "+2 Morale Per Second", sres: 87, eres: 87, cres: 86, stats: "STR: 13 | INI: 30 | WS: 15 | +2 Morale Per Second | SRes: 87 | ERes: 87 | CRes: 86" },
+                { slot: "cloak", name: "Sovereign Changehide", level: 40, renown: 75, ini: 30, str: 18, ws: 18, bonus: "+2% Dodge", sres: 101, eres: 101, cres: 102, stats: "STR: 18 | INI: 30 | WS: 18 | +2% Dodge | SRes: 101 | ERes: 101 | CRes: 102" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+80 Strength" },
@@ -442,11 +442,11 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             requiredLevel: 35,
             requiredRenown: 39,
             pieces: [
-                { slot: "boots", name: "Darkboots of the Mercenary", level: 35, renown: 35, armor: 549, tou: 10, ini: 21, str: 13, bonus: "+2% Dodge" },
-                { slot: "gloves", name: "Gauntlets of the Mercenary", level: 35, renown: 36, armor: 549, tou: 11, ini: 14, str: 9, wounds: 23 },
-                { slot: "shoulders", name: "Shoulderguards of the Mercenary", level: 35, renown: 37, armor: 636, tou: 12, ini: 23, str: 18, bonus: "+3% Reduced Chance to be Parried" },
-                { slot: "helm", name: "Skullcase of the Mercenary", level: 35, renown: 38, armor: 636, tou: 13, str: 15, wounds: 25, bonus: "+2% Disrupt" },
-                { slot: "body", name: "Carapace of the Mercenary", level: 35, renown: 39, armor: 708, tou: 12, ini: 17, str: 30, bonus: "+3 AP Per Second" }
+                { slot: "boots", name: "Darkboots of the Mercenary", level: 35, renown: 35, armor: 549, tou: 10, ini: 21, str: 13, bonus: "+2% Dodge", stats: "Armor: 549 | STR: 13 | TOU: 10 | INI: 21 | +2% Dodge" },
+                { slot: "gloves", name: "Gauntlets of the Mercenary", level: 35, renown: 36, armor: 549, tou: 11, ini: 14, str: 9, wounds: 23, stats: "Armor: 549 | STR: 9 | TOU: 11 | INI: 14 | WOU: 23" },
+                { slot: "shoulders", name: "Shoulderguards of the Mercenary", level: 35, renown: 37, armor: 636, tou: 12, ini: 23, str: 18, bonus: "+3% Reduced Chance to be Parried", stats: "Armor: 636 | STR: 18 | TOU: 12 | INI: 23 | +3% Reduced Chance to be Parried" },
+                { slot: "helm", name: "Skullcase of the Mercenary", level: 35, renown: 38, armor: 636, tou: 13, str: 15, wounds: 25, bonus: "+2% Disrupt", stats: "Armor: 636 | STR: 15 | TOU: 13 | WOU: 25 | +2% Disrupt" },
+                { slot: "body", name: "Carapace of the Mercenary", level: 35, renown: 39, armor: 708, tou: 12, ini: 17, str: 30, bonus: "+3 AP Per Second", stats: "Armor: 708 | STR: 30 | TOU: 12 | INI: 17 | +3 AP Per Second" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+53 Strength" },
@@ -463,12 +463,12 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             requiredLevel: 40,
             requiredRenown: 45,
             pieces: [
-                { slot: "boots", name: "Dominator Darkboots", level: 40, renown: 40, armor: 588, tou: 10, ini: 14, ws: 16, bonus: "+2% Melee Critical Chance" },
-                { slot: "gloves", name: "Dominator Gauntlets", level: 40, renown: 41, armor: 588, ws: 8, wounds: 15, bonus: "+2% Reduced Chance to be Parried" },
-                { slot: "belt", name: "Dominator Deathgirdle", level: 40, renown: 42, tou: 6, ini: 12, ws: 18, bonus: "+36 Melee Power", sres: 83, eres: 77, cres: 83 },
-                { slot: "shoulders", name: "Dominator Shoulderguards", level: 40, renown: 43, armor: 675, ini: 12, ws: 18, wounds: 29, bonus: "+10% Auto Attack Haste" },
-                { slot: "helm", name: "Dominator Skullcase", level: 40, renown: 44, armor: 675, ini: 10, ws: 30, wounds: 17, bonus: "+2% Reduced Chance to be Blocked" },
-                { slot: "body", name: "Dominator Carapace", level: 40, renown: 45, armor: 765, tou: 19, ws: 33, ini: 13, bonus: "+3 AP Per Second" }
+                { slot: "boots", name: "Dominator Darkboots", level: 40, renown: 40, armor: 588, tou: 10, ini: 14, ws: 16, bonus: "+2% Melee Critical Chance", stats: "Armor: 588 | TOU: 10 | INI: 14 | WS: 16 | +2% Melee Critical Chance" },
+                { slot: "gloves", name: "Dominator Gauntlets", level: 40, renown: 41, armor: 588, ws: 8, wounds: 15, bonus: "+2% Reduced Chance to be Parried", stats: "Armor: 588 | WS: 8 | WOU: 15 | +2% Reduced Chance to be Parried" },
+                { slot: "belt", name: "Dominator Deathgirdle", level: 40, renown: 42, tou: 6, ini: 12, ws: 18, bonus: "+36 Melee Power", sres: 83, eres: 77, cres: 83, stats: "TOU: 6 | INI: 12 | WS: 18 | +36 Melee Power | SRes: 83 | ERes: 77 | CRes: 83" },
+                { slot: "shoulders", name: "Dominator Shoulderguards", level: 40, renown: 43, armor: 675, ini: 12, ws: 18, wounds: 29, bonus: "+10% Auto Attack Haste", stats: "Armor: 675 | INI: 12 | WS: 18 | WOU: 29 | +10% Auto Attack Haste" },
+                { slot: "helm", name: "Dominator Skullcase", level: 40, renown: 44, armor: 675, ini: 10, ws: 30, wounds: 17, bonus: "+2% Reduced Chance to be Blocked", stats: "Armor: 675 | INI: 10 | WS: 30 | WOU: 17 | +2% Reduced Chance to be Blocked" },
+                { slot: "body", name: "Dominator Carapace", level: 40, renown: 45, armor: 765, tou: 19, ws: 33, ini: 13, bonus: "+3 AP Per Second", stats: "Armor: 765 | TOU: 19 | WS: 33 | INI: 13 | +3 AP Per Second" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+57 Strength" },
@@ -486,12 +486,12 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             requiredLevel: 40,
             requiredRenown: 58,
             pieces: [
-                { slot: "boots", name: "Oppressor Darkboots", level: 40, renown: 56, armor: 623, wounds: 13, ini: 10, ws: 20, bonus: "+2% Melee Critical Chance" },
-                { slot: "gloves", name: "Oppressor Gauntlets", level: 40, renown: 56, armor: 623, wounds: 14, ws: 20, ini: 17, bonus: "+2% Reduced chance to be Parried" },
-                { slot: "belt", name: "Oppressor Deathgirdle", level: 40, renown: 55, wounds: 12, ini: 20, ws: 24, bonus: "+2% Melee Critical Chance", sres: 87, eres: 86, cres: 86 },
-                { slot: "shoulders", name: "Oppressor Shoulderguards", level: 40, renown: 57, armor: 723, wounds: 23, ws: 20, ini: 11, bonus: "+20 Melee Power" },
-                { slot: "helm", name: "Oppressor Skullcase", level: 40, renown: 57, armor: 723, wounds: 13, ws: 32, ini: 17, bonus: "+2% Parry" },
-                { slot: "body", name: "Oppressor Carapace", level: 40, renown: 58, armor: 822, wounds: 17, ws: 36, ini: 20, bonus: "+2% Reduced Armor Penetration" }
+                { slot: "boots", name: "Oppressor Darkboots", level: 40, renown: 56, armor: 623, wounds: 13, ini: 10, ws: 20, bonus: "+2% Melee Critical Chance", stats: "Armor: 623 | WS: 20 | INI: 10 | WOU: 13 | +2% Melee Critical Chance" },
+                { slot: "gloves", name: "Oppressor Gauntlets", level: 40, renown: 56, armor: 623, wounds: 14, ws: 20, ini: 17, bonus: "+2% Reduced chance to be Parried", stats: "Armor: 623 | WS: 20 | INI: 17 | WOU: 14 | +2% Reduced chance to be Parried" },
+                { slot: "belt", name: "Oppressor Deathgirdle", level: 40, renown: 55, wounds: 12, ini: 20, ws: 24, bonus: "+2% Melee Critical Chance", sres: 87, eres: 86, cres: 86, stats: "WS: 24 | INI: 20 | WOU: 12 | +2% Melee Critical Chance | SRes: 87 | ERes: 86 | CRes: 86" },
+                { slot: "shoulders", name: "Oppressor Shoulderguards", level: 40, renown: 57, armor: 723, wounds: 23, ws: 20, ini: 11, bonus: "+20 Melee Power", stats: "Armor: 723 | WS: 20 | INI: 11 | WOU: 23 | +20 Melee Power" },
+                { slot: "helm", name: "Oppressor Skullcase", level: 40, renown: 57, armor: 723, wounds: 13, ws: 32, ini: 17, bonus: "+2% Parry", stats: "Armor: 723 | WS: 32 | INI: 17 | WOU: 13 | +2% Parry" },
+                { slot: "body", name: "Oppressor Carapace", level: 40, renown: 58, armor: 822, wounds: 17, ws: 36, ini: 20, bonus: "+2% Reduced Armor Penetration", stats: "Armor: 822 | WS: 36 | INI: 20 | WOU: 17 | +2% Reduced Armor Penetration" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+62 Strength" },
@@ -509,13 +509,13 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             requiredLevel: 40,
             requiredRenown: 68,
             pieces: [
-                { slot: "boots", name: "Triumphant Darkboots", level: 40, renown: 66, armor: 705, tou: 20, ini: 21, ws: 18, bonus: "+2% Dodge" },
-                { slot: "gloves", name: "Triumphant Gauntlets", level: 40, renown: 66, armor: 705, tou: 20, ini: 17, str: 16, bonus: "+3% Parry" },
-                { slot: "belt", name: "Triumphant Deathgirdle", level: 40, renown: 65, tou: 12, ini: 22, ws: 25, bonus: "+2% Reduction in being Critically Hit", sres: 94, eres: 94, cres: 94 },
-                { slot: "shoulders", name: "Triumphant Shoulderguards", level: 40, renown: 67, armor: 825, tou: 26, ini: 20, ws: 20, bonus: "+3% Block" },
-                { slot: "helm", name: "Triumphant Skullcase", level: 40, renown: 67, armor: 825, tou: 37, ini: 18, str: 16, bonus: "+2% Disrupt" },
-                { slot: "body", name: "Triumphant Carapace", level: 40, renown: 68, armor: 924, tou: 15, ini: 40, ws: 20, bonus: "+2% Reduction in being Critically Hit" },
-                { slot: "cloak", name: "Triumphant Changehide", level: 40, renown: 65, tou: 21, ini: 10, str: 18, ws: 10, bonus: "+2% Block", sres: 94, eres: 94, cres: 94 }
+                { slot: "boots", name: "Triumphant Darkboots", level: 40, renown: 66, armor: 705, tou: 20, ini: 21, ws: 18, bonus: "+2% Dodge", stats: "Armor: 705 | TOU: 20 | INI: 21 | WS: 18 | +2% Dodge" },
+                { slot: "gloves", name: "Triumphant Gauntlets", level: 40, renown: 66, armor: 705, tou: 20, ini: 17, str: 16, bonus: "+3% Parry", stats: "Armor: 705 | STR: 16 | TOU: 20 | INI: 17 | +3% Parry" },
+                { slot: "belt", name: "Triumphant Deathgirdle", level: 40, renown: 65, tou: 12, ini: 22, ws: 25, bonus: "+2% Reduction in being Critically Hit", sres: 94, eres: 94, cres: 94, stats: "TOU: 12 | INI: 22 | WS: 25 | +2% Reduction in being Critically Hit | SRes: 94 | ERes: 94 | CRes: 94" },
+                { slot: "shoulders", name: "Triumphant Shoulderguards", level: 40, renown: 67, armor: 825, tou: 26, ini: 20, ws: 20, bonus: "+3% Block", stats: "Armor: 825 | TOU: 26 | INI: 20 | WS: 20 | +3% Block" },
+                { slot: "helm", name: "Triumphant Skullcase", level: 40, renown: 67, armor: 825, tou: 37, ini: 18, str: 16, bonus: "+2% Disrupt", stats: "Armor: 825 | STR: 16 | TOU: 37 | INI: 18 | +2% Disrupt" },
+                { slot: "body", name: "Triumphant Carapace", level: 40, renown: 68, armor: 924, tou: 15, ini: 40, ws: 20, bonus: "+2% Reduction in being Critically Hit", stats: "Armor: 924 | TOU: 15 | INI: 40 | WS: 20 | +2% Reduction in being Critically Hit" },
+                { slot: "cloak", name: "Triumphant Changehide", level: 40, renown: 65, tou: 21, ini: 10, str: 18, ws: 10, bonus: "+2% Block", sres: 94, eres: 94, cres: 94, stats: "STR: 18 | TOU: 21 | INI: 10 | WS: 10 | +2% Block | SRes: 94 | ERes: 94 | CRes: 94" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+71 Toughness" },
@@ -534,13 +534,13 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             requiredLevel: 40,
             requiredRenown: 68,
             pieces: [
-                { slot: "boots", name: "Victorious Darkboots", level: 40, renown: 66, armor: 705, ini: 17, str: 14, ws: 20, bonus: "+2% Melee Critical Chance" },
-                { slot: "gloves", name: "Victorious Gauntlets", level: 40, renown: 66, armor: 705, ini: 14, ws: 22, wounds: 17, bonus: "+3% Reduced chance to be Parried" },
-                { slot: "belt", name: "Victorious Deathgirdle", level: 40, renown: 65, ini: 17, str: 20, ws: 26, bonus: "+2% Melee Critical Chance", sres: 94, eres: 94, cres: 94 },
-                { slot: "shoulders", name: "Victorious Shoulderguards", level: 40, renown: 67, armor: 825, ini: 28, ws: 20, str: 21, bonus: "+20 Melee Power" },
-                { slot: "helm", name: "Victorious Skullcase", level: 40, renown: 67, armor: 825, ini: 16, ws: 35, str: 20, bonus: "+2% Parry" },
-                { slot: "body", name: "Victorious Carapace", level: 40, renown: 68, armor: 924, ini: 17, ws: 40, str: 20, bonus: "+3% Reduced Armor Penetration" },
-                { slot: "cloak", name: "Victorious Changehide", level: 40, renown: 65, ini: 10, ws: 18, str: 21, bonus: "+2% Parry", sres: 94, eres: 94, cres: 94 }
+                { slot: "boots", name: "Victorious Darkboots", level: 40, renown: 66, armor: 705, ini: 17, str: 14, ws: 20, bonus: "+2% Melee Critical Chance", stats: "Armor: 705 | STR: 14 | INI: 17 | WS: 20 | +2% Melee Critical Chance" },
+                { slot: "gloves", name: "Victorious Gauntlets", level: 40, renown: 66, armor: 705, ini: 14, ws: 22, wounds: 17, bonus: "+3% Reduced chance to be Parried", stats: "Armor: 705 | WS: 22 | INI: 14 | WOU: 17 | +3% Reduced chance to be Parried" },
+                { slot: "belt", name: "Victorious Deathgirdle", level: 40, renown: 65, ini: 17, str: 20, ws: 26, bonus: "+2% Melee Critical Chance", sres: 94, eres: 94, cres: 94, stats: "STR: 20 | INI: 17 | WS: 26 | +2% Melee Critical Chance | SRes: 94 | ERes: 94 | CRes: 94" },
+                { slot: "shoulders", name: "Victorious Shoulderguards", level: 40, renown: 67, armor: 825, ini: 28, ws: 20, str: 21, bonus: "+20 Melee Power", stats: "Armor: 825 | STR: 21 | INI: 28 | WS: 20 | +20 Melee Power" },
+                { slot: "helm", name: "Victorious Skullcase", level: 40, renown: 67, armor: 825, ini: 16, ws: 35, str: 20, bonus: "+2% Parry", stats: "Armor: 825 | STR: 20 | INI: 16 | WS: 35 | +2% Parry" },
+                { slot: "body", name: "Victorious Carapace", level: 40, renown: 68, armor: 924, ini: 17, ws: 40, str: 20, bonus: "+3% Reduced Armor Penetration", stats: "Armor: 924 | STR: 20 | INI: 17 | WS: 40 | +3% Reduced Armor Penetration" },
+                { slot: "cloak", name: "Victorious Changehide", level: 40, renown: 65, ini: 10, ws: 18, str: 21, bonus: "+2% Parry", sres: 94, eres: 94, cres: 94, stats: "STR: 21 | INI: 10 | WS: 18 | +2% Parry | SRes: 94 | ERes: 94 | CRes: 94" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+71 Strength" },
@@ -558,11 +558,11 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             role: "tank",
             requiredLevel: 36,
             pieces: [
-                { slot: "boots", name: "Darkboots of Ruin", level: 34, armor: 492, tou: 10, ini: 20, str: 9, ws: 11 },
-                { slot: "gloves", name: "Gauntlets of Ruin", level: 35, armor: 492, tou: 20, ws: 8, wounds: 10, bonus: "+2% Parry" },
-                { slot: "shoulders", name: "Shoulderguards of Ruin", level: 36, armor: 567, tou: 23, ws: 11, wounds: 13, bonus: "+2% Block" },
-                { slot: "helm", name: "Skullcase of Ruin", level: 35, armor: 567, tou: 23, ini: 11, ws: 14, wounds: 11 },
-                { slot: "body", name: "Carapace of Ruin", level: 36, armor: 645, tou: 29, ini: 14, ws: 15, bonus: "+2 Morale Per Second" }
+                { slot: "boots", name: "Darkboots of Ruin", level: 34, armor: 492, tou: 10, ini: 20, str: 9, ws: 11, stats: "Armor: 492 | STR: 9 | TOU: 10 | INI: 20 | WS: 11" },
+                { slot: "gloves", name: "Gauntlets of Ruin", level: 35, armor: 492, tou: 20, ws: 8, wounds: 10, bonus: "+2% Parry", stats: "Armor: 492 | TOU: 20 | WS: 8 | WOU: 10 | +2% Parry" },
+                { slot: "shoulders", name: "Shoulderguards of Ruin", level: 36, armor: 567, tou: 23, ws: 11, wounds: 13, bonus: "+2% Block", stats: "Armor: 567 | TOU: 23 | WS: 11 | WOU: 13 | +2% Block" },
+                { slot: "helm", name: "Skullcase of Ruin", level: 35, armor: 567, tou: 23, ini: 11, ws: 14, wounds: 11, stats: "Armor: 567 | TOU: 23 | INI: 11 | WS: 14 | WOU: 11" },
+                { slot: "body", name: "Carapace of Ruin", level: 36, armor: 645, tou: 29, ini: 14, ws: 15, bonus: "+2 Morale Per Second", stats: "Armor: 645 | TOU: 29 | INI: 14 | WS: 15 | +2 Morale Per Second" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+581 Armor" },
@@ -579,11 +579,11 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             requiredLevel: 40,
             requiredRenown: 32,
             pieces: [
-                { slot: "boots", name: "Onslaught Darkboots", level: 40, renown: 32, armor: 609, tou: 14, ini: 18, ws: 18, bonus: "+2% Block" },
-                { slot: "gloves", name: "Onslaught Gauntlets", level: 40, renown: 32, armor: 609, tou: 12, ini: 16, ws: 12, wounds: 24 },
-                { slot: "shoulders", name: "Onslaught Shoulderguards", level: 40, renown: 32, armor: 693, tou: 20, ini: 16, ws: 23, bonus: "+2% Disrupt" },
-                { slot: "helm", name: "Onslaught Skullcase", level: 40, renown: 32, armor: 693, tou: 18, ini: 27, ws: 16, bonus: "+1% Reduction in being Critically Hit" },
-                { slot: "body", name: "Onslaught Carapace", level: 40, renown: 32, armor: 777, tou: 16, ini: 25, ws: 22, bonus: "+72 HP Every 4 Seconds" }
+                { slot: "boots", name: "Onslaught Darkboots", level: 40, renown: 32, armor: 609, tou: 14, ini: 18, ws: 18, bonus: "+2% Block", stats: "Armor: 609 | TOU: 14 | INI: 18 | WS: 18 | +2% Block" },
+                { slot: "gloves", name: "Onslaught Gauntlets", level: 40, renown: 32, armor: 609, tou: 12, ini: 16, ws: 12, wounds: 24, stats: "Armor: 609 | TOU: 12 | INI: 16 | WS: 12 | WOU: 24" },
+                { slot: "shoulders", name: "Onslaught Shoulderguards", level: 40, renown: 32, armor: 693, tou: 20, ini: 16, ws: 23, bonus: "+2% Disrupt", stats: "Armor: 693 | TOU: 20 | INI: 16 | WS: 23 | +2% Disrupt" },
+                { slot: "helm", name: "Onslaught Skullcase", level: 40, renown: 32, armor: 693, tou: 18, ini: 27, ws: 16, bonus: "+1% Reduction in being Critically Hit", stats: "Armor: 693 | TOU: 18 | INI: 27 | WS: 16 | +1% Reduction in being Critically Hit" },
+                { slot: "body", name: "Onslaught Carapace", level: 40, renown: 32, armor: 777, tou: 16, ini: 25, ws: 22, bonus: "+72 HP Every 4 Seconds", stats: "Armor: 777 | TOU: 16 | INI: 25 | WS: 22 | +72 HP Every 4 Seconds" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+58 Wounds" },
@@ -600,12 +600,12 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             role: "tank",
             requiredLevel: 40,
             pieces: [
-                { slot: "jewel", name: "Beastlord Chaos Seal", level: 40, str: 24, ws: 13, bonus: "+1 AP Per Second", sres: 60, eres: 60, cres: 64 },
-                { slot: "cloak", name: "Beastlord Cloak", level: 40, tou: 32, ws: 24, sres: 72, eres: 84, cres: 72 },
-                { slot: "pocket", name: "Beastlord Hunting Guide", level: 40, bonus: "On Use: Increases AP Regeneration for 15s on all party members. 30m cooldown" },
-                { slot: "shoulders", name: "Beastlord Shoulderguards", level: 40, armor: 609, tou: 14, str: 24, ws: 14, cres: 30, eres: 25 },
-                { slot: "helm", name: "Beastlord Skullcase", level: 40, armor: 609, wounds: 20, str: 20, ws: 12, cres: 25, eres: 30 },
-                { slot: "body", name: "Beastlord Carapace", level: 40, armor: 675, tou: 14, wounds: 30, ws: 15, sres: 30, cres: 30 }
+                { slot: "jewel", name: "Beastlord Chaos Seal", level: 40, str: 24, ws: 13, bonus: "+1 AP Per Second", sres: 60, eres: 60, cres: 64, stats: "STR: 24 | WS: 13 | +1 AP Per Second | SRes: 60 | ERes: 60 | CRes: 64" },
+                { slot: "cloak", name: "Beastlord Cloak", level: 40, tou: 32, ws: 24, sres: 72, eres: 84, cres: 72, stats: "TOU: 32 | WS: 24 | SRes: 72 | ERes: 84 | CRes: 72" },
+                { slot: "pocket", name: "Beastlord Hunting Guide", level: 40, bonus: "On Use: Increases AP Regeneration for 15s on all party members. 30m cooldown", stats: "On Use: Increases AP Regeneration for 15s on all party members. 30m cooldown" },
+                { slot: "shoulders", name: "Beastlord Shoulderguards", level: 40, armor: 609, tou: 14, str: 24, ws: 14, cres: 30, eres: 25, stats: "Armor: 609 | STR: 24 | TOU: 14 | WS: 14 | CRes: 30 | ERes: 25" },
+                { slot: "helm", name: "Beastlord Skullcase", level: 40, armor: 609, wounds: 20, str: 20, ws: 12, cres: 25, eres: 30, stats: "Armor: 609 | STR: 20 | WS: 12 | WOU: 20 | CRes: 25 | ERes: 30" },
+                { slot: "body", name: "Beastlord Carapace", level: 40, armor: 675, tou: 14, wounds: 30, ws: 15, sres: 30, cres: 30, stats: "Armor: 675 | TOU: 14 | WS: 15 | WOU: 30 | SRes: 30 | CRes: 30" }
             ],
             setBonuses: [
                 { pieces: 3, bonus: "+55 Weaponskill" },
@@ -621,11 +621,11 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             role: "tank",
             requiredLevel: 39,
             pieces: [
-                { slot: "boots", name: "Rare Fortune Darkboots", level: 37, armor: 570, tou: 24, ini: 14, str: 13, bonus: "+2% Dodge" },
-                { slot: "gloves", name: "Rare Fortune Gauntlets", level: 37, armor: 570, tou: 19, ini: 6, str: 12, ws: 21 },
-                { slot: "shoulders", name: "Rare Fortune Shoulderguards", level: 39, armor: 645, tou: 18, ini: 18, str: 19, bonus: "+2% Reduced Armor Penetration" },
-                { slot: "helm", name: "Rare Fortune Skullcase", level: 38, armor: 645, tou: 12, ini: 20, str: 18, ws: 17 },
-                { slot: "body", name: "Rare Fortune Carapace", level: 39, armor: 720, tou: 22, ini: 27, ws: 12, bonus: "+3 AP Per Second" }
+                { slot: "boots", name: "Rare Fortune Darkboots", level: 37, armor: 570, tou: 24, ini: 14, str: 13, bonus: "+2% Dodge", stats: "Armor: 570 | STR: 13 | TOU: 24 | INI: 14 | +2% Dodge" },
+                { slot: "gloves", name: "Rare Fortune Gauntlets", level: 37, armor: 570, tou: 19, ini: 6, str: 12, ws: 21, stats: "Armor: 570 | STR: 12 | TOU: 19 | INI: 6 | WS: 21" },
+                { slot: "shoulders", name: "Rare Fortune Shoulderguards", level: 39, armor: 645, tou: 18, ini: 18, str: 19, bonus: "+2% Reduced Armor Penetration", stats: "Armor: 645 | STR: 19 | TOU: 18 | INI: 18 | +2% Reduced Armor Penetration" },
+                { slot: "helm", name: "Rare Fortune Skullcase", level: 38, armor: 645, tou: 12, ini: 20, str: 18, ws: 17, stats: "Armor: 645 | STR: 18 | TOU: 12 | INI: 20 | WS: 17" },
+                { slot: "body", name: "Rare Fortune Carapace", level: 39, armor: 720, tou: 22, ini: 27, ws: 12, bonus: "+3 AP Per Second", stats: "Armor: 720 | TOU: 22 | INI: 27 | WS: 12 | +3 AP Per Second" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+54 Initiative" },
@@ -642,12 +642,12 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             role: "tank",
             requiredLevel: 40,
             pieces: [
-                { slot: "cloak", name: "Redeye Changehide", level: 40, tou: 21, wounds: 21, ws: 17, sres: 91, eres: 76, cres: 73 },
-                { slot: "boots", name: "Redeye Darkboots", level: 40, armor: 570, tou: 17, ini: 15, str: 16, bonus: "+1% Reduction in being Critically Hit" },
-                { slot: "gloves", name: "Redeye Gauntlets", level: 40, armor: 570, tou: 12, ini: 13, str: 12, ws: 21 },
-                { slot: "shoulders", name: "Redeye Shoulderguards", level: 40, armor: 645, tou: 20, ini: 22, ws: 13, bonus: "+2% Reduced Armor Penetration" },
-                { slot: "helm", name: "Redeye Skullcase", level: 40, armor: 645, tou: 14, ini: 27, str: 22, ws: 13 },
-                { slot: "body", name: "Redeye Carapace", level: 40, armor: 720, tou: 28, ws: 17, wounds: 18, bonus: "+3 AP Per Second" }
+                { slot: "cloak", name: "Redeye Changehide", level: 40, tou: 21, wounds: 21, ws: 17, sres: 91, eres: 76, cres: 73, stats: "TOU: 21 | WS: 17 | WOU: 21 | SRes: 91 | ERes: 76 | CRes: 73" },
+                { slot: "boots", name: "Redeye Darkboots", level: 40, armor: 570, tou: 17, ini: 15, str: 16, bonus: "+1% Reduction in being Critically Hit", stats: "Armor: 570 | STR: 16 | TOU: 17 | INI: 15 | +1% Reduction in being Critically Hit" },
+                { slot: "gloves", name: "Redeye Gauntlets", level: 40, armor: 570, tou: 12, ini: 13, str: 12, ws: 21, stats: "Armor: 570 | STR: 12 | TOU: 12 | INI: 13 | WS: 21" },
+                { slot: "shoulders", name: "Redeye Shoulderguards", level: 40, armor: 645, tou: 20, ini: 22, ws: 13, bonus: "+2% Reduced Armor Penetration", stats: "Armor: 645 | TOU: 20 | INI: 22 | WS: 13 | +2% Reduced Armor Penetration" },
+                { slot: "helm", name: "Redeye Skullcase", level: 40, armor: 645, tou: 14, ini: 27, str: 22, ws: 13, stats: "Armor: 645 | STR: 22 | TOU: 14 | INI: 27 | WS: 13" },
+                { slot: "body", name: "Redeye Carapace", level: 40, armor: 720, tou: 28, ws: 17, wounds: 18, bonus: "+3 AP Per Second", stats: "Armor: 720 | TOU: 28 | WS: 17 | WOU: 18 | +3 AP Per Second" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+3% Reduction in being Critically Hit" },
@@ -664,13 +664,13 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             role: "tank",
             requiredLevel: 40,
             pieces: [
-                { slot: "boots", name: "Sentinel Darkboots", level: 40, armor: 609, tou: 27, wounds: 8, ws: 15, bonus: "+2% Parry" },
-                { slot: "gloves", name: "Sentinel Gauntlets", level: 40, armor: 609, tou: 15, ws: 10, wounds: 23, bonus: "+21 Melee Power" },
-                { slot: "belt", name: "Sentinel Deathgirdle", level: 40, tou: 18, wounds: 12, str: 24, ws: 9, sres: 80, eres: 90, cres: 95 },
-                { slot: "shoulders", name: "Sentinel Shoulderguards", level: 40, armor: 693, tou: 17, wounds: 30, str: 12, bonus: "+2% Disrupt" },
-                { slot: "helm", name: "Sentinel Skullcase", level: 40, armor: 693, tou: 27, wounds: 10, str: 14, bonus: "+2% Reduction in being Critically Hit" },
-                { slot: "body", name: "Sentinel Carapace", level: 40, armor: 777, tou: 35, wounds: 19, str: 17, bonus: "+60 HP Every 4 Seconds" },
-                { slot: "jewel", name: "Sentinel Chaos Seal", level: 40, str: 27, ws: 17, bonus: "+3 AP Per Second", sres: 70, eres: 70, cres: 71 }
+                { slot: "boots", name: "Sentinel Darkboots", level: 40, armor: 609, tou: 27, wounds: 8, ws: 15, bonus: "+2% Parry", stats: "Armor: 609 | TOU: 27 | WS: 15 | WOU: 8 | +2% Parry" },
+                { slot: "gloves", name: "Sentinel Gauntlets", level: 40, armor: 609, tou: 15, ws: 10, wounds: 23, bonus: "+21 Melee Power", stats: "Armor: 609 | TOU: 15 | WS: 10 | WOU: 23 | +21 Melee Power" },
+                { slot: "belt", name: "Sentinel Deathgirdle", level: 40, tou: 18, wounds: 12, str: 24, ws: 9, sres: 80, eres: 90, cres: 95, stats: "STR: 24 | TOU: 18 | WS: 9 | WOU: 12 | SRes: 80 | ERes: 90 | CRes: 95" },
+                { slot: "shoulders", name: "Sentinel Shoulderguards", level: 40, armor: 693, tou: 17, wounds: 30, str: 12, bonus: "+2% Disrupt", stats: "Armor: 693 | STR: 12 | TOU: 17 | WOU: 30 | +2% Disrupt" },
+                { slot: "helm", name: "Sentinel Skullcase", level: 40, armor: 693, tou: 27, wounds: 10, str: 14, bonus: "+2% Reduction in being Critically Hit", stats: "Armor: 693 | STR: 14 | TOU: 27 | WOU: 10 | +2% Reduction in being Critically Hit" },
+                { slot: "body", name: "Sentinel Carapace", level: 40, armor: 777, tou: 35, wounds: 19, str: 17, bonus: "+60 HP Every 4 Seconds", stats: "Armor: 777 | STR: 17 | TOU: 35 | WOU: 19 | +60 HP Every 4 Seconds" },
+                { slot: "jewel", name: "Sentinel Chaos Seal", level: 40, str: 27, ws: 17, bonus: "+3 AP Per Second", sres: 70, eres: 70, cres: 71, stats: "STR: 27 | WS: 17 | +3 AP Per Second | SRes: 70 | ERes: 70 | CRes: 71" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+58 Strength" },
@@ -688,13 +688,13 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             role: "tank",
             requiredLevel: 40,
             pieces: [
-                { slot: "boots", name: "Bloodlord Darkboots", level: 40, armor: 663, ini: 14, str: 14, ws: 27, bonus: "+2% Dodge" },
-                { slot: "gloves", name: "Bloodlord Gauntlets", level: 40, armor: 663, ini: 14, str: 15, ws: 25, wounds: 13 },
-                { slot: "belt", name: "Bloodlord Deathgirdle", level: 40, ini: 16, str: 12, ws: 22, bonus: "+2% Parry, +1% Disrupt", sres: 91, eres: 91, cres: 91 },
-                { slot: "shoulders", name: "Bloodlord Shoulderguards", level: 40, armor: 771, ini: 19, str: 18, ws: 29, bonus: "+2% Parry" },
-                { slot: "helm", name: "Bloodlord Skullcase", level: 40, armor: 771, ini: 20, str: 10, ws: 28, bonus: "+2% Reduction in being Critically Hit" },
-                { slot: "body", name: "Bloodlord Carapace", level: 40, armor: 876, tou: 21, wounds: 16, ws: 31, bonus: "" },
-                { slot: "cloak", name: "Bloodlord Changehide", level: 40, ini: 16, str: 12, ws: 30, bonus: "+1% Melee Critial Chance", sres: 91, eres: 91, cres: 91 }
+                { slot: "boots", name: "Bloodlord Darkboots", level: 40, armor: 663, ini: 14, str: 14, ws: 27, bonus: "+2% Dodge", stats: "Armor: 663 | STR: 14 | INI: 14 | WS: 27 | +2% Dodge" },
+                { slot: "gloves", name: "Bloodlord Gauntlets", level: 40, armor: 663, ini: 14, str: 15, ws: 25, wounds: 13, stats: "Armor: 663 | STR: 15 | INI: 14 | WS: 25 | WOU: 13" },
+                { slot: "belt", name: "Bloodlord Deathgirdle", level: 40, ini: 16, str: 12, ws: 22, bonus: "+2% Parry, +1% Disrupt", sres: 91, eres: 91, cres: 91, stats: "STR: 12 | INI: 16 | WS: 22 | +2% Parry, +1% Disrupt | SRes: 91 | ERes: 91 | CRes: 91" },
+                { slot: "shoulders", name: "Bloodlord Shoulderguards", level: 40, armor: 771, ini: 19, str: 18, ws: 29, bonus: "+2% Parry", stats: "Armor: 771 | STR: 18 | INI: 19 | WS: 29 | +2% Parry" },
+                { slot: "helm", name: "Bloodlord Skullcase", level: 40, armor: 771, ini: 20, str: 10, ws: 28, bonus: "+2% Reduction in being Critically Hit", stats: "Armor: 771 | STR: 10 | INI: 20 | WS: 28 | +2% Reduction in being Critically Hit" },
+                { slot: "body", name: "Bloodlord Carapace", level: 40, armor: 876, tou: 21, wounds: 16, ws: 31, bonus: "", stats: "Armor: 876 | TOU: 21 | WS: 31 | WOU: 16" },
+                { slot: "cloak", name: "Bloodlord Changehide", level: 40, ini: 16, str: 12, ws: 30, bonus: "+1% Melee Critial Chance", sres: 91, eres: 91, cres: 91, stats: "STR: 12 | INI: 16 | WS: 30 | +1% Melee Critial Chance | SRes: 91 | ERes: 91 | CRes: 91" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+66 Wounds" },
@@ -712,13 +712,13 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             role: "tank",
             requiredLevel: 40,
             pieces: [
-                { slot: "boots", name: "Vale Walker Darkboots", level: 40, armor: 648, tou: 16, wounds: 20, ini: 15, str: 15 },
-                { slot: "gloves", name: "Vale Walker Gauntlets", level: 40, armor: 648, tou: 15, wounds: 20, ws: 11, bonus: "+2% Melee Critical Chance" },
-                { slot: "belt", name: "Vale Walker Deathgirdle", level: 40, wounds: 21, ini: 28, bonus: "+1% Dodge, 2% Disrupt", sres: 90, eres: 90, cres: 90 },
-                { slot: "shoulders", name: "Vale Walker Shoulderguards", level: 40, armor: 741, wounds: 20, ws: 25, bonus: "+3% Parry", eres: 30, cres: 35 },
-                { slot: "helm", name: "Vale Walker Skullcase", level: 40, armor: 741, wounds: 25, ini: 16, ws: 20, bonus: "N/A", eres: 40, cres: 35 },
-                { slot: "body", name: "Valewalker Carapace", level: 40, armor: 834, tou: 19, wounds: 35, ini: 18, ws: 22, cres: 35 },
-                { slot: "jewel", name: "Vale Walker Change-Gem", level: 40, wounds: 24, ws: 24, bonus: "+1% Reduction in being Critically Hit", sres: 66, eres: 80, cres: 80 }
+                { slot: "boots", name: "Vale Walker Darkboots", level: 40, armor: 648, tou: 16, wounds: 20, ini: 15, str: 15, stats: "Armor: 648 | STR: 15 | TOU: 16 | INI: 15 | WOU: 20" },
+                { slot: "gloves", name: "Vale Walker Gauntlets", level: 40, armor: 648, tou: 15, wounds: 20, ws: 11, bonus: "+2% Melee Critical Chance", stats: "Armor: 648 | TOU: 15 | WS: 11 | WOU: 20 | +2% Melee Critical Chance" },
+                { slot: "belt", name: "Vale Walker Deathgirdle", level: 40, wounds: 21, ini: 28, bonus: "+1% Dodge, 2% Disrupt", sres: 90, eres: 90, cres: 90, stats: "INI: 28 | WOU: 21 | +1% Dodge, 2% Disrupt | SRes: 90 | ERes: 90 | CRes: 90" },
+                { slot: "shoulders", name: "Vale Walker Shoulderguards", level: 40, armor: 741, wounds: 20, ws: 25, bonus: "+3% Parry", eres: 30, cres: 35, stats: "Armor: 741 | WS: 25 | WOU: 20 | +3% Parry | ERes: 30 | CRes: 35" },
+                { slot: "helm", name: "Vale Walker Skullcase", level: 40, armor: 741, wounds: 25, ini: 16, ws: 20, bonus: "N/A", eres: 40, cres: 35, stats: "Armor: 741 | WS: 20 | INI: 16 | WOU: 25 | ERes: 40 | CRes: 35" },
+                { slot: "body", name: "Valewalker Carapace", level: 40, armor: 834, tou: 19, wounds: 35, ini: 18, ws: 22, cres: 35, stats: "Armor: 834 | TOU: 19 | WS: 22 | INI: 18 | WOU: 35 | CRes: 35" },
+                { slot: "jewel", name: "Vale Walker Change-Gem", level: 40, wounds: 24, ws: 24, bonus: "+1% Reduction in being Critically Hit", sres: 66, eres: 80, cres: 80, stats: "WS: 24 | WOU: 24 | +1% Reduction in being Critically Hit | SRes: 66 | ERes: 80 | CRes: 80" }
             ],
             setBonuses: [
                 { pieces: 2, bonus: "+62 Weaponskill" },
