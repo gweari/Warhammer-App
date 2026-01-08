@@ -246,18 +246,16 @@ function displayRecommendations(classObj, level, renown, role, gearSets, crestSa
                         const bonus = bonusEntry.bonus;
                         // Match patterns like "+45 Armor", "+20 Willpower", "+4% Dodge", "+4 HP Every 4s", etc.
                         const matches = bonus.matchAll(/\+(\d+)(%?)\s+([^,|]+)/g);
+                        for (const match of matches) {
+                            const value = match[1];
+                            const isPercent = match[2];
+                            let statName = match[3].trim();
                             if (!statBonuses[statName]) {
                                 statBonuses[statName] = { value: 0, isPercent: false };
                             }
                             statBonuses[statName].value += parseInt(value);
                             if (isPercent) statBonuses[statName].isPercent = true;
                         }
-                html += `
-                    <div class="stat-line">
-                        <span class="stat-label">Available Sets:</span>
-                        <span class="stat-value" style="color: #5dff8c; font-weight: 700;">${gearSets.length}</span>
-                    </div>
-                `;
                     });
                     // Add bonuses to the displayStats string
                     for (const [statName, bonus] of Object.entries(statBonuses)) {
