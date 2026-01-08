@@ -582,7 +582,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             totalStats: 'Armor: 1420 | INT: 203, TOU: 27, INI: 171, WOU: 114 | 290 SRe, 289 ERe, 289 CRe'
         },
         'shaman_goblin_healer_rr70_overlord': {
-            setName: 'Overlord Set (Auxiliary)',
+            // ...existing code...
             pieces: [
                 { slot: 'Shoulders', name: 'Sholdafings of the Overlord', stats: 'Armor: 240 | WP: 23, TOU: 18, INI: 12, WOU: 14 | +2% Reduction in being Crit', cost: 80, currency: 'War Crests', level: 40 },
                 { slot: 'Belt', name: 'Waaaghat of the Overlord', stats: 'Armor: 240 | WP: 28, INI: 10, WOU: 14 | +2% Reduction in being Crit, +12 Healing Power', cost: 80, currency: 'War Crests', level: 40 }
@@ -593,7 +593,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             totalStats: 'Armor: 480 | WP: 51, TOU: 18, INI: 22, WOU: 28'
         },
         'shaman_goblin_healer_rr70_imperator': {
-            setName: 'Imperator Set (Auxiliary)',
+            // ...existing code...
             pieces: [
                 { slot: 'Shoulders', name: 'Sholdafings of the Imperator', stats: 'Armor: 240 | INT: 23, TOU: 12, INI: 15, WOU: 14 | +2% Reduced Chance to be Disrupted', cost: 80, currency: 'War Crests', level: 40 },
                 { slot: 'Belt', name: 'Waaaghat of the Imperator', stats: 'Armor: 240 | INT: 28, INI: 10, WOU: 14 | +2% Reduced Chance to be Disrupted, +12 Magic Power', cost: 80, currency: 'War Crests', level: 40 }
@@ -604,7 +604,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             totalStats: 'Armor: 480 | INT: 51, TOU: 12, INI: 25, WOU: 28'
         },
         'shaman_goblin_healer_rr70_genesis_curative': {
-            setName: 'Genesis Curative Set (Accessories)',
+            // ...existing code...
             pieces: [
                 { slot: 'Ring', name: 'Genesis Aspect of the Curative', stats: 'INI: 24 | +36 Healing Power | 64 SRe, 64 ERe, 64 CRe', cost: 1, currency: 'Genesis Aspect', level: 36 },
                 { slot: 'Ring', name: 'Genesis Fragment of the Curative', stats: 'WP: 24 | +1% Dodge, +1% Disrupt | 57 SRe, 57 ERe, 57 CRe', cost: 1, currency: 'Genesis Fragment', level: 36 },
@@ -621,7 +621,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             totalStats: 'WP: 48, INI: 24, WOU: 24 | 293 SRe, 293 ERe, 293 CRe'
         },
         'shaman_goblin_healer_rr70_genesis_scholar': {
-            setName: 'Genesis Scholar Set (Accessories)',
+            // ...existing code...
             pieces: [
                 { slot: 'Ring', name: 'Genesis Aspect of the Scholar', stats: 'INI: 24 | +36 Magic Power | 64 SRe, 64 ERe, 64 CRe', cost: 1, currency: 'Genesis Aspect', level: 36 },
                 { slot: 'Ring', name: 'Genesis Fragment of the Scholar', stats: 'INT: 24 | +1% Dodge, +1% Disrupt | 57 SRe, 57 ERe, 57 CRe', cost: 1, currency: 'Genesis Fragment', level: 36 },
@@ -638,7 +638,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             totalStats: 'INT: 76, INI: 24, WOU: 4 | 293 SRe, 293 ERe, 293 CRe'
         },
         'shaman_goblin_healer_rr70_warrant_medic': {
-            setName: 'Warrant Medic Set (Accessories)',
+            // ...existing code...
             pieces: [
                 { slot: 'Ring', name: 'Icon of the Medic', stats: 'WP: 17, INI: 12, WOU: 13 | 62 SRe, 62 ERe, 62 CRe', cost: 1, currency: 'Warrant', level: 36 },
                 { slot: 'Ring', name: 'Mark of the Medic', stats: 'WP: 24 | +1% Disrupt | 68 SRe, 68 ERe, 68 CRe', cost: 1, currency: 'Warrant', level: 36 },
@@ -650,7 +650,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             totalStats: 'WP: 57, INI: 12, WOU: 13 | 195 SRe, 195 ERe, 195 CRe'
         },
         'shaman_goblin_healer_rr70_warrant_mender': {
-            setName: 'Warrant Mender Set (Accessories)',
+            // ...existing code...
             pieces: [
                 { slot: 'Ring', name: 'Icon of the Mender', stats: 'WP: 20, INI: 16, WOU: 16 | 69 SRe, 69 ERe, 69 CRe', cost: 1, currency: 'Warrant', level: 36 },
                 { slot: 'Ring', name: 'Mark of the Mender', stats: 'WP: 19 | +2% Disrupt | 72 SRe, 72 ERe, 72 CRe', cost: 1, currency: 'Warrant', level: 36 },
@@ -662,7 +662,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             totalStats: 'WP: 55, INI: 16, WOU: 16 | 206 SRe, 206 ERe, 206 CRe'
         },
         'shaman_goblin_healer_rr70_warrant_arcanist': {
-            setName: 'Warrant Arcanist Set (Accessories)',
+            // ...existing code...
             pieces: [
                 { slot: 'Ring', name: 'Icon of the Arcanist', stats: 'INT: 17, INI: 12, WOU: 13 | 62 SRe, 62 ERe, 62 CRe', cost: 1, currency: 'Warrant', level: 36 },
                 { slot: 'Ring', name: 'Mark of the Arcanist', stats: 'INT: 24 | +1% Disrupt | 68 SRe, 68 ERe, 68 CRe', cost: 1, currency: 'Warrant', level: 36 },
@@ -674,7 +674,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             totalStats: 'INT: 57, INI: 12, WOU: 28 | 190 SRe, 190 ERe, 190 CRe'
         },
         'shaman_goblin_healer_rr70_warrant_seer': {
-            setName: 'Warrant Seer Set (Accessories)',
+            // ...existing code...
             pieces: [
                 { slot: 'Ring', name: 'Icon of the Seer', stats: 'INT: 20, INI: 16, WOU: 16 | 69 SRe, 69 ERe, 69 CRe', cost: 1, currency: 'Warrant', level: 36 },
                 { slot: 'Ring', name: 'Mark of the Seer', stats: 'INT: 19 | +2% Disrupt | 72 SRe, 72 ERe, 72 CRe', cost: 1, currency: 'Warrant', level: 36 },

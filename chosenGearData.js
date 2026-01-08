@@ -122,7 +122,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
                 { pieces: 3, bonus: "+38 Wounds" },
                 { pieces: 4, bonus: "+2% Melee Critical Chance" }
             ],
-            totalStats: "Armor: 1104 | STR: 47 | TOU: 28 | WS: 16 | INI: 12 | WOU: 36"
+                name: "Overlord Set",
         },
         chosen_havoc_rr16: {
             name: "Set of Havoc",
@@ -322,7 +322,7 @@ if (typeof gearDatabase !== 'undefined' && gearDatabase.recommendations) {
             setBonuses: [
                 { pieces: 2, bonus: "+62 Toughness" },
                 { pieces: 3, bonus: "+68 Wounds" },
-                { pieces: 4, bonus: "Active Defences - On Attacking Target: 10% chance to increase Parry, Block, Disrupt and Dodge by 7% for 10 seconds." },
+                name: "Imperator Set",
                 { pieces: 5, bonus: "+5% Block" },
                 { pieces: 6, bonus: "Bulwarking Presence - On Being Hit: 10% chance to reduce the damage being taken by your Group within 30ft by 3% for 10 seconds." }
             ],
