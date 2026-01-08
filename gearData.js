@@ -1,64 +1,38 @@
 // Warhammer Online RoR Gear Recommendation Database
 // Updated class names
-
-// Import Chosen gear data if available (for browser or Node)
-if (typeof chosenGearData !== 'undefined') {
-    if (typeof gearDatabase === 'undefined') window.gearDatabase = {};
-    if (!window.gearDatabase.recommendations) window.gearDatabase.recommendations = {};
-    Object.assign(window.gearDatabase.recommendations, chosenGearData);
-}
-
 const gearDatabase = {
-    // Classes available in the game
     classes: [
-        // Empire
         { id: 'knight', name: 'Knight of the Blazing Sun', faction: 'Empire', type: 'Melee Tank', roles: ['Tank', 'DPS'] },
         { id: 'witch_hunter', name: 'Witch Hunter', faction: 'Empire', type: 'Melee DPS', roles: ['DPS'] },
         { id: 'bright_wizard', name: 'Bright Wizard', faction: 'Empire', type: 'Ranged DPS', roles: ['DPS'] },
         { id: 'priest_sigmar', name: 'Warrior Priest', faction: 'Empire', type: 'Healer', roles: ['Healer', 'DPS'] },
-        
-        // Dwarf
         { id: 'ironbreaker', name: 'Ironbreaker', faction: 'Dwarf', type: 'Melee Tank', roles: ['Tank', 'DPS'] },
         { id: 'slayer', name: 'Slayer', faction: 'Dwarf', type: 'Melee DPS', roles: ['DPS'] },
         { id: 'engineer', name: 'Engineer', faction: 'Dwarf', type: 'Ranged DPS', roles: ['DPS'] },
         { id: 'runepriest', name: 'Runepriest', faction: 'Dwarf', type: 'Healer', roles: ['Healer', 'DPS'] },
-        
-        // High Elf
         { id: 'lion_guard', name: 'White Lion', faction: 'High Elf', type: 'Melee Tank', roles: ['DPS'] },
         { id: 'shadow_warrior', name: 'Shadow Warrior', faction: 'High Elf', type: 'Melee DPS', roles: ['DPS'] },
         { id: 'mage', name: 'Archmage', faction: 'High Elf', type: 'Ranged DPS', roles: ['Healer', 'DPS'] },
         { id: 'warrior_priest', name: 'Swordmaster', faction: 'High Elf', type: 'Melee Tank', roles: ['Tank', 'DPS'] },
-        
-        
-        // Chaos
         { id: 'chaos_knight', name: 'Chosen', faction: 'Chaos', type: 'Melee Tank', roles: ['Tank', 'DPS'] },
         { id: 'marauder', name: 'Marauder', faction: 'Chaos', type: 'Melee DPS', roles: ['DPS'] },
         { id: 'magus', name: 'Magus', faction: 'Chaos', type: 'Ranged DPS', roles: ['DPS'] },
         { id: 'zealot', name: 'Zealot', faction: 'Chaos', type: 'Healer', roles: ['Healer', 'DPS'] },
-        
-        // Dark Elf
         { id: 'corsair', name: 'Black Guard', faction: 'Dark Elf', type: 'Melee Tank', roles: ['Tank', 'DPS'] },
         { id: 'witch_elf', name: 'Witch Elf', faction: 'Dark Elf', type: 'Melee DPS', roles: ['DPS'] },
         { id: 'dark_elf_ranged', name: 'Sorceress', faction: 'Dark Elf', type: 'Ranged DPS', roles: ['DPS'] },
         { id: 'disciple_khaine', name: 'Disciple of Khaine', faction: 'Dark Elf', type: 'Healer', roles: ['Healer', 'DPS'] },
-             
-        
-        // Greenskin
         { id: 'squig_herder', name: 'Squig Herder', faction: 'Greenskin', type: 'Ranged DPS', roles: ['DPS'] },
         { id: 'black_orc', name: 'Black Orc', faction: 'Greenskin', type: 'Melee Tank', roles: ['Tank', 'DPS'] },
         { id: 'choppa', name: 'Choppa', faction: 'Greenskin', type: 'Melee DPS', roles: ['DPS'] },
         { id: 'shaman_goblin', name: 'Shaman', faction: 'Greenskin', type: 'Healer', roles: ['Healer', 'DPS'] }
     ],
-
-    // Level ranges for gear recommendations
     levelRanges: [
         { id: '1-10', label: 'Level 1-10', min: 1, max: 10 },
         { id: '11-20', label: 'Level 11-20', min: 11, max: 20 },
         { id: '21-30', label: 'Level 21-30', min: 21, max: 30 },
         { id: '31-40', label: 'Level 31-40 (Cap)', min: 31, max: 40 }
     ],
-
-    // Renown ranks
     renownRanks: [
         { id: 'r1', label: 'Renown Rank 1-10', min: 1, max: 10 },
         { id: 'r2', label: 'Renown Rank 11-20', min: 11, max: 20 },
@@ -69,90 +43,56 @@ const gearDatabase = {
         { id: 'r7', label: 'Renown Rank 61-70', min: 61, max: 70 },
         { id: 'r8', label: 'Renown Rank 71-80', min: 71, max: 80 }
     ],
-
-    // Gear sets by class for direct lookup (fix for Chosen and others)
-    gearSets: {
-        chaos_knight: {
-            tank: {
-                decimator: { setName: "Decimator Set", pieces: [ { slot: "body", name: "Decimator Carapace", level: 8, renown: 8, armor: 165, str: 4, tou: 8, ini: 4, wounds: 4, bonus: "+1% Block" }, { slot: "boots", name: "Decimator Darkboots", level: 8, renown: 8, armor: 132, str: 2, tou: 6, ws: 4, wounds: 6 }, { slot: "belt", name: "Decimator Deathgirdle", level: 7, renown: 7, str: 2, tou: 3, wounds: 4, bonus: "+1% Reduced chance to be Critically Hit", sres: 33, eres: 20, cres: 20 } ], setBonuses: [ { pieces: 2, bonus: "+18 Toughness" }, { pieces: 3, bonus: "+22 Wounds" } ], totalStats: "Armor: 297 | STR: 8 | TOU: 17 | WS: 4 | INI: 4 | WOU: 10 | SRes: 33 | ERes: 20 | CRes: 20" },
-                braggart: { setName: "Set of the Braggart", pieces: [ { slot: "body", name: "Braggart Carapace", level: 8, renown: 8, armor: 165, str: 6, wounds: 8, ws: 5, bonus: "+1% Reduced chance to be Parried" }, { slot: "boots", name: "Braggart Darkboots", level: 7, renown: 7, armor: 132, str: 6, tou: 2, ws: 4, wounds: 6 }, { slot: "belt", name: "Braggart Deathgirdle", level: 7, renown: 7, str: 4, tou: 2, wounds: 3, bonus: "+1% Melee Critical Chance", sres: 23, eres: 25, cres: 25 } ], setBonuses: [ { pieces: 2, bonus: "+18 Strength" }, { pieces: 3, bonus: "+22 Toughness" } ], totalStats: "Armor: 297 | STR: 16 | TOU: 4 | WS: 12 | WOU: 14 | SRes: 23 | ERes: 25 | CRes: 25" },
-                carnage: { setName: "Set of Carnage", pieces: [ { slot: "body", name: "Carnage Carapace", level: 5, armor: 135, str: 4, tou: 7, ini: 5, wounds: 6 }, { slot: "gloves", name: "Carnage Gauntlets", level: 5, armor: 108, str: 4, tou: 4, wounds: 3, ini: 5 }, { slot: "boots", name: "Carnage Darkboots", level: 5, armor: 108, str: 5, tou: 6, ws: 2, wounds: 3 } ], setBonuses: [ { pieces: 2, bonus: "+135 Armor" }, { pieces: 3, bonus: "+20 Weapon Skill" } ], totalStats: "Armor: 351 | STR: 13 | TOU: 17 | WS: 7 | INI: 3 | WOU: 14" },
-                // ... (add all other tank sets from chosenGearData.js here, following the same structure)
-            },
-            dps: {
-                // Chosen currently has no unique DPS sets in chosenGearData.js, but this structure is required for logic to work.
-                // Add any Chosen DPS sets here in the same format as tank sets if/when they exist.
-            }
-        }
-    },
-    // Gear recommendations by class and level tier
-    // Format: classId_tierKey: { slot: itemName }
     recommendations: {
-       
+        chaos_knight_tank_decimator: {
+            setName: "Decimator Set",
+            pieces: [
+                {slot: "body", name: "Decimator Carapace", level: 8, renown: 8, armor: 165, str: 4, tou: 8, ini: 4, wounds: 4, bonus: "+1% Block"},
+                {slot: "boots", name: "Decimator Darkboots", level: 8, renown: 8, armor: 132, str: 2, tou: 6, ws: 4, wounds: 6},
+                {slot: "belt", name: "Decimator Deathgirdle", level: 7, renown: 7, str: 2, tou: 3, wounds: 4, bonus: "+1% Reduced chance to be Critically Hit", sres: 33, eres: 20, cres: 20}
+            ],
+            setBonuses: [
+                {pieces: 2, bonus: "+18 Toughness"},
+                {pieces: 3, bonus: "+22 Wounds"}
+            ],
+            totalStats: "Armor: 297 | Strength: 8 | Toughness: 17 | Weapon Skill: 4 | Initiative: 4 | Wounds: 10 | Spirit Resist: 33 | Elemental Resist: 20 | Corporeal Resist: 20"
+        },
+        chaos_knight_tank_braggart: {
+            setName: "Set of the Braggart",
+            pieces: [
+                {slot: "body", name: "Braggart Carapace", level: 8, renown: 8, armor: 165, str: 6, wounds: 8, ws: 5, bonus: "+1% Reduced chance to be Parried"},
+                {slot: "boots", name: "Braggart Darkboots", level: 7, renown: 7, armor: 132, str: 6, tou: 2, ws: 4, wounds: 6},
+                {slot: "belt", name: "Braggart Deathgirdle", level: 7, renown: 7, str: 4, tou: 2, wounds: 3, bonus: "+1% Melee Critical Chance", sres: 23, eres: 25, cres: 25}
+            ],
+            setBonuses: [
+                {pieces: 2, bonus: "+18 Strength"},
+                {pieces: 3, bonus: "+22 Toughness"}
+            ],
+            totalStats: "Armor: 297 | Strength: 16 | Toughness: 4 | Weapon Skill: 12 | Wounds: 14 | Spirit Resist: 23 | Elemental Resist: 25 | Corporeal Resist: 25"
+        },
+        chaos_knight_tank_carnage: {
+            setName: "Set of Carnage",
+            pieces: [
+                {slot: "body", name: "Carnage Carapace", level: 5, armor: 135, str: 4, tou: 7, ini: 5, wounds: 6},
+                {slot: "gloves", name: "Carnage Gauntlets", level: 5, armor: 108, str: 4, tou: 4, wounds: 3, ini: 5},
+                {slot: "boots", name: "Carnage Darkboots", level: 5, armor: 108, str: 5, tou: 6, ws: 2, wounds: 3}
+            ],
+            setBonuses: [
+                {pieces: 2, bonus: "+135 Armor"},
+                {pieces: 3, bonus: "+20 Weapon Skill"}
+            ],
+            totalStats: "Armor: 351 | Strength: 13 | Toughness: 17 | Weapon Skill: 7 | Initiative: 3 | Wounds: 14"
+        },
     },
 
-    // Get gear recommendations based on class, level, renown, and role
-    getRecommendations: function(classId, level, renown, role) {
-        let allSets = [];
-
-        // Always check gearSets for any class/role (future-proof for all classes)
-        if (this.gearSets && this.gearSets[classId]) {
-            const setsByRole = this.gearSets[classId];
-            if (role && setsByRole[role.toLowerCase()]) {
-                allSets = allSets.concat(Object.values(setsByRole[role.toLowerCase()]));
-            } else {
-                // Flatten all sets for all roles (tank/dps/healer/etc.)
-                allSets = allSets.concat(Object.values(setsByRole).flatMap(roleSets => Object.values(roleSets)));
-            }
-        }
-
-        // Also pull from legacy recommendations for backward compatibility
-        if (this.recommendations) {
-            for (const key in this.recommendations) {
-                const rolePrefix = role ? `${classId}_${role.toLowerCase()}_` : null;
-                const classPrefix = `${classId}_`;
-                if (rolePrefix && key.startsWith(rolePrefix)) {
-                    allSets.push(this.recommendations[key]);
-                } else if (!key.includes('_healer_') && !key.includes('_dps_') && !key.includes('_tank_') && key.startsWith(classPrefix)) {
-                    allSets.push(this.recommendations[key]);
-                }
-            }
-        }
-
-        // Filter: only include sets where ALL pieces meet level AND renown requirements
-        const wearableSets = allSets.filter(set => {
-            if (!set || !set.pieces || !Array.isArray(set.pieces) || set.pieces.length === 0) return false;
-            for (const piece of set.pieces) {
-                if (piece.level && piece.level > level) return false;
-                if (piece.renown && piece.renown > renown) return false;
-            }
-            return true;
-        });
-
-        // Sort by total stats (sum all numeric stats)
-        wearableSets.sort((a, b) => {
-            const scoreA = this.calculateTotalStats(a);
-            const scoreB = this.calculateTotalStats(b);
-            return scoreB - scoreA;
-        });
-
-        // Always return at least an empty array (never undefined/null)
-        return wearableSets.slice(0, 3);
-    },
-
-    // Calculate total numeric stats from all pieces in a set
     calculateTotalStats: function(gearSet) {
         if (!gearSet || !gearSet.pieces || !Array.isArray(gearSet.pieces)) {
             return 0;
         }
-        
         let total = 0;
-        
         gearSet.pieces.forEach(piece => {
             if (!piece.stats) return;
-            
             const stats = piece.stats;
-            
             // Extract and sum all numeric values
             const numbers = stats.match(/:\s*(\d+)/g);
             if (numbers) {
@@ -162,7 +102,6 @@ const gearDatabase = {
                 });
             }
         });
-        
         return total;
     },
 
@@ -239,12 +178,12 @@ const gearDatabase = {
             const stats = piece.stats;
             
             // Extract numeric values for primary stats
-            const wpMatch = stats.match(/WP:\s*(\d+)/i);
-            const intMatch = stats.match(/INT:\s*(\d+)/i);
-            const strMatch = stats.match(/STR:\s*(\d+)/i);
-            const touMatch = stats.match(/TOU:\s*(\d+)/i);
-            const wouMatch = stats.match(/WOU:\s*(\d+)/i);
-            const iniMatch = stats.match(/INI:\s*(\d+)/i);
+            const wpMatch = stats.match(/Willpower:\s*(\d+)/i);
+            const intMatch = stats.match(/Intelligence:\s*(\d+)/i);
+            const strMatch = stats.match(/Strength:\s*(\d+)/i);
+            const touMatch = stats.match(/Toughness:\s*(\d+)/i);
+            const wouMatch = stats.match(/Wounds:\s*(\d+)/i);
+            const iniMatch = stats.match(/Initiative:\s*(\d+)/i);
             const armorMatch = stats.match(/Armor:\s*(\d+)/i);
             
             // Role-based scoring weights (Main Stat > Wounds > Initiative > Toughness)
@@ -328,12 +267,12 @@ const gearDatabase = {
             const totalStats = gearSet.totalStats;
             
             // Extract totals
-            const totalWP = totalStats.match(/WP:\s*(\d+)/i);
-            const totalINT = totalStats.match(/INT:\s*(\d+)/i);
-            const totalSTR = totalStats.match(/STR:\s*(\d+)/i);
-            const totalTOU = totalStats.match(/TOU:\s*(\d+)/i);
-            const totalWOU = totalStats.match(/WOU:\s*(\d+)/i);
-            const totalINI = totalStats.match(/INI:\s*(\d+)/i);
+            const totalWP = totalStats.match(/Willpower:\s*(\d+)/i);
+            const totalINT = totalStats.match(/Intelligence:\s*(\d+)/i);
+            const totalSTR = totalStats.match(/Strength:\s*(\d+)/i);
+            const totalTOU = totalStats.match(/Toughness:\s*(\d+)/i);
+            const totalWOU = totalStats.match(/Wounds:\s*(\d+)/i);
+            const totalINI = totalStats.match(/Initiative:\s*(\d+)/i);
             const totalArmor = totalStats.match(/Armor:\s*(\d+)/i);
             
             // Apply role-based scoring to totals with high multipliers
