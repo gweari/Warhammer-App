@@ -1,5 +1,13 @@
 // Warhammer Online RoR Gear Recommendation Database
 // Updated class names
+
+// Import Chosen gear data if available (for browser or Node)
+if (typeof chosenGearData !== 'undefined') {
+    if (typeof gearDatabase === 'undefined') window.gearDatabase = {};
+    if (!window.gearDatabase.recommendations) window.gearDatabase.recommendations = {};
+    Object.assign(window.gearDatabase.recommendations, chosenGearData);
+}
+
 const gearDatabase = {
     // Classes available in the game
     classes: [
