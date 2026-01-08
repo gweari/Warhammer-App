@@ -53,7 +53,10 @@ const UnifiedGearDatabase = {
 };
 
 document.addEventListener('DOMContentLoaded', function() {
-    initializeApp();
+    // Delay initialization to ensure all gear data scripts have loaded
+    setTimeout(() => {
+        initializeApp();
+    }, 150);
 });
 
 function initializeApp() {
