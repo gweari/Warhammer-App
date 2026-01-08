@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gear Data Converter</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #e0e0e0;
+        }
+        h1 { color: #ffb81c; }
+        .section {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        button {
+            background: #ffb81c;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin: 5px;
+        }
+        button:hover { background: #ffc93f; }
+        select, input {
+            padding: 8px;
+            margin: 5px;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #e0e0e0;
+            border-radius: 4px;
+        }
+        #output {
+            background: #000;
+            color: #0f0;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        .stats {
+            color: #ffb81c;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>⚔️ Warhammer RoR - Gear Data Converter</h1>
+    
+    <div class="section">
+        <h2>Load HTML Gear Data</h2>
+        <p>This tool will convert the community HTML gear data into JavaScript format for your app.</p>
+        <button onclick="loadHTMLData()">Load Data from HTML</button>
+        <button onclick="parseAndConvert()">Parse & Convert to JavaScript</button>
+        <div class="stats" id="stats"></div>
+    </div>
+
+    <div class="section">
+        <h2>Filter Options</h2>
+        <label>Class Filter: <input type="text" id="classFilter" placeholder="e.g., Shaman, WE, WH"></label>
+        <label>Max Rows: <input type="number" id="maxRows" value="500" min="10" max="5000"></label>
+        <button onclick="filterData()">Apply Filter</button>
+    </div>
+
+    <div class="section">
+        <h2>Output (JavaScript Format)</h2>
+        <button onclick="copyOutput()">Copy to Clipboard</button>
+        <button onclick="downloadOutput()">Download as .js file</button>
+        <pre id="output">// JavaScript code will appear here...</pre>
+    </div>
+
+    <iframe id="dataFrame" src="tool from web/Data.html" style="display:none;"></iframe>
+
+    <script>
+        let parsedData = [];
+        let filteredData = [];
+
+        function loadHTMLData() {
+            const iframe = document.getElementById('dataFrame');
+            const doc = iframe.contentDocument || iframe.contentWindow.document;
+            const table = doc.querySelector('table');
+            
+            if (!table) {
+                alert('Could not find table in HTML file');
+                return;
+            }
+
+            const rows = table.querySelectorAll('tr');
+            parsedData = [];
+
+            // Skip first 2 rows (headers)
+            for (let i = 2; i < rows.length; i++) {
+                const cells = rows[i].querySelectorAll('td');
+                if (cells.length < 20) continue;
+
+                const gear = {
+                    type: cells[0]?.textContent?.trim() || '',
+                    class: cells[1]?.textContent?.trim() || '',
+                    set: cells[2]?.textContent?.trim() || '',
+                    piece: cells[3]?.textContent?.trim() || '',
+                    armor: cells[5]?.textContent?.trim() || '',
+                    tou: cells[6]?.textContent?.trim() || '',
+                    ini: cells[7]?.textContent?.trim() || '',
+                    wou: cells[8]?.textContent?.trim() || '',
+                    ws: cells[9]?.textContent?.trim() || '',
+                    str: cells[10]?.textContent?.trim() || '',
+                    int: cells[11]?.textContent?.trim() || '',
+                    wp: cells[12]?.textContent?.trim() || '',
+                    bs: cells[13]?.textContent?.trim() || '',
+                    sRes: cells[14]?.textContent?.trim() || '',
+                    eRes: cells[15]?.textContent?.trim() || '',
+                    cRes: cells[16]?.textContent?.trim() || '',
+                    bonus1: cells[17]?.textContent?.trim() || '',
+                    bonus2: cells[18]?.textContent?.trim() || '',
+                    bonus3: cells[19]?.textContent?.trim() || '',
+                    level: cells[20]?.textContent?.trim() || '',
+                    renown: cells[21]?.textContent?.trim() || ''
+                };
+
+                if (gear.class && gear.set && gear.piece) {
+                    parsedData.push(gear);
+                }
+            }
+
+            document.getElementById('stats').innerHTML = 
+                `✅ Loaded ${parsedData.length} gear pieces<br>` +
+                `📊 Classes: ${[...new Set(parsedData.map(g => g.class))].length}`;
+            
+            filteredData = parsedData;
+        }
+
+        function filterData() {
+            const classFilter = document.getElementById('classFilter').value.trim();
+            const maxRows = parseInt(document.getElementById('maxRows').value);
+
+            filteredData = parsedData.filter(gear => {
+                if (classFilter && !gear.class.toLowerCase().includes(classFilter.toLowerCase())) {
+                    return false;
+                }
+                return true;
+            }).slice(0, maxRows);
+
+            document.getElementById('stats').innerHTML = 
+                `✅ Filtered to ${filteredData.length} gear pieces`;
+        }
+
+        function parseAndConvert() {
+            if (filteredData.length === 0) {
+                alert('Please load data first!');
+                return;
+            }
+
+            // Group by class and set
+            const grouped = {};
+            filteredData.forEach(gear => {
+                const key = `${gear.class}_${gear.set}`;
+                if (!grouped[key]) {
+                    grouped[key] = {
+                        class: gear.class,
+                        set: gear.set,
+                        pieces: []
+                    };
+                }
+                grouped[key].pieces.push(gear);
+            });
+
+            // Generate JavaScript
+            let js = `// Auto-generated from community gear data\n// Add this to endgameGearData.js\n\n`;
+            
+            for (const key in grouped) {
+                const data = grouped[key];
+                const classKey = data.class.toLowerCase().replace(/\s+/g, '_');
+                const setKey = data.set.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
+                
+                js += `'${classKey}_${setKey}': {\n`;
+                js += `    setName: '${data.set}',\n`;
+                js += `    pieces: [\n`;
+                
+                data.pieces.forEach((piece, idx) => {
+                    const stats = buildStatsString(piece);
+                    js += `        { slot: '${piece.piece}', name: '${data.set} ${piece.piece}', stats: '${stats}'`;
+                    
+                    if (piece.level && piece.level !== '-') {
+                        js += `, level: ${piece.level}`;
+                    }
+                    if (piece.renown && piece.renown !== '-') {
+                        js += `, renown: ${piece.renown}`;
+                    }
+                    
+                    js += ` }${idx < data.pieces.length - 1 ? ',' : ''}\n`;
+                });
+                
+                js += `    ],\n`;
+                js += `    setBonuses: [],\n`; // Placeholder
+                js += `    totalStats: 'See individual pieces'\n`;
+                js += `},\n\n`;
+            }
+
+            document.getElementById('output').textContent = js;
+        }
+
+        function buildStatsString(gear) {
+            const parts = [];
+            
+            if (gear.armor && gear.armor !== '0') parts.push(`Armor: ${gear.armor}`);
+            
+            const statMap = {
+                tou: 'TOU', ini: 'INI', wou: 'WOU', ws: 'WS',
+                str: 'STR', int: 'INT', wp: 'WP', bs: 'BS'
+            };
+            
+            const stats = [];
+            for (const [key, label] of Object.entries(statMap)) {
+                if (gear[key] && gear[key] !== '0') {
+                    stats.push(`${label}: ${gear[key]}`);
+                }
+            }
+            if (stats.length) parts.push(stats.join(', '));
+            
+            if (gear.bonus1 && gear.bonus1 !== '-') parts.push(gear.bonus1);
+            if (gear.bonus2 && gear.bonus2 !== '-') parts.push(gear.bonus2);
+            if (gear.bonus3 && gear.bonus3 !== '-') parts.push(gear.bonus3);
+            
+            if (gear.sRes && gear.sRes !== '0') {
+                parts.push(`${gear.sRes} SRe, ${gear.eRes} ERe, ${gear.cRes} CRe`);
+            }
+            
+            return parts.join(' | ');
+        }
+
+        function copyOutput() {
+            const output = document.getElementById('output').textContent;
+            navigator.clipboard.writeText(output).then(() => {
+                alert('Copied to clipboard!');
+            });
+        }
+
+        function downloadOutput() {
+            const output = document.getElementById('output').textContent;
+            const blob = new Blob([output], {type: 'text/javascript'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'endgame_gear_parsed.js';
+            a.click();
+        }
+
+        // Auto-load on page load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                loadHTMLData();
+            }, 500);
+        });
+    </script>
+</body>
+</html>

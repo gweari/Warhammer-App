@@ -542,22 +542,7 @@ const gearDatabase = {
             ],
             totalStats: 'Armor: 368 | INT: 50, TOU: 34, INI: 24, WOU: 31'
         },
-        'shaman_goblin_healer_rr16_citywatch': {
-            setName: 'City-Watch Set',
-            pieces: [
-                { slot: 'Head', name: 'City-Watch Morkyfeets', stats: 'Armor: 76 | TOU: 6, INI: 7, WP: 8, WOU: 10', level: 16 },
-                { slot: 'Chest', name: 'City-Watch Robefings', stats: 'Armor: 95 | TOU: 12, INI: 16, WOU: 13', level: 16 },
-                { slot: 'Hands', name: 'City-Watch Greenbringas', stats: 'Armor: 76 | INI: 8, WP: 13, WOU: 10', level: 16 },
-                { slot: 'Shoulders', name: 'City-Watch Sholdafings', stats: 'Armor: 86 | INI: 6, WP: 12, WOU: 8 | +1% Reduction in being Crit', level: 16 },
-                { slot: 'Belt', name: 'City-Watch Waaaghat', stats: 'Armor: 86 | TOU: 9, WP: 17, WOU: 10', level: 16 }
-            ],
-            setBonuses: [
-                { pieces: 3, bonus: '+35 Toughness' },
-                { pieces: 4, bonus: '+2% Outgoing Healing' },
-                { pieces: 5, bonus: 'Bracing - On Being Hit: 10% chance to increase Armor by 334 for 10 seconds' }
-            ],
-            totalStats: 'Armor: 419 | TOU: 27, INI: 37, WP: 50, WOU: 51'
-        },
+
         'shaman_goblin_healer_rr16': {
             setName: 'Obliterator Set',
             pieces: [
@@ -961,27 +946,6 @@ const gearDatabase = {
             ],
             totalStats: 'Armor: 1328 | INT: 186, TOU: 33, INI: 129, WOU: 45 | 188 SRe, 188 ERe, 188 CRe'
         },
-        'shaman_goblin_healer_rr60': {
-            setName: 'Invader Set',
-            pieces: [
-                { slot: 'Head', name: 'Invader Morkyfeets', stats: 'Armor: 221 | WP: 27, INI: 12, WOU: 18 | +2 Morale Per Second' },
-                { slot: 'Chest', name: 'Invader Robefings', stats: 'Armor: 292 | WP: 26, TOU: 16, INI: 21, WOU: 16 | +1 AP Per Second' },
-                { slot: 'Hands', name: 'Invader Greenbringas', stats: 'Armor: 221 | WP: 25, INI: 17, WOU: 15 | +15 Healing Power' },
-                { slot: 'Shoulders', name: 'Invader Sholdafings', stats: 'Armor: 257 | WP: 21, TOU: 12, INI: 20 | +2% Healing Crit' },
-                { slot: 'Belt', name: 'Invader Waaaghat', stats: 'Armor: 257 | WP: 27, TOU: 15, WOU: 18 | +27 Healing Power' },
-                { slot: 'Accessory', name: 'Invader Bitskeepa', stats: 'WP: 18, WOU: 12 | +2% Dodge, +2% Disrupt | 91 SRe, 91 ERe, 91 CRe' },
-                { slot: 'Cloak', name: 'Invader Waaaghchain', stats: 'WP: 27, INI: 12 | +2 AP Per Second, +2% Reduced Armor Pen | 79 SRe, 78 ERe, 78 CRe' }
-            ],
-            setBonuses: [
-                { pieces: 2, bonus: '+66 Willpower' },
-                { pieces: 3, bonus: '+73 Wounds' },
-                { pieces: 4, bonus: '+80 Toughness' },
-                { pieces: 5, bonus: '+5% Healing Critical Chance' },
-                { pieces: 6, bonus: 'Absolve I - On Direct Heal: 5% chance to remove a Hex, Curse, or Ailment from heal target' },
-                { pieces: 7, bonus: 'Much Good Green - All healing abilities have 10% chance to increase Crit Heal by 9% and crit value by 12% for 10s' }
-            ],
-            totalStats: 'Armor: 1248 | WP: 171, TOU: 43, INI: 82, WOU: 79'
-        },
         'shaman_goblin_healer_rr70': {
             setName: 'Sovereign Set of da Great Green',
             pieces: [
@@ -1339,49 +1303,10 @@ const gearDatabase = {
 
     // Get gear recommendations based on class, level, renown, and role
     getRecommendations: function(classId, level, renown, role) {
-        let tier = 'starter';
-        
-        // More granular tier system based on renown rank
-        if (level >= 40 && renown >= 70) {
-            tier = 'rr70';
-        } else if (level >= 40 && renown >= 60) {
-            tier = 'rr60';
-        } else if (level >= 40 && renown >= 55) {
-            tier = 'rr55';
-        } else if (level >= 40 && renown >= 45) {
-            tier = 'rr45';
-        } else if (level >= 35 && renown >= 35) {
-            tier = 'rr35';
-        } else if (level >= 26 && renown >= 26) {
-            tier = 'rr26';
-        } else if (level >= 16 && renown >= 16) {
-            tier = 'rr16';
-        } else if (level >= 8 && renown >= 8) {
-            tier = 'rr8';
-        } else if (level >= 5) {
-            tier = 'rr5';
-        }
-
-        // Find ALL matching sets for this tier AND lower tiers
         const allSets = [];
-        const roleKey = role ? `${classId}_${role.toLowerCase()}_${tier}` : null;
-        const classKey = `${classId}_${tier}`;
         
-        // Define tier hierarchy for filtering
-        const tierOrder = ['rr5', 'rr8', 'rr16', 'rr26', 'rr35', 'rr45', 'rr55', 'rr60', 'rr70'];
-        const currentTierIndex = tierOrder.indexOf(tier);
-        const allowedTiers = currentTierIndex >= 0 ? tierOrder.slice(0, currentTierIndex + 1) : [tier];
-        
-        // Search through all recommendations for matching keys
+        // Search through all recommendations for matching class and role
         for (const key in this.recommendations) {
-            // Extract the tier from the key (e.g., 'shaman_goblin_healer_rr26' -> 'rr26')
-            const keyTierMatch = key.match(/_rr(\d+)/);
-            const keyTier = keyTierMatch ? `rr${keyTierMatch[1]}` : null;
-            
-            // Skip sets from higher tiers than player qualifies for
-            if (keyTier && !allowedTiers.includes(keyTier)) continue;
-            
-            // Check if this key matches the current class and role
             const rolePrefix = role ? `${classId}_${role.toLowerCase()}_` : null;
             const classPrefix = `${classId}_`;
             
@@ -1392,36 +1317,58 @@ const gearDatabase = {
             }
         }
         
-        // Filter out sets with pieces the player can't equip (additional check for explicit requirements)
+        // Filter: only include sets where ALL pieces meet level AND renown requirements
         const wearableSets = allSets.filter(set => {
-            if (!set.pieces || !Array.isArray(set.pieces)) return true;
+            if (!set.pieces || !Array.isArray(set.pieces) || set.pieces.length === 0) return false;
             
-            // Check if any piece has requirements the player doesn't meet
+            // Check every piece - if ANY piece can't be equipped, reject the whole set
             for (const piece of set.pieces) {
-                if (piece.level && level < piece.level) return false;
-                if (piece.renown && renown < piece.renown) return false;
+                // If piece has level requirement and player doesn't meet it, reject set
+                if (piece.level && piece.level > level) return false;
+                // If piece has renown requirement and player doesn't meet it, reject set
+                if (piece.renown && piece.renown > renown) return false;
             }
             return true;
         });
         
-        // If no wearable sets found, try fallback
-        if (wearableSets.length === 0) {
-            const fallback = this.recommendations[`default_${tier}`] || this.recommendations[`default_starter`];
-            if (fallback) {
-                wearableSets.push(fallback);
-            }
-        }
+        // Sort by total stats (sum all numeric stats)
+        wearableSets.sort((a, b) => {
+            const scoreA = this.calculateTotalStats(a);
+            const scoreB = this.calculateTotalStats(b);
+            return scoreB - scoreA;
+        });
         
-        // Sort sets by score (best first) - pass level and renown for context
-        wearableSets.sort((a, b) => this.calculateSetScore(b, role, level, renown, tier) - this.calculateSetScore(a, role, level, renown, tier));
-        
-        return wearableSets;        // Sort sets by score (best first) - pass level and renown for context
-        allSets.sort((a, b) => this.calculateSetScore(b, role, level, renown, tier) - this.calculateSetScore(a, role, level, renown, tier));
-        
-        return allSets;
+        // Return top 3 best sets
+        return wearableSets.slice(0, 3);
     },
 
-    // Calculate score for a gear set to determine BiS
+    // Calculate total numeric stats from all pieces in a set
+    calculateTotalStats: function(gearSet) {
+        if (!gearSet || !gearSet.pieces || !Array.isArray(gearSet.pieces)) {
+            return 0;
+        }
+        
+        let total = 0;
+        
+        gearSet.pieces.forEach(piece => {
+            if (!piece.stats) return;
+            
+            const stats = piece.stats;
+            
+            // Extract and sum all numeric values
+            const numbers = stats.match(/:\s*(\d+)/g);
+            if (numbers) {
+                numbers.forEach(num => {
+                    const value = parseInt(num.replace(/:\s*/, ''));
+                    total += value;
+                });
+            }
+        });
+        
+        return total;
+    },
+
+    // Old calculateSetScore kept for compatibility
     calculateSetScore: function(gearSet, role, level, renown, tier) {
         if (!gearSet || !gearSet.pieces || !Array.isArray(gearSet.pieces)) {
             return 0;
@@ -1431,6 +1378,27 @@ const gearDatabase = {
         const isHealer = role && role.toLowerCase() === 'healer';
         const isDPS = role && role.toLowerCase() === 'dps';
         const isTank = role && role.toLowerCase() === 'tank';
+        
+        // Calculate average level requirement of the set
+        let totalLevel = 0;
+        let levelCount = 0;
+        gearSet.pieces.forEach(piece => {
+            if (piece.level) {
+                totalLevel += piece.level;
+                levelCount++;
+            }
+        });
+        const avgSetLevel = levelCount > 0 ? totalLevel / levelCount : 0;
+        
+        // HEAVILY penalize sets far below player's level (underleveled gear)
+        const levelDifference = level - avgSetLevel;
+        if (levelDifference > 8) {
+            score -= levelDifference * 100; // Massive penalty for showing low-level gear
+        } else if (levelDifference > 4) {
+            score -= levelDifference * 50; // Moderate penalty
+        } else if (levelDifference >= 0 && levelDifference <= 4) {
+            score += (4 - levelDifference) * 20; // Small bonus for gear at appropriate level
+        }
         
         // Determine if this is a PvE set based on set name patterns
         const setName = gearSet.setName || '';
@@ -1452,12 +1420,12 @@ const gearDatabase = {
         };
         const requiredRR = tierRRRequirement[tier] || 0;
         
-        // If player's RR is significantly below tier requirement, heavily favor PvE sets
+        // If player's RR is significantly below tier requirement, favor PvE sets
         if (renown < requiredRR - 2) {
             if (isPvESet) {
-                score += 500; // Huge bonus for PvE sets when undergeared in RR
+                score += 200; // Bonus for PvE sets when undergeared in RR
             } else {
-                score -= 300; // Penalty for RvR sets when undergeared
+                score -= 200; // Penalty for RvR sets when undergeared
             }
         } else if (renown >= requiredRR) {
             // At or above RR requirement, slightly favor RvR sets (they're usually BiS at cap)

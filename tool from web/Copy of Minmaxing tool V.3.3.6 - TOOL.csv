@@ -1,0 +1,75 @@
+!!!ATTENTION!!! FOR TOOL TO WORK - COPY IT TO YOUR OWN DRIVE !!!ATTENTION!!! FOR TOOL TO WORK - COPY IT TO YOUR OWN DRIVE !!!ATTENTION!!! FOR TOOL TO WORK - COPY IT TO YOUR OWN DRIVE !!!ATTENTION!!! FOR TOOL TO WORK - COPY IT TO YOUR OWN DRIVE !!!ATTENTION!!!,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Class group:,,Sham,,,Summary,,,,,,,,Epic Talisman,,,,,,,0,,0,,,,,,,,,Class group:,,None,,,Summary,,,,,,,,Epic Talisman,,,,,,,0,,0,,,,,,,
+Class stats:,,ON,,,Required LVL:,,36,Talis slots:,,,3,,Stat,Magic Power,,,,,0,0,,0,,,,,,,,,Class stats:,,OFF,,,Required LVL:,,0,Talis slots:,,,0,,Stat,Magic Power,,,,,0,0,,0,,,,,,,
+,,,,,Required RR:,,45,Epic Talis slots:,,,0,,,,,,,,,0,,0,,,,,,,,,,,,,,Required RR:,,0,Epic Talis slots:,,,0,,,,,,,,,0,,0,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+SET,,Piece,Armor,Toughness,Initiative,Wounds,Weapon Skill,Strength,Intelligence,Willpower,Ballistic skill,Spiritual Resistance,Elemental Resistance,Corporeal Resistance,Item bonus 1,REF,,Item bonus 2,REF,,Item bonus 3,REF,,,,,,,,,SET,,Piece,Armor,Toughness,Initiative,Wounds,Weapon Skill,Strength,Intelligence,Willpower,Ballistic skill,Spiritual Resistance,Elemental Resistance,Corporeal Resistance,Item bonus 1,REF,,Item bonus 2,REF,,Item bonus 3,REF,,,,,,,
+,,,,,,,,,,,,,,,,Value,Bonus,,Value,Bonus,,Value,Bonus,talis,special talis,LVL,RR,Weapon check,points ,,,,,,,,,,,,,,,,,,Value,Bonus,,Value,Bonus,,Value,Bonus,talis,special talis,LVL,RR,Weapon check,points 
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Class stats,,,0,147,172,391,123,98,196,221,74,0,0,0,-,,,-,,,-,,,,,,,,,,Class stats,,,0,0,0,0,0,0,0,0,0,0,0,0,-,,,-,,,-,,,,,,,,
+Talis,Amount of talismans,,0,0,0,0,0,0,0,0,0,0,0,0,-,,,-,,,-,,,,,,,,,,Talis,Amount of talismans,,0,0,0,0,0,0,0,0,0,0,0,0,-,,,-,,,-,,,,,,,,
+,Value of talismans,,0,0,0,0,0,0,0,0,0,0,0,0,-,,,-,,,-,,,,,,,,,,,Value of talismans,,0,0,0,0,0,0,0,0,0,0,0,0,-,,,-,,,-,,,,,,,,
+Armor,Beastlord,Helm,203,0,0,20,0,0,20,12,0,25,0,30,-,0,0,-,0,0,-,0,0,1,0,40,0,,"77,8",,Armor,None,Helm,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,,0
+,Redeye,Shoulders,215,20,0,22,0,0,0,13,0,0,0,0,+2% Reduced Armor Penetration,2,Reduced Armor Penetration,-,0,0,-,0,0,1,0,40,0,,"88,5",,,None,Shoulders,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,,0
+,Dominator,Body,255,19,0,13,0,0,33,0,0,0,0,0,+3 AP Per Second,3,AP Per Second,-,0,0,-,0,0,1,0,40,45,,"105,5",,,None,Body,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,,0
+,None,Gloves,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,,0,,,None,Gloves,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,,0
+,None,Belt,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,,0,,,None,Belt,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,,0
+,None,Boots,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,,0,,,None,Boots,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,,0
+,None,Cloak,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,,0,,,None,Cloak,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,,0
+Jewelry,None,None,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,,0,,Jewelry,None,None,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,,0
+,None,None,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,,0,,,None,None,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,,0
+,None,None,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,,0,,,None,None,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,,0
+,None,None,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,,0,,,None,None,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,,0
+Weapons,None,Main hand,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,0,0,,Weapons,None,Main hand,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,0,0
+,None,Off hand,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,0,0,,,None,Off hand,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,0,0
+,None,Shield,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,0,0,,,None,Shield,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,0,0
+,None,Both hands,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,0,0,,,None,Both hands,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,0,0
+Pocket,None,Pocket,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,,0,,Pocket,None,Pocket,0,0,0,0,0,0,0,0,0,0,0,0,-,0,0,-,0,0,-,0,0,0,0,0,0,,0
+Summary of Item Stats,,,673,39,0,55,0,0,53,25,0,25,0,30,-,,,-,,,-,,,,,,,,,,Summary of Item Stats,,,0,0,0,0,0,0,0,0,0,0,0,0,-,,,-,,,-,,,,,,,,
+Summary of set bonus Stats,,,0,0,0,0,0,0,0,0,0,0,0,0,-,,,-,,,-,,,,,,,,,,Summary of set bonus Stats,,,0,0,0,0,0,0,0,0,0,0,0,0,-,,,-,,,-,,,,,,,,
+Summary of talismans,,,0,0,0,0,0,0,0,0,0,0,0,0,-,,,-,,,-,,,,,,,,,,Summary of talismans,,,0,0,0,0,0,0,0,0,0,0,0,0,-,,,-,,,-,,,,,,,,
+STAT SUMMARY,,,673,186,172,446,123,98,249,246,74,25,0,30,-,,,-,,,-,,,,,,,,,,STAT SUMMARY,,,0,0,0,0,0,0,0,0,0,0,0,0,-,,,-,,,-,,,,,,,,
+Delta,,,673,186,172,446,123,98,249,246,74,25,0,30,-,,,-,,,-,,,,,,,,,,Delta,,,-673,-186,-172,-446,-123,-98,-249,-246,-74,-25,0,-30,-,,,-,,,-,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+ADDITIONAL STATS FROM ITEMS AND BONUSES,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,ADDITIONAL STATS FROM ITEMS AND BONUSES,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Reduced Chance to be Blocked,,,0,Block,,0,Melee Power,,,0,Melee Critical Chance,,,,,,,0,,,,,,,,,,,,,Reduced Chance to be Blocked,,,0,Block,,0,Melee Power,,,0,Melee Critical Chance,,,,,,,0,,,,,,,,,,,
+Reduced Chance to be Parried,,,0,Parry,,0,Healing Power,,,0,Healing Critical Chance,,,,,,,0,,,,,,,,,,,,,Reduced Chance to be Parried,,,0,Parry,,0,Healing Power,,,0,Healing Critical Chance,,,,,,,0,,,,,,,,,,,
+Reduced Chance to be Dodged,,,0,Dodge,,0,Ranged Power,,,0,Ranged Critical Chance,,,,,,,0,,,,,,,,,,,,,Reduced Chance to be Dodged,,,0,Dodge,,0,Ranged Power,,,0,Ranged Critical Chance,,,,,,,0,,,,,,,,,,,
+Reduced Chance to be Disrupted,,,0,Disrupt,,0,Magic Power,,,0,Magic Critical Chance,,,,,,,0,,,,,,,,,,,,,Reduced Chance to be Disrupted,,,0,Disrupt,,0,Magic Power,,,0,Magic Critical Chance,,,,,,,0,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Armor Penetration,,,0,Auto Attack Haste,,,,0,,,Reduction in being Critically Hit,,,,,,,0,,,,,,,,,,,,,Armor Penetration,,,0,Auto Attack Haste,,,,0,,,Reduction in being Critically Hit,,,,,,,0,,,,,,,,,,,
+Reduced Armor Penetration,,,2,Range,,,,0,,,Critical Damage,,,,,,,0,,,,,,,,,,,,,Reduced Armor Penetration,,,0,Range,,,,0,,,Critical Damage,,,,,,,0,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Hit Points Every four Seconds,,,0,AP Per Second,,,,3,,,Critical Hit Rating,,,,,,,0,,,,,,,,,,,,,Hit Points Every four Seconds,,,0,AP Per Second,,,,0,,,Critical Hit Rating,,,,,,,0,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Morale Per Second,,,0,Gear Value,,,,,,,272,,,,,,,,,,,,,,,,,,,,Morale Per Second,,,0,Gear Value,,,,,,,0,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+WEAPON BONUSES,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,WEAPON SET BONUSES,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Weapon,,Piece,DPS,,AA speed,,Block Rate,,Proc,,,,,,,,,,,,,,,,,,,,,,Weapon,,Piece,DPS,,AA speed,,Block Rate,,Proc,,,,,,,,,,,,,,,,,,,,
+-,,-,"0,0",,"0,0",,0,,-,,,,,,,,,,,,,,,,,,,,,,-,,-,"0,0",,"0,0",,0,,-,,,,,,,,,,,,,,,,,,,,
+-,,-,"0,0",,"0,0",,0,,-,,,,,,,,,,,,,,,,,,,,,,-,,-,"0,0",,"0,0",,0,,-,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+SET BONUSES,,,,,,,,,,,,,,,,,,,,,,REF,,,,,,,,,SET BONUSES,,,,,,,,,,,,,,,,,,,,,,REF,,,,,,,
+Set,,Piece,Bonus effect,,,,,,,,,,,,,,,,,,,Value,Bonus,,,,,,,,Set,,Piece,Bonus effect,,,,,,,,,,,,,,,,,,,Value,Bonus,,,,,,
+None,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0,,None,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0
+,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0
+,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0
+,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0
+,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0
+,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0
+,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0
+,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0
+,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0
+,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0
+,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0
+,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0
+,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0
+,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0
+,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0
+,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0
+,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0
+,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0
+,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0
+,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0
+,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,0,0,,,,,,0
