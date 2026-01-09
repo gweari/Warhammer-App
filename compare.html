@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Compare Gear Sets</title>
+    <link rel="stylesheet" href="tool/resources/sheet.css">
+    <style>
+        body { background: #181a1b; color: #fff; font-family: 'Segoe UI', Arial, sans-serif; }
+        .compare-header { font-size: 2rem; color: #ffb81c; margin: 30px 0 20px 0; text-align: center; }
+        .set-block { background: rgba(255,255,255,0.07); border-left: 4px solid #5dff8c; margin: 18px 0; padding: 18px; border-radius: 8px; }
+        .set-title { font-size: 1.2rem; color: #5dff8c; font-weight: 700; margin-bottom: 8px; }
+        .set-summary { font-size: 1rem; color: #fff; margin-bottom: 8px; }
+        .set-bonuses { background: rgba(0,255,100,0.08); border-left: 3px solid #5dff8c; margin-top: 10px; padding: 10px; border-radius: 6px; }
+        .set-bonus-title { color: #5dff8c; font-weight: 700; font-size: 1.05rem; }
+        .set-bonus-item { color: #d0d0d0; font-size: 0.95rem; margin: 4px 0; }
+    </style>
+</head>
+<body>
+    <div class="compare-header">Compare Alternative Gear Sets</div>
+    <div id="compareResults"></div>
+    <script src="gearData.js"></script>
+    <script src="app.js"></script>
+    <script>
+    // Example: get class, level, renown from query params
+    function getQueryParam(key) {
+        const params = new URLSearchParams(window.location.search);
+        return params.get(key);
+    }
+    const classKey = getQueryParam('class');
+    const level = parseInt(getQueryParam('level')) || 40;
+    const renown = parseInt(getQueryParam('renown')) || 80;
+    // Use gearDatabase to get sets
+    let sets = [];
+    if (window.gearDatabase && classKey && window.gearDatabase[classKey]) {
+        sets = window.gearDatabase[classKey].recommendations.filter(set => set.level <= level && set.renown <= renown);
+    }
+    // Remove BiS (first set)
+    if (sets.length > 1) sets = sets.slice(1);
+    const resultsDiv = document.getElementById('compareResults');
+    if (sets.length === 0) {
+        resultsDiv.innerHTML = '<div style="color:#ff4d4d; font-size:1.1rem; text-align:center; margin-top:40px;">No alternative sets found for this class, level, and renown.</div>';
+    } else {
+        sets.forEach(set => {
+            let html = `<div class='set-block'>`;
+            html += `<div class='set-title'>${set.setName || 'Alternative Set'}</div>`;
+            html += `<div class='set-summary'>Level: ${set.level} | Renown: ${set.renown}</div>`;
+            if (set.totalStats) {
+                html += `<div class='set-summary'>${set.totalStats}</div>`;
+            }
+            if (set.setBonuses && Array.isArray(set.setBonuses)) {
+                html += `<div class='set-bonuses'><div class='set-bonus-title'>Set Bonuses</div>`;
+                set.setBonuses.forEach(bonus => {
+                    html += `<div class='set-bonus-item'><span style='color:#5dff8c; font-weight:700;'>${bonus.pieces} Pieces:</span> ${bonus.bonus}</div>`;
+                });
+                html += `</div>`;
+            }
+            html += `</div>`;
+            resultsDiv.innerHTML += html;
+        });
+    }
+    </script>
+</body>
+</html>
