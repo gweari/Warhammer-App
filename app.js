@@ -309,6 +309,7 @@ function displayRecommendations(classObj, level, renown, role, gearSets, crestSa
             `;
             gearSets.slice(1).forEach((gearSet, index) => {
                 html += `<div style="height: 3px; background: linear-gradient(90deg, rgba(255,184,28,0) 0%, rgba(255,184,28,0.5) 50%, rgba(255,184,28,0) 100%); margin: 40px 0;"></div>`;
+                // Only show the breakdown for alternatives, not total stats or set bonuses
                 displayGearSet(gearSet, index + 1, false);
             });
             html += '</div>';
@@ -429,61 +430,63 @@ function displayRecommendations(classObj, level, renown, role, gearSets, crestSa
             });
             html += '</div>';
             
-            // Show total stats if available - calculate with set bonuses included
-            if (gearSet.totalStats) {
-                let displayStats = gearSet.totalStats;
-                // Parse and add set bonuses to the total stats using only full stat names
-                if (gearSet.setBonuses && Array.isArray(gearSet.setBonuses)) {
-                    const statBonuses = {};
-                    gearSet.setBonuses.forEach(bonusEntry => {
-                        const bonus = bonusEntry.bonus;
-                        // Match patterns like "+45 Armor", "+20 Willpower", "+4% Dodge", "+4 HP Every 4s", etc.
-                        const matches = bonus.matchAll(/\+(\d+)(%?)\s+([^,|]+)/g);
-                        for (const match of matches) {
-                            const value = match[1];
-                            const isPercent = match[2];
-                            // Use stat name exactly as in the bonus (trimmed)
-                            let statName = match[3].trim();
-                            if (!statBonuses[statName]) {
-                                statBonuses[statName] = { value: 0, isPercent: false };
+            // Show total stats and set bonuses ONLY for BiS set
+            if (isBiS) {
+                // Show total stats if available - calculate with set bonuses included
+                if (gearSet.totalStats) {
+                    let displayStats = gearSet.totalStats;
+                    // Parse and add set bonuses to the total stats using only full stat names
+                    if (gearSet.setBonuses && Array.isArray(gearSet.setBonuses)) {
+                        const statBonuses = {};
+                        gearSet.setBonuses.forEach(bonusEntry => {
+                            const bonus = bonusEntry.bonus;
+                            // Match patterns like "+45 Armor", "+20 Willpower", "+4% Dodge", "+4 HP Every 4s", etc.
+                            const matches = bonus.matchAll(/\+(\d+)(%?)\s+([^,|]+)/g);
+                            for (const match of matches) {
+                                const value = match[1];
+                                const isPercent = match[2];
+                                // Use stat name exactly as in the bonus (trimmed)
+                                let statName = match[3].trim();
+                                if (!statBonuses[statName]) {
+                                    statBonuses[statName] = { value: 0, isPercent: false };
+                                }
+                                statBonuses[statName].value += parseInt(value);
+                                if (isPercent) statBonuses[statName].isPercent = true;
                             }
-                            statBonuses[statName].value += parseInt(value);
-                            if (isPercent) statBonuses[statName].isPercent = true;
-                        }
-                    });
-                    // Add bonuses to the displayStats string
-                    for (const [statName, bonus] of Object.entries(statBonuses)) {
-                        const bonusStr = bonus.isPercent ? `+${bonus.value}%` : `+${bonus.value}`;
-                        // Try to match stat in displayStats by full name (case-insensitive)
-                        const pattern = new RegExp(`(${statName}:\\s*)(\\d+)`, 'i');
-                        if (pattern.test(displayStats)) {
-                            // Add to existing stat
-                            displayStats = displayStats.replace(pattern, (match, prefix, currentValue) => {
-                                const newValue = parseInt(currentValue) + (bonus.isPercent ? 0 : bonus.value);
-                                return `${prefix}${newValue}`;
-                            });
-                        } else {
-                            // Append new stat (for percentage bonuses not in base stats)
-                            displayStats += ` | ${bonusStr} ${statName}`;
+                        });
+                        // Add bonuses to the displayStats string
+                        for (const [statName, bonus] of Object.entries(statBonuses)) {
+                            const bonusStr = bonus.isPercent ? `+${bonus.value}%` : `+${bonus.value}`;
+                            // Try to match stat in displayStats by full name (case-insensitive)
+                            const pattern = new RegExp(`(${statName}:\\s*)(\\d+)`, 'i');
+                            if (pattern.test(displayStats)) {
+                                // Add to existing stat
+                                displayStats = displayStats.replace(pattern, (match, prefix, currentValue) => {
+                                    const newValue = parseInt(currentValue) + (bonus.isPercent ? 0 : bonus.value);
+                                    return `${prefix}${newValue}`;
+                                });
+                            } else {
+                                // Append new stat (for percentage bonuses not in base stats)
+                                displayStats += ` | ${bonusStr} ${statName}`;
+                            }
                         }
                     }
-                }
-                html += `<div class="gear-item" style="background: rgba(100, 100, 255, 0.15); border-left-color: #6b9eff; margin-bottom: 15px;">
-                    <div class="gear-slot" style="color: #8bb4ff;">📊 Total Set Stats (with Set Bonuses)</div>
-                    <div class="gear-name" style="font-size: 0.95rem; margin-top: 5px;">${displayStats}</div>
-                </div>`;
-            }
-            
-            // Show set bonuses separately
-            if (gearSet.setBonuses && Array.isArray(gearSet.setBonuses)) {
-                html += `<div class="gear-item" style="background: rgba(0, 255, 100, 0.1); border-left-color: #5dff8c;">
-                    <div class="gear-slot" style="color: #5dff8c; font-size: 1.05rem;">✨ Set Bonuses</div>`;
-                gearSet.setBonuses.forEach(bonus => {
-                    html += `<div class="gear-name" style="font-size: 0.9rem; padding: 5px 0; color: #d0d0d0;">
-                        <span style="color: #5dff8c; font-weight: 700;">${bonus.pieces} Pieces:</span> ${bonus.bonus}
+                    html += `<div class="gear-item" style="background: rgba(100, 100, 255, 0.15); border-left-color: #6b9eff; margin-bottom: 15px;">
+                        <div class="gear-slot" style="color: #8bb4ff;">📊 Total Set Stats (with Set Bonuses)</div>
+                        <div class="gear-name" style="font-size: 0.95rem; margin-top: 5px;">${displayStats}</div>
                     </div>`;
-                });
-                html += '</div>';
+                }
+                // Show set bonuses separately
+                if (gearSet.setBonuses && Array.isArray(gearSet.setBonuses)) {
+                    html += `<div class="gear-item" style="background: rgba(0, 255, 100, 0.1); border-left-color: #5dff8c;">
+                        <div class="gear-slot" style="color: #5dff8c; font-size: 1.05rem;">✨ Set Bonuses</div>`;
+                    gearSet.setBonuses.forEach(bonus => {
+                        html += `<div class="gear-name" style="font-size: 0.9rem; padding: 5px 0; color: #d0d0d0;">
+                            <span style="color: #5dff8c; font-weight: 700;">${bonus.pieces} Pieces:</span> ${bonus.bonus}
+                        </div>`;
+                    });
+                    html += '</div>';
+                }
             }
         } else {
             // Fallback for old format
